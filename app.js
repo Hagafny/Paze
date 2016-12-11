@@ -133,9 +133,9 @@ function receivedMessage(event) {
 	if (!sessionIds.has(senderID)) {
 		sessionIds.set(senderID, uuid.v1());
 	}
-	console.log("Received message for user %d and page %d at %d with message:",
+	//console.log("Received message for user %d and page %d at %d with message:",
 		senderID, recipientID, timeOfMessage);
-	console.log(JSON.stringify(message));
+	//console.log(JSON.stringify(message));
 
 	var isEcho = message.is_echo;
 	var messageId = message.mid;
@@ -191,23 +191,119 @@ function handleApiAiAction(sender, action, responseText, contexts, parameters) {
 	}
 }
 
+function handleMessage(message, sender) {
+	switch (message.type) {
+		case 0: //text
+			sendTextMessage(sender, message.speech);
+			break;
+		case 2: //quick replies
+			let replies = [];
+			for (var b = 0; b < message.replies.length; b++) {
+				let reply =
+				{
+					"content_type": "text",
+					"title": message.replies[b],
+					"payload": message.replies[b]
+				}
+				replies.push(reply);
+			}
+			sendQuickReply(sender, message.title, replies);
+			break;
+		case 3: //image
+			sendImageMessage(sender, message.imageUrl);
+			break;
+		case 4:
+			// custom payload
+			var messageData = {
+				recipient: {
+					id: sender
+				},
+				message: message.payload.facebook
+
+			};
+
+			callSendAPI(messageData);
+
+			break;
+	}
+}
+
+
+function handleCardMessages(messages, sender) {
+
+	let elements = [];
+	for (var m = 0; m < messages.length; m++) {
+		let message = messages[m];
+		let buttons = [];
+		for (var b = 0; b < message.buttons.length; b++) {
+			let isLink = (message.buttons[b].postback.substring(0, 4) === 'http');
+			let button;
+			if (isLink) {
+				button = {
+					"type": "web_url",
+					"title": message.buttons[b].text,
+					"url": message.buttons[b].postback
+				}
+			} else {
+				button = {
+					"type": "postback",
+					"title": message.buttons[b].text,
+					"payload": message.buttons[b].postback
+				}
+			}
+			buttons.push(button);
+		}
+
+
+		let element = {
+			"title": message.title,
+			"image_url":message.imageUrl,
+			"subtitle": message.subtitle,
+			"buttons": buttons
+		};
+		elements.push(element);
+	}
+	sendGenericMessage(sender, elements);
+}
+
+
 function handleApiAiResponse(sender, response) {
 	let responseText = response.result.fulfillment.speech;
 	let responseData = response.result.fulfillment.data;
+	let messages = response.result.fulfillment.messages;
 	let action = response.result.action;
 	let contexts = response.result.contexts;
 	let parameters = response.result.parameters;
 
-	console.log("responseText: " + responseText);
-	console.log("responseData: " + responseData);
-	console.log("action: " + action);
 	sendTypingOff(sender);
 
+	if (isDefined(messages)) {
+		let timeoutInterval = 1100;
+		let previousType ;
+		let cardTypes = [];
+		let timeout = 0;
+		for (var i = 0; i < messages.length; i++) {
 
-	if (responseText == '' && !isDefined(action)) {
+			if ( messages[i].type == 1 ) {
+				cardTypes.push(messages[i]);
+			} else if ( previousType == 1 && messages[i].type != 1 ) {
+				timeout = (i - 1) * timeoutInterval;
+				setTimeout(handleCardMessages.bind(null, cardTypes, sender), timeout);
+				cardTypes = [];
+				timeout = i * timeoutInterval;
+				setTimeout(handleMessage.bind(null, messages[i], sender), timeout);
+			} else {
+				timeout = i * timeoutInterval;
+				setTimeout(handleMessage.bind(null, messages[i], sender), timeout);
+			}
+
+			previousType = messages[i].type;
+
+		}
+	} else if (responseText == '' && !isDefined(action)) {
 		//api ai could not evaluate input.
 		console.log('Unknown query' + response.result.resolvedQuery);
-		sendTextMessage(senderID, "I'm not sure what you want. Can you be more specific?");
+		sendTextMessage(sender, "I'm not sure what you want. Can you be more specific?");
 	} else if (isDefined(action)) {
 		handleApiAiAction(sender, action, responseText, contexts, parameters);
 	} else if (isDefined(responseData) && isDefined(responseData.facebook)) {
@@ -218,13 +314,13 @@ function handleApiAiResponse(sender, response) {
 			sendTextMessage(sender, err.message);
 		}
 	} else if (isDefined(responseText)) {
-		console.log('Respond as text message');
+
 		sendTextMessage(sender, responseText);
 	}
 }
 
 function sendToApiAi(sender, text) {
-	console.log("sendToApiAi: " + text);
+
 	sendTypingOn(sender);
 	let apiaiRequest = apiAiService.textRequest(text, {
 		sessionId: sessionIds.get(sender)
@@ -259,7 +355,7 @@ function sendTextMessage(recipientId, text) {
  * Send an image using the Send API.
  *
  */
-function sendImageMessage(recipientId) {
+function sendImageMessage(recipientId, imageUrl) {
 	var messageData = {
 		recipient: {
 			id: recipientId
@@ -268,7 +364,7 @@ function sendImageMessage(recipientId) {
 			attachment: {
 				type: "image",
 				payload: {
-					url: config.SERVER_URL + "/assets/rift.png"
+					url: imageUrl
 				}
 			}
 		}
@@ -391,92 +487,7 @@ function sendButtonMessage(recipientId, text, buttons) {
 	callSendAPI(messageData);
 }
 
-/*
- * Send a Structured Message (Generic Message type) using the Send API.
- * elements example:
- * [{
- * title: "rift",
- * subtitle: "Next-generation virtual reality",
- * item_url: "https://www.oculus.com/en-us/rift/",
- * image_url: config.SERVER_URL + "/assets/rift.png",
- * buttons: [{
- * type: "web_url",
- * url: "https://www.oculus.com/en-us/rift/",
- * title: "Open Web URL"
- * }, {
- * type: "postback",
- * title: "Call Postback",
- * payload: "Payload for first bubble",
- * }],
- * }, {
- * title: "touch",
- * subtitle: "Your Hands, Now in VR",
- * item_url: "https://www.oculus.com/en-us/touch/",
- * image_url: config.SERVER_URL + "/assets/touch.png",
- * buttons: [{
- * type: "web_url",
- * url: "https://www.oculus.com/en-us/touch/",
- * title: "Open Web URL"
- * }, {
- * type: "postback",
- * title: "Call Postback",
- * payload: "Payload for second bubble",
- * }]
- * }]
- *
- *
- * OR
- *
- * [
- *  {
- * "title": "Classic White T-Shirt",
- * "subtitle": "Soft white cotton t-shirt is back in style",
- * "item_url": "https://petersapparel.parseapp.com/view_item?item_id=100",
- * "image_url": "http://petersapparel.parseapp.com/img/item100-thumb.png",
- * "buttons": [
- *  {
- * "type": "web_url",
- * "url": "https://petersapparel.parseapp.com/view_item?item_id=100",
- * "title": "View Item"
- * },
- * {
- * "type": "web_url",
- * "url": "https://petersapparel.parseapp.com/buy_item?item_id=100",
- * "title": "Buy Item"
- * },
- * {
- * "type": "postback",
- * "title": "Bookmark Item",
- * "payload": "USER_DEFINED_PAYLOAD_FOR_ITEM100"
- * }
- * ]
- * },
- * {
- * "title": "Classic Grey T-Shirt",
- * "subtitle": "Soft gray cotton t-shirt is back in style",
- * "image_url": "http://petersapparel.parseapp.com/img/item101-thumb.png",
- * "item_url": "https://petersapparel.parseapp.com/view_item?item_id=101",
- * "buttons": [
- * {
- * "type": "web_url",
- * "url": "https://petersapparel.parseapp.com/view_item?item_id=101",
- * "title": "View Item"
- * },
- * {
- * "type": "web_url",
- * "url": "https://petersapparel.parseapp.com/buy_item?item_id=101",
- * "title": "Buy Item"
- * },
- * {
- * "type": "postback",
- * "title": "Bookmark Item",
- * "payload": "USER_DEFINED_PAYLOAD_FOR_ITEM101"
- * }
- * ]
- * }
- * ]
- *
- */
+
 function sendGenericMessage(recipientId, elements) {
 	var messageData = {
 		recipient: {
@@ -496,50 +507,7 @@ function sendGenericMessage(recipientId, elements) {
 	callSendAPI(messageData);
 }
 
-/*
- * Send a receipt message using the Send API.
- * example:
- * 	recipient_name: "Peter Chang",
- * 	currency: "USD",
- * 	payment_method: "Visa 1234",
- * 	timestamp: "1428444852",
- * 	elements: [{
- * 	title: "Oculus Rift",
- * 	subtitle: "Includes: headset, sensor, remote",
- * 	quantity: 1,
- * 	price: 599.00,
- * 	currency: "USD",
- * 	image_url: config.SERVER_URL + "/assets/riftsq.png"
- * 	}, {
- * 	title: "Samsung Gear VR",
- * 	subtitle: "Frost White",
- * 	quantity: 1,
- * 	price: 99.99,
- * 	currency: "USD",
- * 	image_url: config.SERVER_URL + "/assets/gearvrsq.png"
- * 	}],
- * 	address: {
- * 	street_1: "1 Hacker Way",
- * 	street_2: "",
- * 	city: "Menlo Park",
- * 	postal_code: "94025",
- * 	state: "CA",
- * 	country: "US"
- * 	},
- * 	summary: {
- * 	subtotal: 698.99,
- * 	shipping_cost: 20.00,
- * 	total_tax: 57.67,
- * 	total_cost: 626.66
- * 	},
- * 	adjustments: [{
- * 	name: "New Customer Discount",
- * 	amount: -50
- * 	}, {
- * 	name: "$100 Off Coupon",
- * 	amount: -100
- * 	}]
- */
+
 function sendReceiptMessage(recipientId, recipient_name, currency, payment_method,
 							timestamp, elements, address, summary, adjustments) {
 	// Generate a random receipt ID as the API requires a unique ID
@@ -595,7 +563,6 @@ function sendQuickReply(recipientId, text, replies, metadata) {
  *
  */
 function sendReadReceipt(recipientId) {
-	console.log("Sending a read receipt to mark message as seen");
 
 	var messageData = {
 		recipient: {
@@ -612,7 +579,7 @@ function sendReadReceipt(recipientId) {
  *
  */
 function sendTypingOn(recipientId) {
-	console.log("Turning typing indicator on");
+
 
 	var messageData = {
 		recipient: {
@@ -629,7 +596,7 @@ function sendTypingOn(recipientId) {
  *
  */
 function sendTypingOff(recipientId) {
-	console.log("Turning typing indicator off");
+
 
 	var messageData = {
 		recipient: {
@@ -681,7 +648,7 @@ function greetUserText(userId) {
 		if (!error && response.statusCode == 200) {
 
 			var user = JSON.parse(body);
-			console.log("getUserData:" + user);
+
 			if (user.first_name) {
 				console.log("FB user: %s %s, %s",
 					user.first_name, user.last_name, user.gender);
@@ -755,7 +722,7 @@ function receivedPostback(event) {
 			break;
 
 	}
-	console.log("payload" + payload);
+
 	console.log("Received postback for user %d and page %d with payload '%s' " +
 		"at %d", senderID, recipientID, payload, timeOfPostback);
 
