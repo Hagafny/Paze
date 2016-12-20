@@ -276,7 +276,7 @@ function handleApiAiResponse(sender, response) {
 
 	sendTypingOff(sender);
 
-	if (isDefined(messages) && messages.length > 1) {
+	if (isDefined(messages) && (messages.length == 1 && messages[0].type != 0 || messages.length > 1)) {
 		let timeoutInterval = 1100;
 		let previousType ;
 		let cardTypes = [];
