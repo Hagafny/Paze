@@ -283,14 +283,15 @@ function handleApiAiResponse(sender, response) {
 		let timeout = 0;
 		for (var i = 0; i < messages.length; i++) {
 
-			if ( messages[i].type == 1 ) {
-				cardTypes.push(messages[i]);
-			} else if ( previousType == 1 && messages[i].type != 1 ) {
+			if ( previousType == 1 && (messages[i].type != 1 || i == messages.length - 1)) {
+
 				timeout = (i - 1) * timeoutInterval;
 				setTimeout(handleCardMessages.bind(null, cardTypes, sender), timeout);
 				cardTypes = [];
 				timeout = i * timeoutInterval;
 				setTimeout(handleMessage.bind(null, messages[i], sender), timeout);
+			} else if ( messages[i].type == 1 ) {
+				cardTypes.push(messages[i]);
 			} else {
 				timeout = i * timeoutInterval;
 				setTimeout(handleMessage.bind(null, messages[i], sender), timeout);
