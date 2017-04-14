@@ -290,6 +290,11 @@ function handleApiAiResponse(sender, response) {
 				cardTypes = [];
 				timeout = i * timeoutInterval;
 				setTimeout(handleMessage.bind(null, messages[i], sender), timeout);
+			} else if ( messages[i].type == 1 && i == messages.length - 1) {
+				cardTypes.push(messages[i]);
+                		timeout = (i - 1) * timeoutInterval;
+                		setTimeout(handleCardMessages.bind(null, cardTypes, sender), timeout);
+                		cardTypes = [];
 			} else if ( messages[i].type == 1 ) {
 				cardTypes.push(messages[i]);
 			} else {
