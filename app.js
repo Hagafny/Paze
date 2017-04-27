@@ -5,20 +5,20 @@ const app = express();
 const crypto = require('crypto');
 const bodyParser = require('body-parser');
 const apiAiModule = require('./apiaiModule');
-<<<<<<< HEAD
+
 const passport = require('passport');
 const createSendToken = require('./services/jwt.js');
 const facebookAuth = require('./services/facebookAuth.js');
 const localStrategy = require('./services/localStrategy.js');
-const cognitiveServices = require('cognitive-services');
-=======
->>>>>>> 4321c78c46b963e82ea468ca0e207bb661d1bf61
-const routes = require('./routes');
+//const cognitiveServices = require('cognitive-services');
 
+// 4321c78c46b963e82ea468ca0e207bb661d1bf61
+const routes = require('./routes');
+/*
 apiAiModule.textAnalytic = new cognitiveServices.textAnalytics({
     API_KEY: '59020ee40ddf870004a4ea1f'
 });
-
+*/
 require('./dbConnector')(() => {
     console.log('mongo connected!');
 })

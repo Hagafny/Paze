@@ -31,6 +31,7 @@ const apiAiService = apiai(config.API_AI_CLIENT_ACCESS_TOKEN, {
     language: "en",
     requestSource: "fb"
 });
+
 const sessionIds = new Map();
 
 var webhookGet = (req, res) => {
@@ -120,7 +121,7 @@ function receivedMessage(event) {
     var messageText = message.text;
     var messageAttachments = message.attachments;
     var quickReply = message.quick_reply;
-
+    /*
     self.textAnalytics.detectLanguage({
         body: messageText
     }).then((response) => {
@@ -130,8 +131,7 @@ function receivedMessage(event) {
         handleEcho("errpr" + err.message);
         //console.error('Encountered error making request:', err);
     });
-
-    return;
+    */
 
     if (isEcho) {
         handleEcho(messageId, appId, metadata);
