@@ -49,10 +49,10 @@ var webhookGet = (req, res) => {
  *
  */
 
-my.namespace.ColorEnum = {
-    PREINTERVIEW : 0,
-    AFTERINTERVIEW : 1,
-}
+//my.namespace.Enum = {
+  //  PREINTERVIEW : 0,
+    //AFTERINTERVIEW : 1,
+//}
 
 
 
@@ -158,13 +158,12 @@ function handleEcho(messageId, appId, metadata) {
 function handleApiAiAction(sender, action, responseText, contexts, parameters) {
     switch (action) {
         case "example.survey":
-            isDefined(contexts[1].name = "example-survey" && contexts[1].parameters)
-            {
+          //  isDefined(contexts[1].name = "example-survey" && contexts[1].parameters)
+           // {
                 
-            sendTextMessage(sender, responscontexts[1].nameeText);
-
+            sendTextMessage(sender, responscontexts[1].name);
                 
-            }
+           // }
         break;
         default:
             //unhandled action, just send back the text
@@ -699,7 +698,7 @@ function receivedPostback(event) {
     var payload = event.postback.payload;
 
     switch (payload) {
-        case GetStarted_Button-Pressed:
+        case "GetStarted_Button_Pressed":
 
         sendTypingOn(sender);
         sendTypingOff(sender);
