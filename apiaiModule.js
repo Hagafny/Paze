@@ -158,10 +158,10 @@ function handleEcho(messageId, appId, metadata) {
 function handleApiAiAction(sender, action, responseText, contexts, parameters) {
     switch (action) {
         case "example.survey":
-          //  isDefined(contexts[1].name = "example-survey" && contexts[1].parameters)
+          //  isDefined(contexts[0].name = "yes-to-example-survey_dialog_context" && contexts[0].parameters)
            // { 
              //  let age = isDefined
-            sendTextMessage(sender,contexts[0].name);
+            sendTextMessage(sender,contexts[0].parameters);
               
            // }
         break;
