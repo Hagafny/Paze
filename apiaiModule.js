@@ -7,7 +7,13 @@ const bodyParser = require('body-parser');
 const request = require('request');
 const uuid = require('uuid');
 const participantService = require("./services/participantService");
+const cognitiveServices = require('cognitive-services');
 
+const textAnalytics = new cognitiveServices.textAnalytics({
+    API_KEY: '0b08f2e3532d4e789b3918ea26e82f6b'
+})
+ 
+ 
 // Messenger API parameters
 if (!config.FB_PAGE_TOKEN) {
     throw new Error('missing FB_PAGE_TOKEN');
@@ -121,17 +127,23 @@ function receivedMessage(event) {
     var messageText = message.text;
     var messageAttachments = message.attachments;
     var quickReply = message.quick_reply;
-    /*
-    self.textAnalytics.detectLanguage({
-        body: messageText
-    }).then((response) => {
-        handleEcho(response ? JSON.stringify(response) : "undefined responseText");
-        //console.log('Got response', response ? JSON.stringify(response) : "undefined responseText");
-    }).catch((err) => {
-        handleEcho("errpr" + err.message);
-        //console.error('Encountered error making request:', err);
-    });
-    */
+    
+    try {
+
+        textAnalytics.detectTopics()
+        .then((response) => {
+            sendTextMessage(sender, JSON.stringify(err));
+            //console.log('Got response', response ? JSON.stringify(response) : "undefined responseText");
+        }).catch((err) => {
+            sendTextMessage(sender, JSON.stringify(err));
+            //console.error('Encountered error making request:', err);
+        });
+
+    } catch(e) {
+       sendTextMessage(sender, e.message);
+    }
+
+    return;
 
     if (isEcho) {
         handleEcho(messageId, appId, metadata);
@@ -140,8 +152,6 @@ function receivedMessage(event) {
         handleQuickReply(senderID, quickReply, messageId);
         return;
     }
-
-    
 
     if (messageText) {
         //send message to api.ai
