@@ -7,7 +7,6 @@ const bodyParser = require('body-parser');
 const apiAiModule = require('./apiaiModule');
 
 const passport = require('passport');
-const createSendToken = require('./services/jwt.js');
 const facebookAuth = require('./services/facebookAuth.js');
 const localStrategy = require('./services/localStrategy.js');
 //const cognitiveServices = require('cognitive-services');
