@@ -1,0 +1,43 @@
+<div class='content-wrapper' ng-init="app.settings.pagetitle = 'Playlists';">
+    <div class="col-lg-12" ng-controller="PlaylistsCtrl">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">All Playlists</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-bottom-0">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-4 col-sm-4 col-xs-6" ng-repeat="playlist in playlists">
+                                <div class="music_genre music-playlist">
+                                    <div class="thumb">
+                                    <img class="img-responsive" ng-src="{{playlist.thumb}}">
+                                    <div class="overlay"><a ui-sref="app.mus-playlist-view"><i class="material-icons">play_circle_filled</i></a></div>
+                                    </div>
+                                    <div class="song-info">
+                                        <h4><a ui-sref="app.mus-playlist-view">{{ playlist.title | limitTo: 20 }}{{playlist.title.length > 20 ? '...' : ''}}</a></h4>
+                                        <p><a ui-sref="app.mus-genres">{{playlist.genre}}</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                        <div class="row" ng-controller="PaginationDemoCtrl">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center padding-top-30 padding-bottom-30">
+                                <uib-pagination total-items="totalItems" ng-model="currentPage"></uib-pagination>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

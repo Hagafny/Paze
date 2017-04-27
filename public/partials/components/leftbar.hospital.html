@@ -1,0 +1,41 @@
+<!-- SIDEBAR - START -->
+<!-- MAIN MENU - START -->
+<perfect-scrollbar class="page-sidebar-wrapper" id="main-menu-wrapper" wheel-propagation="true" suppress-scroll-x="true" min-scrollbar-length="20" menuheight>
+    <!-- USER INFO - START -->
+    <div class="profile-info" ng-show="app.settings.menuProfile">
+        <div class="profile-image col-md-12 col-sm-12 col-xs-12 text-center">
+            <a ui-sref="app.hos-doctor-profile">
+                <img src="data/profile/profile-hospital.jpg" class="img-responsive">
+                <span class="profile-status available"></span>
+            </a>
+        </div>
+        <div class="profile-details col-md-12 col-sm-12 col-xs-12">
+            <h3>
+                    <a ui-sref="app.ui.profile">Dr. John Arthur</a>
+
+                    <!-- Available statuses: online, idle, busy, away and offline -->
+                </h3>
+            <p class="profile-title">M.D. Physician</p>
+        </div>
+    </div>
+    <!-- USER INFO - END -->
+    <!-- nav -->
+
+    <nav ui-nav ng-include="'partials/components/nav.hospital.html'"></nav>
+
+    <!-- nav -->
+    <div class="sidebar-graphs col-md-12">
+        <h5>
+              Rx Stock
+              <span class="pull-right">50%</span>
+            </h5>
+        <uib-progressbar value="50" class="progress progress-sm primary"></uib-progressbar>
+        <h5>
+              Beds Occupied
+              <span class="pull-right">75%</span>
+            </h5>
+        <uib-progressbar value="75" class="progress progress-sm warning"></uib-progressbar>
+    </div>
+</perfect-scrollbar>
+<!-- MAIN MENU - END -->
+<!--  SIDEBAR - END -->

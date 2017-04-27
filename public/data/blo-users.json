@@ -1,0 +1,74 @@
+[
+    {
+        "avatar": "data/blo-users/user-1.jpg",
+        "age": "45", 
+        "name": "Mrs. Brodeur", 
+        "role": "Administrator"
+    }, 
+    {
+        "avatar": "data/blo-users/user-2.jpg",
+        "age": "39", 
+        "name": "Ms. Latshaw", 
+        "role": "Contributor"
+    }, 
+    {
+        "avatar": "data/blo-users/user-3.jpg",
+        "age": "34", 
+        "name": "Mrs. Clementina", 
+        "role": "Administrator"
+    }, 
+    {
+        "avatar": "data/blo-users/user-4.jpg",
+        "age": "29", 
+        "name": "Mr. Carri Busey", 
+        "role": "Contributor"
+    }, 
+    {
+        "avatar": "data/blo-users/user-5.jpg",
+        "age": "65", 
+        "name": "Ms. Clay Dock", 
+        "role": "Editor"
+    }, 
+    {
+        "avatar": "data/blo-users/user-6.jpg",
+        "age": "57", 
+        "name": "Mr. Mark Peskin", 
+        "role": "Administrator"
+    }, 
+    {
+        "avatar": "data/blo-users/user-7.jpg",
+        "age": "65", 
+        "name": "Mr. Arthur John.", 
+        "role": "Subscriber"
+    }, 
+    {
+        "avatar": "data/blo-users/user-8.jpg",
+        "age": "29", 
+        "name": "Mr. Carri Busey", 
+        "role": "Administrator"
+    }, 
+    {
+        "avatar": "data/blo-users/user-9.jpg",
+        "age": "65", 
+        "name": "Ms. Clay Dock", 
+        "role": "Editor"
+    }, 
+    {
+        "avatar": "data/blo-users/user-10.jpg",
+        "age": "57", 
+        "name": "Mr. Mark Peskin", 
+        "role": "Author"
+    }, 
+    {
+        "avatar": "data/blo-users/user-11.jpg",
+        "age": "65", 
+        "name": "Mr. Arthur John.", 
+        "role": "Subscriber"
+    }, 
+    {
+        "avatar": "data/blo-users/user-12.jpg",
+        "age": "29", 
+        "name": "Mrs. Jonh A.", 
+        "role": "Teacher"
+    }
+]

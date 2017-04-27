@@ -1,0 +1,133 @@
+<div class='content-wrapper' ng-init="app.settings.pagetitle = 'Progress Bar';">
+    <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Dynamic</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-bottom-15">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 " ng-controller="ProgressDemoCtrl">
+                        <uib-progressbar max="max" value="dynamic" class='accent'><span style="white-space:nowrap;">{{dynamic}} / {{max}}</span></uib-progressbar>
+                        <uib-progressbar animate="false" value="dynamic" type="success"><b>{{dynamic}}%</b></uib-progressbar>
+                        <uib-progressbar class="progress-striped active" value="dynamic" type="{{type}}">{{type}} <i ng-show="showWarning">!!! Watch out !!!</i></uib-progressbar>
+                        <p>
+                            <button class="btn btn-sm btn-primary" type="button" ng-click="random()">Randomize</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Stacked</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-bottom-15">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 " ng-controller="ProgressDemoCtrl">
+                        <h4 class='margin-bottom-10'>Dynamic</h4>
+                        <uib-progress>
+                            <uib-bar ng-repeat="bar in stacked track by $index" value="bar.value" type="{{bar.type}}"><span ng-hide="bar.value < 5">{{bar.value}}%</span></uib-bar>
+                        </uib-progress>
+                        <h4 class='margin-bottom-10'>Static</h4>
+                        <uib-progress>
+                            <uib-bar value='15' type='success'>15%</uib-bar>
+                            <uib-bar value='25' type='warning'>25%</uib-bar>
+                            <uib-bar value='45' type='info'>45%</uib-bar>
+                        </uib-progress>
+                        <h4 class='margin-bottom-10'>Animated</h4>
+                        <uib-progress class='progress-striped active'>
+                            <uib-bar value='15' type='danger'>25%</uib-bar>
+                            <uib-bar value='25' type='warning'>55%</uib-bar>
+                            <uib-bar value='45' type='success'>35%</uib-bar>
+                        </uib-progress>
+                        <p>
+                            <button class="btn btn-sm btn-primary" type="button" ng-click="randomStacked()">Randomize</button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Sizes</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-bottom-15">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 " ng-controller="ProgressDemoCtrl">
+                        <uib-progressbar value="35" class="progress progress-sm primary"></uib-progressbar>
+                        <uib-progressbar value="50" class="progress progress-md primary"></uib-progressbar>
+                        <uib-progressbar value="65" class="progress progress-lg primary"></uib-progressbar>
+                        <uib-progressbar value="80" class="progress progress-xlg primary"></uib-progressbar>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Colors & Contextual</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-bottom-15">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 ">
+                        <uib-progressbar value="20" class="progress progress-sm" type='success'></uib-progressbar>
+                        <uib-progressbar value="30" class="progress progress-sm" type='info'></uib-progressbar>
+                        <uib-progressbar value="40" class="progress progress-sm" type='warning'></uib-progressbar>
+                        <uib-progressbar value="50" class="progress progress-sm" type='danger'></uib-progressbar>
+                        <uib-progressbar value="60" class="progress progress-sm primary"></uib-progressbar>
+                        <uib-progressbar value="70" class="progress progress-sm accent"></uib-progressbar>
+                        <uib-progressbar value="80" class="progress progress-sm secondary"></uib-progressbar>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Stripped & Animated</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-bottom-15">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 ">
+                        <uib-progressbar class="progress-striped active" max="200" value="36" type=''></uib-progressbar>
+                        <uib-progressbar class="progress-striped active" max="200" value="56" type='success'></uib-progressbar>
+                        <uib-progressbar class="progress-striped active" max="200" value="96" type='info'></uib-progressbar>
+                        <uib-progressbar class="progress-striped active " max="200" value="126" type='warning'></uib-progressbar>
+                        <uib-progressbar class="progress-striped active" max="200" value="166" type='danger'></uib-progressbar>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

@@ -1,0 +1,108 @@
+<div class='content-wrapper' ng-init="app.settings.pagetitle = 'Professors Report';">
+    
+
+
+    <div class="col-lg-12" ng-controller="UniversityProfessorCtrl">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Departmental Professor Count</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div ui-jq="plot" ui-options="
+              {{chart5}},
+              {
+                series: { pie: { show: true, innerRadius: 0.35, stroke: { width: 0 }, label: { show: true, threshold: 0.05 } } },
+                colors: ['{{app.color.primary}}', '{{app.color.success}}', '{{app.color.accent}}', '{{app.color.warning}}', '#797979'],
+                grid: { hoverable: true, clickable: true, tickColor: '#f5f5f5', borderWidth: 1, borderColor: '#eaeaea' },   
+                tooltip: true,
+                tooltipOpts: { content: '%s: %p.0%' }
+              }
+            " style="height:300px"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="col-lg-12" ng-controller="UniversityProfessorCtrl">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Monthly Professor Income</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div ui-jq="plot" ui-options="
+                  [
+                    { data: {{chart1}}, points: { show: true, radius: 12}, splines: { show: true, tension: 0.15, lineWidth: 10, fill: 0 } }
+                  ], 
+                  {
+                    colors: ['{{app.color.accent}}'],
+                    series: { shadowSize: 7 },
+                    xaxis:{ 
+                      font: { color: '#ccc' },
+                      position: 'top',
+                      ticks: [
+                        [ 1, 'Jan' ], [ 2, 'Feb' ], [ 3, 'Mar' ], [ 4, 'Apr' ], [ 5, 'May' ], [ 6, 'Jun' ], [ 7, 'Jul' ], [ 8, 'Aug' ], [ 9, 'Sep' ], [ 10, 'Oct' ], [ 11, 'Nov' ], [ 12, 'Dec' ]
+                      ]
+                    },
+                    yaxis:{ font: { color: '#ccc' } },
+                    grid: { hoverable: true, clickable: true, tickColor: '#f5f5f5', borderWidth: 1, borderColor: '#eaeaea' },
+                    tooltip: true,
+                    tooltipOpts: { content: '%x.1 is %y.4',  defaultTheme: false, shifts: { x: 0, y: 20 } }
+                  }
+                " style="height:270px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+  <div class="col-lg-12" ng-controller="UniversityProfessorCtrl">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Professor Attendance Comparison</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div ui-jq="plot" ui-options="
+              [
+                { data: {{chart2}}, label: 'Current Year', points: { show: true, radius: 7 }, lines: { show: true, fill: true, fillColor: { colors: [{ opacity: 0.1 }, { opacity: 0.1}] } } }, 
+                { data: {{chart3}}, label: 'Last Year', points: { show: true, radius: 7 } }
+              ],
+              {
+                colors: [ '{{app.color.accent}}','{{app.color.primary}}' ],
+                series: { shadowSize: 7 },
+                xaxis:{ font: { color: '#ccc' } },
+                yaxis:{ font: { color: '#ccc' } },
+                grid: { hoverable: true, clickable: true, tickColor: '#f5f5f5', borderWidth: 1, borderColor: '#eaeaea'  },
+                tooltip: true,
+                tooltipOpts: { content: '%s of %x.1 is %y.4',  defaultTheme: false, shifts: { x: 0, y: 20 } }
+              }
+            " style="height:240px"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+</div>

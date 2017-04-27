@@ -1,0 +1,157 @@
+<div class='content-wrapper' ng-init="app.settings.pagetitle = 'Input Masks';">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Basic Profile Fields</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-bottom-0">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10">
+                        <div class="form-group">
+                            <label class="form-label" for="field-2">Phone</label>
+                            <span class="desc">e.g. "(534) 253-5353"</span>
+                            <div class="controls">
+                                <input type="text" name="masked" ui-mask="(999) 999-9999" placeholder="(999) 999-9999" class="form-control" ng-model="mask1" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="field-2">Phone with ext.</label>
+                            <span class="desc">e.mask "(534) 253-5353 ext. 111"</span>
+                            <div class="controls">
+                                <input type="text" name="masked" ui-mask="(999) 999-9999 ext. 999" ng-model="bb" placeholder="(999) 999-9999 ext. 999" class="form-control" ng-model="mask2" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="field-2">Mixed</label>
+                            <span class="desc">e.mask "UL:TRA-533"</span>
+                            <div class="controls">
+                                <input type="text" name="masked" ui-mask="**:AAA-999" ng-model="cc" placeholder="**:AAA-999" class="form-control" ng-model="mask3" required>
+                                <p class="m-b"><code>A</code> Any letter.
+                                    <br><code>9</code> Any number.
+                                    <br><code>*</code> Any letter or number.</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="field-3">Currency (€)</label>
+                            <span class="desc">e.g. "€ 343,433.13"</span>
+                            <div class="controls">
+                                <input type="text" name="masked" ui-mask="€ 999,999.99" placeholder="€ 999,999.99" class="form-control" ng-model="mask4" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="field-4">Currency ($)</label>
+                            <span class="desc">e.g. "$ 343,433.13"</span>
+                            <div class="controls">
+                                <input type="text" name="masked" ui-mask="$ 999,999.99" placeholder="$ 999,999.99" class="form-control" ng-model="mask5" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">More Common Fields</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-bottom-0">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10">
+                        <div class="form-group">
+                            <label class="form-label">ISBN 1</label>
+                            <span class="desc">e.g. "999-99-999-9999-9"</span>
+                            <div class="controls">
+                                <input type="text" name="masked" ui-mask="999-99-999-9999-9" placeholder="999-99-999-9999-9" class="form-control" ng-model="mask21" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">ISBN 2</label>
+                            <span class="desc">e.g. "999 99 999 9999 9"</span>
+                            <div class="controls">
+                                <input type="text" name="masked" ui-mask="999 99 999 9999 9" placeholder="999 99 999 9999 9" class="form-control" ng-model="mask22" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">ISBN 3</label>
+                            <span class="desc">e.g. "999/99/999/9999/9"</span>
+                            <div class="controls">
+                                <input type="text" name="masked" ui-mask="999/99/999/9999/9" placeholder="999/99/999/9999/9" class="form-control" ng-model="mask23" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">IPV4</label>
+                            <span class="desc">e.g. "192.168.110.310"</span>
+                            <div class="controls">
+                                <input type="text" name="masked" ui-mask="999.999.999.9999" placeholder="999.999.999.9999" class="form-control" ng-model="mask24" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">IPV6</label>
+                            <span class="desc">e.g. "4deg:1340:6547:2:540:h8je:ve73:98pd"</span>
+                            <div class="controls">
+                                <input type="text" name="masked" ui-mask="9999:9999:9999:9:999:9999:9999:9999" placeholder="9999:9999:9999:9:999:9999:9999:9999" class="form-control" ng-model="mask25" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Tax ID</label>
+                            <span class="desc">e.g. "99-9999999"</span>
+                            <div class="controls">
+                                <input type="text" name="masked" ui-mask="99-9999999" placeholder="99-9999999" class="form-control" ng-model="mask26" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Date Time</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-bottom-0">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10">
+                        <div class="form-group">
+                            <label class="form-label" for="field-5">Date (Default)</label>
+                            <span class="desc">e.g. "04/03/2015"</span>
+                            <div class="controls">
+                                <input type="text" name="masked" ui-mask="99/99/9999" placeholder="MM/DD/YYYY" class="form-control" ng-model="mask11" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="field-11">Date (Formatted)</label>
+                            <span class="desc">e.g. "04-03-2015"</span>
+                            <div class="controls">
+                                <input type="text" name="masked" ui-mask="99-99-9999" placeholder="MM-DD-YYYY" class="form-control" ng-model="mask12" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="field-6">Date Time</label>
+                            <span class="desc">e.g. "31/12/2015 12:12"</span>
+                            <div class="controls">
+                                <input type="text" name="masked" ui-mask="99/99/9999 99:99" placeholder="MM/DD/YYYY hh:mm" class="form-control" ng-model="mask13" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

@@ -1,0 +1,205 @@
+<div class='content-wrapper' ng-init="app.settings.pagetitle = 'Edit Blog ';">
+    <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Blog Basic Info</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-bottom-0">
+                <div class="row">
+                    <form action ="#" method="post">
+                        <div class="col-lg-8 col-md-8 col-sm-9 col-xs-12">
+                            <div class="form-group">
+                                <label class="form-label" for="field-1">Blog Title</label>
+                                <span class="desc"></span>
+                                <div class="controls">
+                                    <input type="text" value="Graphic Design and its upcoming trends" class="form-control" id="field-1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <label class="form-label" for="field-6">Blog Post Content</label>
+                            <div class="form-group wysiwyg">
+                                <span class="desc"></span>
+                                <div class="">
+                                    <div class="btn-toolbar m-b-sm btn-editor" data-role="editor-toolbar" data-target="#editor">
+                                        <div class="btn-group dropdown margin-left-0" uib-dropdown>
+                                            <a class="btn btn-default btn-border" uib-dropdown-toggle uib-tooltip="Font"><i class="fa fa-font"></i><b class="caret"></b></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href data-edit="fontName Serif" style="font-family:'Serif'">Serif</a></li>
+                                                <li><a href data-edit="fontName Sans" style="font-family:'Sans'">Sans</a></li>
+                                                <li><a href data-edit="fontName Arial" style="font-family:'Arial'">Arial</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="btn-group dropdown" uib-dropdown>
+                                            <a class="btn btn-default btn-border" uib-dropdown-toggle data-toggle="dropdown" uib-tooltip="Font Size"><i class="fa fa-text-height"></i>&nbsp;<b class="caret"></b></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href data-edit="fontSize 5" style="font-size:24px">Huge</a></li>
+                                                <li><a href data-edit="fontSize 3" style="font-size:18px">Normal</a></li>
+                                                <li><a href data-edit="fontSize 1" style="font-size:14px">Small</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="btn-group">
+                                            <a class="btn btn-default btn-border" data-edit="bold" uib-tooltip="Bold (Ctrl/Cmd+B)"><i class="fa fa-bold"></i></a>
+                                            <a class="btn btn-default btn-border" data-edit="italic" uib-tooltip="Italic (Ctrl/Cmd+I)"><i class="fa fa-italic"></i></a>
+                                            <a class="btn btn-default btn-border" data-edit="strikethrough" uib-tooltip="Strikethrough"><i class="fa fa-strikethrough"></i></a>
+                                            <a class="btn btn-default btn-border" data-edit="underline" uib-tooltip="Underline (Ctrl/Cmd+U)"><i class="fa fa-underline"></i></a>
+                                        </div>
+                                        <div class="btn-group">
+                                            <a class="btn btn-default btn-border" data-edit="insertunorderedlist" uib-tooltip="Bullet list"><i class="fa fa-list-ul"></i></a>
+                                            <a class="btn btn-default btn-border" data-edit="insertorderedlist" uib-tooltip="Number list"><i class="fa fa-list-ol"></i></a>
+                                            <a class="btn btn-default btn-border" data-edit="outdent" uib-tooltip="Reduce indent (Shift+Tab)"><i class="fa fa-dedent"></i></a>
+                                            <a class="btn btn-default btn-border" data-edit="indent" uib-tooltip="Indent (Tab)"><i class="fa fa-indent"></i></a>
+                                        </div>
+                                        <div class="btn-group">
+                                            <a class="btn btn-default btn-border" data-edit="justifyleft" uib-tooltip="Align Left (Ctrl/Cmd+L)"><i class="fa fa-align-left"></i></a>
+                                            <a class="btn btn-default btn-border" data-edit="justifycenter" uib-tooltip="Center (Ctrl/Cmd+E)"><i class="fa fa-align-center"></i></a>
+                                            <a class="btn btn-default btn-border" data-edit="justifyright" uib-tooltip="Align Right (Ctrl/Cmd+R)"><i class="fa fa-align-right"></i></a>
+                                            <a class="btn btn-default btn-border" data-edit="justifyfull" uib-tooltip="Justify (Ctrl/Cmd+J)"><i class="fa fa-align-justify"></i></a>
+                                        </div>
+                                        <div class="btn-group dropdown" uib-dropdown>
+                                            <a class="btn btn-default btn-border" uib-dropdown-toggle uib-tooltip="Hyperlink"><i class="fa fa-link"></i></a>
+                                            <div class="dropdown-menu">
+                                                <div class="input-group m-l-xs m-r-xs">
+                                                    <input class="form-control input-sm" id="LinkInput" placeholder="URL" type="text" data-edit="createLink" />
+                                                    <div class="input-group-btn">
+                                                        <button class="btn btn-sm btn-default btn-border" type="button">Add</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <a class="btn btn-default btn-border" data-edit="unlink" uib-tooltip="Remove Hyperlink"><i class="fa fa-cut"></i></a>
+                                        </div>
+                                        <div class="btn-group">
+                                            <a class="btn btn-default btn-border" uib-tooltip="Insert picture (or just drag & drop)" id="pictureBtn"><i class="fa fa-picture-o"></i></a>
+                                            <input type="file" data-edit="insertImage" style="position:absolute; opacity:0; width:41px; height:34px" />
+                                        </div>
+                                        <div class="btn-group">
+                                            <a class="btn btn-default btn-border" data-edit="undo" uib-tooltip="Undo (Ctrl/Cmd+Z)"><i class="fa fa-undo"></i></a>
+                                            <a class="btn btn-default btn-border" data-edit="redo" uib-tooltip="Redo (Ctrl/Cmd+Y)"><i class="fa fa-repeat"></i></a>
+                                        </div>
+                                    </div><br>
+                                    <div ui-jq="wysiwyg" class="form-control wysiwyg-editor" style="overflow:scroll;height:200px;max-height:200px">
+
+                                        <p>Graphic design is the process of visual communication, and problem-solving through the use of type, space, image and color.</p>
+                                        <p>The field is considered a subset of visual communication and communication design, but sometimes the term "graphic design" is used interchangeably with these due to overlapping skills involved. <b>Graphic designers</b> use various methods to create and combine words, symbols, and images to create a visual representation of ideas and messages. A graphic designer may use a combination of <u>typography</u>, visual arts and page layout techniques to produce a final result. Graphic design often refers to both the process (designing) by which the communication is created and the products (designs) which are generated.</p>
+                                        <p>Common uses of graphic design include identity (logos and branding), publications (magazines, newspapers and books), print advertisements, posters, billboards, website graphics and elements, signs and product packaging. For example, a product package might include a logo or other artwork, organized text and pure design elements such as images, shapes and color which unify the piece. Composition is one of the most important features of graphic design, especially when using pre-existing materials or diverse elements.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 col-md-8 col-sm-9 col-xs-12 padding-bottom-30">
+                            <div class="text-left">
+                                <button type="button" class="btn btn-primary">Save</button>
+                                <button type="button" class="btn">Cancel</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Blog Info</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-bottom-0">
+                <div class="row">
+                    <form action="#" method="post">
+                        <div class="col-lg-8 col-md-8 col-sm-9 col-xs-12">
+
+                            <div class="form-group">
+                                <label class="form-label" for="field-1">Blog Featured Image</label>
+                                <span class="desc"></span>
+                                <img class="img-responsive" ng-src="data/blogs/blog-1.jpg" alt="" style="max-width:120px;">
+                                <div class="controls">
+                                    <input type="file" class="form-control" id="field-5">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="field-1">Blog URL Slug</label>
+                                <span class="desc"></span>
+                                <div class="controls">
+                                    <input type="text" value="graphic-design-trends" class="form-control" id="field-1">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="field-1">Categories</label>
+                                <div class="controls">
+                                    <select ui-jq="chosen" multiple class="form-control" data-placeholder="Select categories">
+                                        <option value=""></option>
+                                        <option selected="selected" value="Webdesign">Web Design</option>
+                                        <option  selected="selected" value="desgin">Design</option>
+                                        <option value="marketing">Marketing</option>
+                                        <option value="seo">SEO</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="field-1">Tags</label>
+                                <div class="controls">
+                                    <select ui-jq="chosen" multiple class="form-control" data-placeholder="Select Tags">
+                                        <option value=""></option>
+                                        <option value="general">General</option>
+                                        <option  selected="selected" value="graphics">Graphics</option>
+                                        <option  selected="selected" value="branding">Branding</option>
+                                        <option value="marketing">Marketing</option>
+                                        <option value="seo">SEO</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="field-5">Date Created</label>
+                                <span class="desc">e.g. "04/03/2015"</span>
+                                <div class="controls">
+                                    <input type="text" name="masked" ui-mask="99/99/9999" placeholder="MM/DD/YYYY" class="form-control" ng-model="mask11" required ng-init="mask11='04/06/2015'">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="field-5">Status</label>
+                                <span class="desc"></span>
+                                <div class="input-group" inputgroup>
+                                    <select class="form-control ">
+                                        <option>New</option>
+                                        <option>Draft</option>
+                                        <option selected="selected">Published</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="field-1">Author</label>
+                                <span class="desc"></span>
+                                <div class="controls">
+                                    <input type="text" value="John Doe" class="form-control" id="field-1">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="field-6">Blog Excerpt</label>
+                                <span class="desc">e.g. "Enter any size of text description here"</span>
+                                <div class="controls">
+                                    <textarea class="form-control" cols="8" id="field-6">The field is considered a subset of visual communication and communication design, but sometimes the term "graphic design" is used interchangeably with these due to overlapping skills involved. Graphic designers use various methods to create and combine words, symbols, and images to create a visual representation of ideas and messages. </textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-8 col-md-8 col-sm-9 col-xs-12 padding-bottom-30">
+                            <div class="text-left">
+                                <button type="button" class="btn btn-primary">Save</button>
+                                <button type="button" class="btn">Cancel</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

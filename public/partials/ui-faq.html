@@ -1,0 +1,50 @@
+<div class='content-wrapper' ng-init="app.settings.pagetitle = 'FAQ';">
+    <div class="col-lg-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">FAQ</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-bottom-15">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10  ">
+                        <!-- Bootstrap FAQ - START -->
+                        <div class="panel-group faq-panels" id="accordion">
+                            <h4>General questions</h4>
+                            <div ng-controller="FAQCtrl" class=''>
+                                <uib-accordion close-others="oneAtATime">
+                                    <uib-accordion-group heading="{{question.title}}" ng-repeat="question in general">
+                                        {{question.answer}}
+                                    </uib-accordion-group>
+                                </uib-accordion>
+                            </div>
+                            <br>
+                            <h4>Sellers</h4>
+                            <div ng-controller="FAQCtrl" class=''>
+                                <uib-accordion close-others="oneAtATime">
+                                    <uib-accordion-group heading="{{question.title}}" ng-repeat="question in sellers">
+                                        {{question.answer}}
+                                    </uib-accordion-group>
+                                </uib-accordion>
+                            </div>
+                            <br>
+                            <h4>Buyers</h4>
+                            <div ng-controller="FAQCtrl" class=''>
+                                <uib-accordion close-others="oneAtATime">
+                                    <uib-accordion-group heading="{{question.title}}" ng-repeat="question in buyers">
+                                        {{question.answer}}
+                                    </uib-accordion-group>
+                                </uib-accordion>
+                            </div>
+                        </div>
+                        <!-- bs faq end -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

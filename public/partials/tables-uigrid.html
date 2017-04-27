@@ -1,0 +1,45 @@
+<div class='content-wrapper' ng-init="app.settings.pagetitle = 'uiGrid Table';">
+    <div class="col-lg-12" ng-controller="UiGridDemoCtrl">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Basic uiGrid Table</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 table-responsive">
+                        <div ui-grid="gridOptionsSimple"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-12" ng-controller="UiGridDemoCtrl">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Complex uiGrid Table</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 table-responsive">
+                        <div ui-grid="gridOptionsComplex" ui-grid-edit ui-grid-resize-columns></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<style type="text/css">
+    .ui-grid-canvas{
+        width: 100% !important;
+    }
+</style>

@@ -1,0 +1,110 @@
+[
+    {
+        "avatar": "data/hos-staffs/staff-1.jpg",
+        "age": "45", 
+        "name": "Mrs. Brodeur", 
+        "position": "Salesman",
+        "phone": "+1 233 454 4343",
+        "email": "email@example.com",
+        "department": "Laboratory"
+    }, 
+    {
+        "avatar": "data/hos-staffs/staff-2.jpg",
+        "age": "39", 
+        "name": "Ms. Latshaw", 
+        "position": "Dept. Head",
+        "phone": "+1 233 454 4343",
+        "email": "email@example.com",
+        "department": "Housekeeping"
+    }, 
+    {
+        "avatar": "data/hos-staffs/staff-3.jpg",
+        "age": "34", 
+        "name": "Mrs. Clementina", 
+        "position": "Manager",
+        "phone": "+1 233 454 4343",
+        "email": "email@example.com",
+        "department": "Housekeeping"
+    }, 
+    {
+        "avatar": "data/hos-staffs/staff-4.jpg",
+        "age": "29", 
+        "name": "Mr. Carri Busey", 
+        "position": "Manager",
+        "phone": "+1 233 454 4343",
+        "email": "email@example.com",
+        "department": "Laboratory"
+    }, 
+    {
+        "avatar": "data/hos-staffs/staff-5.jpg",
+        "age": "65", 
+        "name": "Ms. Clay Dock", 
+        "position": "Salesman",
+        "phone": "+1 233 454 4343",
+        "email": "email@example.com",
+        "department": "Pharmacy"
+    }, 
+    {
+        "avatar": "data/hos-staffs/staff-6.jpg",
+        "age": "57", 
+        "name": "Mr. Mark Peskin", 
+        "position": "Assistant",
+        "phone": "+1 233 454 4343",
+        "email": "email@example.com",
+        "department": "Laboratory"
+    }, 
+    {
+        "avatar": "data/hos-staffs/staff-7.jpg",
+        "age": "65", 
+        "name": "Mr. Arthur John.", 
+        "position": "Assistant",
+        "phone": "+1 233 454 4343",
+        "email": "email@example.com",
+        "department": "Pharmacy"
+    }, 
+    {
+        "avatar": "data/hos-staffs/staff-8.jpg",
+        "age": "29", 
+        "name": "Mr. Carri Busey", 
+        "position": "Assistant",
+        "phone": "+1 233 454 4343",
+        "email": "email@example.com",
+        "department": "Laboratory"
+    }, 
+    {
+        "avatar": "data/hos-staffs/staff-9.jpg",
+        "age": "65", 
+        "name": "Ms. Clay Dock", 
+        "position": "Front Desk",
+        "phone": "+1 233 454 4343",
+        "email": "email@example.com",
+        "department": "Administration"
+    }, 
+    {
+        "avatar": "data/hos-staffs/staff-10.jpg",
+        "age": "57", 
+        "name": "Mr. Mark Peskin", 
+        "position": "Assistant",
+        "phone": "+1 233 454 4343",
+        "email": "email@example.com",
+        "department": "Pharmacy"
+    }, 
+    {
+        "avatar": "data/hos-staffs/staff-11.jpg",
+        "age": "65", 
+        "name": "Mr. Arthur John.", 
+        "position": "Clerk",
+        "phone": "+1 233 454 4343",
+        "email": "email@example.com",
+        "department": "Administration"
+    }, 
+    {
+        "avatar": "data/hos-staffs/staff-12.jpg",
+        "age": "29", 
+        "name": "Mrs. Jonh A.", 
+        "position": "Assistant",
+        "phone": "+1 233 454 4343",
+        "email": "email@example.com",
+        "department": "Front Desk"
+    }
+]

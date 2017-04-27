@@ -1,0 +1,92 @@
+<div class='content-wrapper' ng-init="app.settings.pagetitle = 'Carousel Slider';">
+    <div class="col-md-6 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Basic</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 carousel-demo">
+                        <div ng-controller="CarouselDemoCtrl" set-ng-animate="false">
+                            <uib-carousel interval="myInterval">
+                                <uib-slide ng-repeat="slide in slides" active="slide.active">
+                                    <img ng-src="{{slide.image}}" style="margin:auto;">
+                                    
+                                </uib-slide>
+                            </uib-carousel>
+                            <div class="clearfix"></div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label" for="field-1">Interval, in milliseconds</label>
+                                        <div class="controls">
+                                            <input type="number" class="form-control" ng-model="myInterval">
+                                            <p class="help-block">Enter a negative number or 0 to stop the interval.</p>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <button type="button" class="btn btn-primary" ng-click="addSlide()">Add Slide</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+  <div class="col-md-6 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">With Caption</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 carousel-demo">
+                        <div ng-controller="CarouselDemoCtrl" set-ng-animate="false">
+                            <uib-carousel interval="myInterval">
+                                <uib-slide ng-repeat="slide in slides" active="slide.active">
+                                    <img ng-src="{{slide.image}}" style="margin:auto;">
+                                    <div class="carousel-caption">
+                                        <h3>Slide {{$index}}</h3>
+                                        <div class="clearfix"></div>
+                                        <p>{{slide.text}}</p>
+                                    </div>
+                                </uib-slide>
+                            </uib-carousel>
+                            <div class="clearfix"></div>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label" for="field-1">Interval, in milliseconds</label>
+                                        <div class="controls">
+                                            <input type="number" class="form-control" ng-model="myInterval">
+                                            <p class="help-block">Enter a negative number or 0 to stop the interval.</p>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                    <button type="button" class="btn btn-primary" ng-click="addSlide()">Add Slide</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+</div>

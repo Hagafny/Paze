@@ -1,0 +1,182 @@
+<div class='content-wrapper' ng-init="app.settings.pagetitle = 'Rickshaw Charts';">
+    <div class="col-lg-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Basic</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-lg-12" ng-controller="RickshawCtrl">
+                        <rickshaw rickshaw-options="options1" rickshaw-series="series1">
+                        </rickshaw>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Hover Details</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-lg-12" ng-controller="RickshawCtrl">
+                        <rickshaw rickshaw-options="options2" rickshaw-features="features2" rickshaw-series="series2">
+                        </rickshaw>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">X axis</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-lg-12" ng-controller="RickshawCtrl">
+                        <rickshaw rickshaw-options="options4" rickshaw-features="features4" rickshaw-series="series4">
+                        </rickshaw>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Y axis</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-lg-12" ng-controller="RickshawCtrl">
+                        <rickshaw rickshaw-options="options5" rickshaw-features="features5" rickshaw-series="series5">
+                        </rickshaw>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Legend</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-lg-12" ng-controller="RickshawCtrl">
+                        <rickshaw rickshaw-options="options6" rickshaw-features="features6" rickshaw-series="series6">
+                        </rickshaw>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Interactive Demo</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-bottom-15">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-lg-12" ng-controller="RickshawCtrl">
+
+                        <rickshaw rickshaw-options="options0" rickshaw-features="features0" rickshaw-series="series0"></rickshaw>
+
+                        <div class="clearfix"></div>
+                        <br>
+                        <form class="form-inline row">
+                            <div class="form-group col-md-3">
+                                <label>Renderer</label><br>
+                                <select class="form-control" ng-model="renderer0" ng-options="renderer.name for renderer in renderers" ng-change="rendererChanged(0)"></select>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label>Palette</label><br>
+                                <select class="form-control" ng-model="palette0" ng-options="palette for palette in palettes" ng-change="paletteChanged(0)"></select>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label>X axis*</label><br>
+                                <select class="form-control" ng-model="xAxis0" ng-options="xAxis for xAxis in xAxes" ng-change="xAxisChanged(0)" ng-disabled="xAxisDisabled0"></select>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label>Y axis*</label><br>
+                                <select class="form-control" ng-model="yAxis0" ng-options="yAxis for yAxis in yAxes" ng-change="yAxisChanged(0)" ng-disabled="yAxisDisabled0"></select>
+                            </div>
+                            <div class="clearfix"></div><br>
+                            <div class="checkbox col-md-3">
+                            <label class="icheck">
+                                <input type="checkbox" ng-model="legend0" ng-change="legendChanged(0)">
+                                <i></i> Legend
+                            </label>
+
+                            </div>
+                            <div class="clearfix"></div><br>
+                            <div class=" col-md-3">
+                            <button class="btn btn-primary" ng-click="changeSeriesData(0)">Change series data</button>
+                            </div>
+                        </form><br>
+                        <p>* X-axis and Y-axis can only be set once.</p>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Real Time</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-lg-12" ng-controller="RickshawCtrl">
+                        <form class="form-inline">
+                            <button class="btn btn-primary" ng-click="toggleRandomSeries(100)">
+                                <span ng-if="!random100">Start</span>
+                                <span ng-if="random100">Stop</span>
+                            </button>
+                        </form>
+                        <rickshaw rickshaw-options="options100" rickshaw-features="features100" rickshaw-series="series100"></rickshaw>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

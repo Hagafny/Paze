@@ -34,7 +34,7 @@ module.exports = function (req, res) {
                     name: profile.name
                 }
 
-                participantService.save(newParticipant, (err, savedParticipant) {
+                participantService.save(newParticipant, (err, savedParticipant) => {
                     createSendToken(savedParticipant, res);
                 })
             })

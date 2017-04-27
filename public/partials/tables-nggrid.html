@@ -1,0 +1,60 @@
+<div class='content-wrapper' ng-init="app.settings.pagetitle = 'ngGrid Table';">
+    <div class="col-lg-12" ng-controller="ngGridDemoCtrl">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Server-Side Paging</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-bottom-15">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 table-responsive">
+                        <div ng-grid="gridOptions" style="min-height:420px"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-12" ng-controller="ngGridDemoCtrl">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Master Details & Cell selection</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-bottom-15">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 table-responsive">
+                        <div ng-grid="gridOptions2" style="min-height:190px"></div>
+                        <div class="selectedItems" style='padding-left:10px;'>Selection: {{mySelections2}}</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-12" ng-controller="ngGridDemoCtrl">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Edit Cell</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-bottom-15">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 table-responsive">
+                        <div ng-grid="gridOptions3" style="min-height:190px"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

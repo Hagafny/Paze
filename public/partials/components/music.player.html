@@ -1,0 +1,22 @@
+<div class="videogular-container bg-light lter">
+  <videogular
+    vg-player-ready="onPlayerReady($API)" 
+    vg-complete="onComplete()"   
+    vg-auto-play="config.autoPlay" vg-theme="config.theme.url" class="videogular-container audio">
+        <vg-media vg-src="config.sources" vg-type="audio"></vg-media>
+
+        <vg-controls>
+            <vg-button ng-show="audios.length-1" ng-click="play('prev')"><i class="fa fa-backward"></i></vg-button>
+            <vg-play-pause-button></vg-play-pause-button>
+            <vg-button ng-show="audios.length-1" ng-click="play('next')"><i class="fa fa-forward"></i></vg-button>
+            <vg-time-display>{{ currentTime | date:'mm:ss':'+0000' }}</vg-time-display>
+            <vg-scrub-bar>
+                <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+            </vg-scrub-bar>
+            <vg-time-display>{{ timeLeft | date:'mm:ss':'+0000' }}</vg-time-display>
+            <vg-volume>
+                <vg-mute-button></vg-mute-button>
+            </vg-volume>
+        </vg-controls>
+    </videogular>
+</div>

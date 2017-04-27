@@ -22,11 +22,10 @@ exports.login = new LocalStrategy(strategyOptions, (email, password, done) => {
                 return done(null, false, { message: 'Wrong email/password' });
 
             return done(null, publisher);
-            
+
         });
     })
 });
-
 
 exports.register = new LocalStrategy(
     strategyOptions, function (email, password, done) {

@@ -1,5 +1,4 @@
 var mongoose = require('mongoose');
-var skipEmpty = require('mongoose-skip-empty');
 
 var rangeSchema = mongoose.Schema({
     min: Number,
@@ -27,7 +26,8 @@ var surveySchema = mongoose.Schema({
     amountOfParticipants: { type: Number, required: true },
     questions: [questionSchema],
     deliveryGroup: deliveryGroupSchema,
-    pazePoints: { type: Number, default: 0 }
+    pazePoints: { type: Number, default: 0 },
+    status: Number
 });
 
 surveySchema.methods.getAmountOfQuestions = function () {

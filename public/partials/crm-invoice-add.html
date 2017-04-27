@@ -1,0 +1,116 @@
+<div class='content-wrapper' ng-init="app.settings.pagetitle = 'Add A Invoice ';">
+    <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Invoice Basic Info</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-bottom-0">
+                <div class="row">
+                    <form action ="#" method="post">
+                        <div class="col-lg-8 col-md-8 col-sm-9 col-xs-12">
+                            <div class="form-group">
+                                <label class="form-label" for="field-1">Invoice Number</label>
+                                <span class="desc"></span>
+                                <div class="controls">
+                                    <input type="text" class="form-control" id="field-1">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="field-5">Date Created</label>
+                                <span class="desc">e.g. "04/03/2015"</span>
+                                <div class="controls">
+                                    <input type="text" name="masked" ui-mask="99/99/9999" placeholder="MM/DD/YYYY" class="form-control" ng-model="mask11" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="field-5">Date Sent</label>
+                                <span class="desc">e.g. "04/03/2015"</span>
+                                <div class="controls">
+                                    <input type="text" name="masked" ui-mask="99/99/9999" placeholder="MM/DD/YYYY" class="form-control" ng-model="mask13" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="field-5">Date Due</label>
+                                <span class="desc">e.g. "04/03/2015"</span>
+                                <div class="controls">
+                                    <input type="text" name="masked" ui-mask="99/99/9999" placeholder="MM/DD/YYYY" class="form-control" ng-model="mask14" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="field-5">Status</label>
+                                <span class="desc"></span>
+                                <div class="input-group" inputgroup>
+                                    <select class="form-control ">
+                                        <option>New</option>
+                                        <option>Completed</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="field-1">Job</label>
+                                <span class="desc"></span>
+                                <div class="controls">
+                                    <input type="text" class="form-control" id="field-1">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="field-1">Customer</label>
+                                <span class="desc"></span>
+                                <div class="controls">
+                                    <input type="text" class="form-control" id="field-1">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="field-5">Date of Approval</label>
+                                <span class="desc">e.g. "04/03/2015"</span>
+                                <div class="controls">
+                                    <input type="text" name="masked" ui-mask="99/99/9999" placeholder="MM/DD/YYYY" class="form-control" ng-model="mask11" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="field-1">Amount Price</label>
+                                <span class="desc">Eg: $400.00</span>
+                                <div class="controls">
+                                    <input type="text" class="form-control" id="field-1">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="field-1">Tax</label>
+                                <span class="desc">Eg: $40.00</span>
+                                <div class="controls">
+                                    <input type="text" class="form-control" id="field-1">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="field-1">Discount</label>
+                                <span class="desc">Eg: $100.00</span>
+                                <div class="controls">
+                                    <input type="text" class="form-control" id="field-1">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="field-1">Amount Due</label>
+                                <span class="desc">Eg: $200.00</span>
+                                <div class="controls">
+                                    <input type="text" class="form-control" id="field-1">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 col-md-8 col-sm-9 col-xs-12 padding-bottom-30">
+                            <div class="text-left">
+                                <button type="button" class="btn btn-primary">Save</button>
+                                <button type="button" class="btn">Cancel</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</div>

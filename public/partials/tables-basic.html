@@ -1,0 +1,611 @@
+<div class='content-wrapper' ng-init="app.settings.pagetitle = 'Basic tables';">
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Basic Table</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-bottom-15">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Progress</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>
+                                        <div ui-jq="easyPieChart" ui-options="{
+                    easing: 'easeOutBounce',
+                    barColor: '{{app.color.primary}}',
+                    trackColor: '#eaeaea',
+                    scaleColor: false,
+                    lineCap: 'square',
+                    lineWidth: 3,
+                    size: 20,
+                    animate: 1000,
+                    percent: 66
+                  }">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>
+                                        <div ui-jq="easyPieChart" ui-options="{
+                    easing: 'easeOutBounce',
+                    barColor: '{{app.color.accent}}',
+                    trackColor: '#eaeaea',
+                    scaleColor: false,
+                    lineCap: 'square',
+                    lineWidth: 3,
+                    size: 20,
+                    animate: 1000,
+                    percent: 66
+                  }">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>
+                                        <div ui-jq="easyPieChart" ui-options="{
+                    easing: 'easeOutBounce',
+                    barColor: '{{app.color.warning}}',
+                    trackColor: '#eaeaea',
+                    scaleColor: false,
+                    lineCap: 'square',
+                    lineWidth: 3,
+                    size: 20,
+                    animate: 1000,
+                    percent: 66
+                  }">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td>John</td>
+                                    <td>King</td>
+                                    <td>
+                                        <div ui-jq="easyPieChart" ui-options="{
+                    easing: 'easeOutBounce',
+                    barColor: '{{app.color.success}}',
+                    trackColor: '#eaeaea',
+                    scaleColor: false,
+                    lineCap: 'square',
+                    lineWidth: 3,
+                    size: 20,
+                    animate: 1000,
+                    percent: 86
+                  }">
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">5</th>
+                                    <td>Mark</td>
+                                    <td>Arthur</td>
+                                    <td>
+                                        <div ui-jq="easyPieChart" ui-options="{
+                    easing: 'easeOutBounce',
+                    barColor: '{{app.color.danger}}',
+                    trackColor: '#eaeaea',
+                    scaleColor: false,
+                    lineCap: 'square',
+                    lineWidth: 3,
+                    size: 20,
+                    animate: 1000,
+                    percent: 36
+                  }">
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Stripped Table</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-bottom-15">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th style='width:30%'>Score</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>
+                                        <div ng-init="data1=[5,10, 4, 4, 7, 5, 2, 8, 3, 4, 5]" ui-jq="sparkline" ui-options="{{data1}}, {
+                type: 'line',
+                width: '100%',
+                height: '20',
+                lineWidth: 1,
+                lineColor: '{{app.color.primary}}',
+                fillColor: '{{app.color.primary}}',
+                highlightSpotColor: '{{app.color.accent}}',
+                highlightLineColor: '#FF6E40',
+                spotRadius: 1,
+                }" class="sparkline inline">...
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>
+                                        <div ng-init="data1=[4, 7, 5, 2, 8, 3, 4, 5]" ui-jq="sparkline" ui-options="{{data1}}, {
+                type: 'line',
+                width: '100%',
+                height: '20',
+                lineWidth: 1,
+                lineColor: '{{app.color.accent}}',
+                fillColor: '{{app.color.accent}}',
+                highlightSpotColor: '{{app.color.accent}}',
+                highlightLineColor: '#FF6E40',
+                spotRadius: 1,
+                }" class="sparkline inline">...
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>
+                                        <div ng-init="data1=[5,10, 4, 4, 7, 5, 2, 8, 3, 4, 5]" ui-jq="sparkline" ui-options="{{data1}}, {
+                type: 'line',
+                width: '100%',
+                height: '20',
+                lineWidth: 1,
+                lineColor: '{{app.color.warning}}',
+                fillColor: '{{app.color.warning}}',
+                highlightSpotColor: '{{app.color.accent}}',
+                highlightLineColor: '#FF6E40',
+                spotRadius: 1,
+                }" class="sparkline inline">...
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">4</th>
+                                    <td>Arthur</td>
+                                    <td>Jane</td>
+                                    <td>
+                                        <div ng-init="data1=[5,10, 4, 4, 7, 5, 2, 8, 3, 4, 5]" ui-jq="sparkline" ui-options="{{data1}}, {
+                type: 'line',
+                width: '100%',
+                height: '20',
+                lineWidth: 1,
+                lineColor: '{{app.color.success}}',
+                fillColor: '{{app.color.success}}',
+                highlightSpotColor: '{{app.color.accent}}',
+                highlightLineColor: '#FF6E40',
+                spotRadius: 1,
+                }" class="sparkline inline">...
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">5</th>
+                                    <td>Jack</td>
+                                    <td>Dawson</td>
+                                    <td>
+                                        <div ng-init="data1=[5,10, 4, 4, 7, 5, 2, 8, 3, 4, 5]" ui-jq="sparkline" ui-options="{{data1}}, {
+                type: 'line',
+                width: '100%',
+                height: '20',
+                lineWidth: 1,
+                lineColor: '{{app.color.primary}}',
+                fillColor: '{{app.color.primary}}',
+                highlightSpotColor: '{{app.color.accent}}',
+                highlightLineColor: '#FF6E40',
+                spotRadius: 1,
+                }" class="sparkline inline">...
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Bordered Table</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-bottom-15">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Progress</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>
+                                        <uib-progressbar value="35" class="progress progress-sm primary"></uib-progressbar>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>
+                                        <uib-progressbar value="55" class="progress progress-sm success"></uib-progressbar>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>
+                                        <uib-progressbar value="75" class="progress progress-sm accent"></uib-progressbar>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>
+                                        <uib-progressbar value="85" class="progress progress-sm warning"></uib-progressbar>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>
+                                        <uib-progressbar value="90" class="progress progress-sm danger"></uib-progressbar>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Hover Table</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-bottom-15">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Charts</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>
+                                        <div ng-init="data2=[10, 8, 5, 7, 4, 4, 7, 5, 2]" ui-jq="sparkline" ui-options="{{data2}}, {
+                type: 'bar',
+                barColor: '{{app.color.primary}}',
+                height: '20',
+                barWidth: '3',
+                barSpacing: 1
+                }" class="sparkline inline">...
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>
+                                        <div ng-init="data2=[10, 8, 5, 7, 4, 4, 7, 5, 2]" ui-jq="sparkline" ui-options="{{data2}}, {
+                type: 'bar',
+                barColor: '{{app.color.accent}}',
+                height: '20',
+                barWidth: '3',
+                barSpacing: 1
+                }" class="sparkline inline">...
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>
+                                        <div ng-init="data2=[10, 8, 5, 7, 4, 4, 7, 5, 2]" ui-jq="sparkline" ui-options="{{data2}}, {
+                type: 'bar',
+                barColor: '{{app.color.success}}',
+                height: '20',
+                barWidth: '3',
+                barSpacing: 1
+                }" class="sparkline inline">...
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>
+                                        <div ng-init="data2=[10, 8, 5, 7, 4, 4, 7, 5, 2]" ui-jq="sparkline" ui-options="{{data2}}, {
+                type: 'bar',
+                barColor: '{{app.color.warning}}',
+                height: '20',
+                barWidth: '3',
+                barSpacing: 1
+                }" class="sparkline inline">...
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>
+                                        <div ng-init="data2=[10, 8, 5, 7, 4, 4, 7, 5, 2]" ui-jq="sparkline" ui-options="{{data2}}, {
+                type: 'bar',
+                barColor: '{{app.color.danger}}',
+                height: '20',
+                barWidth: '3',
+                barSpacing: 1
+                }" class="sparkline inline">...
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="clearfix"></div>
+
+ <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Responsive Table</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-bottom-15">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>First Name</th>
+                                        <th>Last Name</th>
+                                        <th>Username</th>
+                                        <th>Email</th>
+                                        <th>Contact</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>@mdo</td>
+                                        <td>first.last@example.com</td>
+                                        <td>+1-234-567-890</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>@fat</td>
+                                        <td>first.last@example.com</td>
+                                        <td>+1-234-567-890</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td colspan="2">Larry the Bird</td>
+                                        <td>@twitter</td>
+                                        <td>first.last@example.com</td>
+                                        <td>+1-234-567-890</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Condensed Table</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-bottom-15">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Username</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td colspan="2">Larry the Bird</td>
+                                    <td>@twitter</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td colspan="2">Larry the Bird</td>
+                                    <td>@twitter</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+   
+    <div class="col-lg-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Contextual Table</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-bottom-15">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Username</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="success">
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>
+                                </tr>
+                                <tr class="danger">
+                                    <th scope="row">3</th>
+                                    <td colspan="2">Larry the Bird</td>
+                                    <td>@twitter</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td class="primary">Jacob</td>
+                                    <td class="accent">Thornton</td>
+                                    <td class="warning">@fat</td>
+                                </tr>
+                                <tr class="warning">
+                                    <th scope="row">3</th>
+                                    <td colspan="2">Larry the Bird</td>
+                                    <td>@twitter</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

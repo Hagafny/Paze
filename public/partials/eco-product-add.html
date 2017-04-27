@@ -1,0 +1,119 @@
+<div class='content-wrapper' ng-init="app.settings.pagetitle = 'Add A Product';">
+    <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Product Basic Info</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-bottom-0">
+                <div class="row">
+                <form action ="#" method="post">
+                    <div class="col-lg-8 col-md-8 col-sm-9 col-xs-12">
+
+                        <div class="form-group">
+                            <label class="form-label" for="field-1">Product SKU</label>
+                            <span class="desc"></span>
+                            <div class="controls">
+                                <input type="text" class="form-control" id="field-1">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="field-1">Product Name</label>
+                            <span class="desc"></span>
+                            <div class="controls">
+                                <input type="text" class="form-control" id="field-1">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="field-5">Added On</label>
+                            <span class="desc">e.g. "04/03/2015"</span>
+                            <div class="controls">
+                                <input type="text" name="masked" ui-mask="99/99/9999" placeholder="MM/DD/YYYY" class="form-control" ng-model="mask11" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="field-5">Status</label>
+                            <span class="desc"></span>
+                            <div class="input-group" inputgroup>
+                                <select class="form-control ">
+                                    <option></option>
+                                    <option>In Stock</option>
+                                    <option>Out of Stock</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="field-1">Product Image</label>
+                            <span class="desc"></span>
+                            <div class="controls">
+                                <input type="file" class="form-control" id="field-5">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="field-1">Product Color Options</label>
+                            <div class="controls">
+                                <select ui-jq="chosen" multiple class="form-control" data-placeholder="Select colors">
+                                    <option value=""></option>
+                                    <option value="black">Black</option>
+                                    <option value="red">Red</option>
+                                    <option value="white">White</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="field-1">Product Vendor</label>
+                            <span class="desc"></span>
+                            <div class="controls">
+                                <input type="text" class="form-control" id="field-1">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="field-1">Product Price</label>
+                            <span class="desc"></span>
+                            <div class="controls">
+                                <input type="text" class="form-control" id="field-1">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="field-1">Product Discount</label>
+                            <span class="desc"></span>
+                            <div class="controls">
+                                <input type="text" class="form-control" id="field-1">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="field-1">Product Quantity</label>
+                            <span class="desc"></span>
+                            <div class="controls">
+                                <input type="text" class="form-control" id="field-1">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="field-6">Brief</label>
+                            <span class="desc">e.g. "Enter any size of text description here"</span>
+                            <div class="controls">
+                                <textarea class="form-control" cols="15" id="field-6"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+
+                        <div class="col-lg-8 col-md-8 col-sm-9 col-xs-12 padding-bottom-30">
+                            <div class="text-left">
+                                <button type="button" class="btn btn-primary">Save</button>
+                                <button type="button" class="btn">Cancel</button>
+                            </div>
+                        </div>
+                    </form>
+
+
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

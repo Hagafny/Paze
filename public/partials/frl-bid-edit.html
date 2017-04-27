@@ -1,0 +1,103 @@
+<div class='content-wrapper' ng-init="app.settings.pagetitle = 'Edit Bid';">
+    <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Bid Basic Info</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-bottom-0">
+                <div class="row">
+                    <form action ="#" method="post">
+                        <div class="col-lg-8 col-md-8 col-sm-9 col-xs-12">
+                            <div class="form-group">
+                                <label class="form-label" for="field-1">Bid ID</label>
+                                <span class="desc"></span>
+                                <div class="controls">
+                                    <input type="text" value="BID1234-ORD001" class="form-control" id="field-1">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="field-5">Date of Bid</label>
+                                <span class="desc">e.g. "04/03/2015"</span>
+                                <div class="controls">
+                                    <input type="text" ng-init="mask11='03/11/2015'"  name="masked" ui-mask="99/99/9999" placeholder="MM/DD/YYYY" class="form-control" ng-model="mask11" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="field-5">Status</label>
+                                <span class="desc"></span>
+                                <div class="input-group" inputgroup>
+                                    <select class="form-control ">
+                                        <option selected="selected">Accepted</option>
+                                        <option>Rejected</option>
+                                        <option>Pending</option>
+                                        <option>Shortlisted</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="field-1">Buyer</label>
+                                <span class="desc"></span>
+                                <div class="controls">
+                                    <input type="text" value="Rocket Consulting Inc." class="form-control" id="field-1">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="field-5">Payment Type</label>
+                                <span class="desc"></span>
+                                <div class="input-group" inputgroup>
+                                    <select class="form-control ">
+                                        <option></option>
+                                        <option selected="selected">Credit Card</option>
+                                        <option>Paypal</option>
+                                        <option>Cash on Delivery</option>
+                                        <option>Net Banking</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="field-1">Seller</label>
+                                <span class="desc"></span>
+                                <div class="controls">
+                                    <input type="text" value="Fire Media Corp." class="form-control" id="field-1">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="field-1">Bid Price</label>
+                                <span class="desc">Eg: $400.00</span>
+                                <div class="controls">
+                                    <input type="text" value="$500.00" class="form-control" id="field-1">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="field-1">Tax</label>
+                                <span class="desc">Eg: $40.00</span>
+                                <div class="controls">
+                                    <input type="text" value="$50.00" class="form-control" id="field-1">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="field-6">Brief</label>
+                                <span class="desc">e.g. "Enter any size of text description here"</span>
+                                <div class="controls">
+                                    <textarea class="form-control" cols="5" id="field-6">Seller agrees to provide all the services to buyer, as per project description in alloted period of time.</textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 col-md-8 col-sm-9 col-xs-12 padding-bottom-30">
+                            <div class="text-left">
+                                <button type="button" class="btn btn-primary">Save</button>
+                                <button type="button" class="btn">Cancel</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</div>

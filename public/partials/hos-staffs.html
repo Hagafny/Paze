@@ -1,0 +1,45 @@
+<div class='content-wrapper' ng-init="app.settings.pagetitle = 'Staff Members';">
+    <div class="col-lg-12" ng-controller="HospitalStaffsCtrl">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Hospital Staff Members</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-bottom-0">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="row">
+                            <div class="col-lg-6 col-sm-12 col-md-6 col-md-12" ng-repeat="staff in staffs">
+                                <div class="team-member col">
+                                    <div class="team-img col-lg-4 col-md-4 col-sm-4 col-xs-4 margin-top-0">
+                                        <img class="img-responsive" ng-src="{{staff.avatar}}" alt="">
+                                    </div>
+                                    <div class="team-info col-lg-8 col-md-8 col-sm-8 col-xs-8 margin-top-0">
+                                        <span class='team-member-edit'><a ui-sref="app.hos-staff-edit"><i class='material-icons icon-sm'>edit</i></a></span>
+                                        <h4 class='margin-top-0 margin-bottom-10 text-primary'><a ui-sref="app.hos-staff-profile">{{staff.name}}</a></h4>
+                                        <span>{{staff.position}}, {{staff.department}}<br>
+                                        <small>Age:</small> {{staff.age}} yrs<br>
+                                        <small>Phone:</small> {{staff.phone}}<br>
+                                        <small>Email:</small> {{staff.email}}</span>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row" ng-controller="PaginationDemoCtrl">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center padding-top-30 padding-bottom-30">
+                                <uib-pagination total-items="totalItems" ng-model="currentPage"></uib-pagination>
+                            </div>
+                        </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>

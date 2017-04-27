@@ -4,6 +4,8 @@ let participantSchema = mongoose.Schema({
   fbid: {type: String, required: true}, 
   name: {type: String, required: true, trim: true},
   age: Number,
+  picture: String,
+  status: Number,
   gender: Number,
   income: Number,
   location: String,

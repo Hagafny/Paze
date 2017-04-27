@@ -1,0 +1,62 @@
+[
+{
+    "thumb": "data/songs/song-1.jpg",
+    "title": "ligula pellentesque ultrices phasellus id",
+    "artist": "ahayes0",
+    "genre": "[metal,rock,dancehall,trap,world]"
+}, {
+    "thumb": "data/songs/song-2.jpg",
+    "title": "at ipsum ac tellus semper",
+    "artist": "dross1",
+    "genre": "[reggae,trap,jazzblues,trap,rock]"
+}, {
+    "thumb": "data/songs/song-3.jpg",
+    "title": "amet eleifend pede libero quis orci nullam molestie nibh in",
+    "artist": "bphillips2",
+    "genre": "[rbsoul,disco,indie,latin,reggae]"
+}, {
+    "thumb": "data/songs/song-4.jpg",
+    "title": "nulla mollis molestie lorem quisque ut erat curabitur gravida nisi",
+    "artist": "sramos3",
+    "genre": "[electronic,deephouse,metal,hiphoprap,hiphoprap,world]"
+}, {
+    "thumb": "data/songs/song-5.jpg",
+    "title": "nulla tempus vivamus in felis eu",
+    "artist": "sdean4",
+    "genre": "[house,soundtrack,country,dancehall,jazzblues]"
+}, {
+    "thumb": "data/songs/song-6.jpg",
+    "title": "felis ut at dolor quis odio consequat",
+    "artist": "amyers5",
+    "genre": "[pop,indie,rock,folksingersongwriter,danceedm]"
+}, {
+    "thumb": "data/songs/song-7.jpg",
+    "title": "vel enim sit amet nunc viverra dapibus nulla suscipit ligula",
+    "artist": "gaustin6",
+    "genre": "[rbsoul,reggaeton,dubstep,electronic,deephouse,dubstep]"
+}, {
+    "thumb": "data/songs/song-8.jpg",
+    "title": "nibh quisque id justo sit amet sapien",
+    "artist": "jharper7",
+    "genre": "[piano,dancehall,hiphoprap,house,trance,reggae]"
+}, {
+    "thumb": "data/songs/song-9.jpg",
+    "title": "nulla dapibus dolor vel est donec",
+    "artist": "amartinez8",
+    "genre": "[reggaeton,rock,country,danceedm,rbsoul]"
+}, {
+    "thumb": "data/songs/song-10.jpg",
+    "title": "etiam vel augue vestibulum rutrum rutrum",
+    "artist": "hallen9",
+    "genre": "[ambient,piano,danceedm,reggaeton,dancehall]"
+}, {
+    "thumb": "data/songs/song-11.jpg",
+    "title": "duis ac nibh fusce lacus purus aliquet at feugiat",
+    "artist": "pcarrolla",
+    "genre": "[drumbass,alternativerock,soundtrack,metal,dubstep,house]"
+}, {
+    "thumb": "data/songs/song-12.jpg",
+    "title": "montes nascetur ridiculus mus vivamus vestibulum sagittis sapien cum",
+    "artist": "mharrisb",
+    "genre": "[jazzblues,ambient,dubstep,reggaeton,folksingersongwriter]"
+}]

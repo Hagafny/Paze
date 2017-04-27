@@ -1,0 +1,328 @@
+<div class='content-wrapper' ng-init="app.settings.pagetitle = 'Tile Widgets';">
+    <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Counter Tiles</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-bottom-0">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4 class="margin-bottom-0">Default (Colored Tiles)</h4>
+                        <br>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="tile-counter bg-primary">
+                            <div class="content">
+                                <i class='fa fa-thumbs-up icon-lg'></i>
+                                <h2 count-to="1001" value="0" duration="5" class="number_counter"></h2>
+                                <div class="clearfix"></div>
+                                <span>People liked it !</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="tile-counter bg-accent">
+                            <div class="content">
+                                <i class='fa fa-user icon-lg'></i>
+                                <h2 count-to="1001" value="0" duration="5" class="number_counter"></h2>
+                                <div class="clearfix"></div>
+                                <span>New Users</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="tile-counter bg-warning">
+                            <div class="content">
+                                <i class='fa fa-share icon-lg'></i>
+                                <h2 count-to="1001" value="0" duration="5" class="number_counter"></h2>
+                                <div class="clearfix"></div>
+                                <span>Shared this post</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="tile-counter bg-info">
+                            <div class="content">
+                                <i class='fa fa-rocket icon-lg'></i>
+                                <h2 count-to="78" value="0" duration="3" class="number_counter"></h2>
+                                <h2>MB</h2>
+                                <div class="clearfix"></div>
+                                <span>Server Load</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="tile-counter bg-success">
+                            <div class="content">
+                                <i class='fa fa-dashboard icon-lg'></i>
+                                <h2 count-to="1601" value="100" duration="5" class="number_counter"></h2>
+                                <div class="clearfix"></div>
+                                <span>New Sites!</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="tile-counter bg-danger">
+                            <div class="content">
+                                <i class='fa fa-thumbs-down icon-lg'></i>
+                                <h2 count-to="1001" value="0" duration="5" class="number_counter"></h2>
+                                <div class="clearfix"></div>
+                                <span>People disliked it</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="tile-counter bg-secondary">
+                            <div class="content">
+                                <i class='fa fa-bookmark icon-lg'></i>
+                                <h2 count-to="9492" value="1001" duration="5" class="number_counter"></h2>
+                                <div class="clearfix"></div>
+                                <span>Pages Bookmarked!</span>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="clearfix"></div>
+                    <br>
+                    <div class="col-md-12">
+                        <h4 class="margin-bottom-0">Inverted Style</h4>
+                        <br>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="tile-counter inverted text-primary">
+                            <div class="content">
+                                <i class='fa fa-thumbs-up icon-lg'></i>
+                                <h2 count-to="1001" value="0" duration="5" class="number_counter"></h2>
+                                <div class="clearfix"></div>
+                                <span>People liked it !</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="tile-counter inverted text-accent">
+                            <div class="content">
+                                <i class='fa fa-user icon-lg'></i>
+                                <h2 count-to="1001" value="0" duration="5" class="number_counter"></h2>
+                                <div class="clearfix"></div>
+                                <span>New Users</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="tile-counter inverted text-warning">
+                            <div class="content">
+                                <i class='fa fa-share icon-lg'></i>
+                                <h2 count-to="1001" value="0" duration="5" class="number_counter"></h2>
+                                <div class="clearfix"></div>
+                                <span>Shared this post</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="tile-counter inverted text-info">
+                            <div class="content">
+                                <i class='fa fa-rocket icon-lg'></i>
+                                <h2 count-to="11" value="65" duration="5" class="number_counter"></h2>
+                                <h2>MB</h2>
+                                <div class="clearfix"></div>
+                                <span>Server Load</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="tile-counter inverted text-success">
+                            <div class="content">
+                                <i class='fa fa-dashboard icon-lg'></i>
+                                <h2 count-to="1601" value="1101" duration="5" class="number_counter"></h2>
+                                <div class="clearfix"></div>
+                                <span>New Sites!</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="tile-counter inverted text-danger">
+                            <div class="content">
+                                <i class='fa fa-thumbs-down icon-lg'></i>
+                                <h2 count-to="121" value="0" duration="5" class="number_counter"></h2>
+                                <div class="clearfix"></div>
+                                <span>People disliked it</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="tile-counter inverted text-secondary">
+                            <div class="content">
+                                <i class='fa fa-bookmark icon-lg'></i>
+                                <h2 count-to="9001" value="0" duration="5" class="number_counter"></h2>
+                                <div class="clearfix"></div>
+                                <span>Pages Bookmarked!</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Progress Bar Tiles</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-bottom-0">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4 class="margin-bottom-0">Default (Colored Tiles)</h4>
+                        <br>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="tile-progress bg-primary">
+                            <div class="content">
+                                <h4><i class='fa fa-dashboard icon-sm'></i> Server Load</h4>
+                                <uib-progressbar value="40" class="progress"></uib-progressbar>
+                                <span>40% increase</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="tile-progress bg-accent">
+                            <div class="content">
+                                <h4><i class='fa fa-dashboard icon-sm'></i> Server Load</h4>
+                                <uib-progressbar value="40" class="progress"></uib-progressbar>
+                                <span>40% increase</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="tile-progress bg-warning">
+                            <div class="content">
+                                <h4><i class='fa fa-dashboard icon-sm'></i> Server Load</h4>
+                                <uib-progressbar value="40" class="progress"></uib-progressbar>
+                                <span>40% increase</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="tile-progress bg-info">
+                            <div class="content">
+                                <h4><i class='fa fa-dashboard icon-sm'></i> Server Load</h4>
+                                <uib-progressbar value="40" class="progress"></uib-progressbar>
+                                <span>40% increase</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="tile-progress bg-success">
+                            <div class="content">
+                                <h4><i class='fa fa-dashboard icon-sm'></i> Server Load</h4>
+                                <uib-progressbar value="40" class="progress"></uib-progressbar>
+                                <span>40% increase</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="tile-progress bg-danger">
+                            <div class="content">
+                                <h4><i class='fa fa-dashboard icon-sm'></i> Server Load</h4>
+                                <uib-progressbar value="40" class="progress"></uib-progressbar>
+                                <span>40% increase</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="tile-progress bg-secondary">
+                            <div class="content">
+                                <h4><i class='fa fa-dashboard icon-sm'></i> Server Load</h4>
+                                <uib-progressbar value="40" class="progress"></uib-progressbar>
+                                <span>40% increase</span>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="clearfix"></div>
+                    <br>
+                    <div class="col-md-12">
+                        <h4 class="margin-bottom-0">Inverted Style</h4>
+                        <br>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="tile-progress inverted text-primary">
+                            <div class="content">
+                                <h4><i class='fa fa-dashboard icon-sm'></i> Server Load</h4>
+                                <uib-progressbar value="40" class="progress"></uib-progressbar>
+                                <span>40% increase</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="tile-progress inverted text-accent">
+                            <div class="content">
+                                <h4><i class='fa fa-dashboard icon-sm'></i> Server Load</h4>
+                                <uib-progressbar value="40" class="progress"></uib-progressbar>
+                                <span>40% increase</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="tile-progress inverted text-warning">
+                            <div class="content">
+                                <h4><i class='fa fa-dashboard icon-sm'></i> Server Load</h4>
+                                <uib-progressbar value="40" class="progress"></uib-progressbar>
+                                <span>40% increase</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="tile-progress inverted text-info">
+                            <div class="content">
+                                <h4><i class='fa fa-dashboard icon-sm'></i> Server Load</h4>
+                                <uib-progressbar value="40" class="progress"></uib-progressbar>
+                                <span>40% increase</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="tile-progress inverted text-success">
+                            <div class="content">
+                                <h4><i class='fa fa-dashboard icon-sm'></i> Server Load</h4>
+                                <uib-progressbar value="40" class="progress"></uib-progressbar>
+                                <span>40% increase</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="tile-progress inverted text-danger">
+                            <div class="content">
+                                <h4><i class='fa fa-dashboard icon-sm'></i> Server Load</h4>
+                                <uib-progressbar value="40" class="progress"></uib-progressbar>
+                                <span>40% increase</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                        <div class="tile-progress inverted text-secondary">
+                            <div class="content">
+                                <h4><i class='fa fa-dashboard icon-sm'></i> Server Load</h4>
+                                <uib-progressbar value="40" class="progress"></uib-progressbar>
+                                <span>40% increase</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

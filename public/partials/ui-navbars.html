@@ -1,0 +1,412 @@
+<div class='content-wrapper' ng-init="app.settings.pagetitle = 'Nav & Dropdown';">
+    <div class="col-lg-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Dropdowns</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-bottom-15">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12" ng-controller="DropdownDemoCtrl">
+                        <h4>Default Style</h4>
+                        <div class="ui-dropdowns" data-example-id="single-button-dropdown">
+                            <div class="btn-group" uib-dropdown>
+                                <button type="button" class="btn btn-default dropdown-toggle" uib-dropdown-toggle ng-disabled="disabled">
+                                    Default <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </div>
+                            <!-- dropdown -->
+                            <div class="btn-group" uib-dropdown>
+                                <button type="button" class="btn btn-primary dropdown-toggle" uib-dropdown-toggle ng-disabled="disabled">
+                                    Primary <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </div>
+                            <div class="btn-group" uib-dropdown>
+                                <button type="button" class="btn btn-success dropdown-toggle" uib-dropdown-toggle ng-disabled="disabled">
+                                    Success <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </div>
+                            <div class="btn-group" uib-dropdown>
+                                <button type="button" class="btn btn-info dropdown-toggle" uib-dropdown-toggle ng-disabled="disabled">
+                                    Info <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </div>
+                            <div class="btn-group" uib-dropdown>
+                                <button type="button" class="btn btn-warning dropdown-toggle" uib-dropdown-toggle ng-disabled="disabled">
+                                    Warning <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </div>
+                            <div class="btn-group" uib-dropdown>
+                                <button type="button" class="btn btn-danger dropdown-toggle" uib-dropdown-toggle ng-disabled="disabled">
+                                    Danger <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <br>
+                        <h4>Split Style</h4>
+                        <div class="ui-dropdowns" data-example-id="split-button-dropdown">
+                            <div class="btn-group" uib-dropdown>
+                                <button type="button" class="btn btn-default">Default</button>
+                                <button type="button" class="btn btn-default dropdown-toggle" uib-dropdown-toggle>
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Split button!</span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </div>
+                            <!-- /btn-group -->
+                            <div class="btn-group" uib-dropdown>
+                                <button type="button" class="btn btn-primary">Primary</button>
+                                <button type="button" class="btn btn-primary dropdown-toggle" uib-dropdown-toggle>
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Split button!</span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </div>
+                            <!-- /btn-group -->
+                            <div class="btn-group" uib-dropdown>
+                                <button type="button" class="btn btn-success">Success</button>
+                                <button type="button" class="btn btn-success dropdown-toggle" uib-dropdown-toggle>
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Split button!</span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </div>
+                            <!-- /btn-group -->
+                            <div class="btn-group" uib-dropdown>
+                                <button type="button" class="btn btn-info">Info</button>
+                                <button type="button" class="btn btn-info dropdown-toggle" uib-dropdown-toggle>
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Split button!</span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </div>
+                            <!-- /btn-group -->
+                            <div class="btn-group" uib-dropdown>
+                                <button type="button" class="btn btn-warning">Warning</button>
+                                <button type="button" class="btn btn-warning dropdown-toggle" uib-dropdown-toggle>
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Split button!</span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </div>
+                            <!-- /btn-group -->
+                            <div class="btn-group" uib-dropdown>
+                                <button type="button" class="btn btn-danger">Danger</button>
+                                <button type="button" class="btn btn-danger dropdown-toggle" uib-dropdown-toggle>
+                                    <span class="caret"></span>
+                                    <span class="sr-only">Split button!</span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </div>
+                            <!-- /btn-group -->
+                        </div>
+                        <div class="clearfix"></div>
+                        <br>
+                        <h4>Sizes</h4>
+                        <div class="ui-dropdowns" data-example-id="button-dropdown-sizing">
+                            <div class="btn-group" uib-dropdown>
+                                <button type="button" class="btn btn-default btn-lg dropdown-toggle" uib-dropdown-toggle ng-disabled="disabled">
+                                    Large Dropdown <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </div>
+                            <!-- dropdown -->
+                            <div class="btn-group" uib-dropdown>
+                                <button type="button" class="btn btn-default btn-md dropdown-toggle" uib-dropdown-toggle ng-disabled="disabled">
+                                    Medium Dropdown <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </div>
+                            <!-- dropdown -->
+                            <div class="btn-group" uib-dropdown>
+                                <button type="button" class="btn btn-default btn-sm dropdown-toggle" uib-dropdown-toggle ng-disabled="disabled">
+                                    Small Dropdown <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </div>
+                            <!-- dropdown -->
+                            <div class="btn-group" uib-dropdown>
+                                <button type="button" class="btn btn-default btn-xs dropdown-toggle" uib-dropdown-toggle ng-disabled="disabled">
+                                    Extra Small Dropdown <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Action</a></li>
+                                    <li><a href="#">Another action</a></li>
+                                    <li><a href="#">Something else here</a></li>
+                                    <li class="divider"></li>
+                                    <li><a href="#">Separated link</a></li>
+                                </ul>
+                            </div>
+                            <!-- dropdown -->
+                            <!-- /btn-group -->
+                        </div>
+                        <div class="clearfix"></div>
+                        <br>
+                        <h4>Drop Up Style</h4>
+                        <div class="ui-dropdowns" data-example-id="button-dropdown-dropup">
+                            <div class="btn-toolbar" role="toolbar">
+                                <div class="btn-group dropup" uib-dropdown>
+                                    <button type="button" class="btn btn-default btn-md dropdown-toggle" uib-dropdown-toggle ng-disabled="disabled">
+                                        Drop Up <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li><a href="#">Action</a></li>
+                                        <li><a href="#">Another action</a></li>
+                                        <li><a href="#">Something else here</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="#">Separated link</a></li>
+                                    </ul>
+                                </div>
+                                <!-- dropdown -->
+                                <div class="btn-group dropup" uib-dropdown>
+                                    <button type="button" class="btn btn-default btn-md dropdown-toggle" uib-dropdown-toggle ng-disabled="disabled">
+                                        Right Drop Up <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu dropdown-menu-right" role="menu">
+                                        <li><a href="#">Action</a></li>
+                                        <li><a href="#">Another action</a></li>
+                                        <li><a href="#">Something else here</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="#">Separated link</a></li>
+                                    </ul>
+                                </div>
+                                <!-- dropdown -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Navigation bars</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-bottom-15">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <h4>Default Style</h4>
+                        <nav class="navbar navbar-default" ng-controller="DropdownDemoCtrl">
+                            <div class="container-fluid">
+                                <!-- Slant Admin - Angular and toggle get grouped for better mobile display -->
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                    <a class="navbar-brand" href="#">Slant Admin - Angular</a>
+                                </div>
+                                <div class="collapse navbar-collapse pull-right" id="bs-example-navbar-collapse-3" style="padding-right:0px;">
+                                    <button type="button" class="btn btn-default btn-sm navbar-btn" style='margin:7px 0 0 0;'>Sign in</button>
+                                </div>
+                                <!-- Collect the nav links, forms, and other content for toggling -->
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                                    <ul class="nav navbar-nav">
+                                        <li class="active"><a href="#">Home<span class="sr-only">(current)</span></a></li>
+                                        
+                                        <li class="btn-group" uib-dropdown>
+                                            <a href="#" class="dropdown-toggle" uib-dropdown-toggle ng-disabled="disabled">
+        Services <span class="caret"></span>
+      </a>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="#">Separated link</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    <form class="navbar-form navbar-left hidden-md hidden-sm" role="search">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Search">
+                                        </div>
+                                    </form>
+                                    
+                                    <ul class="nav navbar-nav navbar-right">
+                                        <li class="hidden-xs hidden-sm" uib-dropdown>
+                                            <a href="#" class="dropdown-toggle" uib-dropdown-toggle ng-disabled="disabled">
+        Products <span class="caret"></span>
+      </a>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li><a href="#">Action</a></li>
+                                                <li><a href="#">Another action</a></li>
+                                                <li><a href="#">Something else here</a></li>
+                                                <li class="divider"></li>
+                                                <li><a href="#">Separated link</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="hidden-xs hidden-sm"><a href="#"><i class='fa fa-envelope'></i></a></li>
+                                    </ul>
+                                </div>
+                                <!-- /.navbar-collapse -->
+                            </div>
+                            <!-- /.container-fluid -->
+                        </nav>
+                        <div class="clearfix"></div>
+                        <h4>Inverted Style</h4>
+                        <nav class="navbar navbar-inverse">
+                            <div class="container-fluid">
+                                <!-- Slant Admin - Angular and toggle get grouped for better mobile display -->
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-9">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                    <a class="navbar-brand" href="#">Slant Admin - Angular</a>
+                                </div>
+                                <!-- Collect the nav links, forms, and other content for toggling -->
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9">
+                                    <ul class="nav navbar-nav">
+                                        <li class="active"><a href="#">Home</a></li>
+                                        <li><a href="#">About</a></li>
+                                        <li><a href="#">Contact</a></li>
+                                    </ul>
+                                </div>
+                                <!-- /.navbar-collapse -->
+                            </div>
+                            <!-- /.container-fluid -->
+                        </nav>
+                        <div class="clearfix"></div>
+                        <h4>Primary Style</h4>
+                        <nav class="navbar navbar-primary navbar-default">
+                            <div class="container-fluid">
+                                <!-- Slant Admin - Angular and toggle get grouped for better mobile display -->
+                                <div class="navbar-header">
+                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-19">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </button>
+                                    <a class="navbar-brand" href="#">Slant Admin - Angular</a>
+                                </div>
+                                <!-- Collect the nav links, forms, and other content for toggling -->
+                                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-19">
+                                    <ul class="nav navbar-nav">
+                                        <li class="active"><a href="#">Home</a></li>
+                                        <li><a href="#">About</a></li>
+                                        <li><a href="#">Contact</a></li>
+                                    </ul>
+                                </div>
+                                <!-- /.navbar-collapse -->
+                            </div>
+                            <!-- /.container-fluid -->
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

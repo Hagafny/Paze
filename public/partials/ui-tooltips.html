@@ -1,0 +1,276 @@
+<div class='content-wrapper' ng-init="app.settings.pagetitle = 'Tooltips & PopOvers';">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Tooltip Example</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-top-30 padding-bottom-30">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="row" ui-tooltip ng-controller="TooltipDemoCtrl">
+                            <div class=" col-xs-6 col-sm-6 col-md-3 margin-bottom-30">
+                                <div class=" top primary animated fadeIn fade in" ng-class="" uib-tooltip-popup="" title="" content="I am a Top placed tooltip" placement="top" is-open="isOpen" style="">
+                                    <div class="tooltip-arrow"></div>
+                                    <div class="tooltip-inner ng-binding" ng-bind="content">I am a Top placed tooltip</div>
+                                </div>
+                            </div>
+                            <div class=" col-xs-6 col-sm-6 col-md-3 margin-bottom-30">
+                                <div class=" left primary animated fadeIn fade in" ng-class="" uib-tooltip-popup="" title="" content="I am a left placed tooltip" placement="left" is-open="isOpen" style="">
+                                    <div class="tooltip-arrow"></div>
+                                    <div class="tooltip-inner ng-binding" ng-bind="content">I am a Left placed tooltip</div>
+                                </div>
+                            </div>
+                            <div class=" col-xs-6 col-sm-6 col-md-3 margin-bottom-30">
+                                <div class=" bottom primary animated fadeIn fade in" ng-class="" uib-tooltip-popup="" title="" content="I am a bottom placed tooltip" placement="bottom" is-open="isOpen" style="">
+                                    <div class="tooltip-arrow"></div>
+                                    <div class="tooltip-inner ng-binding" ng-bind="content">I am a bottom placed tooltip</div>
+                                </div>
+                            </div>
+                            <div class=" col-xs-6 col-sm-6 col-md-3 margin-bottom-30">
+                                <div class=" right primary animated fadeIn fade in" ng-class="" uib-tooltip-popup="" title="" content="I am a right placed tooltip" placement="right" is-open="isOpen" style="">
+                                    <div class="tooltip-arrow"></div>
+                                    <div class="tooltip-inner ng-binding" ng-bind="content">I am a right placed tooltip</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Popover Example</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-top-30 padding-bottom-30">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 padding-top-15 ">
+                        <div class="row" ui-popover ng-controller="PopoverDemoCtrl">
+                            <div class=" col-xs-12 col-sm-12 col-md-6 margin-bottom-30">
+                                <div class=" top animated fadeIn fade in" uib-popover-popup="" title="Top popover" content="Test content of the popover details ! It can handle HTML content too !" placement="top" animation="animation" style="display:block;position:relative;">
+                                    <div class="arrow"></div>
+                                    <div class="popover-inner">
+                                        <h3 class="popover-title ng-binding">Top popover</h3>
+                                        <div class="popover-content ng-binding">Test content of the popover details ! It can handle HTML content too !</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" col-xs-12 col-sm-12 col-md-6 margin-bottom-30">
+                                <div class=" left animated fadeIn fade in" uib-popover-popup="" title="Left popover" content="Test content of the popover details ! It can handle HTML content too !" placement="Left" animation="animation" style="display:block;position:relative;">
+                                    <div class="arrow"></div>
+                                    <div class="popover-inner">
+                                        <h3 class="popover-title ng-binding">Left popover</h3>
+                                        <div class="popover-content ng-binding">Test content of the popover details ! It can handle HTML content too !</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" col-xs-12 col-sm-12 col-md-6 margin-bottom-30">
+                                <div class=" right animated fadeIn fade in" uib-popover-popup="" title="Right popover" content="Test content of the popover details ! It can handle HTML content too !" placement="Right" animation="animation" style="display:block;position:relative;">
+                                    <div class="arrow"></div>
+                                    <div class="popover-inner">
+                                        <h3 class="popover-title ng-binding">Right popover</h3>
+                                        <div class="popover-content ng-binding">Test content of the popover details ! It can handle HTML content too !</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class=" col-xs-12 col-sm-12 col-md-6 margin-bottom-30">
+                                <div class=" bottom animated fadeIn fade in" uib-popover-popup="" title="Bottom popover" content="Test content of the popover details ! It can handle HTML content too !" placement="Bottom" animation="animation" style="display:block;position:relative;">
+                                    <div class="arrow"></div>
+                                    <div class="popover-inner">
+                                        <h3 class="popover-title ng-binding">Bottom popover</h3>
+                                        <div class="popover-content ng-binding">Test content of the popover details ! It can handle HTML content too !</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Tooltips</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-bottom-15">
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <h4>Placements</h4>
+                        <div class="row" ui-tooltip ng-controller="TooltipDemoCtrl">
+                            <div class=" col-sm-12  bottom15"><a class="btn btn-secondary btn-border btn-sm" href="#" tooltip-placement="top" uib-tooltip="I am a Top placed tooltip" tooltip-class="primary animated fadeIn"><span class='text-dark'>Top placed tooltip</span></a></div>
+                            <div class=" col-sm-12  bottom15"><a class="btn btn-secondary btn-border btn-sm" href="#" tooltip-placement="left" uib-tooltip="I am a Left placed tooltip" tooltip-class="primary animated fadeIn"><span class='text-dark'>Left placed tooltip</span></a></div>
+                            <div class=" col-sm-12  bottom15"><a class="btn btn-secondary btn-border btn-sm" href="#" tooltip-placement="right" uib-tooltip="I am a Right placed tooltip" tooltip-class="primary animated fadeIn"><span class='text-dark'>Right placed tooltip</span></a></div>
+                            <div class=" col-sm-12  bottom15"><a class="btn btn-secondary btn-border btn-sm" href="#" tooltip-placement="bottom" uib-tooltip="I am a Bottom placed tooltip" tooltip-class="primary animated fadeIn"><span class='text-dark'>Bottom placed tooltip</span></a></div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <h4>Animations</h4>
+                        <div class="row" ui-tooltip ng-controller="TooltipDemoCtrl">
+                            <div class="col-sm-12  bottom15"><a class="btn btn-secondary btn-border btn-sm" href="#" tooltip-class=" animated fadeIn" uib-tooltip="I am a Fading tooltip" data-placement="top"><span class='text-dark'>Fading tooltip</span></a></div>
+                            <div class="col-sm-12  bottom15"><a class="btn btn-secondary btn-border btn-sm" href="#" tooltip-class=" animated bounce" uib-tooltip="I am a Bouncing tooltip" data-placement="top"><span class='text-dark'>Bouncing tooltip</span></a></div>
+                            <div class="col-sm-12  bottom15"><a class="btn btn-secondary btn-border btn-sm" href="#" tooltip-class=" animated flip" uib-tooltip="I am a Fliping tooltip" data-placement="top"><span class='text-dark'>Fliping tooltip</span></a></div>
+                            <div class="col-sm-12  bottom15"><a class="btn btn-secondary btn-border btn-sm" href="#" tooltip-class=" animated flash" uib-tooltip="I am a Flashing tooltip" data-placement="top"><span class='text-dark'>Flashing tooltip</span></a></div>
+                            <div class="col-sm-12  bottom15"><a class="btn btn-secondary btn-border btn-sm" href="#" tooltip-class=" animated pulse" uib-tooltip="I am a Pulse effect tooltip" data-placement="top"><span class='text-dark'>Pulse effect tooltip</span></a></div>
+                            <div class="col-sm-12  bottom15"><a class="btn btn-secondary btn-border btn-sm" href="#" tooltip-class=" animated swing" uib-tooltip="I am a Swinging tooltip" data-placement="top"><span class='text-dark'>Swinging tooltip</span></a></div>
+                            <div class="col-sm-12  bottom15"><a class="btn btn-secondary btn-border btn-sm" href="#" tooltip-class=" animated shake" uib-tooltip="I am a Shaking tooltip" data-placement="top"><span class='text-dark'>Shaking tooltip</span></a></div>
+                            <div class="col-sm-12  bottom15"><a class="btn btn-secondary btn-border btn-sm" href="#" tooltip-class=" animated wobble" uib-tooltip="I am a Wobbling tooltip" data-placement="top"><span class='text-dark'>Wobbling tooltip</span></a></div>
+                            <div class="col-sm-12  bottom15"><a class="btn btn-secondary btn-border btn-sm" href="#" tooltip-class=" animated tada" uib-tooltip="I am a Tada effect tooltip" data-placement="top"><span class='text-dark'>Tada effect tooltip</span></a></div>
+                            <div class="col-sm-12  bottom15"><a class="btn btn-secondary btn-border btn-sm" href="#" tooltip-class=" animated rubberBand" uib-tooltip="I am a Rubber Band effect tooltip" data-placement="top"><span class='text-dark'>Rubber Band effect tooltip</span></a></div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <h4>Colors</h4>
+                        <div class="row" ui-tooltip ng-controller="TooltipDemoCtrl">
+                            <div class="col-sm-12  bottom15"><a class="btn btn-secondary btn-border btn-sm" href="#" tooltip-class="accent animated fadeIn" uib-tooltip="Accent colored tooltip"><span class='text-dark'>Accent tooltip</span></a></div>
+                            <div class="col-sm-12  bottom15"><a class="btn btn-secondary btn-border btn-sm" href="#" tooltip-class="success animated fadeIn" uib-tooltip="Success tooltip"><span class='text-dark'>Success tooltip</span></a></div>
+                            <div class="col-sm-12  bottom15"><a class="btn btn-secondary btn-border btn-sm" href="#" tooltip-class="warning animated fadeIn " uib-tooltip="Warning tooltip"><span class='text-dark'>Warning tooltip</span></a></div>
+                            <div class="col-sm-12  bottom15"><a class="btn btn-secondary btn-border btn-sm" href="#" tooltip-class="info animated fadeIn " uib-tooltip="Info tooltip"><span class='text-dark'>Info tooltip</span></a></div>
+                            <div class="col-sm-12  bottom15"><a class="btn btn-secondary btn-border btn-sm" href="#" tooltip-class="danger animated fadeIn " uib-tooltip="Danger tooltip"><span class='text-dark'>Danger tooltip</span></a></div>
+                            <div class="col-sm-12  bottom15"><a class="btn btn-secondary btn-border btn-sm" href="#" tooltip-class="primary animated fadeIn " uib-tooltip="Primary tooltip"><span class='text-dark'>Primary tooltip</span></a></div>
+                            <div class="col-sm-12  bottom15"><a class="btn btn-secondary btn-border btn-sm" href="#" tooltip-class="secondary animated fadeIn " uib-tooltip="Secondary tooltip"><span class='text-dark'>Secondary tooltip</span></a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Popovers</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-bottom-15">
+                <div class="row">
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <h4>Placements</h4>
+                        <div class="row" ui-popover ng-controller="PopoverDemoCtrl">
+                            <div class="col-sm-12  bottom15">
+                                <div class="btn btn-secondary btn-border btn-sm" popover-class=" animated fadeIn " popover-placement="top" uib-popover="Test content of the popover details ! It can handle HTML content too !" popover-title="Top popover" popover-trigger="mouseenter"><span class='text-dark'>Top Placed Popover</span></div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="col-sm-12  bottom15">
+                                <div class="btn btn-secondary btn-border btn-sm" popover-class=" animated fadeIn " popover-placement="left" uib-popover="Test content of the popover details ! It can handle HTML content too !" popover-title="Left popover" popover-trigger="mouseenter"><span class='text-dark'>Left Placed Popover</span></div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="col-sm-12  bottom15">
+                                <div class="btn btn-secondary btn-border btn-sm" popover-class=" animated fadeIn " popover-placement="right" uib-popover="Test content of the popover details ! It can handle HTML content too !" popover-title="Right Placed popover" popover-trigger="mouseenter"><span class='text-dark'>Right placed Popover</span></div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="col-sm-12  bottom15">
+                                <div class="btn btn-secondary btn-border btn-sm" popover-class=" animated fadeIn " popover-placement="bottom" uib-popover="Test content of the popover details ! It can handle HTML content too !" popover-title="Bottom popover" popover-trigger="mouseenter"><span class='text-dark'>Bottom placed Popover</span></div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <h4>Animations</h4>
+                        <div class="row" ui-popover ng-controller="PopoverDemoCtrl">
+                            <div class="col-sm-12  bottom15">
+                                <div class="btn btn-secondary btn-border btn-sm" popover-class=" animated fadeIn " popover-placement="top" uib-popover="Test content of the popover details ! It can handle HTML content too !" popover-title="Fading popover" popover-trigger="mouseenter"><span class='text-dark'>Fading Popover</span></div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="col-sm-12  bottom15">
+                                <div class="btn btn-secondary btn-border btn-sm" popover-class=" animated bounce" popover-placement="top" uib-popover="Test content of the popover details ! It can handle HTML content too !" popover-title="Bouncing popover" popover-trigger="mouseenter"><span class='text-dark'>Bouncing Popover</span></div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="col-sm-12  bottom15">
+                                <div class="btn btn-secondary btn-border btn-sm" popover-class=" animated flip " popover-placement="top" uib-popover="Test content of the popover details ! It can handle HTML content too !" popover-title="Fliping popover" popover-trigger="mouseenter"><span class='text-dark'>Fliping Popover</span></div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="col-sm-12  bottom15">
+                                <div class="btn btn-secondary btn-border btn-sm" popover-class=" animated flash " popover-placement="top" uib-popover="Test content of the popover details ! It can handle HTML content too !" popover-title="Flashing popover" popover-trigger="mouseenter"><span class='text-dark'>Flashing Popover</span></div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="col-sm-12  bottom15">
+                                <div class="btn btn-secondary btn-border btn-sm" popover-class=" animated pulse " popover-placement="top" uib-popover="Test content of the popover details ! It can handle HTML content too !" popover-title="Pulse effect popover" popover-trigger="mouseenter"><span class='text-dark'>Pulse effect Popover</span></div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="col-sm-12  bottom15">
+                                <div class="btn btn-secondary btn-border btn-sm" popover-class=" animated swing " popover-placement="top" uib-popover="Test content of the popover details ! It can handle HTML content too !" popover-title="Swinging popover" popover-trigger="mouseenter"><span class='text-dark'>Swinging Popover</span></div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="col-sm-12  bottom15">
+                                <div class="btn btn-secondary btn-border btn-sm" popover-class=" animated shake " popover-placement="top" uib-popover="Test content of the popover details ! It can handle HTML content too !" popover-title="Shaking popover" popover-trigger="mouseenter"><span class='text-dark'>Shaking Popover</span></div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="col-sm-12  bottom15">
+                                <div class="btn btn-secondary btn-border btn-sm" popover-class=" animated wobble " popover-placement="top" uib-popover="Test content of the popover details ! It can handle HTML content too !" popover-title="Wobbling popover" popover-trigger="mouseenter"><span class='text-dark'>Wobbling Popover</span></div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="col-sm-12  bottom15">
+                                <div class="btn btn-secondary btn-border btn-sm" popover-class=" animated tada" popover-placement="top" uib-popover="Test content of the popover details ! It can handle HTML content too !" popover-title="Tada effect popover" popover-trigger="mouseenter"><span class='text-dark'>Tada effect Popover</span></div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="col-sm-12  bottom15">
+                                <div class="btn btn-secondary btn-border btn-sm" popover-class=" animated rubberBand" popover-placement="top" uib-popover="Test content of the popover details ! It can handle HTML content too !" popover-title="Rubber Band effect popover" popover-trigger="mouseenter"><span class='text-dark'>Rubber Band effect Popover</span></div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <h4>Colors</h4>
+                        <div class="row" ui-popover ng-controller="PopoverDemoCtrl">
+                            <div class="col-sm-12 bottom15">
+                                <div class="btn btn-secondary btn-border btn-sm" popover-class="success animated fadeIn " popover-placement="top" uib-popover="Test content of the popover details ! It can handle HTML content too !" popover-title="Success popover" popover-trigger="mouseenter">
+                                    <span class='text-dark'>Success Popover</span></div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="col-sm-12  bottom15">
+                                <div class="btn btn-secondary btn-border btn-sm" popover-class="primary animated fadeIn " popover-placement="top" uib-popover="Test content of the popover details ! It can handle HTML content too !" popover-title="Primary popover" popover-trigger="mouseenter">
+                                    <span class='text-dark'>Primary Popover</span></div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="col-sm-12  bottom15">
+                                <div class="btn btn-secondary btn-border btn-sm" popover-class="accent animated fadeIn " popover-placement="top" uib-popover="Test content of the popover details ! It can handle HTML content too !" popover-title="Accent popover" popover-trigger="mouseenter">
+                                    <span class='text-dark'>Accent Popover</span></div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="col-sm-12  bottom15">
+                                <div class="btn btn-secondary btn-border btn-sm" popover-class="warning animated fadeIn " popover-placement="top" uib-popover="Test content of the popover details ! It can handle HTML content too !" popover-title="Warning popover" popover-trigger="mouseenter">
+                                    <span class='text-dark'>Warning Popover</span></div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="col-sm-12  bottom15">
+                                <div class="btn btn-secondary btn-border btn-sm" popover-class="info animated fadeIn " popover-placement="top" uib-popover="Test content of the popover details ! It can handle HTML content too !" popover-title="Info popover" popover-trigger="mouseenter">
+                                    <span class='text-dark'>Info Popover</span></div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="col-sm-12  bottom15">
+                                <div class="btn btn-secondary btn-border btn-sm" popover-class="danger animated fadeIn " popover-placement="top" uib-popover="Test content of the popover details ! It can handle HTML content too !" popover-title="Danger popover" popover-trigger="mouseenter">
+                                    <span class='text-dark'>Danger Popover</span></div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="col-sm-12  bottom15">
+                                <div class="btn btn-secondary btn-border btn-sm" popover-class="secondary animated fadeIn " popover-placement="top" uib-popover="Test content of the popover details ! It can handle HTML content too !" popover-title="Secondary popover" popover-trigger="mouseenter">
+                                    <span class='text-dark'>Secondary Popover</span></div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

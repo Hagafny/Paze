@@ -1,0 +1,52 @@
+<div class='content-wrapper' ng-init="app.settings.pagetitle = 'Search Results';">
+    <div class="col-lg-12" ng-controller="SearchPageCtrl" ui-searchtabs>
+        <section class="box nobox">
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-7 col-sm-6 col-xs-12">
+                        <div class="input-group primary" inputgroup>
+                            <span class="input-group-addon">                
+                    <span class="arrow"></span>
+                            <i class="fa fa-search"></i>
+                            </span>
+                            <input type="text" class="form-control search-page-input" placeholder="Search" value="Graphic Design" ng-model="search.title">
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-sm-6 col-xs-12">
+                        <nav class='pull-right search-paging'>
+                            <uib-pagination ng-model="currentPage" max-size="noOfPages" total-items="totalItems" items-per-page="entryLimit" class="pull-right"></uib-pagination>
+                        </nav>
+                    </div>
+                    <div class="clearfix"></div>
+                    <br>
+                    <div class="col-md-12 col-sm-12 col-xs-12 search_data">
+                        <ul class="nav nav-tabs vertical col-md-2 col-lg-2 col-sm-3 col-xs-3 left-aligned">
+                            <li><a href="" ng-click="resetFilters()" class="active">All</a></li>
+                            <li><a href="" ng-click="search.category='web'">Web</a></li>
+                            <li><a href="" ng-click="search.category='images'">Images</a></li>
+                            <li><a href="" ng-click="search.category='contacts'">Contacts</a></li>
+                            <li><a href="" ng-click="search.category='projects'">Projects</a></li>
+                            <li><a href="" ng-click="search.category='map'">Maps</a></li>
+                            <li><a href="" ng-click="search.category='videos'">Videos</a></li>
+                            <li><a href="" ng-click="search.category='messages'">Messages</a></li>
+                            <li><a href="" ng-click="search.category='profile'">Profile</a></li>
+                        </ul>
+                        <div class="tab-content vertical col-md-10 col-lg-10 col-sm-9 col-xs-9 left-aligned">
+                            <div class="tab-pane fade in active">
+                                <perfect-scrollbar wheel-propagation="true" suppress-scroll-x="true"  min-scrollbar-length="20" class='ps-scrollbar'>
+                                    <div class="search_result" ng-repeat="item in filtered = items | filter:search | startSearchFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
+                                        <div class="pull-left col-sm-2 col-xs-3"><img class="img-responsive" ng-src="{{item.thumb}}"></div>
+                                        <div class="pull-left col-sm-10 col-xs-9">
+                                            <h4><a href="#">{{item.title}}</a></h4>
+                                            <p>{{item.description}}<a href="#" class="pull-right"><small>Read More...</small></a></p>
+                                        </div>
+                                    </div>
+                                </perfect-scrollbar>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

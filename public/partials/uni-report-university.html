@@ -1,0 +1,155 @@
+<div class='content-wrapper' ng-init="app.settings.pagetitle = 'University Reports';">
+
+
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">University Admissions</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-8 col-sm-12 col-xs-12 col-md-offset-2" ng-controller="UniversityAdmissionsCtrl">
+                        <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-legend="true" chart-series="series" chart-click="onClick" chart-colours="colours">
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Student Cost Per Month Per Year Stay</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+
+                    <div class="col-md-8 col-sm-12 col-xs-12 col-md-offset-2" ng-controller="CostPerStudentPerYearCtrl">
+        
+                        <div class="graph_axis_color">
+                        <p><span class='bg-primary'></span> Cost Per Month (USD)</p>
+                        <p><span class='bg-accent'></span> Cost Per Year (USD)</p>
+                        </div>
+
+                        <canvas id="bar" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-colours="colours"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Professor Communication with Students</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+
+                    <div class="col-md-8 col-sm-12 col-xs-12 col-md-offset-2" ng-controller="ProfessorCommunicationCtrl">
+
+                        <div class="graph_axis_color">
+                        <p><span class='bg-primary'></span> Professor Communication</p>
+                        <p><span class='bg-accent'></span> Professor Listen Carefully</p>
+                        <p><span class='bg-warning'></span> Professors Treated with Respect/Courtesy</p>
+                        <p><span class='bg-success'></span> Professors explained well to understand</p>
+                        </div>
+
+                        <canvas id="bar" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-colours="colours"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">University Budget</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-8 col-sm-12 col-xs-12 col-md-offset-2" ng-controller="UniversityBudgetCtrl">
+                        <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-legend="true" chart-series="series" chart-click="onClick" chart-colours="colours">
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Professor Daily Activity</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-8 col-sm-12 col-xs-12 col-md-offset-2" ng-controller="UniversityStudentActivityCtrl">
+
+
+                        <div class="graph_axis_color">
+                        <p><span class='bg-primary'></span> Summer</p>
+                        <p><span class='bg-accent'></span> Winter</p>
+                        <p><span class='bg-warning'></span> Monsoon</p>
+                        </div>
+
+                        <canvas id="radar" class="chart chart-radar" chart-data="data" chart-labels="labels" chart-colours="colours"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+   
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">University Staff Gender Count</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-8 col-sm-12 col-xs-12 col-md-offset-2" ng-controller="UniversityGenderCountCtrl">
+                        <canvas id="doughnut" class="chart chart-doughnut" chart-data="data" chart-labels="labels" chart-colours="colours"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+</div>

@@ -1,0 +1,94 @@
+[
+        {
+        "id": 1,
+        "avatar": "data/profile/avatar-1.png",
+        "status": "available",
+        "statusclass":"Available", 
+        "name": "Clarine Vassar"
+    },   
+    {
+        "id": 2,
+        "avatar": "data/profile/avatar-2.png",
+        "statusclass": "idle",
+        "status":"Idle", 
+        "name": "Brooks Latshaw"
+    },   
+    {
+        "id": 3,
+        "avatar": "data/profile/avatar-3.png",
+        "statusclass": "busy",
+        "status":"Busy", 
+        "name": "Clementina Brodeur"
+    },   
+    {
+        "id": 4,
+        "avatar": "data/profile/avatar-4.png",
+        "status": "away",
+        "statusclass":"Away", 
+        "name": "Carri Busey"
+    },   
+    {
+        "id": 5,
+        "avatar": "data/profile/avatar-5.png",
+        "statusclass": "busy",
+        "status":"Busy", 
+        "name": "Melissa Dock"
+    },   
+    {
+        "id": 6,
+        "avatar": "data/profile/avatar-1.png",
+        "statusclass": "idle",
+        "status":"Idle", 
+        "name": "Verdell Rea"
+    },   
+    {
+        "id": 7,
+        "avatar": "data/profile/avatar-2.png",
+        "statusclass": "idle",
+        "status":"Idle", 
+        "name": "Linette Lheureux"
+    },   
+    {
+        "id": 8,
+        "avatar": "data/profile/avatar-3.png",
+        "statusclass": "away",
+        "status":"Away", 
+        "name": "Araceli Boatright"
+    },   
+    {
+        "id": 9,
+        "avatar": "data/profile/avatar-4.png",
+        "statusclass": "available",
+        "status":"Available", 
+        "name": "Clay Peskin"
+    },   
+    {
+        "id": 10,
+        "avatar": "data/profile/avatar-5.png",
+        "statusclass": "away",
+        "status":"Away", 
+        "name": "Loni Tindall"
+    },   
+    {
+        "id": 11,
+        "avatar": "data/profile/avatar-1.png",
+        "statusclass": "busy",
+        "status":"Busy", 
+        "name": "Tanisha Kimbro"
+    },   
+    {
+        "id": 12,
+        "avatar": "data/profile/avatar-2.png",
+        "statusclass": "offline",
+        "status":"Offline", 
+        "name": "Jovita Tisdale"
+    },   
+    {
+        "id": 13,
+        "avatar": "data/profile/avatar-3.png",
+        "statusclass": "offline",
+        "status":"Offline", 
+        "name": "Collen Kirby"
+    }
+ 
+]

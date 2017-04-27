@@ -1,0 +1,137 @@
+<div class='content-wrapper' ng-init="app.settings.pagetitle = 'Music Genres';">
+    <div class="col-lg-12" ng-controller="MusicGenreCtrl" ui-searchtabs>
+        <section class="box nobox">
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="input-group primary" inputgroup>
+                            <span class="input-group-addon">
+                            <span class="arrow"></span>
+                            <i class="fa fa-search"></i>
+                            </span>
+                            <input type="text" class="form-control search-page-input" placeholder="Search Genre Music" value="Graphic Design" ng-model="search.title">
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <nav class='pull-right search-paging'>
+                            <uib-pagination ng-model="currentPage" max-size="noOfPages" total-items="totalItems" items-per-page="entryLimit" previous-text="&lsaquo;" next-text="&rsaquo;"  class="pull-right"></uib-pagination>
+                        </nav>
+                    </div>
+                    <div class="clearfix"></div>
+                    <br>
+                    <div class="col-md-12 col-sm-12 col-xs-12 search_data music_genre_data">
+                        <ul class="nav nav-tabs vertical col-md-2 col-lg-2 col-sm-3 col-xs-3 left-aligned">
+                            <li><a href="" ng-click="resetFilters()" class="active">All Genres</a></li>
+                            <li>
+                                <a href="" ng-click="search.genre='alternativerock'">Alternative Rock</a>
+                            </li>
+                            <li>
+                                <a href="" ng-click="search.genre='ambient'">Ambient</a>
+                            </li>
+                            <li>
+                                <a href="" ng-click="search.genre='classical'">Classical</a>
+                            </li>
+                            <li>
+                                <a href="" ng-click="search.genre='country'">Country</a>
+                            </li>
+                            <li>
+                                <a href="" ng-click="search.genre='danceedm'">Dance &amp; EDM</a>
+                            </li>
+                            <li>
+                                <a href="" ng-click="search.genre='dancehall'">Dancehall</a>
+                            </li>
+                            <li>
+                                <a href="" ng-click="search.genre='deephouse'">Deep House</a>
+                            </li>
+                            <li>
+                                <a href="" ng-click="search.genre='disco'">Disco</a>
+                            </li>
+                            <li>
+                                <a href="" ng-click="search.genre='drumbass'">Drum &amp; Bass</a>
+                            </li>
+                            <li>
+                                <a href="" ng-click="search.genre='dubstep'">Dubstep</a>
+                            </li>
+                            <li>
+                                <a href="" ng-click="search.genre='electronic'">Electronic</a>
+                            </li>
+                            <li>
+                                <a href="" ng-click="search.genre='folksingersongwriter'">Folk &amp; Singer-Songwriter</a>
+                            </li>
+                            <li>
+                                <a href="" ng-click="search.genre='hiphoprap'">Hip Hop &amp; Rap</a>
+                            </li>
+                            <li>
+                                <a href="" ng-click="search.genre='house'">House</a>
+                            </li>
+                            <li>
+                                <a href="" ng-click="search.genre='indie'">Indie</a>
+                            </li>
+                            <li>
+                                <a href="" ng-click="search.genre='jazzblues'">Jazz &amp; Blues</a>
+                            </li>
+                            <li>
+                                <a href="" ng-click="search.genre='latin'">Latin</a>
+                            </li>
+                            <li>
+                                <a href="" ng-click="search.genre='metal'">Metal</a>
+                            </li>
+                            <li>
+                                <a href="" ng-click="search.genre='piano'">Piano</a>
+                            </li>
+                            <li>
+                                <a href="" ng-click="search.genre='pop'">Pop</a>
+                            </li>
+                            <li>
+                                <a href="" ng-click="search.genre='rbsoul'">R&amp;B &amp; Soul</a>
+                            </li>
+                            <li>
+                                <a href="" ng-click="search.genre='reggae'">Reggae</a>
+                            </li>
+                            <li>
+                                <a href="" ng-click="search.genre='reggaeton'">Reggaeton</a>
+                            </li>
+                            <li>
+                                <a href="" ng-click="search.genre='rock'">Rock</a>
+                            </li>
+                            <li>
+                                <a href="" ng-click="search.genre='soundtrack'">Soundtrack</a>
+                            </li>
+                            <li>
+                                <a href="" ng-click="search.genre='techno'">Techno</a>
+                            </li>
+                            <li>
+                                <a href="" ng-click="search.genre='trance'">Trance</a>
+                            </li>
+                            <li>
+                                <a href="" ng-click="search.genre='trap'">Trap</a>
+                            </li>
+                            <li>
+                                <a href="" ng-click="search.genre='triphop'">Trip Hop</a>
+                            </li>
+                            <li>
+                                <a href="" ng-click="search.genre='world'">World</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content vertical col-md-10 col-lg-10 col-sm-9 col-xs-9 left-aligned">
+                            <div class="tab-pane fade in active">
+                                <perfect-scrollbar wheel-propagation="true" suppress-scroll-x="true"  min-scrollbar-length="20" class='ps-scrollbar'>
+                                <div class="music_genre col-lg-3 col-md-4 col-sm-4 col-xs-6" ng-repeat="item in filtered = items | filter:search | startSearchFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
+                                    <div class="thumb">
+                                    <img class="img-responsive" ng-src="{{item.thumb}}">
+                                    <div class="overlay"><a ui-sref="app.mus-song-view"><i class="material-icons">play_circle_filled</i></a></div>
+                                    </div>
+                                    <div class="song-info">
+                                        <h4><a ui-sref="app.mus-song-view">{{ item.title | limitTo: 20 }}{{item.title.length > 20 ? '...' : ''}}</a></h4>
+                                        <p><a ui-sref="app.mus-artist-profile">{{item.artist}}</a></p>
+                                    </div>
+                                </div>
+                                </perfect-scrollbar>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

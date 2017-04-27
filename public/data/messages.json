@@ -1,0 +1,42 @@
+[
+    {
+        "time": "15 mins ago", 
+        "avatar": "data/profile/avatar-1.png",
+        "status": "available", 
+        "read": 0, 
+        "name": "Clarine Vassar", 
+        "description": "Sometimes its good to be different"
+    }, 
+    {
+        "time": "45 mins ago", 
+        "avatar": "data/profile/avatar-2.png",
+        "status": "busy", 
+        "read": 0, 
+        "name": "Brooks Latshaw", 
+        "description": "Sometimes its good to be different"
+    }, 
+    {
+        "time": "1 hour ago", 
+        "avatar": "data/profile/avatar-3.png",
+        "status": "away", 
+        "read": 1, 
+        "name": "Clementina Brodeur", 
+        "description": "Sometimes its good to be different"
+    }, 
+    {
+        "time": "Yesterday", 
+        "avatar": "data/profile/avatar-4.png",
+        "status": "offline", 
+        "read": 1, 
+        "name": "Carri Busey", 
+        "description": "Sometimes its good to be different"
+    }, 
+    {
+        "time": "14th Mar", 
+        "avatar": "data/profile/avatar-5.png",
+        "status": "idle", 
+        "read": 1, 
+        "name": "Melissa Dock", 
+        "description": "Sometimes its good to be different"
+    }
+]

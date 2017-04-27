@@ -1,0 +1,94 @@
+<div class='content-wrapper' ng-controller="ModalDemoCtrl" ng-init="app.settings.pagetitle = 'Modals';">
+    <div class="col-lg-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Modal Types</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-bottom-10">
+                <div class="row">
+                    <div class="modalbuttons col-xs-12">
+                        <p>This admin theme comes with differnt styles of modals. You can select your modal sizes like small, medium and large. You can also pick the style of animation the modals appear on the screen.</p>
+                        <br>
+                        <div class="col-xs-12 margin-bottom-30  padding-bottom-30 padding-top-30" style='background-color: #cccccc;'>
+
+                            <div class="col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1">
+                            <div class="modal-content">
+                                <div class="modal-header ng-scope">
+                                    <h3 class="modal-title">Modal!</h3>
+                                </div>
+                                <div class="modal-body ng-scope">
+
+                                    <p>Body Content Here...</p>                                    
+                                </div>
+                                <div class="modal-footer ng-scope">
+                                    <button class="btn btn-default">Cancel</button>
+                                    <button class="btn btn-primary">OK</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
+<div class="clearfix"></div>
+
+                        <div class="pull-left">
+                            <button class="btn btn-secondary btn-border btn-sm margin-bottom-15 margin-right-15" ng-click="open()">Default Modal</button>
+                        </div>
+                        <div class="pull-left">
+                            <button class="btn btn-secondary btn-border btn-sm margin-bottom-15 margin-right-15" ng-click="open('lg')">Large Modal</button>
+                        </div>
+                        <div class="hidden-lg hidden-md clearfix padding-bottom-20"></div>
+                        <div class="pull-left">
+                            <button class="btn btn-secondary btn-border btn-sm margin-bottom-15 margin-right-15" ng-click="open('sm')">Small Modal</button>
+                        </div>
+                        <div class="pull-left">
+                            <button class="btn btn-secondary btn-border btn-sm margin-bottom-15 margin-right-15" ng-click="open('','animated fadeInDown')">Fade Down</button>
+                        </div>
+                        <div class="pull-left">
+                            <button class="btn btn-secondary btn-border btn-sm margin-bottom-15 margin-right-15" ng-click="open('','animated fadeInUp')">Fade Up</button>
+                        </div>
+                        <div class="pull-left">
+                            <button class="btn btn-secondary btn-border btn-sm margin-bottom-15 margin-right-15" ng-click="open('','animated fadeInLeft')">Fade Left</button>
+                        </div>
+                        <div class="pull-left">
+                            <button class="btn btn-secondary btn-border btn-sm margin-bottom-15 margin-right-15" ng-click="open('','animated fadeInRight')">Fade Right</button>
+                        </div>
+                        <div class="pull-left">
+                            <button class="btn btn-secondary btn-border btn-sm margin-bottom-15 margin-right-15" ng-click="open('','animated rotateInDownLeft')">Rotate Down Left</button>
+                        </div>
+                        <div class="pull-left">
+                            <button class="btn btn-secondary btn-border btn-sm margin-bottom-15 margin-right-15" ng-click="open('','animated rotateInDownRight')">Rotate Down Right</button>
+                        </div>
+                        <div class="pull-left">
+                            <button class="btn btn-secondary btn-border btn-sm margin-bottom-15 margin-right-15" ng-click="open('','animated rotateInUpLeft')">Rotate Up Left</button>
+                        </div>
+                        <div class="pull-left">
+                            <button class="btn btn-secondary btn-border btn-sm margin-bottom-15 margin-right-15" ng-click="open('','animated rotateInUpRight')">Rotate Up Right</button>
+                        </div>
+                        <div class="pull-left">
+                            <button class="btn btn-secondary btn-border btn-sm margin-bottom-15 margin-right-15" ng-click="open('','animated flip')">Flip</button>
+                        </div>
+                        <div class="pull-left">
+                            <button class="btn btn-secondary btn-border btn-sm margin-bottom-15 margin-right-15" ng-click="open('','animated swing')">Swing</button>
+                        </div>
+                        <div class="pull-left">
+                            <button class="btn btn-secondary btn-border btn-sm margin-bottom-15 margin-right-15" ng-click="open('','animated shake')">Shake</button>
+                        </div>
+                        <div class="pull-left">
+                            <button class="btn btn-secondary btn-border btn-sm margin-bottom-15 margin-right-15" ng-click="open('','animated rubberBand')">Rubber Band</button>
+                        </div>
+                        <div class="pull-left">
+                            <button class="btn btn-secondary btn-border btn-sm margin-bottom-15 margin-right-15" ng-click="open('','animated lightSpeedIn')">Light Speed</button>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div ng-show="selected" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 padding-top-15">Selection from a modal: <strong>{{ selected }}</strong></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

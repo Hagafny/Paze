@@ -1,0 +1,56 @@
+[
+    {
+        "avatar": "data/doctors/doctor-1.jpg",
+        "speciality": "Physician", 
+        "name": "Dr. Clarine Vassar", 
+        "brief": " The surgical specialties are the specialties in which an important part of diagnosis and treatmentby surgery. "
+    }, 
+    {
+        "avatar": "data/doctors/doctor-2.jpg",
+        "speciality": "Surgeon", 
+        "name": "Dr. Brooks Latshaw", 
+        "brief": " The surgical specialties are the specialties in which an important part of diagnosis and treatmentby surgery. "
+    }, 
+    {
+        "avatar": "data/doctors/doctor-3.jpg",
+        "speciality": "Cardiologist", 
+        "name": "Dr. Clementina Brodeur", 
+        "brief": "The internal medicine specialties are the specialties in which the main diagnosis and treatment is never major surgery. "
+    }, 
+    {
+        "avatar": "data/doctors/doctor-4.jpg",
+        "speciality": "Physician", 
+        "name": "Dr. Carri Busey", 
+        "brief": " The surgical specialties are the specialties in which an important part of diagnosis and treatmentby surgery. "
+    }, 
+    {
+        "avatar": "data/doctors/doctor-5.jpg",
+        "speciality": "Orthopaedics", 
+        "name": "Melissa Dock", 
+        "brief": "The internal medicine specialties are the specialties in which the main diagnosis and treatment is never major surgery. "
+    }, 
+    {
+        "avatar": "data/doctors/doctor-6.jpg",
+        "speciality": "Neurosurgery", 
+        "name": "Dr. Clay Peskin", 
+        "brief": " The surgical specialties are the specialties in which an important part of diagnosis and treatmentby surgery. "
+    }, 
+    {
+        "avatar": "data/doctors/doctor-7.jpg",
+        "speciality": "Neurology", 
+        "name": "Dr. Winford K.", 
+        "brief": "The internal medicine specialties are the specialties in which the main diagnosis and treatment is never major surgery. "
+    }, 
+    {
+        "avatar": "data/doctors/doctor-8.jpg",
+        "speciality": "Physician", 
+        "name": "Dr. Cart", 
+        "brief": " The surgical specialties are the specialties in which an important part of diagnosis and treatmentby surgery. "
+    }, 
+    {
+        "avatar": "data/doctors/doctor-9.jpg",
+        "speciality": "Surgeon", 
+        "name": "Dr. Angle Law", 
+        "brief": " The surgical specialties are the specialties in which an important part of diagnosis and treatmentby surgery. "
+    }
+]

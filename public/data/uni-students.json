@@ -1,0 +1,78 @@
+[
+   
+{
+  "avatar": "data/students/student-1.jpg",
+  "year": "First Yr.",
+  "department": "Computer Engg.",
+  "name": "Martha Stanley",
+  "brief": "Along with studies, is good in all around activities held in the university events."
+}, {
+  "avatar": "data/students/student-2.jpg",
+  "year": "First Yr.",
+  "department": "Architecture",
+  "name": "Jason Ortiz",
+  "brief": "Along with studies, is good in all around activities held in the university events."
+}, {
+  "avatar": "data/students/student-3.jpg",
+  "year": "First Yr.",
+  "department": "Mech. Engg.",
+  "name": "Lawrence Stevens",
+  "brief": "Along with studies, is good in all around activities held in the university events."
+}, {
+  "avatar": "data/students/student-4.jpg",
+  "year": "First Yr.",
+  "department": "Civil Engg.",
+  "name": "James Lee",
+  "brief": "Along with studies, is good in all around activities held in the university events."
+}, {
+  "avatar": "data/students/student-5.jpg",
+  "year": "First Yr.",
+  "department": "Automobile Engg.",
+  "name": "Arthur Fisher",
+  "brief": "Along with studies, is good in all around activities held in the university events."
+}, {
+  "avatar": "data/students/student-6.jpg",
+  "year": "First Yr.",
+  "department": "MBA",
+  "name": "Craig Watkins",
+  "brief": "Along with studies, is good in all around activities held in the university events."
+}, {
+  "avatar": "data/students/student-7.jpg",
+  "year": "Second Yr.",
+  "department": "Computer Engg.",
+  "name": "Kathy Taylor",
+  "brief": "Along with studies, is good in all around activities held in the university events."
+}, {
+  "avatar": "data/students/student-8.jpg",
+  "year": "Second Yr.",
+  "department": "Architecture",
+  "name": "Jacqueline Collins",
+  "brief": "Along with studies, is good in all around activities held in the university events."
+}, {
+  "avatar": "data/students/student-9.jpg",
+  "year": "Second Yr.",
+  "department": "Mech. Engg.",
+  "name": "Diana Daniels",
+  "brief": "Along with studies, is good in all around activities held in the university events."
+}, {
+  "avatar": "data/students/student-10.jpg",
+  "year": "Second Yr.",
+  "department": "Civil Engg.",
+  "name": "Walter Pierce",
+  "brief": "Along with studies, is good in all around activities held in the university events."
+}, {
+  "avatar": "data/students/student-11.jpg",
+  "year": "Second Yr.",
+  "department": "Automobile Engg.",
+  "name": "Ann Kelly",
+  "brief": "Along with studies, is good in all around activities held in the university events."
+}, {
+  "avatar": "data/students/student-12.jpg",
+  "year": "Second Yr.",
+  "department": "MBA",
+  "name": "Joyce Bailey",
+  "brief": "Along with studies, is good in all around activities held in the university events."
+}
+
+    
+]
