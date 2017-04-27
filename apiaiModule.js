@@ -132,15 +132,15 @@ function receivedMessage(event) {
 
         textAnalytics.detectTopics()
         .then((response) => {
-            sendTextMessage(sender, JSON.stringify(err));
+            sendTextMessage(senderID, JSON.stringify(err));
             //console.log('Got response', response ? JSON.stringify(response) : "undefined responseText");
         }).catch((err) => {
-            sendTextMessage(sender, JSON.stringify(err));
+            sendTextMessage(senderID, JSON.stringify(err));
             //console.error('Encountered error making request:', err);
         });
 
     } catch(e) {
-       sendTextMessage(sender, e.message);
+       sendTextMessage(senderID, e.message);
     }
 
     return;
