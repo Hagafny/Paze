@@ -154,17 +154,21 @@ function handleEcho(messageId, appId, metadata) {
     // Just logging message echoes to console
     console.log("Received echo for message %s and app %d with metadata %s", messageId, appId, metadata);
 }
-
 function handleApiAiAction(sender, action, responseText, contexts, parameters) {
+    let saidLetsStart = false;
     switch (action) {
-        case "example.survey":
-         //  isDefined(contexts[0].name = "yes-to-example-survey_dialog_context")
-           // { 
+        case "example.survey":   
+               if (!saidLetsStart) {
+                   // Create User in DB with basic info from facebook ==> Ron
+                   sendTextMessage(sender, "Great ! Let's get started");
+                   saidLetsStart = true;
+               }
                sendTextMessage(sender, responseText);
                let age = isDefined(contexts[0].parameters['Age'] && contexts[0].parameters['Age'] != '') ? contexts[0].parameters['Age'] : "";  
                let gender = isDefined(contexts[0].parameters['Gender'] && contexts[0].parameters['Gender'] != '') ? contexts[0].parameters['Gender'] : "";  
-               
-
+               let location = isDefined(contexts[0].parameters['Location'] && contexts[0].parameters['Location'] != '') ? contexts[0].parameters['Location'] : "";  
+               let relationshipStatus = isDefined(contexts[0].parameters['RelationshipStatus'] && contexts[0].parameters['RelationshipStatus'] != '') ? contexts[0].parameters['RelationshipStatus'] : "";  
+               let career = isDefined(contexts[0].parameters['Career'] && contexts[0].parameters['Career'] != '') ? contexts[0].parameters['Career'] : "";  
           //  }
         break;
         default:
