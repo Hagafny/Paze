@@ -160,8 +160,10 @@ function handleApiAiAction(sender, action, responseText, contexts, parameters) {
         case "example.survey":
          //  isDefined(contexts[0].name = "yes-to-example-survey_dialog_context")
            // { 
+               sendTextMessage(sender, responseText);
                let age = isDefined(contexts[0].parameters['Age'] && contexts[0].parameters['Age'] != '') ? contexts[0].parameters['Age'] : "";  
-               sendTextMessage(sender, age);
+               let gender = isDefined(contexts[0].parameters['Gender'] && contexts[0].parameters['Gender'] != '') ? contexts[0].parameters['Gender'] : "";  
+               
 
           //  }
         break;
