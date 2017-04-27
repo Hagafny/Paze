@@ -206,7 +206,7 @@ function handleEcho(messageId, appId, metadata) {
 function handleApiAiAction(sender, action, responseText, contexts, parameters) {
     switch (action) {
         case "example.survey":
-
+/*
             let replies = [
                 {
                     "content_type": "text",
@@ -216,7 +216,7 @@ function handleApiAiAction(sender, action, responseText, contexts, parameters) {
             ]
 
             sendQuickReply(sender, responseText, replies);
-
+*/
 
             /*
               // Create User in DB with basic info from facebook ==> Ron
