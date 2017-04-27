@@ -4,7 +4,6 @@
   "description": "Later",
   "main": "app.js",
   "scripts": {
-    "postinstall": "bower install -V",
     "start": "node app.js"
   },
   "repository": {

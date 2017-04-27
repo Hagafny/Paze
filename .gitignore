@@ -2,4 +2,3 @@ node_modules/
 token
 .DS_Store
 .idea/
-public/bower_components/
