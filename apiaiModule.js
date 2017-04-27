@@ -161,7 +161,7 @@ function handleApiAiAction(sender, action, responseText, contexts, parameters) {
           //  isDefined(contexts[1].name = "example-survey" && contexts[1].parameters)
            // { 
 
-            sendTextMessage(sender, responscontexts[0].name);
+            sendTextMessage(sender, responscontexts[1].name);
               
            // }
         break;
