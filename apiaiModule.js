@@ -159,10 +159,10 @@ function handleApiAiAction(sender, action, responseText, contexts, parameters) {
     switch (action) {
         case "example.survey":
           //  isDefined(contexts[1].name = "example-survey" && contexts[1].parameters)
-           // {
-                
-            sendTextMessage(sender, responscontexts[1].name);
-                
+           // { 
+
+            sendTextMessage(sender,"wha");
+              
            // }
         break;
         default:
