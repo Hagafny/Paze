@@ -49,6 +49,13 @@ var webhookGet = (req, res) => {
  *
  */
 
+my.namespace.ColorEnum = {
+    PREINTERVIEW : 0,
+    AFTERINTERVIEW : 1,
+}
+
+
+
 var webhookPost = (req, res) => {
     var data = req.body;
     console.log(JSON.stringify(data));
@@ -620,7 +627,7 @@ function greetUserText(userId) {
                 console.log("FB user: %s %s, %s",
                     user.first_name, user.last_name, user.gender);
 
-                sendTextMessage(userId, "Welcome " + user.first_name + '!');
+                sendTextMessage(userId, "Hello " + user.first_name + '!');
             } else {
                 console.log("Cannot get data for fb user with id",
                     userId);
@@ -683,6 +690,36 @@ function receivedPostback(event) {
     var payload = event.postback.payload;
 
     switch (payload) {
+        case GetStarted_Button-Pressed:
+        
+        sendTypingOn(sender);
+        sendTypingOff(sender);
+        greetUserText(senderID); 
+        sendTypingOn(sender);
+        sendTypingOff(sender);
+        sendTextMessage(senderID, "My name is Paze and I am an artifcial inteligance powered survey panel bot");
+        sendTypingOn(sender);
+        sendTypingOff(sender);
+        sendTextMessage(senderID, "My wish is to send you surveys and I will pay you in exchange for your answers");
+        sendTypingOn(sender);
+        sendTypingOff(sender);
+  //    sendToApiAi(sender,)
+ //    sendTextMessage(senderID, "The more I know you, the more survies you will receive. Would you like for us to conduct an example survey?");
+
+      let replies = [
+      {
+        "content_type":"text",
+        "title":"Yes",
+        "payload":"Yes, I want to take an example survey"
+      },
+      {
+        "content_type":"text",
+        "title":"No",
+        "payload":"No, I don't to take an example survey"
+      },
+    ]
+        sendQuickReply(senderID,"The more I know you, the more survies you will receive. Would you like for us to conduct an example survey?",replies);
+        break;
         default:
             //unindentified payload
             sendTextMessage(senderID, "I'm not sure what you want. Can you be more specific?");
