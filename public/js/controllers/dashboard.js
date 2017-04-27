@@ -14,9 +14,122 @@
         });
     });
 
+    app.controller('SmartTableCtrl', ['$scope', '$timeout', '$http', function($scope, $timeout, $http) {
+      $scope.rowCollectionBasic = [
+          {firstName: 'Laurent', lastName: 'Renard', birthDate: new Date('1987-05-21'), balance: 102, email: 'whatever@gmail.com'},
+          {firstName: 'Blandine', lastName: 'Faivre', birthDate: new Date('1987-04-25'), balance: -2323.22, email: 'oufblandou@gmail.com'},
+          {firstName: 'Francoise', lastName: 'Frere', birthDate: new Date('1955-08-27'), balance: 42343, email: 'raymondef@gmail.com'}
+      ];
+
+      $scope.removeRow = function(row) {
+          var index = $scope.rowCollectionBasic.indexOf(row);
+          if (index !== -1) {
+              $scope.rowCollectionBasic.splice(index, 1);
+          }
+      };
+
+      $scope.predicates = ['firstName', 'lastName', 'birthDate', 'balance', 'email'];
+      $scope.selectedPredicate = $scope.predicates[0];
+
+      var firstnames = ['Laurent', 'Blandine', 'Olivier', 'Max'];
+      var lastnames = ['Renard', 'Faivre', 'Frere', 'Eponge'];
+      var dates = ['1987-05-21', '1987-04-25', '1955-08-27', '1966-06-06'];
+      var id = 1;
+
+      function generateRandomItem(id) {
+
+          var firstname = firstnames[Math.floor(Math.random() * 3)];
+          var lastname = lastnames[Math.floor(Math.random() * 3)];
+          var birthdate = dates[Math.floor(Math.random() * 3)];
+          var balance = Math.floor(Math.random() * 2000);
+
+          return {
+              id: id,
+              name: firstname,
+              count: lastname,
+              completed: Math.round(Math.random()) > 0 ? 'yes' : 'no',
+              points: Math.floor(Math.random() * 2000)
+          }
+      }
+
+      $scope.rowCollection = [];
+
+      for (id = 0; id < 5; id++) {
+          $scope.rowCollection.push(generateRandomItem(id));
+      }
+
+      //copy the references (you could clone ie angular.copy but then have to go through a dirty checking for the matches)
+      $scope.displayedCollection = [].concat($scope.rowCollection);
+
+      //add to the real data holder
+      $scope.addRandomItem = function addRandomItem() {
+          $scope.rowCollection.push(generateRandomItem(id));
+          id++;
+      };
+
+      //remove to the real data holder
+      $scope.removeItem = function(row) {
+          var index = $scope.rowCollection.indexOf(row);
+          if (index !== -1) {
+              $scope.rowCollection.splice(index, 1);
+          }
+      }
+
+      //  pagination
+      $scope.itemsByPage=5;
+
+      $scope.rowCollectionPage = [];
+      for (var j = 0; j < 10; j++) {
+        $scope.rowCollectionPage.push(generateRandomItem(j));
+      }
+
+      // pip
+      var promise = null;
+      $scope.isLoading = false;
+      $scope.rowCollectionPip = [];
+      
+      $scope.getPage = function() {
+        $scope.rowCollectionPip=[];
+        for (var j = 0; j < 20; j++) {
+          $scope.rowCollectionPip.push(generateRandomItem(j));
+        }
+      }
+
+      $scope.callServer = function getData(tableState) {
+          //here you could create a query string from tableState
+          //fake ajax call
+          $scope.isLoading = true;
+
+          $timeout(function () {
+              $scope.getPage();
+              $scope.isLoading = false;
+          }, 2000);
+      };
+
+     $scope.getPage();
+
+    }]);
+
+    app.controller('UserStatesCtrl', ['$scope', '$http', function($scope, $http) {
+        $http({
+          method: 'GET',
+          url: '/api/participants/59020ee40ddf870004a4ea1f' 
+        }).then(function (response) {
+            $scope.name = response.name;
+            $scope.age = response.age;
+            $scope.hashtags = response.hashtags; 
+        }, function (response) {
+            console.log("!!!");              
+            console.log(response);  
+            $scope.name = "John Dou";
+            $scope.age = 20;
+            $scope.hashtags = [];
+        });
+    }]);
+
     app.controller('DashboardLineCtrl', ['$scope', '$timeout', function($scope, $timeout) {
         $scope.labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'];
-        $scope.series = ['Page Views', 'Visitors'];
+        $scope.series = ['Completed', 'Skipped'];
         $scope.data = [
             [23, 10, 13, 24, 12, 21, 19, 10, 24],
             [7, 13, 8, 10, 18, 11, 17, 9, 17]
@@ -32,16 +145,16 @@
             }
         };
         $scope.colours = [{ // grey
-                fillColor: "rgba(255,110,64,1)",
-                strokeColor: "rgba(255,110,64,1)",
-                pointColor: "rgba(255,110,64,1)",
+                fillColor: "rgba(20,161,198,0.75)",
+                strokeColor: "rgba(20,161,198,1)",
+                pointColor: "rgba(20,161,198,1)",
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "rgba(255,110,64,1)"
         }, { // dark grey
-                fillColor: "rgba(103,58,183,1)",
-                strokeColor: "rgba(103,58,183,1.0)",
-                pointColor: "rgba(103,58,183,1.0)",
+                fillColor: "rgba(245,139,33,0.75)",
+                strokeColor: "rgba(245,139,33,1.0)",
+                pointColor: "rgba(245,139,33,1.0)",
                 pointStrokeColor: "#fff",
                 pointHighlightFill: "#fff",
                 pointHighlightStroke: "rgba(103,58,183,1.0)"
@@ -75,12 +188,12 @@
             [7, 13, 8, 10, 18, 11, 17, 9, 17]
         ];
         $scope.colours = [{ // grey
-                fillColor: "rgba(255,110,64,1)",
+                fillColor: "rgba(255,110,64,0.75)",
                 strokeColor: "rgba(255,110,64,1)",
                 highlightFill: "rgba(255,110,64,1)",
                 highlightStroke: "rgba(255,110,64,1)"
         }, { // dark grey
-                fillColor: "rgba(103,58,183,1.0)",
+                fillColor: "rgba(103,58,183,0.75)",
                 strokeColor: "rgba(103,58,183,1)",
                 highlightFill: "rgba(103,58,183,1)",
                 highlightStroke: "rgba(103,58,183,1.0)"

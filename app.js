@@ -5,6 +5,12 @@ const app = express();
 const crypto = require('crypto');
 const bodyParser = require('body-parser');
 const apiAiModule = require('./apiaiModule');
+
+const passport = require('passport');
+//const facebookAuth = require('./services/facebookAuth.js');
+//const localStrategy = require('./services/localStrategy.js');
+
+// 4321c78c46b963e82ea468ca0e207bb661d1bf61
 const routes = require('./routes');
 
 require('./dbConnector')(() => {
