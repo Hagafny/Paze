@@ -164,8 +164,8 @@ function handleApiAiAction(sender, action, responseText, contexts, parameters) {
                    saidLetsStart = true;
                    sendTextMessage(sender, "Great ! Let's get started");
                }
-               sendTypingOn(sender);
-               sendTypingOff(sender);
+             //  sendTypingOn(sender);
+            //   sendTypingOff(sender);
                sendTextMessage(sender, reponse);
                let age = isDefined(contexts[0].parameters['Age'] && contexts[0].parameters['Age'] != '') ? contexts[0].parameters['Age'] : "";  
                let gender = isDefined(contexts[0].parameters['Gender'] && contexts[0].parameters['Gender'] != '') ? contexts[0].parameters['Gender'] : "";  
