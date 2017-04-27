@@ -8,7 +8,7 @@ const apiAiModule = require('./apiaiModule');
 
 const passport = require('passport');
 //const facebookAuth = require('./services/facebookAuth.js');
-const localStrategy = require('./services/localStrategy.js');
+//const localStrategy = require('./services/localStrategy.js');
 //const cognitiveServices = require('cognitive-services');
 
 // 4321c78c46b963e82ea468ca0e207bb661d1bf61
