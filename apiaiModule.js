@@ -156,14 +156,15 @@ function handleEcho(messageId, appId, metadata) {
 }
 function handleApiAiAction(sender, action, responseText, contexts, parameters) {
     switch (action) {
-        case "example.survey":  
+        case "example.survey": 
+               let reponse = responseText; 
                // say let's get started first 
                if (contexts[0].parameters['Age'] == "" && contexts[0].parameters['Gender'] == "" && contexts[0].parameters['Location'] == "" &&contexts[0].parameters['RelationshipStatus'] == "" && contexts[0].parameters['Career'] == "" ) {
                    // Create User in DB with basic info from facebook ==> Ron
                    sendTextMessage(sender, "Great ! Let's get started");
                    saidLetsStart = true;
                }
-               sendTextMessage(sender, responseText);
+               sendTextMessage(sender, reponse);
                let age = isDefined(contexts[0].parameters['Age'] && contexts[0].parameters['Age'] != '') ? contexts[0].parameters['Age'] : "";  
                let gender = isDefined(contexts[0].parameters['Gender'] && contexts[0].parameters['Gender'] != '') ? contexts[0].parameters['Gender'] : "";  
                let location = isDefined(contexts[0].parameters['Location'] && contexts[0].parameters['Location'] != '') ? contexts[0].parameters['Location'] : "";  
