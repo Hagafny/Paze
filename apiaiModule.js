@@ -160,8 +160,8 @@ function handleApiAiAction(sender, action, responseText, contexts, parameters) {
         case "example.survey":
           //  isDefined(contexts[1].name = "example-survey" && contexts[1].parameters)
            // { 
-
-            sendTextMessage(sender,"wha");
+             //  let age = isDefined
+            sendTextMessage(sender,contexts[0].name);
               
            // }
         break;
