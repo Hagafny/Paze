@@ -186,7 +186,7 @@ function handleApiAiAction(sender, action, responseText, contexts, parameters) {
 
              //  if (contexts[0].parameters['Age'] == "" && contexts[0].parameters['Gender'] == "" && contexts[0].parameters['Location'] == "" &&contexts[0].parameters['RelationshipStatus'] == "" && contexts[0].parameters['Career'] == "" ) {
 
-            sendTextMessage(sender, reponse);
+            sendTextMessage(sender, responseText);
                let age = isDefined(contexts[0].parameters['Age'] && contexts[0].parameters['Age'] != '') ? contexts[0].parameters['Age'] : "";  
                let gender = isDefined(contexts[0].parameters['Gender'] && contexts[0].parameters['Gender'] != '') ? contexts[0].parameters['Gender'] : "";  
                let location = isDefined(contexts[0].parameters['Location'] && contexts[0].parameters['Location'] != '') ? contexts[0].parameters['Location'] : "";  
