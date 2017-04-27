@@ -162,7 +162,7 @@ function handleApiAiAction(sender, action, responseText, contexts, parameters) {
                    // Create User in DB with basic info from facebook ==> Ron
                    sendTextMessage(sender, "Great ! Let's get started");
                    sendTextMessage(sender, "What is your age ?");
-                   contexts[0].parameters['Age'] = 0;
+               //    contexts[0].parameters['Age'] = 0;
 
                }
              //  sendTypingOn(sender);
