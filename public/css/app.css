@@ -884,7 +884,6 @@ a:focus {
 
 .page-topbar .quick-area .info-menu li.profile a img,
 .page-topbar .quick-area .info-menu li.profile a span {
-    top: -7px;
     position: relative;
 }
 
@@ -6746,7 +6745,7 @@ code {
 }
 
 #main-content {
-    margin-left: 200px;
+    margin-left: 50px;
     display: block;
 }
 

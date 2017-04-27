@@ -27,8 +27,21 @@ let getParticipantSurveys = (req, res) => {
     surveyService.getParticipantSurveys(participantId, (err, surveys) => {
         if (err)
             res.status(404).json(err);
-        else
-            res.status(200).send(surveys);
+        else {
+            participantService.getById(participantId, (err2, participant) => {
+                if (err2)
+                    res.status(404).json(err2);
+                else {
+                    var sendObj = {
+                        participant: participant,
+                        surveys: surveys
+                    }
+
+                    res.status(200).send(sendObj);
+                }
+            })
+        }
+
     })
 }
 
