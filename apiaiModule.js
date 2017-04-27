@@ -158,12 +158,12 @@ function handleEcho(messageId, appId, metadata) {
 function handleApiAiAction(sender, action, responseText, contexts, parameters) {
     switch (action) {
         case "example.survey":
-           isDefined(contexts[0].name = "yes-to-example-survey_dialog_context")
-            { 
+         //  isDefined(contexts[0].name = "yes-to-example-survey_dialog_context")
+           // { 
                let age = isDefined(contexts[0].parameters['Age']&& contexts[0].parameters['age'] != '') ? contexts[0].parameters['age'] : "" ;  
-                          sendTextMessage(sender, age);
+               sendTextMessage(sender, age);
 
-            }
+          //  }
         break;
         default:
             //unhandled action, just send back the text
