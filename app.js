@@ -31,7 +31,6 @@ app.get('/', function (req, res) {
 
 // for Facebook verification
 app.get('/webhook/', apiAiModule.webhookGet);
-
 app.post('/webhook/', apiAiModule.webhookPost);
 
 // Spin up the server
