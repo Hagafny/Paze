@@ -6,6 +6,7 @@ const crypto = require('crypto');
 const bodyParser = require('body-parser');
 const request = require('request');
 const uuid = require('uuid');
+const participantService = require("./services/participantService");
 
 // Messenger API parameters
 if (!config.FB_PAGE_TOKEN) {
@@ -156,24 +157,35 @@ function handleEcho(messageId, appId, metadata) {
 }
 function handleApiAiAction(sender, action, responseText, contexts, parameters) {
     switch (action) {
-        case "example.survey": 
-               // say let's get started first 
-               if (contexts[0].parameters['Age'] == "" && contexts[0].parameters['Gender'] == "" && contexts[0].parameters['Location'] == "" &&contexts[0].parameters['RelationshipStatus'] == "" && contexts[0].parameters['Career'] == "" ) {
-                   // Create User in DB with basic info from facebook ==> Ron
-                   sendTextMessage(sender, "Great ! Let's get started");
-                   sendTextMessage(sender, "What is your age ?");
-               //    contexts[0].parameters['Age'] = 0;
+        case "example.survey":  
+    /*
+      // Create User in DB with basic info from facebook ==> Ron
+      var patricipant = {
 
-               }
-             //  sendTypingOn(sender);
-            //   sendTypingOff(sender);
-               sendTextMessage(sender, reponse);
+    fbid: {type: String, required: true}, 
+    name: {type: String, required: true, trim: true},
+    age: Number,
+    picture: String,
+    status: Number,
+     gender: Number,
+     income: Number,
+     location: String,
+     hashtags: [String]
+
+      }
+    */
+        break;
+        case "yes-to-example-survey.yes-to-example-survey-custom":
+
+
+             //  if (contexts[0].parameters['Age'] == "" && contexts[0].parameters['Gender'] == "" && contexts[0].parameters['Location'] == "" &&contexts[0].parameters['RelationshipStatus'] == "" && contexts[0].parameters['Career'] == "" ) {
+
+            sendTextMessage(sender, reponse);
                let age = isDefined(contexts[0].parameters['Age'] && contexts[0].parameters['Age'] != '') ? contexts[0].parameters['Age'] : "";  
                let gender = isDefined(contexts[0].parameters['Gender'] && contexts[0].parameters['Gender'] != '') ? contexts[0].parameters['Gender'] : "";  
                let location = isDefined(contexts[0].parameters['Location'] && contexts[0].parameters['Location'] != '') ? contexts[0].parameters['Location'] : "";  
                let relationshipStatus = isDefined(contexts[0].parameters['RelationshipStatus'] && contexts[0].parameters['RelationshipStatus'] != '') ? contexts[0].parameters['RelationshipStatus'] : "";  
                let career = isDefined(contexts[0].parameters['Career'] && contexts[0].parameters['Career'] != '') ? contexts[0].parameters['Career'] : "";  
-          //  }
         break;
         default:
             //unhandled action, just send back the text
