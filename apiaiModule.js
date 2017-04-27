@@ -240,10 +240,10 @@ function handleApiAiAction(sender, action, responseText, contexts, parameters) {
 
             break;
         case "example.survey.interview":
-
+        
 
             //  if (contexts[0].parameters['Age'] == "" && contexts[0].parameters['Gender'] == "" && contexts[0].parameters['Location'] == "" &&contexts[0].parameters['RelationshipStatus'] == "" && contexts[0].parameters['Career'] == "" ) {
-
+            /*
             let age = isDefined(contexts[0].parameters['Age'] && contexts[0].parameters['Age'] != '') ? contexts[0].parameters['Age'] : "";
             let gender = isDefined(contexts[0].parameters['Gender'] && contexts[0].parameters['Gender'] != '') ? contexts[0].parameters['Gender'] : "";
             let location = isDefined(contexts[0].parameters['Location'] && contexts[0].parameters['Location'] != '') ? contexts[0].parameters['Location'] : "";
@@ -313,7 +313,7 @@ function handleApiAiAction(sender, action, responseText, contexts, parameters) {
                 // Store career at DB here
                 sendTextMessage(sender, responseText);
             }
-
+*/
             break;
         default:
             //unhandled action, just send back the text
