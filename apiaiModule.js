@@ -24,6 +24,7 @@ if (!config.SERVER_URL) { //used for ink to static files
     throw new Error('missing SERVER_URL');
 }
 
+let self = this;
 
 const apiAiService = apiai(config.API_AI_CLIENT_ACCESS_TOKEN, {
     language: "en",
@@ -119,6 +120,18 @@ function receivedMessage(event) {
     var messageAttachments = message.attachments;
     var quickReply = message.quick_reply;
 
+    self.textAnalytics.detectLanguage({
+        body: messageText
+    }).then((response) => {
+        handleEcho(response ? JSON.stringify(response) : "undefined responseText");
+        //console.log('Got response', response ? JSON.stringify(response) : "undefined responseText");
+    }).catch((err) => {
+        handleEcho("errpr" + err.message);
+        //console.error('Encountered error making request:', err);
+    });
+
+    return;
+
     if (isEcho) {
         handleEcho(messageId, appId, metadata);
         return;
@@ -127,6 +140,7 @@ function receivedMessage(event) {
         return;
     }
 
+    
 
     if (messageText) {
         //send message to api.ai
