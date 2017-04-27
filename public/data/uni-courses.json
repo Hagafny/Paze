@@ -1,0 +1,219 @@
+[
+{
+  "image": "data/courses/course-1.jpg",
+  "year": "First Year",
+  "department": "Computer Engineering",
+  "name": "Responsive Designs",
+  "price": "$419.75",
+  "students": 143,
+  "professor": "Prof. Roger Johnson",
+  "timelength": "8 months"
+}, {
+  "image": "data/courses/course-2.jpg",
+  "year": "First Year",
+  "department": "Architecture",
+  "name": "Web Programming",
+  "price": "$419.01",
+  "students": 257,
+  "professor": "Prof. Martin Stanley",
+  "timelength": "9 months"
+}, {
+  "image": "data/courses/course-3.jpg",
+  "year": "First Year",
+  "department": "Mechanical Engineering",
+  "name": "Law Practice",
+  "price": "$204.30",
+  "students": 174,
+  "professor": "Prof. Jeffrey Jenkins",
+  "timelength": "6 months"
+}, {
+  "image": "data/courses/course-4.jpg",
+  "year": "First Year",
+  "department": "Civil Engg.",
+  "name": "Responsive Designs",
+  "price": "$442.05",
+  "students": 126,
+  "professor": "Prof. Joshua Johnson",
+  "timelength": "7 months"
+}, {
+  "image": "data/courses/course-5.jpg",
+  "year": "First Year",
+  "department": "Automobile Engg.",
+  "name": "Responsive Designs",
+  "price": "$453.52",
+  "students": 112,
+  "professor": "Prof. Beverly Daniels",
+  "timelength": "2 months"
+}, {
+  "image": "data/courses/course-6.jpg",
+  "year": "First Year",
+  "department": "MBA",
+  "name": "Management",
+  "price": "$315.60",
+  "students": 115,
+  "professor": "Prof. Karen Murray",
+  "timelength": "9 months"
+}, {
+  "image": "data/courses/course-7.jpg",
+  "year": "Second Year",
+  "department": "Computer Engineering",
+  "name": "Computer Basics",
+  "price": "$297.57",
+  "students": 155,
+  "professor": "Prof. Lisa Myers",
+  "timelength": "1 months"
+}, {
+  "image": "data/courses/course-8.jpg",
+  "year": "Second Year",
+  "department": "Architecture",
+  "name": "Animation",
+  "price": "$300.04",
+  "students": 150,
+  "professor": "Prof. Jennifer Scott",
+  "timelength": "12 months"
+}, {
+  "image": "data/courses/course-9.jpg",
+  "year": "Second Year",
+  "department": "Mechanical Engineering",
+  "name": "SQL",
+  "price": "$332.87",
+  "students": 186,
+  "professor": "Prof. Brian Morgan",
+  "timelength": "5 months"
+}, {
+  "image": "data/courses/course-10.jpg",
+  "year": "Second Year",
+  "department": "Civil Engg.",
+  "name": "Web Programming",
+  "price": "$438.95",
+  "students": 235,
+  "professor": "Prof. Patrick Schmidt",
+  "timelength": "2 months"
+}, {
+  "image": "data/courses/course-11.jpg",
+  "year": "Second Year",
+  "department": "Automobile Engg.",
+  "name": "SQL",
+  "price": "$360.71",
+  "students": 191,
+  "professor": "Prof. Doris Robertson",
+  "timelength": "12 months"
+}, {
+  "image": "data/courses/course-12.jpg",
+  "year": "Second Year",
+  "department": "MBA",
+  "name": "Management",
+  "price": "$203.85",
+  "students": 260,
+  "professor": "Prof. Paul Boyd",
+  "timelength": "1 months"
+},{
+  "image": "data/courses/course-1.jpg",
+  "year": "First Year",
+  "department": "Computer Engineering",
+  "name": "Responsive Designs",
+  "price": "$419.75",
+  "students": 143,
+  "professor": "Prof. Roger Johnson",
+  "timelength": "8 months"
+}, {
+  "image": "data/courses/course-2.jpg",
+  "year": "First Year",
+  "department": "Architecture",
+  "name": "Web Programming",
+  "price": "$419.01",
+  "students": 257,
+  "professor": "Prof. Martin Stanley",
+  "timelength": "9 months"
+}, {
+  "image": "data/courses/course-3.jpg",
+  "year": "First Year",
+  "department": "Mechanical Engineering",
+  "name": "Law Practice",
+  "price": "$204.30",
+  "students": 174,
+  "professor": "Prof. Jeffrey Jenkins",
+  "timelength": "6 months"
+}, {
+  "image": "data/courses/course-4.jpg",
+  "year": "First Year",
+  "department": "Civil Engg.",
+  "name": "Responsive Designs",
+  "price": "$442.05",
+  "students": 126,
+  "professor": "Prof. Joshua Johnson",
+  "timelength": "7 months"
+}, {
+  "image": "data/courses/course-5.jpg",
+  "year": "First Year",
+  "department": "Automobile Engg.",
+  "name": "Responsive Designs",
+  "price": "$453.52",
+  "students": 112,
+  "professor": "Prof. Beverly Daniels",
+  "timelength": "2 months"
+}, {
+  "image": "data/courses/course-6.jpg",
+  "year": "First Year",
+  "department": "MBA",
+  "name": "Management",
+  "price": "$315.60",
+  "students": 115,
+  "professor": "Prof. Karen Murray",
+  "timelength": "9 months"
+}, {
+  "image": "data/courses/course-7.jpg",
+  "year": "Second Year",
+  "department": "Computer Engineering",
+  "name": "Computer Basics",
+  "price": "$297.57",
+  "students": 155,
+  "professor": "Prof. Lisa Myers",
+  "timelength": "1 months"
+}, {
+  "image": "data/courses/course-8.jpg",
+  "year": "Second Year",
+  "department": "Architecture",
+  "name": "Animation",
+  "price": "$300.04",
+  "students": 150,
+  "professor": "Prof. Jennifer Scott",
+  "timelength": "12 months"
+}, {
+  "image": "data/courses/course-9.jpg",
+  "year": "Second Year",
+  "department": "Mechanical Engineering",
+  "name": "SQL",
+  "price": "$332.87",
+  "students": 186,
+  "professor": "Prof. Brian Morgan",
+  "timelength": "5 months"
+}, {
+  "image": "data/courses/course-10.jpg",
+  "year": "Second Year",
+  "department": "Civil Engg.",
+  "name": "Web Programming",
+  "price": "$438.95",
+  "students": 235,
+  "professor": "Prof. Patrick Schmidt",
+  "timelength": "2 months"
+}, {
+  "image": "data/courses/course-11.jpg",
+  "year": "Second Year",
+  "department": "Automobile Engg.",
+  "name": "SQL",
+  "price": "$360.71",
+  "students": 191,
+  "professor": "Prof. Doris Robertson",
+  "timelength": "12 months"
+}, {
+  "image": "data/courses/course-12.jpg",
+  "year": "Second Year",
+  "department": "MBA",
+  "name": "Management",
+  "price": "$203.85",
+  "students": 260,
+  "professor": "Prof. Paul Boyd",
+  "timelength": "1 months"
+}
+]

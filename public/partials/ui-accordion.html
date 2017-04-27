@@ -1,0 +1,350 @@
+<div class='content-wrapper' ng-init="app.settings.pagetitle = 'Accordions & Tabs';">
+    <div class="col-lg-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Accordions</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="row">
+                            <!-- Accordion START -->
+                            <div class="col-md-8">
+                                <h4>Default</h4>
+                                <div ng-controller="AccordionDemoCtrl" class=''>
+                                    <uib-accordion close-others="oneAtATime">
+                                        <uib-accordion-group heading="Static Header, initially expanded" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
+                                            Accordion option buttons:
+                                            <p>
+                                                <button class="btn btn-default btn-sm" ng-click="status.open = !status.open">Toggle last panel</button>
+                                                <button class="btn btn-default btn-sm" ng-click="status.isFirstDisabled = ! status.isFirstDisabled">Enable / Disable first panel</button>
+                                            </p>
+                                        </uib-accordion-group>
+                                        <uib-accordion-group heading="{{group.title}}" ng-repeat="group in groups">
+                                            {{group.content}}
+                                        </uib-accordion-group>
+                                        <uib-accordion-group heading="Dynamic Body Content">
+                                            <p>The body of the accordion group grows to fit the contents</p>
+                                            <button class="btn btn-default btn-sm" ng-click="addItem()">Add Item</button>
+                                            <div ng-repeat="item in items">{{item}}</div>
+                                        </uib-accordion-group>
+                                        <uib-accordion-group is-open="status.open">
+                                            <uib-accordion-heading>
+                                                I can have markup, too! <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+                                            </uib-accordion-heading>
+                                            This is just some content to illustrate fancy headings.
+                                        </uib-accordion-group>
+                                    </uib-accordion>
+                                </div>
+                            </div>
+                            <!-- Accordion END -->
+                            <br>
+                            <div class="clearfix"></div>
+                            <br>
+                            <!-- Accordion START -->
+                            <div class="col-md-8">
+                                <h4>Transparent</h4>
+                                <div ng-controller="AccordionDemoCtrl" class='transparent accordion'>
+                                    <uib-accordion close-others="oneAtATime">
+                                        <uib-accordion-group heading="Static Header, initially expanded" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
+                                            Accordion option buttons:
+                                            <p>
+                                                <button class="btn btn-default btn-sm" ng-click="status.open = !status.open">Toggle last panel</button>
+                                                <button class="btn btn-default btn-sm" ng-click="status.isFirstDisabled = ! status.isFirstDisabled">Enable / Disable first panel</button>
+                                            </p>
+                                        </uib-accordion-group>
+                                        <uib-accordion-group heading="{{group.title}}" ng-repeat="group in groups">
+                                            {{group.content}}
+                                        </uib-accordion-group>
+                                        <uib-accordion-group heading="Dynamic Body Content">
+                                            <p>The body of the accordion group grows to fit the contents</p>
+                                            <button class="btn btn-default btn-sm" ng-click="addItem()">Add Item</button>
+                                            <div ng-repeat="item in items">{{item}}</div>
+                                        </uib-accordion-group>
+                                        <uib-accordion-group is-open="status.open">
+                                            <uib-accordion-heading>
+                                                I can have markup, too! <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+                                            </uib-accordion-heading>
+                                            This is just some content to illustrate fancy headings.
+                                        </uib-accordion-group>
+                                    </uib-accordion>
+                                </div>
+                            </div>
+                            <!-- Accordion END -->
+                            <br>
+                            <div class="clearfix"></div>
+                            <br>
+                            <!-- Accordion START -->
+                            <div class="col-md-8">
+                                <h4>Collapsed</h4>
+                                <div ng-controller="AccordionDemoCtrl" class='collapsed accordion'>
+                                    <uib-accordion close-others="oneAtATime">
+                                        <uib-accordion-group heading="Static Header, initially expanded" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
+                                            Accordion option buttons:
+                                            <p>
+                                                <button class="btn btn-default btn-sm" ng-click="status.open = !status.open">Toggle last panel</button>
+                                                <button class="btn btn-default btn-sm" ng-click="status.isFirstDisabled = ! status.isFirstDisabled">Enable / Disable first panel</button>
+                                            </p>
+                                        </uib-accordion-group>
+                                        <uib-accordion-group heading="{{group.title}}" ng-repeat="group in groups">
+                                            {{group.content}}
+                                        </uib-accordion-group>
+                                        <uib-accordion-group heading="Dynamic Body Content">
+                                            <p>The body of the accordion group grows to fit the contents</p>
+                                            <button class="btn btn-default btn-sm" ng-click="addItem()">Add Item</button>
+                                            <div ng-repeat="item in items">{{item}}</div>
+                                        </uib-accordion-group>
+                                        <uib-accordion-group is-open="status.open">
+                                            <uib-accordion-heading>
+                                                I can have markup, too! <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+                                            </uib-accordion-heading>
+                                            This is just some content to illustrate fancy headings.
+                                        </uib-accordion-group>
+                                    </uib-accordion>
+                                </div>
+                            </div>
+                            <!-- Accordion END -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Tabs</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-bottom-15">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <!-- Horizontal - start -->
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h4>Primary</h4>
+                                <div ng-controller="TabsDemoCtrl">
+                                    <uib-tabset class="tab-container primary">
+                                        <uib-tab>
+                                            <uib-tab-heading>
+                                                <i class="fa fa-home"></i> Home
+                                            </uib-tab-heading>
+                                            <p>You can use all Bootstrap plugins purely through the markup API without writing a single line of JavaScript. This is Bootstrap's first-class API and should be your first consideration when using in a plugin.</p>
+                                            <p>
+                                                <button class="btn btn-default btn-sm" ng-click="tabs[0].active = true">Select second tab</button>
+                                                <button class="btn btn-default btn-sm" ng-click="tabs[1].active = true">Select third tab</button>
+                                                <button class="btn btn-default btn-sm" ng-click="tabs[1].disabled = ! tabs[1].disabled">Enable / Disable third tab</button>
+                                            </p>
+                                        </uib-tab>
+                                        <uib-tab ng-repeat="tab in tabs" active="tab.active" disabled="tab.disabled">
+                                            <uib-tab-heading>
+                                                <i class="fa fa-{{tab.icon}}"></i> {{tab.title}}
+                                            </uib-tab-heading>
+                                            {{tab.content}}
+                                        </uib-tab>
+                                    </uib-tabset>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="clearfix"></div>
+                            <br>
+                            <div class="col-md-8">
+                                <h4>Transparent</h4>
+                                <div ng-controller="TabsDemoCtrl">
+                                    <uib-tabset class="tab-container transparent">
+                                        <uib-tab>
+                                            <uib-tab-heading>
+                                                <i class="fa fa-home"></i> Home
+                                            </uib-tab-heading>
+                                            <p>You can use all Bootstrap plugins purely through the markup API without writing a single line of JavaScript. This is Bootstrap's first-class API and should be your first consideration when using in a plugin.</p>
+                                            <p>
+                                                <button class="btn btn-default btn-sm" ng-click="tabs[0].active = true">Select second tab</button>
+                                                <button class="btn btn-default btn-sm" ng-click="tabs[1].active = true">Select third tab</button>
+                                                <button class="btn btn-default btn-sm" ng-click="tabs[1].disabled = ! tabs[1].disabled">Enable / Disable third tab</button>
+                                            </p>
+                                        </uib-tab>
+                                        <uib-tab ng-repeat="tab in tabs" active="tab.active" disabled="tab.disabled">
+                                            <uib-tab-heading>
+                                                <i class="fa fa-{{tab.icon}}"></i> {{tab.title}}
+                                            </uib-tab-heading>
+                                            {{tab.content}}
+                                        </uib-tab>
+                                    </uib-tabset>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="clearfix"></div>
+                            <br>
+                            <div class="col-md-8">
+                                <h4>Horizontal Left Aligned</h4>
+                                <div ng-controller="TabsDemoCtrl">
+                                    <uib-tabset class="tab-container">
+                                        <uib-tab>
+                                            <uib-tab-heading>
+                                                <i class="fa fa-home"></i> Home
+                                            </uib-tab-heading>
+                                            <p>You can use all Bootstrap plugins purely through the markup API without writing a single line of JavaScript. This is Bootstrap's first-class API and should be your first consideration when using in a plugin.</p>
+                                            <p>
+                                                <button class="btn btn-default btn-sm" ng-click="tabs[0].active = true">Select second tab</button>
+                                                <button class="btn btn-default btn-sm" ng-click="tabs[1].active = true">Select third tab</button>
+                                                <button class="btn btn-default btn-sm" ng-click="tabs[1].disabled = ! tabs[1].disabled">Enable / Disable third tab</button>
+                                            </p>
+                                        </uib-tab>
+                                        <uib-tab ng-repeat="tab in tabs" active="tab.active" disabled="tab.disabled">
+                                            <uib-tab-heading>
+                                                <i class="fa fa-{{tab.icon}}"></i> {{tab.title}}
+                                            </uib-tab-heading>
+                                            {{tab.content}}
+                                        </uib-tab>
+                                    </uib-tabset>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="clearfix"></div>
+                            <br>
+                            <div class="col-md-8">
+                                <h4>Horizontal Right Aligned</h4>
+                                <div ng-controller="TabsDemoCtrl">
+                                    <uib-tabset class="tab-container right-aligned">
+                                        <uib-tab>
+                                            <uib-tab-heading>
+                                                <i class="fa fa-home"></i> Home
+                                            </uib-tab-heading>
+                                            <p>You can use all Bootstrap plugins purely through the markup API without writing a single line of JavaScript. This is Bootstrap's first-class API and should be your first consideration when using in a plugin.</p>
+                                            <p>
+                                                <button class="btn btn-default btn-sm" ng-click="tabs[0].active = true">Select second tab</button>
+                                                <button class="btn btn-default btn-sm" ng-click="tabs[1].active = true">Select third tab</button>
+                                                <button class="btn btn-default btn-sm" ng-click="tabs[1].disabled = ! tabs[1].disabled">Enable / Disable third tab</button>
+                                            </p>
+                                        </uib-tab>
+                                        <uib-tab ng-repeat="tab in tabs" active="tab.active" disabled="tab.disabled">
+                                            <uib-tab-heading>
+                                                <i class="fa fa-{{tab.icon}}"></i> {{tab.title}}
+                                            </uib-tab-heading>
+                                            {{tab.content}}
+                                        </uib-tab>
+                                    </uib-tabset>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="clearfix"></div>
+                            <br>
+                        </div>
+                        <!-- Horizontal - end -->
+                        <div class="clearfix">
+                            <br>
+                        </div>
+                        <!-- Vertical - start -->
+                        <div class="row">
+                            <div class="col-md-8">
+                                <!-- <div class="tabs-vertical-env"> -->
+                                <h4>Vertical Tabs</h4>
+                                <div ng-controller="TabsDemoCtrl">
+                                    <uib-tabset vertical="true" type="pills" class="tab-container vertical">
+                                        <uib-tab>
+                                            <uib-tab-heading>
+                                                <i class="fa fa-home"></i> Home
+                                            </uib-tab-heading>
+                                            <p>You can use all Bootstrap plugins purely through the markup API without writing a single line of JavaScript. This is Bootstrap's first-class API and should be your first consideration when using in a plugin.</p>
+                                            <p>
+                                                <button class="btn btn-default btn-sm" ng-click="tabs[0].active = true">Select second tab</button>
+                                                <button class="btn btn-default btn-sm" ng-click="tabs[1].active = true">Select third tab</button>
+                                                <button class="btn btn-default btn-sm" ng-click="tabs[1].disabled = ! tabs[1].disabled">Enable / Disable third tab</button>
+                                            </p>
+                                        </uib-tab>
+                                        <uib-tab ng-repeat="tab in tabs" active="tab.active" disabled="tab.disabled">
+                                            <uib-tab-heading>
+                                                <i class="fa fa-{{tab.icon}}"></i> {{tab.title}}
+                                            </uib-tab-heading>
+                                            {{tab.content}}
+                                        </uib-tab>
+                                    </uib-tabset>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="clearfix"></div>
+                            <br>
+                        </div>
+                        <!-- Vertical - end -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Justified Tabs</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h4>Default Style</h4>
+                        <div ng-controller="TabsDemoCtrl">
+                            <uib-tabset justified="true" class="tab-container">
+                                <uib-tab>
+                                    <uib-tab-heading>
+                                        <i class="fa fa-home"></i> Home
+                                    </uib-tab-heading>
+                                    <p>You can use all Bootstrap plugins purely through the markup API without writing a single line of JavaScript. This is Bootstrap's first-class API and should be your first consideration when using in a plugin.</p>
+                                    <p>
+                                        <button class="btn btn-default btn-sm" ng-click="tabs[0].active = true">Select second tab</button>
+                                        <button class="btn btn-default btn-sm" ng-click="tabs[1].active = true">Select third tab</button>
+                                        <button class="btn btn-default btn-sm" ng-click="tabs[1].disabled = ! tabs[1].disabled">Enable / Disable third tab</button>
+                                    </p>
+                                </uib-tab>
+                                <uib-tab ng-repeat="tab in tabs" active="tab.active" disabled="tab.disabled">
+                                    <uib-tab-heading>
+                                        <i class="fa fa-{{tab.icon}}"></i> {{tab.title}}
+                                    </uib-tab-heading>
+                                    {{tab.content}}
+                                </uib-tab>
+                            </uib-tabset>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="clearfix"></div>
+                    <br>
+                    <div class="col-md-8">
+                        <h4>Primary Style</h4>
+                        <div ng-controller="TabsDemoCtrl">
+                            <uib-tabset justified="true" class="tab-container primary">
+                                <uib-tab>
+                                    <uib-tab-heading>
+                                        <i class="fa fa-home"></i> Home
+                                    </uib-tab-heading>
+                                    <p>You can use all Bootstrap plugins purely through the markup API without writing a single line of JavaScript. This is Bootstrap's first-class API and should be your first consideration when using in a plugin.</p>
+                                    <p>
+                                        <button class="btn btn-default btn-sm" ng-click="tabs[0].active = true">Select second tab</button>
+                                        <button class="btn btn-default btn-sm" ng-click="tabs[1].active = true">Select third tab</button>
+                                        <button class="btn btn-default btn-sm" ng-click="tabs[1].disabled = ! tabs[1].disabled">Enable / Disable third tab</button>
+                                    </p>
+                                </uib-tab>
+                                <uib-tab ng-repeat="tab in tabs" active="tab.active" disabled="tab.disabled">
+                                    <uib-tab-heading>
+                                        <i class="fa fa-{{tab.icon}}"></i> {{tab.title}}
+                                    </uib-tab-heading>
+                                    {{tab.content}}
+                                </uib-tab>
+                            </uib-tabset>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

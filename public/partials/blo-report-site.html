@@ -1,0 +1,102 @@
+<div class='content-wrapper' ng-init="app.settings.pagetitle = 'Site Reports';">
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Blog User Survey</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-8 col-sm-12 col-xs-12 col-md-offset-2" ng-controller="BlogSurveyCtrl">
+                        <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-legend="true" chart-series="series" chart-click="onClick" chart-colours="colours">
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Site User Statistics</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+
+                    <div class="col-md-8 col-sm-12 col-xs-12 col-md-offset-2" ng-controller="BlogPassingCtrl">
+        
+                        <div class="graph_axis_color">
+                        <p><span class='bg-primary'></span> New Visitors</p>
+                        <p><span class='bg-accent'></span> Registered Users</p>
+                        </div>
+
+                        <canvas id="bar" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-colours="colours"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Site Stats by Category</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-8 col-sm-12 col-xs-12 col-md-offset-2" ng-controller="BlogTestScoreCtrl">
+                        <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-legend="true" chart-series="series" chart-click="onClick" chart-colours="colours">
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">User Satisfaction Level</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+
+                    <div class="col-md-8 col-sm-12 col-xs-12 col-md-offset-2" ng-controller="BlogSatisfactionCtrl">
+        
+                        <div class="graph_axis_color">
+                        <p><span class='bg-primary'></span> User Interface</p>
+                        <p><span class='bg-accent'></span> User Experience</p>
+                        </div>
+
+                        <canvas id="bar" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-colours="colours"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    
+</div>

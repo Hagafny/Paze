@@ -1,0 +1,37 @@
+[
+    {
+        "time": "15 mins ago", 
+        "status": "available", 
+        "statusicon": "build", 
+        "read": 0, 
+        "message": "Server needs to reboot"
+    }, 
+    {
+        "time": "45 mins ago", 
+        "status": "busy", 
+        "statusicon": "attach_file", 
+        "read": 0, 
+        "message": "45 new messages"
+    }, 
+    {
+        "time": "1 hour ago", 
+        "status": "away", 
+        "statusicon": "autorenew", 
+        "read": 1, 
+        "message": "Server IP Blocked"
+    }, 
+    {
+        "time": "Yesterday", 
+        "status": "offline", 
+        "statusicon": "person", 
+        "read": 1, 
+        "message": "10 Orders Shipped"
+    }, 
+    {
+        "time": "14th Mar", 
+        "status": "idle", 
+        "statusicon": "cloud", 
+        "read": 1, 
+        "message": "New Comment on blog"
+    }
+]

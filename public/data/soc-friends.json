@@ -1,0 +1,216 @@
+[
+    {
+        "avatar": "data/soc-members/member-1.jpg",
+        "age": "45", 
+        "name": "Mrs. Brodeur", 
+        "occupation": "HouseWife"
+    }, 
+    {
+        "avatar": "data/soc-members/member-2.jpg",
+        "age": "39", 
+        "name": "Ms. Latshaw", 
+        "occupation": "Teacher"
+    }, 
+    {
+        "avatar": "data/soc-members/member-3.jpg",
+        "age": "34", 
+        "name": "Mrs. Clementina", 
+        "occupation": "Journalist"
+    }, 
+    {
+        "avatar": "data/soc-members/member-4.jpg",
+        "age": "29", 
+        "name": "Mr. Carri Busey", 
+        "occupation": "Industrialist"
+    }, 
+    {
+        "avatar": "data/soc-members/member-5.jpg",
+        "age": "65", 
+        "name": "Ms. Clay Dock", 
+        "occupation": "Book Writer"
+    }, 
+    {
+        "avatar": "data/soc-members/member-6.jpg",
+        "age": "57", 
+        "name": "Mr. Mark Peskin", 
+        "occupation": "Ex. Armyman"
+    }, 
+    {
+        "avatar": "data/soc-members/member-7.jpg",
+        "age": "65", 
+        "name": "Mr. Arthur John.", 
+        "occupation": "Carpenter"
+    }, 
+    {
+        "avatar": "data/soc-members/member-8.jpg",
+        "age": "29", 
+        "name": "Mr. Carri Busey", 
+        "occupation": "Industrialist"
+    }, 
+    {
+        "avatar": "data/soc-members/member-9.jpg",
+        "age": "65", 
+        "name": "Ms. Clay Dock", 
+        "occupation": "Book Writer"
+    }, 
+    {
+        "avatar": "data/soc-members/member-10.jpg",
+        "age": "57", 
+        "name": "Mr. Mark Peskin", 
+        "occupation": "Ex. Armyman"
+    }, 
+    {
+        "avatar": "data/soc-members/member-11.jpg",
+        "age": "65", 
+        "name": "Mr. Arthur John.", 
+        "occupation": "Carpenter"
+    }, 
+    {
+        "avatar": "data/soc-members/member-12.jpg",
+        "age": "29", 
+        "name": "Mrs. Jonh A.", 
+        "occupation": "Teacher"
+    },{
+        "avatar": "data/soc-members/member-1.jpg",
+        "age": "45", 
+        "name": "Mrs. Brodeur", 
+        "occupation": "HouseWife"
+    }, 
+    {
+        "avatar": "data/soc-members/member-2.jpg",
+        "age": "39", 
+        "name": "Ms. Latshaw", 
+        "occupation": "Teacher"
+    }, 
+    {
+        "avatar": "data/soc-members/member-3.jpg",
+        "age": "34", 
+        "name": "Mrs. Clementina", 
+        "occupation": "Journalist"
+    }, 
+    {
+        "avatar": "data/soc-members/member-4.jpg",
+        "age": "29", 
+        "name": "Mr. Carri Busey", 
+        "occupation": "Industrialist"
+    }, 
+    {
+        "avatar": "data/soc-members/member-5.jpg",
+        "age": "65", 
+        "name": "Ms. Clay Dock", 
+        "occupation": "Book Writer"
+    }, 
+    {
+        "avatar": "data/soc-members/member-6.jpg",
+        "age": "57", 
+        "name": "Mr. Mark Peskin", 
+        "occupation": "Ex. Armyman"
+    }, 
+    {
+        "avatar": "data/soc-members/member-7.jpg",
+        "age": "65", 
+        "name": "Mr. Arthur John.", 
+        "occupation": "Carpenter"
+    }, 
+    {
+        "avatar": "data/soc-members/member-8.jpg",
+        "age": "29", 
+        "name": "Mr. Carri Busey", 
+        "occupation": "Industrialist"
+    }, 
+    {
+        "avatar": "data/soc-members/member-9.jpg",
+        "age": "65", 
+        "name": "Ms. Clay Dock", 
+        "occupation": "Book Writer"
+    }, 
+    {
+        "avatar": "data/soc-members/member-10.jpg",
+        "age": "57", 
+        "name": "Mr. Mark Peskin", 
+        "occupation": "Ex. Armyman"
+    }, 
+    {
+        "avatar": "data/soc-members/member-11.jpg",
+        "age": "65", 
+        "name": "Mr. Arthur John.", 
+        "occupation": "Carpenter"
+    }, 
+    {
+        "avatar": "data/soc-members/member-12.jpg",
+        "age": "29", 
+        "name": "Mrs. Jonh A.", 
+        "occupation": "Teacher"
+    },{
+        "avatar": "data/soc-members/member-1.jpg",
+        "age": "45", 
+        "name": "Mrs. Brodeur", 
+        "occupation": "HouseWife"
+    }, 
+    {
+        "avatar": "data/soc-members/member-2.jpg",
+        "age": "39", 
+        "name": "Ms. Latshaw", 
+        "occupation": "Teacher"
+    }, 
+    {
+        "avatar": "data/soc-members/member-3.jpg",
+        "age": "34", 
+        "name": "Mrs. Clementina", 
+        "occupation": "Journalist"
+    }, 
+    {
+        "avatar": "data/soc-members/member-4.jpg",
+        "age": "29", 
+        "name": "Mr. Carri Busey", 
+        "occupation": "Industrialist"
+    }, 
+    {
+        "avatar": "data/soc-members/member-5.jpg",
+        "age": "65", 
+        "name": "Ms. Clay Dock", 
+        "occupation": "Book Writer"
+    }, 
+    {
+        "avatar": "data/soc-members/member-6.jpg",
+        "age": "57", 
+        "name": "Mr. Mark Peskin", 
+        "occupation": "Ex. Armyman"
+    }, 
+    {
+        "avatar": "data/soc-members/member-7.jpg",
+        "age": "65", 
+        "name": "Mr. Arthur John.", 
+        "occupation": "Carpenter"
+    }, 
+    {
+        "avatar": "data/soc-members/member-8.jpg",
+        "age": "29", 
+        "name": "Mr. Carri Busey", 
+        "occupation": "Industrialist"
+    }, 
+    {
+        "avatar": "data/soc-members/member-9.jpg",
+        "age": "65", 
+        "name": "Ms. Clay Dock", 
+        "occupation": "Book Writer"
+    }, 
+    {
+        "avatar": "data/soc-members/member-10.jpg",
+        "age": "57", 
+        "name": "Mr. Mark Peskin", 
+        "occupation": "Ex. Armyman"
+    }, 
+    {
+        "avatar": "data/soc-members/member-11.jpg",
+        "age": "65", 
+        "name": "Mr. Arthur John.", 
+        "occupation": "Carpenter"
+    }, 
+    {
+        "avatar": "data/soc-members/member-12.jpg",
+        "age": "29", 
+        "name": "Mrs. Jonh A.", 
+        "occupation": "Teacher"
+    }
+]

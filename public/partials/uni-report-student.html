@@ -1,0 +1,103 @@
+<div class='content-wrapper' ng-init="app.settings.pagetitle = 'Student Reports';">
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Student Monthly Survey</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-8 col-sm-12 col-xs-12 col-md-offset-2" ng-controller="StudentSurveyCtrl">
+                        <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-legend="true" chart-series="series" chart-click="onClick" chart-colours="colours">
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Student Passing</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+
+                    <div class="col-md-8 col-sm-12 col-xs-12 col-md-offset-2" ng-controller="StudentPassingCtrl">
+        
+                        <div class="graph_axis_color">
+                        <p><span class='bg-primary'></span> Engineering</p>
+                        <p><span class='bg-accent'></span> Accounts</p>
+                        </div>
+
+                        <canvas id="bar" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-colours="colours"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Student Test Score by Subjects</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-8 col-sm-12 col-xs-12 col-md-offset-2" ng-controller="StudentTestScoreCtrl">
+                        <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-legend="true" chart-series="series" chart-click="onClick" chart-colours="colours">
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Student Satisfaction Level</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+
+                    <div class="col-md-8 col-sm-12 col-xs-12 col-md-offset-2" ng-controller="StudentSatisfactionCtrl">
+        
+                        <div class="graph_axis_color">
+                        <p><span class='bg-primary'></span> During University Events</p>
+                        <p><span class='bg-accent'></span> During Examination</p>
+                        <p><span class='bg-warning'></span> During Lectures</p>
+                        </div>
+
+                        <canvas id="bar" class="chart chart-bar" chart-data="data" chart-labels="labels" chart-colours="colours"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    
+</div>

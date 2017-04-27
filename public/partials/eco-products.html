@@ -1,0 +1,74 @@
+<div class='content-wrapper' ng-init="app.settings.pagetitle = 'Genres';">
+    <div class="col-lg-12" ng-controller="EcommerceProductsCtrl" ui-searchtabs>
+        <section class="box nobox">
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="input-group primary" inputgroup>
+                            <span class="input-group-addon">
+                            <span class="arrow"></span>
+                            <i class="fa fa-search"></i>
+                            </span>
+                            <input type="text" class="form-control search-page-input" placeholder="Search Products" value="Graphic Design" ng-model="search.title">
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <nav class='pull-right search-paging'>
+                            <uib-pagination ng-model="currentPage" max-size="noOfPages" total-items="totalItems" items-per-page="entryLimit" previous-text="&lsaquo;" next-text="&rsaquo;"  class="pull-right"></uib-pagination>
+                        </nav>
+                    </div>
+                    <div class="clearfix"></div>
+                    <br>
+                    <div class="col-md-12 col-sm-12 col-xs-12 search_data ecommerce_product_data">
+                        <ul class="nav nav-tabs vertical col-md-2 col-lg-2 col-sm-3 col-xs-3 left-aligned">
+                            <li><a href="" ng-click="resetFilters()" class="active">All Products</a></li>
+                            <li>
+                                <a href="" ng-click="search.category='Electronics'">Electronics</a>
+                            </li>
+                            <li>
+                                <a href="" ng-click="search.category='shoes'">Shoes</a>
+                            </li>
+                            <li>
+                                <a href="" ng-click="search.category='clothes'">Clothes</a>
+                            </li>
+                            <li>
+                                <a href="" ng-click="search.category='mobile'">Mobile Phones</a>
+                            </li>
+                            <li>
+                                <a href="" ng-click="search.category='laptops'">Laptops</a>
+                            </li>
+                            <li>
+                                <a href="" ng-click="search.category='accessories'">Accessories</a>
+                            </li>
+                            <li>
+                                <a href="" ng-click="search.category='hardware'">Hardware</a>
+                            </li>
+                            <li>
+                                <a href="" ng-click="search.category='tools'">Tools</a>
+                            </li>
+                            <li>
+                                <a href="" ng-click="search.category='software'">Software</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content vertical col-md-10 col-lg-10 col-sm-9 col-xs-9 left-aligned">
+                            <div class="tab-pane fade in active">
+                                <perfect-scrollbar wheel-propagation="true" suppress-scroll-x="true"  min-scrollbar-length="20" class='ps-scrollbar'>
+                                <div class="ecommerce_product col-lg-3 col-md-4 col-sm-4 col-xs-6" ng-repeat="item in filtered = items | filter:search | startSearchFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">
+                                    <div class="thumb">
+                                    <img class="img-responsive" ng-src="{{item.thumb}}">
+                                    <div class="overlay"><a ui-sref="app.mus-song-view"><i class="material-icons">shopping_cart</i></a></div>
+                                    </div>
+                                    <div class="product-info">
+                                        <h4><a ui-sref="app.mus-song-view">{{ item.title | limitTo: 20 }}{{item.title.length > 20 ? '...' : ''}}</a></h4>
+                                        <p class="price">{{item.price}}</p>
+                                    </div>
+                                </div>
+                                </perfect-scrollbar>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

@@ -1,0 +1,55 @@
+<div class='content-wrapper' ng-init="app.settings.pagetitle = 'Mailbox';">
+    <div class="col-lg-12" ng-controller="MailCtrl">
+        <section class="box nobox">
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-xs-3 padding-right-0">
+                        <a class="btn btn-primary btn-lg" style='width:100%;' ui-sref="app.mail.compose">Compose</a>
+                    </div>
+                    <div class="col-xs-9 padding-left-0">
+                        <a class="btn btn-lg pull-right btn-accent"><i class='material-icons icon-sm'>settings</i></a>
+                    </div>
+                    <div class="clearfix"></div>
+
+                    <div class="col-md-3 col-sm-3 col-xs-3 padding-right-0 margin-top-30">
+                        <div class="mail-wrapper">
+                            <ul class="list-unstyled mail_tabs">
+                                <li ng-repeat="fold in folds" ui-sref-active="active">
+                                    <a ui-sref="app.mail.list({fold:fold.filter})">
+                                        <i class="fa {{fold.icon}}"></i> {{fold.name}} <span class="badge badge-{{fold.badge}} pull-right" ng-show="fold.count != ''">{{fold.count}}</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="mail-wrapper-label">
+                            <p class='text-dark mail-labels-head'>Lables</p>
+                            <ul class="list-unstyled mail_tabs" style='margin-top:0px;'>
+                                <li ng-repeat="label in labels" ui-sref-active="active">
+                                    <a ui-sref="app.mail.list({fold:label.filter})">
+                                        <i class="fa fa-fw fa-circle-o text-muted icon-{{label.color}}"></i> {{label.name}}
+                                    </a>
+                                </li>
+                            </ul>
+                         <form name="label" class="mail-addlabel">
+                                <div class="input-group" inputgroup>
+                                    <input type="text" class="form-control input-md" ng-model="newLabel.name" placeholder="New label" required>
+                                    <span class="input-group-btn">
+                              <button class="btn btn-sm btn-default" type="button" ng-click="addLabel()" ng-disabled="label.$invalid">Add</button>
+                            </span>
+                                </div>
+                            </form>
+                           </div>
+                    </div>
+                    <div class="col-md-9 col-sm-9 col-xs-9  margin-top-30 padding-left-0">
+                           
+                        <div class="mail_content">
+                            <div class="row">
+                                <div ui-view class="fade-in"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

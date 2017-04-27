@@ -1,0 +1,93 @@
+<h2 class="chatapi-head">Chat API
+
+                <a href data-toggle="chatbar" class="toggle_chat" ng-click="app.settings.chatFolded = !app.settings.chatFolded; menuChatToggle('chat',app.settings.chatFolded) ">
+                    <i class="material-icons">close</i>
+                </a>
+
+</h2>
+<perfect-scrollbar class="chat-wrapper" wheel-propagation="true" suppress-scroll-x="true"  min-scrollbar-length="20">
+    <div class="">
+        <h4 class="group-head">Groups</h4>
+        <ul class="group-list list-unstyled">
+            <li class="group-row">
+                <div class="group-status available">
+                    <i class="fa fa-circle"></i>
+                </div>
+                <div class="group-info">
+                    <h4><a href="#">Work</a></h4>
+                </div>
+            </li>
+            <li class="group-row">
+                <div class="group-status away">
+                    <i class="fa fa-circle"></i>
+                </div>
+                <div class="group-info">
+                    <h4><a href="#">Friends</a></h4>
+                </div>
+            </li>
+        </ul>
+        <h4 class="group-head">Favourites</h4>
+        <ul class="contact-list" ng-controller="ChatCtrl" ui-chatwindow>
+            <li ng-repeat="user in users | limitTo:3:1" class="user-row" id='chat_user_{{user.id}}' data-user-id='{{user.id}}'>
+                <div class="user-img">
+                    <a href="#"><img ng-src="{{user.avatar}}" alt=""></a>
+                </div>
+                <div class="user-info">
+                    <h4><a href="#">{{user.name}}</a></h4>
+                    <span class="status {{user.statusclass}}" data-status="{{user.statusclass}}"> {{user.status}}</span>
+                </div>
+                <div class="user-status {{user.statusclass}}">
+                    <i class="fa fa-circle"></i>
+                </div>
+            </li>
+        </ul>
+        <h4 class="group-head">More Contacts</h4>
+        <ul class="contact-list" ng-controller="ChatCtrl" ui-chatwindow>
+            <li ng-repeat="user in users  | limitTo: 11 | limitTo: -8" class="user-row" id='chat_user_{{user.id}}' data-user-id='{{user.id}}'>
+                <div class="user-img">
+                    <a href="#"><img ng-src="{{user.avatar}}" alt=""></a>
+                </div>
+                <div class="user-info">
+                    <h4><a href="#">{{user.name}}</a></h4>
+                    <span class="status {{user.statusclass}}" data-status="{{user.statusclass}}"> {{user.status}}</span>
+                </div>
+                <div class="user-status {{user.statusclass}}">
+                    <i class="fa fa-circle"></i>
+                </div>
+            </li>
+        </ul>
+    </div>
+</perfect-scrollbar>
+<div class='chaton' ui-chatwindow>
+    <perfect-scrollbar class="chaton-window" wheel-propagation="true" suppress-scroll-x="true"  min-scrollbar-length="20">
+        
+        <i class="material-icons closewindow pull-right">close</i>
+        <h2 class="chatapi-head">Chat API</h2>
+        <div class="chatarea">
+            <div class="chatmsg msg_receive">
+                <div class="user-img">
+                    <a href="#"><img src="data/profile/avatar-1.png" alt=""></a>
+                </div>
+                <div class="msg_info">
+                    <span class="name">Clarine Vassar <i class="fa fa-circle status away"></i></span>
+                    <span class="text">Wow! What a Beautiful theme!</span>
+                    <span class="ts">2 min ago</span>
+                </div>
+                           </div>
+            <div class="chatmsg msg_sent">
+                <div class="msg_info">
+                    <span class="name"><i class="fa fa-circle status available"></i> You</span>
+                    <span class="text">Yes! It is Slant Angular Admin Theme ;)</span>
+                    <span class="ts">just now</span>
+                </div>
+                <div class="user-img">
+                    <a href="#"><img src="data/profile/avatar-2.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+        <div class="typearea" chatapifocus>
+            <i class="material-icons">chat</i>
+            <input type="text" data-user-id="1" placeholder="Type &amp; Enter" class="form-control">
+        </div>
+    </perfect-scrollbar>
+</div>

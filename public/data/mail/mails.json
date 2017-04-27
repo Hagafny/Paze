@@ -1,0 +1,289 @@
+{
+  "mails":[
+    {
+      "id": 20,
+      "subject": "It seems amazingly smart",
+      "from": {"name":"Kate", "email":"kate.343.33331@apple.com", "img":"data/profile/avatar-1.png"},
+      "to":{"name":"Mogen", "email":"mogen.abc@hotmail.com"},
+      "content":"Graphic design is the art of visual communication through the use of images, words, and ideas to give information to the viewers. Graphic design can be used for advertising, or just for entertainment intended for the mind. Designs in balance (or equilibrium) have their parts arrangement planned, keeping a coherent visual pattern (color, shape, space). Balance is a concept based on human perception and the complex nature of the human senses of weight and proportion. Humans can evaluate these visual elements in several situations to find a sense of balance. A design composition does not have to be symmetrical or linear to be considered balanced, the balance is global to all elements even the absence of content. In this context perfectly symmetrical and linear compositions are not necessarily balanced and so asymmetrical or radial distributions of text and graphic elements can achieve balance in a composition.",
+      "attach":[
+        {"name":"c1.png", "url":"img/c1.png"},
+        {"name":"c3.png", "url":"img/c3.png"}
+      ],
+      "date":"12:20 07/17/2015",
+      "label":"market",
+      "fold":"important",
+      "state":"unread"
+    },
+    {
+      "id": 19,
+      "subject": "We Do all. Play, dance and love.",
+      "from": {"name":"Frank", "email":"frank.james@apple.com", "img":"data/profile/avatar-2.png"},
+      "to": {"name":"Mogen", "email":"mogen.abc@hotmail.com"},
+      "content":"Graphic design is the art of visual communication through the use of images, words, and ideas to give information to the viewers. Graphic design can be used for advertising, or just for entertainment intended for the mind. Designs in balance (or equilibrium) have their parts arrangement planned, keeping a coherent visual pattern (color, shape, space). Balance is a concept based on human perception and the complex nature of the human senses of weight and proportion. Humans can evaluate these visual elements in several situations to find a sense of balance. A design composition does not have to be symmetrical or linear to be considered balanced, the balance is global to all elements even the absence of content. In this context perfectly symmetrical and linear compositions are not necessarily balanced and so asymmetrical or radial distributions of text and graphic elements can achieve balance in a composition.",
+      "attach":[
+        {"name":"c1.png", "url":"img/c1.png"},
+        {"name":"c3.png", "url":"img/c3.png"}
+      ],
+      "date":"12:20 07/17/2015",
+      "label":"family",
+      "fold":"important"
+    },
+    {
+      "id": 18,
+      "subject": "Beautiful work",
+      "from": {"name":"Jessica", "email":"Jessica@apple.com", "img":"data/profile/avatar-3.png"},
+      "to": {"name":"Mogen", "email":"mogen.abc@hotmail.com"},
+      "content":"Graphic design is the art of visual communication through the use of images, words, and ideas to give information to the viewers. Graphic design can be used for advertising, or just for entertainment intended for the mind. Designs in balance (or equilibrium) have their parts arrangement planned, keeping a coherent visual pattern (color, shape, space). Balance is a concept based on human perception and the complex nature of the human senses of weight and proportion. Humans can evaluate these visual elements in several situations to find a sense of balance. A design composition does not have to be symmetrical or linear to be considered balanced, the balance is global to all elements even the absence of content. In this context perfectly symmetrical and linear compositions are not necessarily balanced and so asymmetrical or radial distributions of text and graphic elements can achieve balance in a composition.",
+      "attach":[
+        {"name":"c1.png", "url":"img/c1.png"},
+        {"name":"c3.png", "url":"img/c3.png"}
+      ],
+      "date":"16:20 07/17/2015",
+      "label":"urgent",
+      "fold":"important"
+    },
+    {
+      "id": 17,
+      "subject": "Wow! What an elegant design",
+      "from": {"name":"Arthur", "email":"arthur@apple.com", "img":"data/profile/avatar-4.png"},
+      "to": {"name":"Mogen", "email":"mogen.abc@hotmail.com"},
+      "content":"Graphic design is the art of visual communication through the use of images, words, and ideas to give information to the viewers. Graphic design can be used for advertising, or just for entertainment intended for the mind. Designs in balance (or equilibrium) have their parts arrangement planned, keeping a coherent visual pattern (color, shape, space). Balance is a concept based on human perception and the complex nature of the human senses of weight and proportion. Humans can evaluate these visual elements in several situations to find a sense of balance. A design composition does not have to be symmetrical or linear to be considered balanced, the balance is global to all elements even the absence of content. In this context perfectly symmetrical and linear compositions are not necessarily balanced and so asymmetrical or radial distributions of text and graphic elements can achieve balance in a composition.",
+      "attach":[
+        {"name":"c1.png", "url":"img/c1.png"},
+        {"name":"c3.png", "url":"img/c3.png"}
+      ],
+      "date":"10:20 07/17/2015",
+      "label":"market",
+      "fold":"sent",
+      "state":"unread"
+    },
+    {
+      "id": 16,
+      "subject": "This is a lovely lovely day",
+      "from": {"name":"Leon", "email":"Jobs@jobhunter.com", "img":"data/profile/avatar-5.png"},
+      "to": {"name":"Mogen", "email":"mogen.abc@hotmail.com"},
+      "content":"Graphic design is the art of visual communication through the use of images, words, and ideas to give information to the viewers. Graphic design can be used for advertising, or just for entertainment intended for the mind. Designs in balance (or equilibrium) have their parts arrangement planned, keeping a coherent visual pattern (color, shape, space). Balance is a concept based on human perception and the complex nature of the human senses of weight and proportion. Humans can evaluate these visual elements in several situations to find a sense of balance. A design composition does not have to be symmetrical or linear to be considered balanced, the balance is global to all elements even the absence of content. In this context perfectly symmetrical and linear compositions are not necessarily balanced and so asymmetrical or radial distributions of text and graphic elements can achieve balance in a composition.",
+      "attach":[
+        {"name":"c1.png", "url":"img/c1.png"},
+        {"name":"c3.png", "url":"img/c3.png"}
+      ],
+      "date":"13:20 07/17/2015",
+      "label":"client",
+      "fold":"starred",
+      "state":"unread"
+    },
+    {
+      "id": 15,
+      "subject": "Common Meeting at 2",
+      "from": {"name":"Peter", "email":"Peter@microsoft.com", "img":"data/profile/avatar-1.png"},
+      "to": {"name":"Mogen", "email":"mogen.abc@hotmail.com"},
+      "content":"Graphic design is the art of visual communication through the use of images, words, and ideas to give information to the viewers. Graphic design can be used for advertising, or just for entertainment intended for the mind. Designs in balance (or equilibrium) have their parts arrangement planned, keeping a coherent visual pattern (color, shape, space). Balance is a concept based on human perception and the complex nature of the human senses of weight and proportion. Humans can evaluate these visual elements in several situations to find a sense of balance. A design composition does not have to be symmetrical or linear to be considered balanced, the balance is global to all elements even the absence of content. In this context perfectly symmetrical and linear compositions are not necessarily balanced and so asymmetrical or radial distributions of text and graphic elements can achieve balance in a composition.",
+      "attach":[
+        {"name":"c1.png", "url":"img/c1.png"},
+        {"name":"c3.png", "url":"img/c3.png"}
+      ],
+      "date":"12:20 07/17/2015",
+      "label":"",
+      "fold":"sent"
+    },
+    {
+      "id": 14,
+      "subject": "Dinner Tomorrow",
+      "from": {"name":"Nevil", "email":"newsletter@yahoo.com", "img":"data/profile/avatar-2.png"},
+      "to": {"name":"Mogen", "email":"mogen.abc@hotmail.com"},
+      "content":"Graphic design is the art of visual communication through the use of images, words, and ideas to give information to the viewers. Graphic design can be used for advertising, or just for entertainment intended for the mind. Designs in balance (or equilibrium) have their parts arrangement planned, keeping a coherent visual pattern (color, shape, space). Balance is a concept based on human perception and the complex nature of the human senses of weight and proportion. Humans can evaluate these visual elements in several situations to find a sense of balance. A design composition does not have to be symmetrical or linear to be considered balanced, the balance is global to all elements even the absence of content. In this context perfectly symmetrical and linear compositions are not necessarily balanced and so asymmetrical or radial distributions of text and graphic elements can achieve balance in a composition.",
+      "attach":[
+        {"name":"c1.png", "url":"img/c1.png"},
+        {"name":"c3.png", "url":"img/c3.png"}
+      ],
+      "date":"11:20 07/17/2015",
+      "label":"work",
+      "fold":"starred"
+    },
+    {
+      "id": 13,
+      "subject": "Superb Product gallery",
+      "from": {"name":"Marvel", "email":"marvel.3232@yahoo.com", "img":"data/profile/avatar-3.png"},
+      "to": {"name":"Mogen", "email":"mogen.abc@hotmail.com"},
+      "content":"Graphic design is the art of visual communication through the use of images, words, and ideas to give information to the viewers. Graphic design can be used for advertising, or just for entertainment intended for the mind. Designs in balance (or equilibrium) have their parts arrangement planned, keeping a coherent visual pattern (color, shape, space). Balance is a concept based on human perception and the complex nature of the human senses of weight and proportion. Humans can evaluate these visual elements in several situations to find a sense of balance. A design composition does not have to be symmetrical or linear to be considered balanced, the balance is global to all elements even the absence of content. In this context perfectly symmetrical and linear compositions are not necessarily balanced and so asymmetrical or radial distributions of text and graphic elements can achieve balance in a composition.",
+      "attach":[
+        {"name":"c1.png", "url":"img/c1.png"},
+        {"name":"c3.png", "url":"img/c3.png"}
+      ],
+      "date":"14:20 07/16/2015",
+      "label":"",
+      "fold":"starred"
+    },
+    {
+      "id": 12,
+      "subject": "Hi, How are you doing?",
+      "from": {"name":"Linda", "email":"linda.343.334.11@yahoo.com", "img":"data/profile/avatar-4.png"},
+      "to": {"name":"Mogen", "email":"mogen.abc@hotmail.com"},
+      "content":"Graphic design is the art of visual communication through the use of images, words, and ideas to give information to the viewers. Graphic design can be used for advertising, or just for entertainment intended for the mind. Designs in balance (or equilibrium) have their parts arrangement planned, keeping a coherent visual pattern (color, shape, space). Balance is a concept based on human perception and the complex nature of the human senses of weight and proportion. Humans can evaluate these visual elements in several situations to find a sense of balance. A design composition does not have to be symmetrical or linear to be considered balanced, the balance is global to all elements even the absence of content. In this context perfectly symmetrical and linear compositions are not necessarily balanced and so asymmetrical or radial distributions of text and graphic elements can achieve balance in a composition.",
+      "attach":[
+        {"name":"c1.png", "url":"img/c1.png"},
+        {"name":"c3.png", "url":"img/c3.png"}
+      ],
+      "date":"16:20 07/16/2015",
+      "label":"",
+      "fold":"trash"
+    },
+    {
+      "id": 11,
+      "subject": "Month's Schedule released",
+      "from": {"name":"Karl Max", "email":"dev.phone@apple.com", "img":"data/profile/avatar-5.png"},
+      "to": {"name":"Mogen", "email":"mogen.abc@hotmail.com"},
+      "content":"Graphic design is the art of visual communication through the use of images, words, and ideas to give information to the viewers. Graphic design can be used for advertising, or just for entertainment intended for the mind. Designs in balance (or equilibrium) have their parts arrangement planned, keeping a coherent visual pattern (color, shape, space). Balance is a concept based on human perception and the complex nature of the human senses of weight and proportion. Humans can evaluate these visual elements in several situations to find a sense of balance. A design composition does not have to be symmetrical or linear to be considered balanced, the balance is global to all elements even the absence of content. In this context perfectly symmetrical and linear compositions are not necessarily balanced and so asymmetrical or radial distributions of text and graphic elements can achieve balance in a composition.",
+      "attach":[
+        {"name":"c1.png", "url":"img/c1.png"},
+        {"name":"c3.png", "url":"img/c3.png"}
+      ],
+      "date":"18:00 07/16/2015",
+      "label":"work",
+      "fold":"starred"
+    },
+    {
+      "id": 10,
+      "subject": "Your product seems amazingly smart",
+      "from": {"name":"Kate", "email":"kate.343.33331@apple.com", "img":"data/profile/avatar-1.png"},
+      "to":{"name":"Mogen", "email":"mogen.abc@hotmail.com"},
+      "content":"Graphic design is the art of visual communication through the use of images, words, and ideas to give information to the viewers. Graphic design can be used for advertising, or just for entertainment intended for the mind. Designs in balance (or equilibrium) have their parts arrangement planned, keeping a coherent visual pattern (color, shape, space). Balance is a concept based on human perception and the complex nature of the human senses of weight and proportion. Humans can evaluate these visual elements in several situations to find a sense of balance. A design composition does not have to be symmetrical or linear to be considered balanced, the balance is global to all elements even the absence of content. In this context perfectly symmetrical and linear compositions are not necessarily balanced and so asymmetrical or radial distributions of text and graphic elements can achieve balance in a composition.",
+      "attach":[
+        {"name":"c1.png", "url":"img/c1.png"},
+        {"name":"c3.png", "url":"img/c3.png"}
+      ],
+      "date":"12:20 07/16/2015",
+      "label":"market",
+      "fold":"draft"
+    },
+    {
+      "id": 9,
+      "subject": "We play, dance and love.",
+      "from": {"name":"Frank", "email":"frank.james@apple.com", "img":"data/profile/avatar-2.png"},
+      "to": {"name":"Mogen", "email":"mogen.abc@hotmail.com"},
+      "content":"Graphic design is the art of visual communication through the use of images, words, and ideas to give information to the viewers. Graphic design can be used for advertising, or just for entertainment intended for the mind. Designs in balance (or equilibrium) have their parts arrangement planned, keeping a coherent visual pattern (color, shape, space). Balance is a concept based on human perception and the complex nature of the human senses of weight and proportion. Humans can evaluate these visual elements in several situations to find a sense of balance. A design composition does not have to be symmetrical or linear to be considered balanced, the balance is global to all elements even the absence of content. In this context perfectly symmetrical and linear compositions are not necessarily balanced and so asymmetrical or radial distributions of text and graphic elements can achieve balance in a composition.",
+      "attach":[
+        {"name":"c1.png", "url":"img/c1.png"},
+        {"name":"c3.png", "url":"img/c3.png"}
+      ],
+      "date":"12:20 07/16/2015",
+      "label":"family",
+      "fold":"important"
+    },
+    {
+      "id": 8,
+      "subject": "Your work load increases",
+      "from": {"name":"Jessica", "email":"Jessica@apple.com", "img":"data/profile/avatar-3.png"},
+      "to": {"name":"Mogen", "email":"mogen.abc@hotmail.com"},
+      "content":"Graphic design is the art of visual communication through the use of images, words, and ideas to give information to the viewers. Graphic design can be used for advertising, or just for entertainment intended for the mind. Designs in balance (or equilibrium) have their parts arrangement planned, keeping a coherent visual pattern (color, shape, space). Balance is a concept based on human perception and the complex nature of the human senses of weight and proportion. Humans can evaluate these visual elements in several situations to find a sense of balance. A design composition does not have to be symmetrical or linear to be considered balanced, the balance is global to all elements even the absence of content. In this context perfectly symmetrical and linear compositions are not necessarily balanced and so asymmetrical or radial distributions of text and graphic elements can achieve balance in a composition.",
+      "attach":[
+        {"name":"c1.png", "url":"img/c1.png"},
+        {"name":"c3.png", "url":"img/c3.png"}
+      ],
+      "date":"16:20 07/15/2015",
+      "label":"urgent",
+      "fold":"important"
+    },
+    {
+      "id": 7,
+      "subject": "Brilliant and elegant design",
+      "from": {"name":"Arthur", "email":"arthur@apple.com", "img":"data/profile/avatar-4.png"},
+      "to": {"name":"Mogen", "email":"mogen.abc@hotmail.com"},
+      "content":"Graphic design is the art of visual communication through the use of images, words, and ideas to give information to the viewers. Graphic design can be used for advertising, or just for entertainment intended for the mind. Designs in balance (or equilibrium) have their parts arrangement planned, keeping a coherent visual pattern (color, shape, space). Balance is a concept based on human perception and the complex nature of the human senses of weight and proportion. Humans can evaluate these visual elements in several situations to find a sense of balance. A design composition does not have to be symmetrical or linear to be considered balanced, the balance is global to all elements even the absence of content. In this context perfectly symmetrical and linear compositions are not necessarily balanced and so asymmetrical or radial distributions of text and graphic elements can achieve balance in a composition.",
+      "attach":[
+        {"name":"c1.png", "url":"img/c1.png"},
+        {"name":"c3.png", "url":"img/c3.png"}
+      ],
+      "date":"10:20 07/15/2015",
+      "label":"market",
+      "fold":"sent",
+      "state":"unread"
+    },
+    {
+      "id": 6,
+      "subject": "What a lovely lovely day",
+      "from": {"name":"Leon", "email":"Jobs@jobhunter.com", "img":"data/profile/avatar-5.png"},
+      "to": {"name":"Mogen", "email":"mogen.abc@hotmail.com"},
+      "content":"Graphic design is the art of visual communication through the use of images, words, and ideas to give information to the viewers. Graphic design can be used for advertising, or just for entertainment intended for the mind. Designs in balance (or equilibrium) have their parts arrangement planned, keeping a coherent visual pattern (color, shape, space). Balance is a concept based on human perception and the complex nature of the human senses of weight and proportion. Humans can evaluate these visual elements in several situations to find a sense of balance. A design composition does not have to be symmetrical or linear to be considered balanced, the balance is global to all elements even the absence of content. In this context perfectly symmetrical and linear compositions are not necessarily balanced and so asymmetrical or radial distributions of text and graphic elements can achieve balance in a composition.",
+      "attach":[
+        {"name":"c1.png", "url":"img/c1.png"},
+        {"name":"c3.png", "url":"img/c3.png"}
+      ],
+      "date":"23:20 07/15/2015",
+      "label":"client",
+      "fold":"starred",
+      "state":"unread"
+    },
+    {
+      "id": 5,
+      "subject": "Meeting at 2",
+      "from": {"name":"Peter", "email":"Peter@microsoft.com", "img":"data/profile/avatar-1.png"},
+      "to": {"name":"Mogen", "email":"mogen.abc@hotmail.com"},
+      "content":"Graphic design is the art of visual communication through the use of images, words, and ideas to give information to the viewers. Graphic design can be used for advertising, or just for entertainment intended for the mind. Designs in balance (or equilibrium) have their parts arrangement planned, keeping a coherent visual pattern (color, shape, space). Balance is a concept based on human perception and the complex nature of the human senses of weight and proportion. Humans can evaluate these visual elements in several situations to find a sense of balance. A design composition does not have to be symmetrical or linear to be considered balanced, the balance is global to all elements even the absence of content. In this context perfectly symmetrical and linear compositions are not necessarily balanced and so asymmetrical or radial distributions of text and graphic elements can achieve balance in a composition.",
+      "attach":[
+        {"name":"c1.png", "url":"img/c1.png"},
+        {"name":"c3.png", "url":"img/c3.png"}
+      ],
+      "date":"22:20 07/15/2015",
+      "label":"",
+      "fold":"sent"
+    },
+    {
+      "id": 4,
+      "subject": "Lunch Tomorrow",
+      "from": {"name":"Nevil", "email":"newsletter@yahoo.com", "img":"data/profile/avatar-2.png"},
+      "to": {"name":"Mogen", "email":"mogen.abc@hotmail.com"},
+      "content":"Graphic design is the art of visual communication through the use of images, words, and ideas to give information to the viewers. Graphic design can be used for advertising, or just for entertainment intended for the mind. Designs in balance (or equilibrium) have their parts arrangement planned, keeping a coherent visual pattern (color, shape, space). Balance is a concept based on human perception and the complex nature of the human senses of weight and proportion. Humans can evaluate these visual elements in several situations to find a sense of balance. A design composition does not have to be symmetrical or linear to be considered balanced, the balance is global to all elements even the absence of content. In this context perfectly symmetrical and linear compositions are not necessarily balanced and so asymmetrical or radial distributions of text and graphic elements can achieve balance in a composition.",
+      "attach":[
+        {"name":"c1.png", "url":"img/c1.png"},
+        {"name":"c3.png", "url":"img/c3.png"}
+      ],
+      "date":"21:20 07/15/2015",
+      "label":"work",
+      "fold":"starred"
+    },
+    {
+      "id": 3,
+      "subject": "Nice Product gallery",
+      "from": {"name":"Marvel", "email":"marvel.3232@yahoo.com", "img":"data/profile/avatar-3.png"},
+      "to": {"name":"Mogen", "email":"mogen.abc@hotmail.com"},
+      "content":"Graphic design is the art of visual communication through the use of images, words, and ideas to give information to the viewers. Graphic design can be used for advertising, or just for entertainment intended for the mind. Designs in balance (or equilibrium) have their parts arrangement planned, keeping a coherent visual pattern (color, shape, space). Balance is a concept based on human perception and the complex nature of the human senses of weight and proportion. Humans can evaluate these visual elements in several situations to find a sense of balance. A design composition does not have to be symmetrical or linear to be considered balanced, the balance is global to all elements even the absence of content. In this context perfectly symmetrical and linear compositions are not necessarily balanced and so asymmetrical or radial distributions of text and graphic elements can achieve balance in a composition.",
+      "attach":[
+        {"name":"c1.png", "url":"img/c1.png"},
+        {"name":"c3.png", "url":"img/c3.png"}
+      ],
+      "date":"14:20 07/14/2015",
+      "label":"",
+      "fold":"starred"
+    },
+    {
+      "id": 2,
+      "subject": "How are you doing?",
+      "from": {"name":"Linda", "email":"linda.343.334.11@yahoo.com", "img":"data/profile/avatar-4.png"},
+      "to": {"name":"Mogen", "email":"mogen.abc@hotmail.com"},
+      "content":"Graphic design is the art of visual communication through the use of images, words, and ideas to give information to the viewers. Graphic design can be used for advertising, or just for entertainment intended for the mind. Designs in balance (or equilibrium) have their parts arrangement planned, keeping a coherent visual pattern (color, shape, space). Balance is a concept based on human perception and the complex nature of the human senses of weight and proportion. Humans can evaluate these visual elements in several situations to find a sense of balance. A design composition does not have to be symmetrical or linear to be considered balanced, the balance is global to all elements even the absence of content. In this context perfectly symmetrical and linear compositions are not necessarily balanced and so asymmetrical or radial distributions of text and graphic elements can achieve balance in a composition.",
+      "attach":[
+        {"name":"c1.png", "url":"img/c1.png"},
+        {"name":"c3.png", "url":"img/c3.png"}
+      ],
+      "date":"16:20 07/10/2015",
+      "label":"",
+      "fold":"trash"
+    },
+    {
+      "id": 1,
+      "subject": "Schedule released",
+      "from": {"name":"Karl Max", "email":"dev.phone@apple.com", "img":"data/profile/avatar-5.png"},
+      "to": {"name":"Mogen", "email":"mogen.abc@hotmail.com"},
+      "content":"Graphic design is the art of visual communication through the use of images, words, and ideas to give information to the viewers. Graphic design can be used for advertising, or just for entertainment intended for the mind. Designs in balance (or equilibrium) have their parts arrangement planned, keeping a coherent visual pattern (color, shape, space). Balance is a concept based on human perception and the complex nature of the human senses of weight and proportion. Humans can evaluate these visual elements in several situations to find a sense of balance. A design composition does not have to be symmetrical or linear to be considered balanced, the balance is global to all elements even the absence of content. In this context perfectly symmetrical and linear compositions are not necessarily balanced and so asymmetrical or radial distributions of text and graphic elements can achieve balance in a composition.",
+      "attach":[
+        {"name":"c1.png", "url":"img/c1.png"},
+        {"name":"c3.png", "url":"img/c3.png"}
+      ],
+      "date":"18:00 07/10/2015",
+      "label":"work",
+      "fold":"starred"
+    }
+  ]
+}

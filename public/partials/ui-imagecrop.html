@@ -1,0 +1,42 @@
+<div class='content-wrapper' ng-init="app.settings.pagetitle = 'Image Cropper';">
+    <div class="col-lg-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Image Cropper</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12" ng-controller="ImgCropCtrl">
+                        <div class="form-group">
+                            <label for="fileInput" class="form-label">File input</label>
+                            <input type="file" id="fileInput">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-8 col-sm-8 col-xs-12">
+                                <div class="">
+                                    <div class="bg-light" style="height:320px">
+                                        <img-crop image="myImage" result-image="myCroppedImage" result-image-size="160" area-type="{{cropType}}"></img-crop>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                <div class="">
+                                    <div class="bg-light">
+                                        <img ng-src="{{myCroppedImage}}" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            <button class="btn btn-default" ng-model="cropType" uib-btn-radio="'circle'">Circle</button>
+                            <button class="btn btn-default" ng-model="cropType" uib-btn-radio="'square'">Square</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

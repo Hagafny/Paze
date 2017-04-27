@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="app" class="no-js {{app.settings.layoutBoxed ? 'boxed' : ''}}">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Slant Admin - Angular</title>
+    <meta name="description" content="AngularJS" , "admin", "widgets", "admin panel", "flat ui", "ui", "web app", "app", "backend", "angular", "dashboard", "bootstrap", "charts", "ui kit", "responsive" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+    <link rel='stylesheet' href='../bower_components/angular-loading-bar/build/loading-bar.min.css' type='text/css' media='all' />
+    <link rel="stylesheet" href="css/app.min.css" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600|Roboto+Condensed:300|Open+Sans:700,300,600,400' rel='stylesheet' type='text/css'>
+</head>
+
+<body ng-controller="AppCtrl" class="{{app.settings.layoutBoxed ? 'boxed' : ''}}">
+    <div ui-view></div>
+    <script src="js/app.min.js"></script>
+</body>
+
+</html>

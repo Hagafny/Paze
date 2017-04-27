@@ -1,0 +1,667 @@
+<div class='content-wrapper' ng-init="app.settings.pagetitle = 'Form Elements';">
+    <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Basic Elements</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-bottom-0">
+                <div class="row">
+                    <div class="col-lg-5 col-md-6 col-sm-6 col-xs-12">
+                        <div class="form-group">
+                            <label class="form-label" for="field-1">Default Text Field</label>
+                            <span class="desc"></span>
+                            <div class="controls">
+                                <input type="text" class="form-control" id="field-1">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="field-2">Password Field</label>
+                            <span class="desc">e.g. "Cre@t!v!ty"</span>
+                            <div class="controls">
+                                <input type="password" value="Cre@t!v!ty" class="form-control" id="field-2">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="field-4">Placeholder</label>
+                            <span class="desc">e.g. "Username"</span>
+                            <div class="controls">
+                                <input type="text" id="field-4" placeholder="Enter your desired text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group has-help">
+                            <label class="form-label" for="field-13">Help Field</label>
+                            <div class="controls">
+                                <input type="text" class="form-control" id="field-13">
+                                <span class="help-block">A help or brief description message of the input field.</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="field-6">Text area</label>
+                            <span class="desc">e.g. "Enter any size of text description here"</span>
+                            <div class="controls">
+                                <textarea class="form-control" cols="5" id="field-6"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-1 hidden-md hidden-xs hidden-sm"></div>
+                    <div class="col-lg-5 col-md-6 col-sm-6 col-xs-12">
+                        <div class="form-group has-error">
+                            <label class="form-label" for="field-8">Error Field</label>
+                            <span class="desc"></span>
+                            <div class="controls">
+                                <input type="text" class="form-control" id="field-8">
+                            </div>
+                        </div>
+                        <div class="form-group has-warning">
+                            <label class="form-label" for="field-9">Warning Field</label>
+                            <span class="desc"></span>
+                            <div class="controls">
+                                <input type="text" class="form-control" id="field-9">
+                            </div>
+                        </div>
+                        <div class="form-group has-success">
+                            <label class="form-label" for="field-10">Success Field</label>
+                            <span class="desc"></span>
+                            <div class="controls">
+                                <input type="text" class="form-control" id="field-10">
+                            </div>
+                        </div>
+                        <div class="form-group has-info">
+                            <label class="form-label" for="field-11">Info Field</label>
+                            <span class="desc"></span>
+                            <div class="controls">
+                                <input type="text" class="form-control" id="field-11">
+                            </div>
+                        </div>
+                        <div class="form-group has-focus">
+                            <label class="form-label" for="field-12">Focus</label>
+                            <span class="desc"></span>
+                            <div class="controls">
+                                <input type="text" class="form-control" id="field-12">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 
+
+                    <div class="col-lg-8 col-md-8 col-sm-10 col-xs-12">
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="field-5">Disabled</label>
+                            <span class="desc">e.g. "non-editable text"</span>
+                            <div class="controls">
+                                <input type="text" id="field-5" placeholder="Disabled input field" class="form-control" disabled="disabled">
+                            </div>
+                        </div>
+                       
+                        
+                        <div class="form-group has-static">
+                            <label class="form-label">Static Field</label>
+                            <div class="controls">
+                                <p class="form-control-static">A static text field</p>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Input Groups & Size</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <h4>Iconic Groups</h4>
+                        <div class="input-group transparent">
+                            <span class="input-group-addon">
+                    <i class="fa fa-user"></i>
+                </span>
+                            <input type="text" class="form-control" placeholder="Transparent">
+                        </div>
+                        <div class="input-group" inputgroup>
+                            <span class="input-group-addon">
+                            <span class="arrow"></span>
+                            <i class="fa fa-envelope"></i>
+                            </span>
+                            <input type="text" class="form-control" placeholder="Default">
+                        </div>
+                        <div class="input-group primary" inputgroup>
+                            <span class="input-group-addon">                
+                    <span class="arrow"></span>
+                            <i class="fa fa-user"></i>
+                            </span>
+                            <input type="text" class="form-control" placeholder="Primary">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <h4>Text Groups</h4>
+                        <div class="input-group" inputgroup>
+                            <input type="text" class="form-control" placeholder="Name" aria-describedby="basic-addon2">
+                            <span class="input-group-addon" id="basic-addon2">@example.com</span>
+                        </div>
+                        <div class="input-group" inputgroup>
+                            <span class="input-group-addon">$</span>
+                            <input type="text" class="form-control">
+                            <span class="input-group-addon">.00</span>
+                        </div>
+                        <div class="input-group primary" inputgroup>
+                            <span class="input-group-addon">$</span>
+                            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                            <span class="input-group-addon">.00</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <h4>Checkbox & Radio</h4>
+                        <div class="input-group " inputgroup>
+                            <span class="input-group-addon">
+                                <label class="icheck icheck-sm" style='margin:2px 0px 0px 0px;'>
+                                    <input type="checkbox" value="">
+                                    <i></i>
+                                </label>
+                            </span>
+                            <input type="text" class="form-control" placeholder="Input with Checkbox">
+                        </div>
+                        <div class="input-group " inputgroup>
+                            <span class="input-group-addon">
+                                <label class="icheck icheck-sm" style='margin:2px 0px 0px 0px;'>
+                                    <input type="radio" value="">
+                                    <i></i>
+                                </label>
+                            </span>
+                            <input type="text" class="form-control" placeholder="Input with Radio">
+                        </div>
+                        <div class="input-group primary" inputgroup>
+                            <span class="input-group-addon">
+                                <label class="icheck icheck-sm" style='margin:2px 0px 0px 0px;'>
+                                    <input type="checkbox" value="">
+                                    <i></i>
+                                </label>
+                            </span>
+                            <input type="text" class="form-control" placeholder="Input with Checkbox">
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <br>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <h4>Input Sizes</h4>
+                        <div class="input-group" inputgroup>
+                            <input class="form-control input-lg " type="text" placeholder=".input-lg">
+                        </div>
+                        <div class="input-group" inputgroup>
+                            <input class="form-control " type="text" placeholder="Default input">
+                        </div>
+                        <div class="input-group" inputgroup>
+                            <input class="form-control input-sm " type="text" placeholder=".input-sm">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <h4>Select Sizes</h4>
+                        <div class="input-group" inputgroup>
+                            <select class="form-control input-lg ">
+                                <option>Large Select</option>
+                                <option>Option 1</option>
+                                <option>Option 2</option>
+                                <option>Option 3</option>
+                            </select>
+                        </div>
+                        <div class="input-group" inputgroup>
+                            <select class="form-control ">
+                                <option>Default Select</option>
+                                <option>Option 1</option>
+                                <option>Option 2</option>
+                                <option>Option 3</option>
+                            </select>
+                        </div>
+                        <div class="input-group" inputgroup>
+                            <select class="form-control input-sm ">
+                                <option>Small Select</option>
+                                <option>Option 1</option>
+                                <option>Option 2</option>
+                                <option>Option 3</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Switches</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-bottom-15">
+                <!-- START -->
+                <div class='row'>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 form-switches">
+                        <h4>Colors</h4>
+                        <label class="iswitch iswitch-md bg-primary">
+                            <input type="checkbox" checked>
+                            <i></i>
+                        </label>
+                        <label class="iswitch iswitch-md bg-accent ">
+                            <input type="checkbox" checked>
+                            <i></i>
+                        </label>
+                        <label class="iswitch iswitch-md bg-secondary ">
+                            <input type="checkbox" checked>
+                            <i></i>
+                        </label>
+                        <label class="iswitch iswitch-md bg-danger ">
+                            <input type="checkbox" checked>
+                            <i></i>
+                        </label>
+                        <div class="clearfix"></div>
+                        <label class="iswitch iswitch-md bg-success ">
+                            <input type="checkbox" checked>
+                            <i></i>
+                        </label>
+                        <label class="iswitch iswitch-md bg-warning ">
+                            <input type="checkbox" checked>
+                            <i></i>
+                        </label>
+                        <label class="iswitch iswitch-md bg-info ">
+                            <input type="checkbox" checked>
+                            <i></i>
+                        </label>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 form-switches">
+                        <h4>Sizes</h4>
+                        <label class="iswitch bg-primary ">
+                            <input type="checkbox" checked>
+                            <i></i>
+                        </label>
+                        <label class="iswitch bg-accent ">
+                            <input type="checkbox" checked>
+                            <i></i>
+                        </label>
+                        <div class="clearfix"></div>
+                        <label class="iswitch iswitch-md bg-primary ">
+                            <input type="checkbox" checked>
+                            <i></i>
+                        </label>
+                        <label class="iswitch iswitch-md bg-accent ">
+                            <input type="checkbox" checked>
+                            <i></i>
+                        </label>
+                        <div class="clearfix"></div>
+                        <label class="iswitch iswitch-lg bg-primary ">
+                            <input type="checkbox" checked>
+                            <i></i>
+                        </label>
+                        <label class="iswitch iswitch-lg bg-accent ">
+                            <input type="checkbox" checked>
+                            <i></i>
+                        </label>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 form-switches">
+                        <h4>Radio Switch</h4>
+                        <div class="form-group margin-bottom-0">
+                            <label class="iswitch bg-primary ">
+                                <input type="radio" name='switch1' checked>
+                                <i></i>
+                            </label>
+                            <label class="iswitch bg-warning ">
+                                <input type="radio" name='switch1'>
+                                <i></i>
+                            </label>
+                        </div>
+                        <div class="form-group margin-bottom-0">
+                            <label class="iswitch bg-primary iswitch-md">
+                                <input type="radio" name='switch2' checked>
+                                <i></i>
+                            </label>
+                            <label class="iswitch bg-warning iswitch-md">
+                                <input type="radio" name='switch2'>
+                                <i></i>
+                            </label>
+                        </div>
+                        <div class="form-group margin-bottom-0">
+                            <label class="iswitch bg-primary iswitch-lg">
+                                <input type="radio" name='switch3' checked>
+                                <i></i>
+                            </label>
+                            <label class="iswitch bg-warning iswitch-lg">
+                                <input type="radio" name='switch3'>
+                                <i></i>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!-- END -->
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Checkbox & Radio Buttons</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-bottom-0">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <h4>Checkboxes</h4>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 margin-bottom-15">
+                        <h4>States</h4>
+                        <div class="checkbox">
+                            <label class="icheck">
+                                <input type="checkbox" value="">
+                                <i></i> Option
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label class="icheck">
+                                <input type="checkbox" checked value="">
+                                <i></i> Option checked
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label class="icheck">
+                                <input type="checkbox" checked disabled value="">
+                                <i></i> Option checked and disabled
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label class="icheck">
+                                <input type="checkbox" disabled value="">
+                                <i></i> Option disabled
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 margin-bottom-15">
+                        <h4>Colors</h4>
+                        <div class="checkbox">
+                            <label class="icheck icheck-primary">
+                                <input type="checkbox" value="" checked>
+                                <i></i> Default (Primary)
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label class="icheck icheck-accent">
+                                <input type="checkbox" value="" checked>
+                                <i></i> Accent
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label class="icheck icheck-primary">
+                                <input type="checkbox" value="" checked>
+                                <i></i> primary
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label class="icheck icheck-success">
+                                <input type="checkbox" value="" checked>
+                                <i></i> Success
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label class="icheck icheck-warning">
+                                <input type="checkbox" value="" checked>
+                                <i></i> Warning
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label class="icheck icheck-danger">
+                                <input type="checkbox" value="" checked>
+                                <i></i> Danger
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label class="icheck icheck-info">
+                                <input type="checkbox" value="" checked>
+                                <i></i> Info
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 margin-bottom-15">
+                        <h4>Sizes</h4>
+                        <div class="checkbox">
+                            <label class="icheck icheck-sm">
+                                <input type="checkbox" checked>
+                                <i></i> Small size checkbox
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label class="icheck">
+                                <input type="checkbox" checked>
+                                <i></i> Default (Medium) size checkbox
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label class="icheck icheck-lg">
+                                <input type="checkbox" checked>
+                                <i></i> Large size checkbox
+                            </label>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <br>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <h4>Radio Buttons</h4>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 margin-bottom-15">
+                        <h4>States</h4>
+                        <div class="radio">
+                            <label class="icheck">
+                                <input type="radio" value="" name="opt1">
+                                <i></i> Option
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label class="icheck">
+                                <input type="radio" checked value="" name="opt2">
+                                <i></i> Option checked
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label class="icheck">
+                                <input type="radio" checked disabled value="" name="opt3">
+                                <i></i> Option checked and disabled
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label class="icheck">
+                                <input type="radio" disabled value="" name="opt4">
+                                <i></i> Option disabled
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 margin-bottom-15">
+                        <h4>Colors</h4>
+                        <div class="radio">
+                            <label class="icheck icheck-primary">
+                                <input type="radio" value="" checked>
+                                <i></i> Default (Primary)
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label class="icheck icheck-accent">
+                                <input type="radio" value="" checked>
+                                <i></i> Accent
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label class="icheck icheck-primary">
+                                <input type="radio" value="" checked>
+                                <i></i> primary
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label class="icheck icheck-success">
+                                <input type="radio" value="" checked>
+                                <i></i> Success
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label class="icheck icheck-warning">
+                                <input type="radio" value="" checked>
+                                <i></i> Warning
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label class="icheck icheck-danger">
+                                <input type="radio" value="" checked>
+                                <i></i> Danger
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label class="icheck icheck-info">
+                                <input type="radio" value="" checked>
+                                <i></i> Info
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 margin-bottom-15">
+                        <h4>Sizes</h4>
+                        <div class="radio">
+                            <label class="icheck icheck-sm">
+                                <input type="radio" checked>
+                                <i></i> Small size radio
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label class="icheck">
+                                <input type="radio" checked>
+                                <i></i> Default (Medium) size radio
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label class="icheck icheck-lg">
+                                <input type="radio" checked>
+                                <i></i> Large size radio
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Input Grid</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <!-- START -->
+                <div class='row'>
+                    <div class="col-xs-12">
+                        <input type="text" class="form-control" placeholder=".col-xs-12">
+                    </div>
+                </div>
+                <br>
+                <div class='row'>
+                    <div class="col-xs-6">
+                        <input type="text" class="form-control" placeholder=".col-xs-6">
+                    </div>
+                    <div class="col-xs-6">
+                        <input type="text" class="form-control" placeholder=".col-xs-6">
+                    </div>
+                </div>
+                <br>
+                <div class='row'>
+                    <div class="col-xs-3">
+                        <input type="text" class="form-control" placeholder=".col-xs-3">
+                    </div>
+                    <div class="col-xs-3">
+                        <input type="text" class="form-control" placeholder=".col-xs-3">
+                    </div>
+                    <div class="col-xs-3">
+                        <input type="text" class="form-control" placeholder=".col-xs-3">
+                    </div>
+                    <div class="col-xs-3">
+                        <input type="text" class="form-control" placeholder=".col-xs-3">
+                    </div>
+                </div>
+                <br>
+                <div class='row'>
+                    <div class="col-xs-2">
+                        <input type="text" class="form-control" placeholder=".col-xs-2">
+                    </div>
+                    <div class="col-xs-2">
+                        <input type="text" class="form-control" placeholder=".col-xs-2">
+                    </div>
+                    <div class="col-xs-2">
+                        <input type="text" class="form-control" placeholder=".col-xs-2">
+                    </div>
+                    <div class="col-xs-2">
+                        <input type="text" class="form-control" placeholder=".col-xs-2">
+                    </div>
+                    <div class="col-xs-2">
+                        <input type="text" class="form-control" placeholder=".col-xs-2">
+                    </div>
+                    <div class="col-xs-2">
+                        <input type="text" class="form-control" placeholder=".col-xs-2">
+                    </div>
+                </div>
+                <br>
+                <div class='row'>
+                    <div class="col-xs-1">
+                        <input type="text" class="form-control" placeholder=".xs-1">
+                    </div>
+                    <div class="col-xs-1 ">
+                        <input type="text" class="form-control" placeholder=".xs-1">
+                    </div>
+                    <div class="col-xs-1 ">
+                        <input type="text" class="form-control" placeholder=".xs-1">
+                    </div>
+                    <div class="col-xs-1 ">
+                        <input type="text" class="form-control" placeholder=".xs-1">
+                    </div>
+                    <div class="col-xs-1 ">
+                        <input type="text" class="form-control" placeholder=".xs-1">
+                    </div>
+                    <div class="col-xs-1 ">
+                        <input type="text" class="form-control" placeholder=".xs-1">
+                    </div>
+                    <div class="col-xs-1 ">
+                        <input type="text" class="form-control" placeholder=".xs-1">
+                    </div>
+                    <div class="col-xs-1 ">
+                        <input type="text" class="form-control" placeholder=".xs-1">
+                    </div>
+                    <div class="col-xs-1 ">
+                        <input type="text" class="form-control" placeholder=".xs-1">
+                    </div>
+                    <div class="col-xs-1 ">
+                        <input type="text" class="form-control" placeholder=".xs-1">
+                    </div>
+                    <div class="col-xs-1 ">
+                        <input type="text" class="form-control" placeholder=".xs-1">
+                    </div>
+                    <div class="col-xs-1 ">
+                        <input type="text" class="form-control" placeholder=".xs-1">
+                    </div>
+                </div>
+                <!-- END -->
+            </div>
+        </section>
+    </div>
+</div>

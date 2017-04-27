@@ -1,0 +1,865 @@
+<div class='content-wrapper' ng-init="app.settings.pagetitle = 'Widgets';">
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <section class="box nobox">
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="wid-weather">
+                            <div class="today col-md-12 col-sm-12 col-xs-12 bg-primary">
+                                <div class="location pull-left">
+                                    <h3>Los Angeles, USA</h3>
+                                    <span>Today, 17<sup>th</sup> July 2015</span>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="degree">
+                                    <i class="material-icons icon-lg text-white">wb_cloudy</i><span>Now</span>
+                                    <h3>18°</h3>
+                                    <div class="clearfix"></div>
+                                    <h4 class="text-white text-center">Hot & Sunny</h4>
+                                    <span class='windspeed'><i class='fa fa-cloud icon-xs'></i> &nbsp; <strong>57</strong> <sup>MPH</sup></span>
+                                </div>
+                                <div class="clearfix"></div>
+                                <div class="timings">
+                                    <ul class="list-inline list-unstyled">
+                                        <li><span class='time'>13:00</span><i class='fa fa-cloud icon-sm'></i>
+                                            <h4 class='temp'>21°</h4></li>
+                                        <li><span class='time'>15:00</span><i class='fa fa-cloud icon-sm'></i>
+                                            <h4 class='temp'>22°</h4></li>
+                                        <li><span class='time'>17:00</span><i class='fa fa-cloud icon-sm'></i>
+                                            <h4 class='temp'>22°</h4></li>
+                                        <li><span class='time'>19:00</span><i class='fa fa-cloud icon-sm'></i>
+                                            <h4 class='temp'>20°</h4></li>
+                                        <li class="hidden-md"><span class='time'>21:00</span><i class='fa fa-cloud icon-sm'></i>
+                                            <h4 class='temp'>18°</h4></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="clearfix hidden-lg hidden-md hidden-sm"></div>
+    
+<div class="col-lg-6">
+        <section class="box">
+            <header class="panel_header">
+                <h2 class="title pull-left">Messages Widget</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>        
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="wid-notification" ng-controller="MessagesWidgetCtrl">
+                            <perfect-scrollbar wheel-propagation="true" suppress-scroll-x="true" min-scrollbar-length="20" class='ps-messages-widget'>
+                                <ul class="list-unstyled messages-widget">
+                                    <li class="{{message.read ? 'read' : 'unread'}} status-{{message.status}}" ng-repeat="message in messages">
+                                        <a href="javascript:;">
+                                            <div class="user-img">
+                                                <img ng-src="{{message.avatar}}" alt="user-image" class="img-circle img-inline">
+                                            </div>
+                                            <div>
+                                                <span class="name">
+                                                    <strong>{{message.name}}</strong>
+                                                    <span class="time small">- {{message.time}}</span>
+                                                <span class="profile-status {{message.status}} pull-right"></span>
+                                                </span>
+                                                <span class="desc small">
+                                                    {{message.description}}
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </perfect-scrollbar>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+<div class="clearfix"></div>
+    
+
+
+
+
+
+
+    <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Sign Up Widget</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <form class="form-horizontal" role="form">
+                            <div class="input-group" inputgroup>
+                                <span class="input-group-addon">
+                                            <span class="arrow"></span>
+                                <i class="fa fa-user"></i>
+                                </span>
+                                <input type="text" class="form-control" placeholder="Your Name" id='inputName2' value=''>
+                            </div>
+                            <br>
+                            <div class="input-group" inputgroup>
+                                <span class="input-group-addon">
+                                            <span class="arrow"></span>
+                                <i class="fa fa-envelope"></i>
+                                </span>
+                                <input type="text" class="form-control" placeholder="Your Email" id='inputEmail2' value=''>
+                            </div>
+                            <br>
+                            <div class="input-group" inputgroup>
+                                <span class="input-group-addon">
+                                            <span class="arrow"></span>
+                                <i class="fa fa-lock"></i>
+                                </span>
+                                <input type="password" class="form-control" placeholder="Your Password" id='inputpw2' value=''>
+                            </div>
+                            <br>
+                            <div class="input-group" inputgroup>
+                                <label class="icheck form-label ">
+                                    <input type="checkbox" value="" checked>
+                                    <i></i> Remember me
+                                </label>
+                            </div>
+                            <br>
+                            <div class="input-group" inputgroup>
+                                <div class="">
+                                    <button type="submit" ng-click="ok()" class="btn btn-primary">Sign in</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-6 col-md-12 col-xs-12 col-sm-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Project Report Widget</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 wid-project-report">
+                        <div class="row">
+                            <div class="col-lg-6 col-xs-12 col-sm-12 col-md-6">
+                                <div ui-jq="easyPieChart" ui-options="{
+                      easing: 'easeOutBounce',
+                      barColor: '{{app.color.primary}}',
+                      trackColor: '#f5f5f5',
+                      scaleColor: '#eaeaea',
+                      lineCap: 'square',
+                      lineWidth: 5,
+                      size: 120,
+                      animate: 1000,
+                      percent: 66
+                    }">
+                                    <div>
+                                        <span class="text-primary percent">66%</span>
+                                    </div>
+                                </div>
+                                <h4 class="text-center margin-top-10 margin-bottom-10">Task Completed</h4>
+                            </div>
+                            <div class="col-lg-6 col-xs-12 col-sm-12 col-md-6">
+                                <div ui-jq="easyPieChart" ui-options="{
+                      easing: 'easeOutBounce',
+                      barColor: '{{app.color.accent}}',
+                      trackColor: '#f5f5f5',
+                      scaleColor: '#eaeaea',
+                      lineCap: 'square',
+                      lineWidth: 5,
+                      size: 120,
+                      animate: 1000,
+                      percent: 45
+                    }">
+                                    <div>
+                                        <span class="text-accent percent">45%</span>
+                                    </div>
+                                </div>
+                                <h4 class="text-center margin-top-10 margin-bottom-10">Resources Used</h4>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <h4 class=" margin-top-10 margin-bottom-10">Tasks List</h4>
+                        <perfect-scrollbar wheel-propagation="true" suppress-scroll-x="true" min-scrollbar-length="20" class='ps-project-tasks' style='height: 90px;'>
+                            <div class='task'><span class="label label-accent">09:30</span> &nbsp; Server Reboot & Updations Required</div>
+                            <div class='task'><span class="label label-primary">11:30</span> &nbsp; Team Meetup & Planning Resources</div>
+                            <div class='task'><span class="label label-accent">16:30</span> &nbsp; Finance Report Submission Gathering</div>
+                            <div class='task'><span class="label label-accent">18:30</span> &nbsp; Daily Updates sticker to be posted</div>
+                            <div class='task'><span class="label label-primary">19:30</span> &nbsp; New Products to be launced by tonite</div>
+                            <div class='task'><span class="label label-accent">20:00</span> &nbsp; Services hosting order replanning</div>
+                            <div class='task'><span class="label label-warning">21:00</span> &nbsp; Manage new clients list</div>
+                        </perfect-scrollbar>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="clearfix"></div>
+    
+
+
+    <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+        <section class="box">
+        <header class="panel_header">
+                <h2 class="title pull-left">Visitor's Statistics</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-top-45">
+                <div class="">
+                    <div class="">
+                        <div class="wid-vectormap">
+                            <div class="row">
+                                <div class="col-md-9 col-sm-9 col-xs-12 padding-left-10">
+                                    <div class="col-md-12 col-sm-12 col-xs-12 padding-left-0" ng-controller="JVectorMapDemoCtrl">
+                                        <div style="width: 100%; height: 300px;" ui-jq="vectorMap" ui-options="{            
+                        map: 'world_mill_en',
+                        markers: {{world_markers}},
+                        normalizeFunction: 'polynomial',
+                        zoomOnScroll: false,
+                        scaleColors: ['#1fb5ac', '#1fb5ac'],
+                        hoverOpacity: 0.7,
+                        hoverColor: false,
+                        regionsSelectable: true,
+                        markersSelectable: true,
+                        markersSelectableOne: true,
+                        panOnDrag: true,
+
+                        focusOn: {
+                            x: 0.5,
+                            y: 0.5,
+                            scale: 1,
+                            animate: true
+                        },
+                        regionStyle: {
+                            initial: {
+                                fill: '#FF6E40',
+                                'fill-opacity': 0.7,
+                                stroke: '#FF6E40',
+                                'stroke-width': 0,
+                                'stroke-opacity': 0
+                            },
+                            hover: {
+                                fill: '{{app.color.accent}}',
+                                'fill-opacity': 1,
+                                cursor: 'pointer'
+                            },
+                            selected: {
+                                fill: '{{app.color.accent}}'
+                            },
+                            selectedHover: {}
+                        },
+                        markerStyle: {
+                            initial: {
+                                fill: '#673AB7',
+                                stroke: '#673AB7',
+                                r: 6
+                            },
+                            hover: {
+                                stroke: '{{app.color.warning}}',
+                                'stroke-width': 2,
+                                cursor: 'pointer'
+                            },
+                            selected: {
+                                fill: '{{app.color.warning}}',
+                                'stroke-width': 0,
+                            },
+                        },
+                        backgroundColor: '',
+
+          }">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-3 col-xs-12 map_progress">
+                                    <h4>Unique Visitors</h4>
+                                    <span class='text-muted'><small>Last Week Rise by 62%</small></span>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="62" aria-valuemin="0" aria-valuemax="100" style="width: 62%"></div>
+                                    </div>
+                                    <br>
+                                    <h4>Registrations</h4>
+                                    <span class='text-muted'><small>Up by 57% last 7 days</small></span>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width: 57%"></div>
+                                    </div>
+                                    <br>
+                                    <h4>Direct Sales</h4>
+                                    <span class='text-muted'><small>Last Month Rise by 22%</small></span>
+                                    <div class="progress">
+                                        <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="22" aria-valuemin="0" aria-valuemax="100" style="width: 22%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+        <section class="box nobox">
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="wid-sparkgraph bg-accent">
+                            <span class='bold'>28.95%</span>
+                            <span class='pull-right'><small>Resources Used</small></span>
+                            <div class="clearfix"></div>
+                            <div ng-init="data2=[10, 8, 5, 7, 4, 4, 7, 5, 2, 8, 3, 4, 5,8, 3, 10, 8, 5, 7, 4, 4, 7]" ui-jq="sparkline" ui-options="{{data2}}, {
+                type: 'bar',
+                barColor: '#ffffff',
+                height: '60',
+                barWidth: '12',
+                barSpacing: 1,
+                }" class="sparkline inline">Loading...
+                            </div>
+                        </div>
+                        <div class="wid-sparkgraph bg-success">
+                            <span class='bold'>5312</span>
+                            <span class='pull-right'><small>Orders Placed</small></span>
+                            <div class="clearfix"></div>
+                            <div ng-init="data1=[10, 8, 5, 7, 4, 4, 7, 5, 2, 8, 3, 4, 5]" ui-jq="sparkline" ui-options="{{data1}}, {
+                type: 'line',
+                width: '100%',
+                height: '60',
+                lineWidth: 2,
+                lineColor: '#f5f5f5',
+                fillColor: 'rgba(255,255,255,0.2)',
+                highlightSpotColor: '#ffffff',
+                highlightLineColor: '#ffffff',
+                spotRadius: 3,
+                }" class="sparkline inline">Loading...
+                            </div>
+                        </div>
+                        <div class="wid-sparkgraph bg-primary">
+                            <span class='bold'>542/115</span>
+                            <span class='pull-right'><small>Total / Unique visitors</small></span>
+                            <div class="clearfix"></div>
+                            <div ng-init="data4=[
+                [1, 2],
+                [2, 3],
+                [4, 2],
+                [4, 5],
+                [4, 1],
+                [6, 4],
+                [3, 2],
+                [3, 6],
+                [2, 2],
+                [6, 2],
+                [7, 4],
+                [3, 4],
+                [6, 4],
+                [3, 2],
+                [3, 6],
+                [2, 2],
+                [6, 2],
+                [2, 2],
+                [6, 2],
+                [7, 4],
+                [3, 4],
+                [3, 7]
+            ]" ui-jq="sparkline" ui-options="{{data4}}, {
+                type: 'bar',
+                barColor: '#f5f5f5',
+                height: '60',
+                barWidth: '12',
+                barSpacing: 1,
+                zeroAxis: true,
+                negBarColor: '{{app.color.primary}}',
+                zeroColor: '{{app.color.accent}}',
+                stackedBarColor: ['#ffffff', '{{app.color.primary}}'],
+                }" class="sparkline inline">Loading...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+
+
+
+
+    <div class="col-lg-6">
+        <section class="box nobox">
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="wid-blog">
+                            <div class="bg-primary wid-blog-title">
+                                <h2>Slant Admin - Angular is a beautiful theme with tons of features</h2>
+                                
+                            </div>
+                            <div class="bg-white wid-blog-content">
+                                <div class="pic-wrapper col-md-2 col-sm-2 col-xs-3 text-center">
+                                    <img src="data/profile/avatar-5.png" class="" alt="">
+                                </div>
+                                <div class="info-wrapper col-md-10 col-sm-10 col-xs-9">
+                                    <div class="username">
+                                        <h4 class="text-strong">John Smith</h4>
+                                    </div>
+                                    <div class="info text-muted">
+                                        "Balance" is a concept based on human perception and the complex nature of the human senses of weight and proportion.
+                                    </div>
+                                    <div class="info-details">
+                                        <ul class="list-unstyled list-inline">
+                                            <li><a href="#" class="text-muted">12<sup>th</sup> March, 2015</a></li>
+                                            <li><a href="#" class="text-muted"><i class="fa fa-comment"></i> 584</a></li>
+                                            <li><a href="#" class="text-accent"><i class="fa fa-heart"></i> 12k</a></li>
+                                            <li><a href="#" class="text-muted">More</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+        <section class="box nobox">
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="wid-uprofile-wrapper">
+                            <div class="wid-uprofile bg-primary">
+                                <div class="uprofile-image">
+                                    <img src="data/profile/profile.png" class="img-responsive">
+                                </div>
+                                <div class="uprofile-data">
+                                    <div class="uprofile-name">
+                                        <h3>
+                        <a ui-sref="app.ui.profile">John Carter</a>
+                        <!-- Available statuses: online, idle, busy, away and offline -->
+                        <span class="uprofile-status online"></span>
+                    </h3>
+                                        <p class="uprofile-title">Web Developer</p>
+                                    </div>
+                                    <div class="uprofile-info">
+                                        <ul class="list-unstyled">
+                                            <li><i class='fa fa-home'></i> New York, USA</li>
+                                            <li><i class='fa fa-user'></i> 340 Contacts</li>
+                                            <li><i class='fa fa-suitcase'></i> Tech Lead, YIAM</li>
+                                        </ul>
+                                    </div>
+                                    <div class=" uprofile-social">
+                                        <a href="#" class="btn btn-primary btn-sm facebook"><i class="fa fa-facebook icon-xs"></i></a>
+                                        <a href="#" class="btn btn-primary btn-sm twitter"><i class="fa fa-twitter icon-xs"></i></a>
+                                        <a href="#" class="btn btn-primary btn-sm google-plus"><i class="fa fa-google-plus icon-xs"></i></a>
+                                        <a href="#" class="btn btn-primary btn-sm dribbble"><i class="fa fa-dribbble icon-xs"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+
+<div class="clearfix"></div>
+   
+    <div class="col-lg-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Social Media Widgets</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-bottom-0">
+                <div class="row" ng-controller="CounttoCtrl">
+                    <div class="col-lg-3 col-md-4 col-xs-12 col-sm-6">
+                        <div class="wid-social facebook">
+                            <div class="social-icon">
+                                <i class='fa fa-facebook text-light icon-xlg pull-right'></i>
+                            </div>
+                            <div class="social-info">
+                                <h3 count-to="{{countTo_facebook}}" value="{{countFrom_facebook}}" duration="5" class="number_counter bold count text-light"></h3>
+                                <h3 class="bold count text-light"> K</h3>
+                                <h4 class="counttype text-light">Likes</h4>
+                                <span class="percent">5% increase from last week</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-xs-12 col-sm-6">
+                        <div class="wid-social twitter">
+                            <div class="social-icon">
+                                <i class='fa fa-twitter text-light icon-xlg pull-right'></i>
+                            </div>
+                            <div class="social-info">
+                                <h3 count-to="{{countTo_twitter}}" value="{{countFrom_twitter}}" duration="5" class="number_counter bold count text-light"></h3>
+                                <h4 class="counttype text-light">Tweets</h4>
+                                <span class="percent">2% increase from last week</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-xs-12 col-sm-6">
+                        <div class="wid-social google-plus">
+                            <div class="social-icon">
+                                <i class='fa fa-google-plus text-light icon-xlg pull-right'></i>
+                            </div>
+                            <div class="social-info">
+                                <h3 count-to="{{countTo_googleplus}}" value="{{countFrom_googleplus}}" duration="5" class="number_counter bold count text-light"></h3>
+                                <h4 class="counttype text-light">Circles</h4>
+                                <span class="percent">2% increase from last week</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-xs-12 col-sm-6">
+                        <div class="wid-social dribbble">
+                            <div class="social-icon">
+                                <i class='fa fa-dribbble text-light icon-xlg pull-right'></i>
+                            </div>
+                            <div class="social-info">
+                                <h3 count-to="{{countTo_dribbble}}" value="{{countFrom_dribbble}}" duration="5" class="number_counter bold count text-light"></h3>
+                                <h4 class="counttype text-light">Subscribers</h4>
+                                <span class="percent">7% increase from last week</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-xs-12 col-sm-6">
+                        <div class="wid-social linkedin">
+                            <div class="social-icon">
+                                <i class='fa fa-linkedin text-light icon-xlg pull-right'></i>
+                            </div>
+                            <div class="social-info">
+                                <h3 count-to="{{countTo_linkedin}}" value="{{countFrom_linkedin}}" duration="5" class="number_counter bold count text-light"></h3>
+                                <h4 class="counttype text-light">Connections</h4>
+                                <span class="percent">7% increase from last week</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-xs-12 col-sm-6">
+                        <div class="wid-social youtube">
+                            <div class="social-icon">
+                                <i class='fa fa-youtube text-light icon-xlg pull-right'></i>
+                            </div>
+                            <div class="social-info">
+                                <h3 count-to="{{countTo_youtube}}" value="{{countFrom_youtube}}" duration="5" class="number_counter bold count text-light"></h3>
+                                <h4 class="counttype text-light">Subscribers</h4>
+                                <span class="percent">7% increase from last week</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-xs-12 col-sm-6">
+                        <div class="wid-social skype">
+                            <div class="social-icon">
+                                <i class='fa fa-skype text-light icon-xlg pull-right'></i>
+                            </div>
+                            <div class="social-info">
+                                <h3 count-to="{{countTo_skype}}" value="{{countFrom_skype}}" duration="5" class="number_counter bold count text-light"></h3>
+                                <h4 class="counttype text-light">Contacts</h4>
+                                <span class="percent">7% increase from last week</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-xs-12 col-sm-6">
+                        <div class="wid-social flickr">
+                            <div class="social-icon">
+                                <i class='fa fa-flickr text-light icon-xlg pull-right'></i>
+                            </div>
+                            <div class="social-info">
+                                <h3 count-to="{{countTo_flickr}}" value="{{countFrom_flickr}}" duration="5" class="number_counter bold count text-light"></h3>
+                                <h4 class="counttype text-light">Media</h4>
+                                <span class="percent">7% increase from last week</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Counter & Progress Tiles</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-bottom-0">
+                <div class="row" ng-controller="CounttoCtrl">
+                    <div class="col-lg-3 col-md-4 col-xs-12 col-sm-6">
+                        <div class="tile-counter bg-primary">
+                            <div class="content">
+                                <i class='fa fa-thumbs-up icon-lg'></i>
+                                <h2 count-to="{{countTo}}" value="{{countFrom}}" duration="8" class="number_counter"></h2>
+                                <div class="clearfix"></div>
+                                <span>People liked it !</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-xs-12 col-sm-6">
+                        <div class="tile-counter bg-primary">
+                            <div class="content">
+                                <i class='fa fa-heart icon-lg'></i>
+                                <h2 count-to="{{countTo}}" value="{{countFrom}}" duration="8" class="number_counter"></h2>
+                                <div class="clearfix"></div>
+                                <span>Loved your post !</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-xs-12 col-sm-6">
+                        <div class="tile-counter bg-accent">
+                            <div class="content">
+                                <i class='fa fa-user icon-lg'></i>
+                                <h2 count-to="{{countTo}}" value="{{countFrom}}" duration="8" class="number_counter"></h2>
+                                <div class="clearfix"></div>
+                                <span>New Users</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-xs-12 col-sm-6">
+                        <div class="tile-counter bg-warning">
+                            <div class="content">
+                                <i class='fa fa-share icon-lg'></i>
+                                <h2 count-to="{{countTo}}" value="{{countFrom}}" duration="8" class="number_counter"></h2>
+                                <div class="clearfix"></div>
+                                <span>Shared this post</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="col-lg-3 col-md-4 col-xs-12 col-sm-6">
+                        <div class="tile-progress bg-info">
+                            <div class="content">
+                                <h4><i class='fa fa-dashboard icon-sm'></i> Server Load</h4>
+                                <uib-progressbar value="40" class="progress"></uib-progressbar>
+                                <span>40% increase</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-xs-12 col-sm-6">
+                        <div class="tile-progress bg-success">
+                            <div class="content">
+                                <h4><i class='fa fa-dashboard icon-sm'></i> Server Load</h4>
+                                <uib-progressbar value="40" class="progress"></uib-progressbar>
+                                <span>40% increase</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-xs-12 col-sm-6">
+                        <div class="tile-progress bg-danger">
+                            <div class="content">
+                                <h4><i class='fa fa-dashboard icon-sm'></i> Server Load</h4>
+                                <uib-progressbar value="40" class="progress"></uib-progressbar>
+                                <span>40% increase</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-4 col-xs-12 col-sm-6">
+                        <div class="tile-progress bg-secondary">
+                            <div class="content">
+                                <h4><i class='fa fa-dashboard icon-sm'></i> Server Load</h4>
+                                <uib-progressbar value="40" class="progress"></uib-progressbar>
+                                <span>40% increase</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+<div class="clearfix"></div>
+ <div class="col-lg-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">To Do Task Widget</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-bottom-0">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-xs-12 col-sm-6">
+                        <div class="slant-widget slant-todo-task bg-primary" ui-todowidget>
+                            <div class="wid-task-header">
+                                <div class="wid-icon">
+                                    <i class="fa fa-tasks"></i>
+                                </div>
+                                <div class="wid-text">
+                                    <h4>To do Tasks</h4>
+                                    <span>Wed, <small>11<sup>th</sup> March 2015</small></span>
+                                </div>
+                            </div>
+                            <div class="wid-all-tasks">
+                                <perfect-scrollbar class="ps-todo-widget" wheel-propagation="true" suppress-scroll-x="true" min-scrollbar-length="20">
+                                    <ul class="list-unstyled">
+                                        <li class="checked">
+                                            <label class="icheck icheck-white form-label ">
+                                                <input type="checkbox" value="" checked>
+                                                <i></i> Office Projects</label>
+                                        </li>
+                                        <li>
+                                            <label class="icheck icheck-white form-label ">
+                                                <input type="checkbox" value="">
+                                                <i></i> Generate Invoice</label>
+                                        </li>
+                                        <li>
+                                            <label class="icheck icheck-white form-label ">
+                                                <input type="checkbox" value="">
+                                                <i></i> Ecommerce Theme</label>
+                                        </li>
+                                        <li>
+                                            <label class="icheck icheck-white form-label ">
+                                                <input type="checkbox" value="">
+                                                <i></i> PHP and jQuery</label>
+                                        </li>
+                                        <li>
+                                            <label class="icheck icheck-white form-label ">
+                                                <input type="checkbox" value="">
+                                                <i></i> Allocate&nbsp;Resource</label>
+                                        </li>
+                                    </ul>
+                                </perfect-scrollbar>
+                            </div>
+                            <div class="wid-add-task">
+                                <input type="text" class="form-control" placeholder="Add task" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-xs-12 col-sm-6">
+                        <div class="slant-widget slant-todo-task bg-danger" ui-todowidget>
+                            <div class="wid-task-header">
+                                <div class="wid-icon">
+                                    <i class="fa fa-tasks"></i>
+                                </div>
+                                <div class="wid-text">
+                                    <h4>To do Tasks</h4>
+                                    <span>Wed, <small>11<sup>th</sup> March 2015</small></span>
+                                </div>
+                            </div>
+                            <div class="wid-all-tasks">
+                                <perfect-scrollbar class="ps-todo-widget" wheel-propagation="true" suppress-scroll-x="true" min-scrollbar-length="20">
+                                    <ul class="list-unstyled">
+                                        <li class="checked">
+                                            <label class="icheck icheck-white form-label ">
+                                                <input type="checkbox" value="" checked>
+                                                <i></i> Office Projects</label>
+                                        </li>
+                                        <li>
+                                            <label class="icheck icheck-white form-label ">
+                                                <input type="checkbox" value="">
+                                                <i></i> Generate Invoice</label>
+                                        </li>
+                                        <li>
+                                            <label class="icheck icheck-white form-label ">
+                                                <input type="checkbox" value="">
+                                                <i></i> Ecommerce Theme</label>
+                                        </li>
+                                        <li>
+                                            <label class="icheck icheck-white form-label ">
+                                                <input type="checkbox" value="">
+                                                <i></i> PHP and jQuery</label>
+                                        </li>
+                                        <li>
+                                            <label class="icheck icheck-white form-label ">
+                                                <input type="checkbox" value="">
+                                                <i></i> Allocate&nbsp;Resource</label>
+                                        </li>
+                                    </ul>
+                                </perfect-scrollbar>
+                            </div>
+                            <div class="wid-add-task">
+                                <input type="text" class="form-control" placeholder="Add task" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-xs-12 col-sm-6">
+                        <div class="slant-widget slant-todo-task bg-info" ui-todowidget>
+                            <div class="wid-task-header">
+                                <div class="wid-icon">
+                                    <i class="fa fa-tasks"></i>
+                                </div>
+                                <div class="wid-text">
+                                    <h4>To do Tasks</h4>
+                                    <span>Wed, <small>11<sup>th</sup> March 2015</small></span>
+                                </div>
+                            </div>
+                            <div class="wid-all-tasks">
+                                <perfect-scrollbar class="ps-todo-widget" wheel-propagation="true" suppress-scroll-x="true" min-scrollbar-length="20">
+                                    <ul class="list-unstyled">
+                                        <li class="checked">
+                                            <label class="icheck icheck-white form-label ">
+                                                <input type="checkbox" value="" checked>
+                                                <i></i> Office Projects</label>
+                                        </li>
+                                        <li>
+                                            <label class="icheck icheck-white form-label ">
+                                                <input type="checkbox" value="">
+                                                <i></i> Generate Invoice</label>
+                                        </li>
+                                        <li>
+                                            <label class="icheck icheck-white form-label ">
+                                                <input type="checkbox" value="">
+                                                <i></i> Ecommerce Theme</label>
+                                        </li>
+                                        <li>
+                                            <label class="icheck icheck-white form-label ">
+                                                <input type="checkbox" value="">
+                                                <i></i> PHP and jQuery</label>
+                                        </li>
+                                        <li>
+                                            <label class="icheck icheck-white form-label ">
+                                                <input type="checkbox" value="">
+                                                <i></i> Allocate&nbsp;Resource</label>
+                                        </li>
+                                    </ul>
+                                </perfect-scrollbar>
+                            </div>
+                            <div class="wid-add-task">
+                                <input type="text" class="form-control" placeholder="Add task" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+</div>

@@ -1,0 +1,92 @@
+<div class="col-md-12 col-sm-12 col-xs-12 mail_view_info mail_view_title" ng-init="show={cc:false, bcc:false }">
+    <div class="form-group mail_cc_bcc">
+        <label class="form-label" for="field-1">To:</label>
+        <span class="desc">e.g. "someemail@example.com"</span>
+        <div class="labels"><span class='label label-secondary cc' ng-click="show.cc = !show.cc">CC</span> <span class='label label-secondary bcc' ng-click="show.bcc = !show.bcc">BCC</span>
+        </div>
+        <div class="controls">
+            <input ui-jq="tagsinput" type="text" class="form-control mail_compose_to" value="" />
+        </div>
+    </div>
+    <div class="form-group {{show.cc ? '': 'hide'}}">
+        <label class="form-label" for="field-1">CC:</label>
+        <span class="desc">e.g. "someemail@example.com"</span>
+        <div class="controls">
+            <input type="text" class="form-control mail_compose_to" value="" />
+        </div>
+    </div>
+    <div class="form-group {{show.bcc ? '': 'hide'}}">
+        <label class="form-label" for="field-1">BCC:</label>
+        <span class="desc">e.g. "someemail@example.com"</span>
+        <div class="controls">
+            <input type="text" class="form-control mail_compose_to" value="" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="form-label" for="field-1">Subject:</label>
+        <span class="desc">e.g. "Meeting in 1st week"</span>
+        <div class="controls">
+            <input type="text" class="form-control" value="" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="form-label" for="field-1">Message:</label>
+        <div class=""><br>
+            <div class="btn-toolbar m-b-sm btn-editor" data-role="editor-toolbar" data-target="#editor">
+                <div class="btn-group dropdown" uib-dropdown>
+                    <a class="btn btn-default btn-border" uib-dropdown-toggle uib-tooltip="Font"><i class="fa fa-font"></i><b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href data-edit="fontName Serif" style="font-family:'Serif'">Serif</a></li>
+                        <li><a href data-edit="fontName Sans" style="font-family:'Sans'">Sans</a></li>
+                        <li><a href data-edit="fontName Arial" style="font-family:'Arial'">Arial</a></li>
+                    </ul>
+                </div>
+                <div class="btn-group dropdown" uib-dropdown>
+                    <a class="btn btn-default btn-border" uib-dropdown-toggle data-toggle="dropdown" uib-tooltip="Font Size"><i class="fa fa-text-height"></i>&nbsp;<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href data-edit="fontSize 5" style="font-size:24px">Huge</a></li>
+                        <li><a href data-edit="fontSize 3" style="font-size:18px">Normal</a></li>
+                        <li><a href data-edit="fontSize 1" style="font-size:14px">Small</a></li>
+                    </ul>
+                </div>
+                <div class="btn-group">
+                    <a class="btn btn-default btn-border" data-edit="bold" uib-tooltip="Bold (Ctrl/Cmd+B)"><i class="fa fa-bold"></i></a>
+                    <a class="btn btn-default btn-border" data-edit="italic" uib-tooltip="Italic (Ctrl/Cmd+I)"><i class="fa fa-italic"></i></a>
+                    <a class="btn btn-default btn-border" data-edit="strikethrough" uib-tooltip="Strikethrough"><i class="fa fa-strikethrough"></i></a>
+                    <a class="btn btn-default btn-border" data-edit="underline" uib-tooltip="Underline (Ctrl/Cmd+U)"><i class="fa fa-underline"></i></a>
+                </div>
+                <div class="btn-group">
+                    <a class="btn btn-default btn-border" data-edit="insertunorderedlist" uib-tooltip="Bullet list"><i class="fa fa-list-ul"></i></a>
+                    <a class="btn btn-default btn-border" data-edit="insertorderedlist" uib-tooltip="Number list"><i class="fa fa-list-ol"></i></a>
+                </div>
+                <div class="btn-group">
+                    <a class="btn btn-default btn-border" data-edit="justifyleft" uib-tooltip="Align Left (Ctrl/Cmd+L)"><i class="fa fa-align-left"></i></a>
+                    <a class="btn btn-default btn-border" data-edit="justifycenter" uib-tooltip="Center (Ctrl/Cmd+E)"><i class="fa fa-align-center"></i></a>
+                    <a class="btn btn-default btn-border" data-edit="justifyright" uib-tooltip="Align Right (Ctrl/Cmd+R)"><i class="fa fa-align-right"></i></a>
+                    <a class="btn btn-default btn-border" data-edit="justifyfull" uib-tooltip="Justify (Ctrl/Cmd+J)"><i class="fa fa-align-justify"></i></a>
+                </div>
+                <div class="btn-group">
+                    <a class="btn btn-default btn-border" uib-tooltip="Insert picture (or just drag & drop)" id="pictureBtn"><i class="fa fa-picture-o"></i></a>
+                    <input type="file" data-edit="insertImage" style="position:absolute; opacity:0; width:41px; height:34px" />
+                </div>
+            </div>
+            <br>
+            <div ui-jq="wysiwyg" class="form-control wysiwyg-editor" style="overflow:scroll;height:200px;max-height:200px;">
+                Go ahead&hellip;
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class='pull-left'>
+        <button class="btn btn-primary">
+            <i class="fa fa-paper-plane-o icon-xs"></i> &nbsp; SEND
+        </button>
+        <button class="btn btn-accent">
+            <i class="fa fa-floppy-o icon-xs"></i> &nbsp; SAVE
+        </button>
+        <button class="btn btn-secondary">
+            <i class="fa fa-trash-o icon-xs"></i> &nbsp; TRASH
+        </button>
+    </div>
+</div>

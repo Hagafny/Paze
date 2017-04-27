@@ -1,0 +1,99 @@
+<div ng-controller="MailDetailCtrl">
+    <div class="col-md-12  col-sm-12 col-xs-12 mail_view_title">
+        <div class="pull-left">
+            <h3 class="">{{mail.subject}}</h3>
+        </div>
+        <div class='pull-right'>
+            <button class="btn btn-default btn-icon" rel="tooltip" data-color-class="primary" data-animate=" animated fadeIn" data-toggle="tooltip" data-original-title="Reply" data-placement="top">
+                <i class="fa fa-reply icon-xs"></i>
+            </button>
+            <button class="btn btn-default btn-icon" rel="tooltip" data-color-class="primary" data-animate=" animated fadeIn" data-toggle="tooltip" data-original-title="Reply All" data-placement="top">
+                <i class="fa fa-reply-all icon-xs"></i>
+            </button>
+            <button class="btn btn-default btn-icon" rel="tooltip" data-color-class="primary" data-animate=" animated fadeIn" data-toggle="tooltip" data-original-title="Forward" data-placement="top">
+                <i class="fa fa-mail-forward icon-xs"></i>
+            </button>
+            <button class="btn btn-default btn-icon" rel="tooltip" data-color-class="primary" data-animate=" animated fadeIn" data-toggle="tooltip" data-original-title="Attachments" data-placement="top">
+                <i class="fa fa-paperclip icon-xs"></i>
+            </button>
+            <button class="btn btn-default btn-icon" rel="tooltip" data-color-class="primary" data-animate=" animated fadeIn" data-toggle="tooltip" data-original-title="Trash" data-placement="top">
+                <i class="fa fa-trash-o icon-xs"></i>
+            </button>
+        </div>
+    </div>
+    <div class="col-md-12  col-sm-12 col-xs-12 mail_view_info">
+        <div class="pull-left">
+            <span class=""><strong>{{mail.from.name}}</strong> ({{mail.from.email}}) to <strong>{{mail.to.name}}</strong> ({{mail.to.email}})</span>
+        </div>
+        <div class='pull-right'>
+            <span class='msg_ts text-muted'>{{mail.date}}</span>
+        </div>
+    </div>
+    <div class="col-md-12  col-sm-12 col-xs-12 mail_view">
+        {{mail.content}}
+    </div>
+    <div class="col-md-12  col-sm-12 col-xs-12 mail_view_attach">
+        <hr>
+        <ul class="list-unstyled list-inline">
+            <li ng-repeat="attach in mail.attach">
+                <a target='_blank' ng-href="{{attach.url}}" class="file">
+                    <img ng-src="{{attach.url}}" class="img-thumbnail">
+                </a>
+                <a target='_blank' ng-href="{{attach.url}}" class="title">{{attach.name}}</a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-12  col-sm-12 col-xs-12 mail_view_reply">
+        <div class="form-group">
+            <div class="controls">
+
+            <div class="">
+            <br>
+            <div class="btn-toolbar m-b-sm btn-editor" data-role="editor-toolbar" data-target="#editor">
+                <div class="btn-group dropdown" uib-dropdown>
+                    <a class="btn btn-default" uib-dropdown-toggle uib-tooltip="Font"><i class="fa fa-font"></i><b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href data-edit="fontName Serif" style="font-family:'Serif'">Serif</a></li>
+                        <li><a href data-edit="fontName Sans" style="font-family:'Sans'">Sans</a></li>
+                        <li><a href data-edit="fontName Arial" style="font-family:'Arial'">Arial</a></li>
+                    </ul>
+                </div>
+                <div class="btn-group dropdown" uib-dropdown>
+                    <a class="btn btn-default" uib-dropdown-toggle data-toggle="dropdown" uib-tooltip="Font Size"><i class="fa fa-text-height"></i>&nbsp;<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href data-edit="fontSize 5" style="font-size:24px">Huge</a></li>
+                        <li><a href data-edit="fontSize 3" style="font-size:18px">Normal</a></li>
+                        <li><a href data-edit="fontSize 1" style="font-size:14px">Small</a></li>
+                    </ul>
+                </div>
+                <div class="btn-group">
+                    <a class="btn btn-default" data-edit="bold" uib-tooltip="Bold (Ctrl/Cmd+B)"><i class="fa fa-bold"></i></a>
+                    <a class="btn btn-default" data-edit="italic" uib-tooltip="Italic (Ctrl/Cmd+I)"><i class="fa fa-italic"></i></a>
+                    <a class="btn btn-default" data-edit="strikethrough" uib-tooltip="Strikethrough"><i class="fa fa-strikethrough"></i></a>
+                    <a class="btn btn-default" data-edit="underline" uib-tooltip="Underline (Ctrl/Cmd+U)"><i class="fa fa-underline"></i></a>
+                </div>
+                <div class="btn-group">
+                    <a class="btn btn-default" data-edit="insertunorderedlist" uib-tooltip="Bullet list"><i class="fa fa-list-ul"></i></a>
+                    <a class="btn btn-default" data-edit="insertorderedlist" uib-tooltip="Number list"><i class="fa fa-list-ol"></i></a>
+                </div>
+                <div class="btn-group">
+                    <a class="btn btn-default" data-edit="justifyleft" uib-tooltip="Align Left (Ctrl/Cmd+L)"><i class="fa fa-align-left"></i></a>
+                    <a class="btn btn-default" data-edit="justifycenter" uib-tooltip="Center (Ctrl/Cmd+E)"><i class="fa fa-align-center"></i></a>
+                    <a class="btn btn-default" data-edit="justifyright" uib-tooltip="Align Right (Ctrl/Cmd+R)"><i class="fa fa-align-right"></i></a>
+                    <a class="btn btn-default" data-edit="justifyfull" uib-tooltip="Justify (Ctrl/Cmd+J)"><i class="fa fa-align-justify"></i></a>
+                </div>
+                <div class="btn-group">
+                    <a class="btn btn-default" uib-tooltip="Insert picture (or just drag & drop)" id="pictureBtn"><i class="fa fa-picture-o"></i></a>
+                    <input type="file" data-edit="insertImage" style="position:absolute; opacity:0; width:41px; height:34px" />
+                </div>
+            </div>
+            <br>
+            <div ui-jq="wysiwyg" class="form-control wysiwyg-editor" style="overflow:scroll;height:200px;max-height:200px;">
+                Reply or Forward this message
+            </div>
+        </div>
+                
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,52 @@
+<div class='content-wrapper content-calendar' ng-init="app.settings.pagetitle = 'Event Managment';">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div ng-controller="UniversityEventsCtrl">
+            <div class="row">
+                <div class="col-md-9 col-lg-9 col-sm-9 col-xs-12">
+                    <div class="clearfix"></div>
+                        <button type="button" uib-tooltip="Double click on calendar day to create event" class="btn btn-sm btn-primary btn-addon" ng-click="addEvent()">
+                            <i class="fa fa-plus"></i> &nbsp; Add Event
+                        </button>
+                        <div class="pull-right">
+                            <button type="button" class="btn btn-sm btn-primary" ng-click="today()">Today</button>
+                            <div class="btn-group">
+                                <button class="btn btn-sm btn-default" ng-click="changeView('agendaDay')">Day</button>
+
+                                <button class="btn btn-sm btn-default" ng-click="changeView('agendaWeek')">Week</button>
+                                
+                                <button class="btn btn-sm btn-default" ng-click="changeView('month')">Month</button>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div><br>
+                    <div class="pos-rlt" style="margin-top: 3px;">
+                        <div class="fc-overlay">
+                            <div class="panel bg-white b-a pos-rlt">
+                                <span class="arrow"></span>
+                                <div class="h4 font-thin-sm">{{event.title}}</div>
+                                <div class="line b-b b-light"></div>
+                                <div><i class="icon-calendar text-muted m-r-xs"></i> {{event.start | date:'medium'}}</div>
+                                <div class="ng-hide" ng-show='event.end'><i class="icon-clock text-muted m-r-xs"></i> {{event.end | date:'medium'}}</div>
+                                <div class="ng-hide" ng-show='event.location'><i class="icon-pointer text-muted m-r-xs"></i> {{event.location}}</div>
+                                <div class="m-t-sm">{{event.info}}</div>
+                                <div class="m-t-sm">{{event.url}}</div>
+                            </div>
+                        </div>
+
+                        <div class="calendar" ng-model="eventSources" config="uiConfig.calendar" ui-calendar="uiConfig.calendar"></div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-lg-3 col-sm-3 col-xs-12 fc-events" id="aside">
+                        <h4>All Events</h4>
+ <perfect-scrollbar wheel-propagation="true" suppress-scroll-x="true"  min-scrollbar-length="20" class='ps-calendar-events'>
+                                                   <div ng-repeat="e in events" class="event {{e.className[0]}}">
+                            <input ng-model="e.title" class="form-control">
+                            <a class="pull-right text-xs text-muted" ng-click="remove($index)"><i class="fa fa-trash-o"></i></a>
+                            <div class="text-xs text-muted">{{e.start | date:"MMM dd"}} - {{e.end | date:"MMM dd"}}</div>
+                        </div>
+</perfect-scrollbar>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,121 @@
+<div class="content-wrapper"  ng-init="app.settings.pagetitle = 'Form Wizard';">
+   
+<div class="col-lg-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Form Wizard with validations</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12 form-wizard nav-pills">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <uib-progressbar value="steps.percent" class="progress-xs primary" type="success"></uib-progressbar>
+                        </div>
+                        <uib-tabset class="tab-container" ng-init="steps={percent:20, step1:true, step2:false, step3:false, step4:false, step5:false, step1stat:false, step2stat:false, step3stat:false, step4stat:false, step5stat:false }">
+                            <uib-tab active="steps.step1" select="steps.percent=20" class=" {{steps.step1stat ? 'complete' : ''}} ">
+                                <uib-tab-heading class="tabhead">General</uib-tab-heading>
+                                <h4 class='margin-top-30'>Basic Information</h4>
+                                <form name="step1" class="form-validation col-md-8 padding-left-0">
+                                    <div class="form-group">
+                                        <label class="form-label" for="field-1">Full Name</label>
+                                        <div class="controls">
+                                            <input type="text" placeholder="Full Name" class="form-control" name="txtFullName" id="txtFullName" ng-model="txtFullName" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="field-1">Website</label>
+                                        <div class="controls">
+                                            <input type="url" name="url" placeholder="http://" class="form-control" ng-model="website" required>
+                                        </div>
+                                    </div>
+                                    <div class="">
+                                        <button type="submit" ng-disabled="step1.$invalid" class="btn btn-primary" ng-click="steps.step2=true">Next</button>
+                                    </div>
+                                </form>
+                            </uib-tab>
+                            <uib-tab disabled="step1.$invalid" active="steps.step2" select="steps.percent=40; steps.step1stat=true" class=" {{steps.step2stat ? 'complete' : ''}}">
+                                <uib-tab-heading class="tabhead">Profile</uib-tab-heading>
+                                <h4 class='margin-top-30'>Profile Information</h4>
+                                <form name="step2" class="form-validation  col-md-8 padding-left-0">
+                                    <div class="form-group">
+                                        <label class="form-label" for="field-1">Age</label>
+                                        <div class="controls">
+                                            <input type="number" name="age" class="form-control" ng-model="age" required>
+                                        </div>
+                                    </div>
+                                    <div class="">
+                                        <button type="button" class="btn btn-primary" ng-click="steps.step1=true">Prev</button>
+                                        <button type="submit" ng-disabled="step2.$invalid" class="btn btn-primary" ng-click="steps.step3=true">Next</button>
+                                    </div>
+                                </form>
+                            </uib-tab>
+                            <uib-tab disabled="step2.$invalid" active="steps.step3" select="steps.percent=60; steps.step2stat=true" class=" {{steps.step3stat ? 'complete' : ''}}">
+                                <uib-tab-heading class="tabhead">Portfolio</uib-tab-heading>
+                                <h4 class='margin-top-30'>Portfolio Information</h4>
+                                <form name="step3" class="form-validation  col-md-8 padding-left-0">
+                                    <div class="form-group">
+                                        <label class="form-label" for="formfield1">Company Name</label>
+                                        <div class="controls">
+                                            <input type="text" class="form-control" id="formfield1" name="formfield1" placeholder="Company Name" ng-model="company" required>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label" for="formfield1">Experience</label>
+                                        <div class="controls">
+                                            <input type="number" name="experience" class="form-control" ng-model="experience" required>
+                                        </div>
+                                    </div>
+                                    <div class="">
+                                        <button type="button" class="btn btn-primary" ng-click="steps.step2=true">Prev</button>
+                                        <button type="submit" ng-disabled="step3.$invalid" class="btn btn-primary" ng-click="steps.step4=true">Next</button>
+                                    </div>
+                                </form>
+                            </uib-tab>
+                            <uib-tab disabled="step3.$invalid" active="steps.step4" select="steps.percent=80; steps.step3stat=true" class=" {{steps.step4stat ? 'complete' : ''}}">
+                                <uib-tab-heading class="tabhead">Contact</uib-tab-heading>
+                                <h4 class='margin-top-30'>Contact Information</h4>
+                                <form name="step4" class="form-validation  col-md-8 padding-left-0">
+                                    <div class="form-group">
+                                        <label class="form-label" for="field-1">Email</label>
+                                        <div class="controls">
+                                            <input type="email" name="email" class="form-control" ng-model="email" required>
+                                        </div>
+                                    </div>
+                                    <div class="">
+                                        <button type="button" class="btn btn-primary" ng-click="steps.step3=true">Prev</button>
+                                        <button type="submit" ng-disabled="step4.$invalid" class="btn btn-primary" ng-click="steps.step5=true">Next</button>
+                                    </div>
+                                </form>
+                            </uib-tab>
+                            <uib-tab disabled="step4.$invalid" active="steps.step5" select="steps.percent=100; steps.step4stat=true" class=" {{steps.step5stat ? 'complete' : ''}}">
+                                <uib-tab-heading class="tabhead">Settings</uib-tab-heading>
+                                <h4 class='margin-top-30'>User Settings</h4>
+                                <form name="step5" class="form-validation  col-md-8 padding-left-0">
+                                    <div class="form-group">
+                                        <label class="form-label" for="formfield1">Terms</label>
+                                        <div class="controls">
+                                            <label class="form-label checkbox icheck">
+                                                <input type="checkbox" ng-model="txtagree" required><i></i> I agree to terms & conditions
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="">
+                                        <button type="button" class="btn btn-primary" ng-click="steps.step4=true">Prev</button>
+                                        <button type="submit" ng-disabled="step5.$invalid" class="btn btn-primary" ng-click="steps.percent=100;steps.step5=true; steps.step5stat=true">Finish</button>
+                                    </div>
+                                </form>
+                            </uib-tab>
+                        </uib-tabset>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+</div>

@@ -1,0 +1,345 @@
+<div class='content-wrapper' ng-init="app.settings.pagetitle = 'Sparkline Charts';">
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Line</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div ng-init="data1=[5,10, 8,10, 8, 5, 7, 4, 4, 5, 7, 4, 4, 7, 5, 2, 8, 3, 4, 5]" ui-jq="sparkline" ui-options="{{data1}}, {
+                type: 'line',
+                width: '100%',
+                height: '200',
+                lineWidth: 2,
+                lineColor: '{{app.color.primary}}',
+                fillColor: 'rgba(132,127,159,0.5)',
+                highlightSpotColor: '{{app.color.accent}}',
+                highlightLineColor: '#FF6E40',
+                spotRadius: 4,
+                }" class="sparkline inline">Loading...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Bar</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div ng-init="data2=[10, 8, 5, 7, 4, 4, 7, 5, 2, 8, 10 , 7, 4, 5]" ui-jq="sparkline" ui-options="{{data2}}, {
+                type: 'bar',
+                barColor: '{{app.color.primary}}',
+                height: '200',
+                barWidth: '20',
+                barSpacing: 1
+                }" class="sparkline inline">Loading...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Negative Bar</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div ng-init="data3=[8, 4, 3, 0, -2, -6, -3,  4, 3, 0, 3, -2, 4, 6, -4, 4]" ui-jq="sparkline" ui-options="{{data3}}, {
+                type: 'bar',
+                barColor: '{{app.color.primary}}',
+                height: '200',
+                barWidth: '20',
+                barSpacing: 1,
+                zeroAxis: true,
+                negBarColor: '{{app.color.accent}}',
+                zeroColor: '#FF6E40'
+                }" class="sparkline inline">Loading...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Stacked Bar</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div ng-init="data4=[
+                [1, 2, 2],
+                [2, 4, 3],
+                [4, 2, 4],
+                [4, 5, 1],
+                [4, 1, 2],
+                [6, 6, 4],
+                [2, 3, 2],
+                [3, 2, 6],
+                [2, 0, 2],
+                [1, 2, 2],
+                [2, 4, 3],
+                [4, 2, 4],
+                [4, 5, 1],
+                [6, 2, 4],
+                [7, 4, 2],
+                [3, 4, 1],
+                [3, 7, 4]
+            ]" ui-jq="sparkline" ui-options="{{data4}}, {
+                type: 'bar',
+                barColor: '{{app.color.primary}}',
+                height: '200',
+                barWidth: '20',
+                barSpacing: 1,
+                zeroAxis: true,
+                negBarColor: '{{app.color.accent}}',
+                zeroColor: '#FF6E40',
+                stackedBarColor: ['#FF6E40', '{{app.color.primary}}', '{{app.color.accent}}'],
+                }" class="sparkline inline">Loading...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Composite Line</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div ng-init="data5=[8, 4, 1, 2, 6, 7, 1, 6, 2, 4, 3, 5, 6, 0, 3, 0, 4, 6, 5, 7, 6]" ui-jq="sparkline" ui-options="{{data5}}, {
+                fillColor: false,
+                changeRangeMin: 0,
+                chartRangeMax: 10,
+                type: 'line',
+                width: '100%',
+                height: '200',
+                lineWidth: 2,
+                lineColor: '{{app.color.primary}}',
+                highlightSpotColor: '{{app.color.accent}}',
+                highlightLineColor: '#FF6E40',
+                spotRadius: 4,
+                }" class="sparkline inline">Loading...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Normal Range</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div ng-init="data6=[5, 4, 0, 0, 0, 0, 1, 4, 4, 10, 10, 10, 10, 0, 0, 0, 4, 6, 5, 9, 10]" ui-jq="sparkline" ui-options="{{data6}}, {
+                fillColor: false,
+                changeRangeMin: 0,
+                chartRangeMax: 10,
+                type: 'line',
+                width: '100%',
+                height: '200',
+                lineWidth: 2,
+                lineColor: '{{app.color.primary}}',
+                highlightSpotColor: '{{app.color.accent}}',
+                highlightLineColor: '#FF6E40',
+                spotRadius: 4,
+                }" class="sparkline inline">Loading...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+   
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Discrete</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div ng-init="data8=[4, 6, 7, 7, 4, 3, 2, 1, 4, 4, 5, 6, 7, 6, 6, 2, 4, 5, 4, 4, 5, 6, 7, 6, 6, 2, 4, 5, 2, 1, 4, 4]" ui-jq="sparkline" ui-options="{{data8}}, {
+                type: 'discrete',
+                width: '280',
+                height: '200',
+                lineColor: '{{app.color.primary}}',
+                lineHeight: 60,
+                thresholdValue: 5,
+                thresholdColor: '{{app.color.accent}}',
+                }" class="sparkline inline">Loading...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Tristate</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div ng-init="data8=[1, 1, 0, 1, -1, -1, 1, -1, 0, 0, 1, 1]" ui-jq="sparkline" ui-options="{{data8}}, {
+                type: 'tristate',
+                height: '200',
+                posBarColor: '{{app.color.primary}}',
+                negBarColor: '{{app.color.accent}}',
+                zeroBarColor: '#FF6E40',
+                barWidth: 20,
+                barSpacing: 2,
+                zeroAxis: true
+                }" class="sparkline inline">Loading...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Box Plot</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div ng-init="data9=[4, 27, 34, 52, 54, 59, 61, 68, 78, 82, 85, 87, 91, 93, 100]" ui-jq="sparkline" ui-options="{{data9}}, {
+                type: 'box',
+                width: '100%',
+                height: '200',
+                raw: false,
+                target: 27,
+                minValue: 34,
+                boxLineColor: '#FF6E40',
+                boxFillColor: '{{app.color.primary}}',
+                whiskerColor: '{{app.color.accent}}',
+                medianColor: '{{app.color.accent}}',
+                targetColor: '{{app.color.accent}}'
+                }" class="sparkline inline">Loading...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Pie</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div ng-init="data9=[3, 4, 1, 2]" ui-jq="sparkline" ui-options="{{data9}}, {
+                type: 'pie',
+                width: '100%',
+                height: '200',
+                sliceColors: ['{{app.color.primary}}', '{{app.color.accent}}', '{{app.color.warning}}', '{{app.color.success}}'],
+                offset: 0,
+                borderWidth: 0,
+                borderColor: '#00007f'
+                }" class="sparkline inline">Loading...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Bullet</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div ng-init="data10=[10, 12, 12, 9, 7]" ui-jq="sparkline" ui-options="{{data10}}, {
+                type: 'bullet',
+                height: '200',
+                width: '100%',
+                targetWidth: 10,
+                targetColor: '{{app.color.warning}}',
+                performanceColor: '#eaeaea',
+                rangeColors: ['{{app.color.primary}}', '#FF6E40', '{{app.color.accent}} ']
+                }" class="sparkline inline">Loading...
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

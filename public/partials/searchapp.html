@@ -1,0 +1,259 @@
+<div class='col-lg-12 col-md-12 col-sm-12 col-xs-12 page-head'>
+    <div class="page-title">
+        <div class="pull-left">
+            <h1 class="title">Search APP</h1> </div>
+    </div>
+</div>
+<div class="clearfix"></div>
+<div class='content-wrapper' ng-init="app.settings.pagetitle = '';">
+    <div class="col-lg-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Search app</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12" ui-jq="isotobe">
+                        <!--   <div ng-controller="pageCtrl">
+    <input type="text" ng-model="search" ng-change="filterit()" placeholder="Search" value="1"/>
+<input type="button" ng-model="search" ng-click="loadvalues1()" value="category1"/>    
+<input type="button" ng-model="search" ng-click="loadvalues2()" value="category2"/>    
+    <br/>
+    
+    <br/>
+    <ul>
+        <li ng-repeat="data in filtered = (list | filter:search) | startBlogFrom:(currentPage-1)*entryLimit | limitTo:entryLimit">{{data.name}}</li>
+    </ul>
+    <uib-pagination ng-model="search" data-boundary-links="true" data-num-pages="noOfPages" data-current-page="currentPage" max-size="maxSize" class="pagination-small" data-previous-text="&laquo;" data-next-text="&raquo;"></uib-pagination>
+</div> -->
+                        <div>
+                            <div ng-controller="TableCtrl">
+                                <div class="input-group col-md-12">
+                                    <input class="form-control" ng-model="searchText" placeholder="Search" type="search" ng-change="search()" />
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+                                </div>
+                                <br>
+                                <div class="input-group row col-md-12">
+                                    <div class='col-md-4'>
+                                        <select class="form-control filter-34" id="cat1" ng-model="searchType1" ng-change="search()" data-filter="*">
+                                            <option value="0">All Month</option>
+                                            <option value="may">May</option>
+                                            <option value="june">June</option>
+                                            <option value="july">July</option>
+                                        </select>
+                                    </div>
+                                    <div class='col-md-4'>
+                                        <select class="form-control filter-34" id="cat2" ng-model="searchType2" ng-change="search()" data-filter="*">
+                                            <option value="0">All year</option>
+                                            <option value="y2010">2010</option>
+                                            <option value="y2011">2011</option>
+                                            <option value="y2012">2012</option>
+                                        </select>
+                                    </div>
+                                    <div class='col-md-4'>
+                                        <select class="form-control filter-34" id="cat3" ng-model="searchType3" ng-change="search()" data-filter="*">
+                                            <option value="0">All season</option>
+                                            <option value="wint">Wint</option>
+                                            <option value="summ">Summ</option>
+                                            <option value="rain">Rain</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <br>
+                                <!-- static content - start
+                            <div id="content1" style='margin-left:120px;'>
+                                <div class="box june y2010 wint">
+                                    <h2 class="box-title">Lorem Ipsum - June, 2010</h2>
+                                    <div class="box-text">
+                                        Urna vut, eros aliquet sagittis augue? Augue adipiscing duis? Et a placerat, magna enim? Lacus sit. Nunc montes tristique purus auctor. Nascetur? Vut amet, phasellus pulvinar et odio. Ut aliquet integer sed enim ac amet nunc? Tincidunt sit, cum ridiculus, placerat cum, vut magna ridiculus ut phasellus ridiculus? Eu hac, mattis adipiscing, montes adipiscing urna montes rhoncus!
+                                    </div>
+                                </div>
+                                <div class="box july y2010">
+                                    <h2 class="box-title">Lorem Ipsum - July, 2010</h2>
+                                    <div class="box-text">
+                                        Urna vut, eros aliquet sagittis augue? Augue adipiscing duis? Et a placerat, magna enim? Lacus sit. Nunc montes tristique purus auctor. Nascetur? Vut amet, phasellus pulvinar et odio. Ut aliquet integer sed enim ac amet nunc? Tincidunt sit, cum ridiculus, placerat cum, vut magna ridiculus ut phasellus ridiculus? Eu hac, mattis adipiscing, montes adipiscing urna montes rhoncus! Odio placerat pellentesque risus urna elit, odio phasellus, rhoncus, est ridiculus purus etiam, penatibus integer!
+                                    </div>
+                                </div>
+                                <div class="box august y2010">
+                                    <h2 class="box-title">Lorem Ipsum - August, 2010</h2>
+                                    <div class="box-text">
+                                        Urna vut, eros aliquet sagittis augue? Augue adipiscing duis? Et a placerat, magna enim? Lacus sit. Nunc montes tristique purus auctor. Nascetur?
+                                    </div>
+                                </div>
+                                <div class="box june y2011">
+                                    <h2 class="box-title">Lorem Ipsum - June, 2011</h2>
+                                    <div class="box-text">
+                                        Amet dolor? Diam cras ac quis a ut, augue massa cursus natoque cursus in sociis rhoncus, scelerisque mus ac. Pellentesque odio rhoncus, aliquet tempor? Nisi cursus lorem tincidunt penatibus eu scelerisque! Scelerisque mid rhoncus turpis eros? Nunc rhoncus in turpis, mus, nec augue, odio, mid tempor aliquam, ultricies.
+                                    </div>
+                                </div>
+                                <div class="box july y2011">
+                                    <h2 class="box-title">Lorem Ipsum - July, 2011</h2>
+                                    <div class="box-text">
+                                        Diam cras ac quis a ut, augue massa cursus natoque cursus in sociis rhoncus, scelerisque mus ac. Pellentesque odio rhoncus, aliquet tempor? Nisi cursus lorem tincidunt penatibus eu scelerisque! Scelerisque mid rhoncus turpis eros? Nunc rhoncus in turpis, mus, nec augue, odio, mid tempor aliquam, ultricies.
+                                    </div>
+                                </div>
+                                <div class="box august y2011">
+                                    <h2 class="box-title">Lorem Ipsum - August, 2011</h2>
+                                    <div class="box-text">
+                                        Urna vut, eros aliquet sagittis augue? Augue adipiscing duis? Et a placerat, magna enim? Lacus sit. Nunc montes tristique purus auctor. Nascetur? Vut amet, phasellus pulvinar et odio. Pellentesque odio rhoncus, aliquet tempor? Nisi cursus lorem tincidunt penatibus eu scelerisque! Scelerisque mid rhoncus turpis eros? Nunc rhoncus in turpis, mus, nec augue, odio, mid tempor aliquam, ultricies.
+                                    </div>
+                                </div>
+                                <div class="box june y2012">
+                                    <h2 class="box-title">Lorem Ipsum - June, 2012</h2>
+                                    <div class="box-text">
+                                        Urna vut, eros aliquet sagittis augue? Augue adipiscing duis? Et a placerat, magna enim? Lacus sit.
+                                    </div>
+                                </div>
+                                <div class="box july y2012">
+                                    <h2 class="box-title">Lorem Ipsum - July, 2012</h2>
+                                    <div class="box-text">
+                                        Amet dolor? Diam cras ac quis a ut, augue massa cursus natoque cursus in sociis rhoncus, scelerisque mus ac. Pellentesque odio rhoncus, aliquet tempor? Nisi cursus lorem tincidunt penatibus eu scelerisque! Scelerisque mid rhoncus turpis eros? Nunc rhoncus in turpis, mus, nec augue, odio, mid tempor aliquam, ultricies.
+                                    </div>
+                                </div>
+                                <div class="box august y2012">
+                                    <h2 class="box-title">Lorem Ipsum - August, 2012</h2>
+                                    <div class="box-text">
+                                        Urna vut, eros aliquet sagittis augue? Augue adipiscing duis? Et a placerat, magna enim? Lacus sit. Nunc montes tristique purus auctor. Amet dolor? Diam cras ac quis a ut, augue massa cursus natoque cursus in sociis rhoncus, scelerisque mus ac. Pellentesque odio rhoncus, aliquet tempor? Nisi cursus lorem tincidunt penatibus eu scelerisque! Scelerisque mid rhoncus turpis eros? Nunc rhoncus in turpis, mus, nec augue, odio, mid tempor aliquam, ultricies.
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- static content - end -->
+                                <div id="content">
+                                    <div class='col-md-3 box {{item.category}}' style='margin:15px 15px 0 0;border: 2px solid #999;' ng-repeat="item in ItemsByPage[currentPage] | orderBy:columnToOrder:reverse">
+                                        <div style="padding:20px;height:150px;" class="">
+                                            <h4 class="box-title">{{item.EmpId}} - {{item.name}}</h4>
+                                            <div class="box-text">{{item.Email}}
+                                                <br>{{item.category}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                                <!--                             <table class="table  table-hover data-table myTable">
+                                <thead>
+                                    <tr>
+                                        <th class="EmpId"> <a href="#" ng-click="sort('EmpId',$event)">EmpId  
+                         <span class="{{Header[0]}}"></span>
+                         </a>
+                                        </th>
+                                        <th class="name"> <a ng-click="sort('name')" href="#"> Name 
+                         <span class="{{Header[1]}}"></span></a>
+                                        </th>
+                                        <th class="Email"> <a ng-click="sort('Email')" href="#"> Email 
+                     <span class="{{Header[2]}}"></span></a>
+                                        </th>
+                                        <th class="Email"> <a ng-click="sort('category')" href="#"> Category 
+                     <span class="{{Header[3]}}"></span></a>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="item in ItemsByPage[currentPage] | orderBy:columnToOrder:reverse">
+                                        <td>{{item.EmpId}}</td>
+                                        <td>{{item.name}}</td>
+                                        <td>{{item.Email}}</td>
+                                        <td>{{item.category}}</td>
+                                    </tr>
+                                </tbody>
+                            </table> -->
+                                <ul class="pagination pagination-sm">
+                                    <li ng-class="{active:0}"><a href="#" ng-click="firstPage()">First</a>
+                                    </li>
+                                    <li ng-repeat="n in range(ItemsByPage.length)"> <a href="#" ng-click="setPage()" ng-bind="n+1">1</a>
+                                    </li>
+                                    <li><a href="#" ng-click="lastPage()">Last</a>
+                                    </li>
+                                </ul>
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <input type="text" ng-model="newEmpId" class="form-control" placeholder="EmpId">
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <input type="text" ng-model="newName" class="form-control" placeholder="Name">
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <input type="email" ng-model="newEmail" class="form-control" placeholder="Email">
+                                    </div>
+                                    <div class="col-xs-1">
+                                        <button ng-click="add()" type="button" class="btn btn-primary"> <span class="glyphicon glyphicon-plus"></span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Ends Controller -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<style type="text/css">
+/**** isotobe filtering ****/
+
+.isotobe-item {
+    z-index: 2;
+}
+
+.isotobe-hidden.isotobe-item {
+    pointer-events: none;
+    z-index: 1;
+}
+
+.isotobe,
+.isotobe .isotobe-item {
+    /* change duration value to whatever you like */
+    
+    -webkit-transition-duration: 0.8s;
+    -moz-transition-duration: 0.8s;
+    transition-duration: 0.8s;
+}
+
+.isotobe {
+    -webkit-transition-property: height, width;
+    -moz-transition-property: height, width;
+    transition-property: height, width;
+}
+
+.isotobe .isotobe-item {
+    -webkit-transition-property: -webkit-transform, opacity;
+    -moz-transition-property: -moz-transform, opacity;
+    transition-property: transform, opacity;
+}
+/*==============================
+    MY STYLES
+==============================*/
+
+#content .box {
+    width: 200px;
+    height: 200px;
+}
+/*#c1ontent {
+width: 920px;
+margin: 0 auto;
+margin-top: 20px;
+}
+
+.box-title {
+font-size: 30px;
+margin-bottom: 10px;
+}
+
+.box {
+color: #212121;
+padding: 15px;
+float: left;
+margin-left: 10px;
+margin-right: 10px;
+width: 250px;
+background: #ffffff;
+border: 2px solid #787878;
+margin-bottom: 20px;
+}
+*/
+</style>

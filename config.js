@@ -4,4 +4,5 @@ module.exports = {
     API_AI_CLIENT_ACCESS_TOKEN: 'b8a693cd344746ba8f99a924a95f05f5',
     FB_APP_SECRET: 'bfdf8a8ee21ce26f22d8d11e9d9d2f17',
     SERVER_URL: "https://paze.herokuapp.com/",
+    MONGODB_URL: "mongodb://heroku_9hwxc700:dupei4von83o0el9d7t7ueptqf@ds155529.mlab.com:55529/heroku_9hwxc700"    
 };

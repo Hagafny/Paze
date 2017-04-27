@@ -1,0 +1,103 @@
+<div class='content-wrapper' ng-init="app.settings.pagetitle = 'Slider';">
+    <div class="col-lg-12" ng-controller="FormSliderCtrl">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Slider Options</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-bottom-0">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-10 col-xs-10 ">
+                        <h4 class="margin-top-15">Single Knob</h4>
+                        <slider floor='{{ floor }}' ceiling='{{ ceiling }}' step='{{ step }}' precision='{{ precision }}' stickiness='{{ stickiness }}' ng-model='value' style="width: {{ sliderWidth }};"></slider>
+                        <h4 class="margin-top-15">Single Knob w/ Scaling functions (y=x^3)</h4>
+                        <slider floor='{{ floor }}' ceiling='{{ ceiling }}' step='{{ step }}' precision='{{ precision }}' stickiness='{{ stickiness }}' ng-model='value' scale-fn='scale' inverse-scale-fn='inverseScale' style="width: {{ sliderWidth }};"></slider>
+                        <div class="form-group">
+                            <label class="form-label" for="field-1">Single Knob Value</label>
+                            <div class="controls">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <input ng-model="value" type="text" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <br>
+                        <h4 class="margin-top-15">Dual Knob</h4>
+                        <slider floor='{{ floor }}' ceiling='{{ ceiling }}' step='{{ step }}' precision='{{ precision }}' buffer='{{ buffer }}' stickiness='{{ stickiness }}' ng-model='values.low' ng-model-range='values.high' translate-fn='translate' translate-range-fn='translateRange' translate-combined-fn='translateCombined' style="width: {{ sliderWidth }};"></slider>
+                        <h4 class="margin-top-15">Dual Knob w/ Scaling functions (y=x^3)</h4>
+                        <slider floor='{{ floor }}' ceiling='{{ ceiling }}' step='{{ step }}' precision='{{ precision }}' buffer='{{ buffer }}' stickiness='{{ stickiness }}' ng-model='values.low' ng-model-range='values.high' scale-fn='scale' inverse-scale-fn='inverseScale' translate-fn='translate' style="width: {{ sliderWidth }};"></slider>
+                        <div class="form-group">
+                            <label class="form-label" for="field-1">Dual Knob Values</label>
+                            <div class="controls">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <input ng-model="values.low" type="text" class="form-control" />
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input ng-model="values.high" type="text" class="form-control" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <br>
+                        <h4 class="margin-top-15">in ngRepeat</h4>
+                        <div ng-repeat="scope in scopes">
+                            <slider floor='{{ floor }}' ceiling='{{ ceiling }}' step='{{ step }}' precision='{{ precision }}' stickiness='{{ stickiness }}' ng-model='scope.value' style="width: {{ sliderWidth }};"></slider>
+                        </div>
+                        <button type="button" ng-click="addScope()" class="btn btn-primary">Add Slider</button>
+                        <div class="clearfix"></div>
+                        <br>
+                        <h4 class="margin-top-15">Slider Settings</h4>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="field-1">Floor</label>
+                                    <div class="controls">
+                                        <input class='form-control' type='text' ng-model='floor' ng-init='floor = 1' />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="field-1">Ceiling</label>
+                                    <div class="controls">
+                                        <input class='form-control' type='text' ng-model='ceiling' ng-init='ceiling = 10' />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="field-1">Precision</label>
+                                    <div class="controls">
+                                        <input class='form-control' type='text' ng-model='precision' ng-init='precision = 2' />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="field-1">Buffer</label>
+                                    <div class="controls">
+                                        <input class='form-control' type='text' ng-model='buffer' ng-init='buffer = 2' />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="field-1">Stickiness</label>
+                                    <div class="controls">
+                                        <input class='form-control' type='text' ng-model='stickiness' ng-init='stickiness = 3' />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="field-1">Slider Widths</label>
+                                    <div class="controls">
+                                        <input class='form-control' type="text" ng-model="sliderWidth" ng-init="sliderWidth = '700px'" ng-change="fireResizeEvent()" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

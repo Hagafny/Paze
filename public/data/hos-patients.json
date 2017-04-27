@@ -1,0 +1,74 @@
+[
+    {
+        "avatar": "data/patients/patient-1.jpg",
+        "age": "45", 
+        "name": "Mrs. Brodeur", 
+        "occupation": "HouseWife"
+    }, 
+    {
+        "avatar": "data/patients/patient-2.jpg",
+        "age": "39", 
+        "name": "Ms. Latshaw", 
+        "occupation": "Teacher"
+    }, 
+    {
+        "avatar": "data/patients/patient-3.jpg",
+        "age": "34", 
+        "name": "Mrs. Clementina", 
+        "occupation": "Journalist"
+    }, 
+    {
+        "avatar": "data/patients/patient-4.jpg",
+        "age": "29", 
+        "name": "Mr. Carri Busey", 
+        "occupation": "Industrialist"
+    }, 
+    {
+        "avatar": "data/patients/patient-5.jpg",
+        "age": "65", 
+        "name": "Ms. Clay Dock", 
+        "occupation": "Book Writer"
+    }, 
+    {
+        "avatar": "data/patients/patient-6.jpg",
+        "age": "57", 
+        "name": "Mr. Mark Peskin", 
+        "occupation": "Ex. Armyman"
+    }, 
+    {
+        "avatar": "data/patients/patient-7.jpg",
+        "age": "65", 
+        "name": "Mr. Arthur John.", 
+        "occupation": "Carpenter"
+    }, 
+    {
+        "avatar": "data/patients/patient-8.jpg",
+        "age": "29", 
+        "name": "Mr. Carri Busey", 
+        "occupation": "Industrialist"
+    }, 
+    {
+        "avatar": "data/patients/patient-9.jpg",
+        "age": "65", 
+        "name": "Ms. Clay Dock", 
+        "occupation": "Book Writer"
+    }, 
+    {
+        "avatar": "data/patients/patient-10.jpg",
+        "age": "57", 
+        "name": "Mr. Mark Peskin", 
+        "occupation": "Ex. Armyman"
+    }, 
+    {
+        "avatar": "data/patients/patient-11.jpg",
+        "age": "65", 
+        "name": "Mr. Arthur John.", 
+        "occupation": "Carpenter"
+    }, 
+    {
+        "avatar": "data/patients/patient-12.jpg",
+        "age": "29", 
+        "name": "Mrs. Jonh A.", 
+        "occupation": "Teacher"
+    }
+]

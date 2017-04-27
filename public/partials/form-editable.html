@@ -1,0 +1,144 @@
+<div class='content-wrapper' ng-init="app.settings.pagetitle = 'Form Xeditable';">
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">HTML5 Input Fields</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-bottom-0">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label class="form-label">Email</label>
+                            <div class="controls"> <a editable-email="html5.email">{{ html5.email || 'empty' }}</a></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Tel</label>
+                            <div class="controls"> <a editable-tel="html5.tel" e-pattern="\d{3}\-\d{2}\-\d{2}" e-title="xxx-xx-xx">{{ html5.tel || 'empty' }}</a></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Number</label>
+                            <div class="controls"> <a editable-number="html5.number" e-min="18">{{ html5.number || 'empty' }}</a></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Range</label>
+                            <div class="controls"> <a editable-range="html5.range" e-step="5">{{ html5.range || 'empty' }}</a></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Url</label>
+                            <div class="controls"> <a editable-url="html5.url">{{ html5.url || 'empty' }}</a></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Search</label>
+                            <div class="controls"> <a editable-search="html5.search">{{ html5.search || 'empty' }}</a></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Color</label>
+                            <div class="controls"> <a editable-color="html5.color">{{ html5.color || 'empty' }}</a></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Date</label>
+                            <div class="controls"> <a editable-date="html5.date">{{ html5.date || 'empty' }}</a></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Time</label>
+                            <div class="controls"> <a editable-time="html5.time">{{ html5.time || 'empty' }}</a></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Datetime</label>
+                            <div class="controls"> <a editable-datetime="html5.datetime">{{ html5.datetime || 'empty' }}</a></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Month</label>
+                            <div class="controls"> <a editable-month="html5.month">{{ html5.month || 'empty' }}</a></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Week</label>
+                            <div class="controls"> <a editable-week="html5.week">{{ html5.week || 'empty' }}</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Elements</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body padding-bottom-0">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <label class="form-label" for="field-2">Text</label>
+                            <div class="controls">
+                                <p class="form-control-static">
+                                    <a editable-text="user.name">{{ user.name || 'empty' }}</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="field-2">Text</label>
+                            <div class="controls">
+                                <p class="form-control-static">
+                                    <a editable-select="user.status" e-ng-options="s.value as s.text for s in statuses">
+                                        {{ showStatus(user) }}
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Select:</label>
+                            <div class="controls">
+                                <p class="form-control-static">
+                                    <a editable-select="user.status" e-ng-options="s.value as s.text for s in statuses">
+                        {{ showStatus(user) }}
+                    </a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Textarea:</label>
+                            <div class="controls">
+                                <p class="form-control-static">
+                                    <a editable-textarea="user.desc" e-rows="7">
+                                    {{ user.desc || 'no description' }}
+                                  </a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Checkbox:</label>
+                            <div class="controls">
+                                <p class="form-control-static">
+                                    <a editable-checkbox="user.remember" e-title="Remember?">
+                                    {{ user.remember && "Remember me!" || "Don't remember" }}
+                                  </a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Radiolist:</label>
+                            <div class="controls">
+                                <p class="form-control-static">
+                                    <a editable-radiolist="user.agenda" e-ng-options="s.value as s.text for s in agenda">
+                                    {{ showAgenda() }}
+                                  </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

@@ -1,0 +1,82 @@
+<div class='content-wrapper' ng-init="app.settings.pagetitle = 'Morris Charts';">
+    
+  <div class="col-lg-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Line Graph</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div ng-controller='MorrisCtrl'>
+                            <div line-chart line-data='[
+                    { y: "2006", a: 100, b: 90 },
+                    { y: "2007", a: 175,  b: 115 },
+                    { y: "2008", a: 150,  b: 40 },
+                    { y: "2009", a: 175,  b: 165 },
+                    { y: "2010", a: 150,  b: 100 },
+                    { y: "2011", a: 75,  b: 165 },
+                    { y: "2012", a: 100, b: 190 }
+                ]' line-xkey='["y"]' line-ykeys='["a", "b"]' line-labels='["Serie A", "Serie B"]' line-colors='["#673AB7", "#FF6E40"]'>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+        <div class="col-lg-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Bar Chart</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div ng-controller='MorrisCtrl'>
+                            <div bar-chart bar-data='barData' bar-x='y' bar-y='["a","b","c","d"]'></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+  
+    <div class="col-lg-12">
+        <section class="box ">
+            <header class="panel_header">
+                <h2 class="title pull-left">Donut Graph</h2>
+                <div class="actions panel_actions pull-right">
+                    <i class="box_toggle material-icons">expand_more</i>
+                    <i class="box_setting material-icons" ng-click="section_modal()">mode_edit</i>
+                    <i class="box_close material-icons">close</i>
+                </div>
+            </header>
+            <div class="content-body">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div ng-controller='MorrisCtrl'>
+                            <div donut-chart donut-data='[
+                {label: "Download Sales", value: 12},
+                {label: "In-Store Sales",value: 30},
+                {label: "Mail-Order Sales", value: 20}
+            ]' donut-colors='["#31C0BE","#c7254e","#98a0d3"]'>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

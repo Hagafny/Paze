@@ -1,0 +1,78 @@
+[
+    
+{
+  "avatar": "data/professors/professor-1.jpg",
+  "position": "Professor",
+  "department": "Computer Engineering",
+  "name": "Mr. Laura Arnold",
+  "brief": "Well known for deep knowledge and experience on the subject. His teachings and lectures are attended regularly."
+}, {
+  "avatar": "data/professors/professor-2.jpg",
+  "position": "Professor",
+  "department": "Architecture",
+  "name": "Mr. Benjamin Olson",
+  "brief": "Well known for deep knowledge and experience on the subject. His teachings and lectures are attended regularly."
+}, {
+  "avatar": "data/professors/professor-3.jpg",
+  "position": "Professor",
+  "department": "Mechanical Engineering",
+  "name": "Mr. Andrew Pierce",
+  "brief": "Well known for deep knowledge and experience on the subject. His teachings and lectures are attended regularly."
+}, {
+  "avatar": "data/professors/professor-4.jpg",
+  "position": "Professor",
+  "department": "Civil Engg.",
+  "name": "Mr. Nancy Reed",
+  "brief": "Well known for deep knowledge and experience on the subject. His teachings and lectures are attended regularly."
+}, {
+  "avatar": "data/professors/professor-5.jpg",
+  "position": "Professor",
+  "department": "Automobile Engg.",
+  "name": "Mrs. Mildred Franklin",
+  "brief": "Well known for deep knowledge and experience on the subject. His teachings and lectures are attended regularly."
+}, {
+  "avatar": "data/professors/professor-6.jpg",
+  "position": "Professor",
+  "department": "MBA",
+  "name": "Mrs. Linda Mills",
+  "brief": "Well known for deep knowledge and experience on the subject. His teachings and lectures are attended regularly."
+}, {
+  "avatar": "data/professors/professor-7.jpg",
+  "position": "Assitant Professor",
+  "department": "Computer Engineering",
+  "name": "Mr. Evelyn Oliver",
+  "brief": "Well known for deep knowledge and experience on the subject. His teachings and lectures are attended regularly."
+}, {
+  "avatar": "data/professors/professor-8.jpg",
+  "position": "Assitant Professor",
+  "department": "Architecture",
+  "name": "Mr. George Hanson",
+  "brief": "Well known for deep knowledge and experience on the subject. His teachings and lectures are attended regularly."
+}, {
+  "avatar": "data/professors/professor-9.jpg",
+  "position": "Assitant Professor",
+  "department": "Mechanical Engineering",
+  "name": "Mr. Teresa Parker",
+  "brief": "Well known for deep knowledge and experience on the subject. His teachings and lectures are attended regularly."
+}, {
+  "avatar": "data/professors/professor-10.jpg",
+  "position": "Assitant Professor",
+  "department": "Civil Engg.",
+  "name": "Mrs. Steve Coleman",
+  "brief": "Well known for deep knowledge and experience on the subject. His teachings and lectures are attended regularly."
+}, {
+  "avatar": "data/professors/professor-11.jpg",
+  "position": "Assitant Professor",
+  "department": "Automobile Engg.",
+  "name": "Mr. Shawn Pierce",
+  "brief": "Well known for deep knowledge and experience on the subject. His teachings and lectures are attended regularly."
+}, {
+  "avatar": "data/professors/professor-12.jpg",
+  "position": "Assitant Professor",
+  "department": "MBA",
+  "name": "Mr. Diana Elliott",
+  "brief": "Well known for deep knowledge and experience on the subject. His teachings and lectures are attended regularly."
+}
+
+    
+]
