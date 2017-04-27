@@ -59,22 +59,6 @@ var webhookGet = (req, res) => {
     //AFTERINTERVIEW : 1,
 //}
 
-function post(options, callback) {
-    var options =  options;
-    var req = https.request(options, function(res) {
-      res.setEncoding('utf8');
-      res.on('data', callback);
-    });
-
-    req.on('error', function(e) {
-      console.log('problem with request: ' + e.message);
-    });
-
-    // write data to request body
-    req.write('{"string": "Hello, World"}');
-    req.end();
-}
-
 var webhookPost = (req, res) => {
     var data = req.body;
     console.log(JSON.stringify(data));
@@ -136,40 +120,7 @@ function receivedMessage(event) {
     var messageAttachments = message.attachments;
     var quickReply = message.quick_reply;
     
-    try {
-
-        post({
-          hostname: 'westus.api.cognitive.microsoft.com',
-          port: 80,
-          path: 'text/analytics/v2.0/topics?minDocumentsPerWord=1&maxDocumentsPerWord=100',
-          method: 'POST',
-          headers: {
-              'Content-Type': 'application/json',
-              'Ocp-Apim-Subscription-Key': '0b08f2e3532d4e789b3918ea26e82f6b'
-          }, body: {
-              "stopWords": [],
-              "topicsToExclude": [],
-              "documents": [
-                {
-                  "id": "123125411351313125125",
-                  "text": messageText
-                }
-              ]
-          } 
-        }, function(body) {
-                sendTextMessage(senderID, body);
-                //console.log('Got response', response ? JSON.stringify(response) : "undefined responseText");
-        });
-        
-            
-
-    } catch(e) {
-       sendTextMessage(senderID, e.message);
-    }
-
-    return;
-
-    if (isEcho) {
+     if (isEcho) {
         handleEcho(messageId, appId, metadata);
         return;
     } else if (quickReply) {
