@@ -5,7 +5,7 @@ let getById = (req, res) => {
     let id = req.params.id;
     participantService.getById(id, (err, participant) => {
         if (err)
-            res.stats(404).json(err);
+            res.status(404).json(err);
         else if (!participant)
             res.status(404).send("Invalid participant ID");
         else
