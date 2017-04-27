@@ -1,16 +1,16 @@
 {
-  "name": "hero",
+  "name": "Paze",
   "version": "1.0.0",
-  "description": "",
+  "description": "Later",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
     "url": ""
   },
-  "author": "",
+  "author": "Ron Hagafny, Amir Hagafny, Yinon Haver, Lir Lavon, Ofer Lipman",
   "license": "ISC",
   "dependencies": {
     "apiai": "^2.0.5",
