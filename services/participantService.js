@@ -9,6 +9,15 @@ let getById = (id, callback) => {
     })
 }
 
+let getByFbid = (fbid, callback) => {
+    Participant.findOne({ fbid: fbid }, (err, participant) => {
+        if (err) console.error(err);
+        
+        if (typeof callback == typeof Function)
+            callback(err, participant);
+    })
+}
+
 let save = (participant, callback) => {
     new Participant(participant).save((err, savedParticipant) => {
         if (err) console.error(err);
@@ -49,6 +58,7 @@ let getParticpantsByDeliveryGroup = (deliveryGroup, callback) => {
 
 module.exports = {
     getById: getById,
+    getByFbid: getByFbid,
     save: save,
     getParticpantsByDeliveryGroup: getParticpantsByDeliveryGroup
 };

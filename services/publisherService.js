@@ -20,7 +20,17 @@ let save = (publisher, callback) => {
     });
 }
 
+let getByEmail = (email, callback) => {
+     Publisher.findOne({ email: email }, (err, publisher) => {
+        if (err) console.error(err);
+        
+        if (typeof callback == typeof Function)
+            callback(err, publisher);
+    })   
+}
+
 module.exports = {
     getById: getById,
-    save: save
+    save: save,
+    getByEmail: getByEmail
 };

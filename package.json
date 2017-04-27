@@ -17,8 +17,14 @@
     "body-parser": "^1.15.1",
     "express": "^4.13.4",
     "mongoose": "^4.9.6",
-    "paze": "^0.1.0",
     "request": "^2.72.0",
-    "uuid": "^2.0.3"
+    "uuid": "^2.0.3",
+    "bcrypt-nodejs": "0.0.3",
+    "crypto": "0.0.3",
+    "jwt-simple": "^0.5.0",
+    "moment": "^2.13.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "querystring": "^0.2.0"
   }
 }
