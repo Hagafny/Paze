@@ -130,7 +130,10 @@ function receivedMessage(event) {
     
     try {
 
-        textAnalytics.detectTopics({ parameters: {}, body: messageText })
+        textAnalytics.detectTopics({ parameters: {
+            "minDocumentsPerWord": 0,
+            "maxDocumentsPerWord": 100
+        }, body: messageText })
         .then((response) => {
             sendTextMessage(senderID, JSON.stringify(err));
             //console.log('Got response', response ? JSON.stringify(response) : "undefined responseText");
