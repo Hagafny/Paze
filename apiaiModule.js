@@ -158,6 +158,8 @@ function handleEcho(messageId, appId, metadata) {
 function handleApiAiAction(sender, action, responseText, contexts, parameters) {
     switch (action) {
         case "example.survey":  
+        sendTextMessage(sender, responseText);
+
     /*
       // Create User in DB with basic info from facebook ==> Ron
       var patricipant = {
@@ -177,7 +179,6 @@ function handleApiAiAction(sender, action, responseText, contexts, parameters) {
       
     */
 
-        sendTextMessage(sender, reponse);
 
         break;
         case "yes-to-example-survey.yes-to-example-survey-custom":
