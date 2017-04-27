@@ -161,6 +161,8 @@ function handleApiAiAction(sender, action, responseText, contexts, parameters) {
                if (contexts[0].parameters['Age'] == "" && contexts[0].parameters['Gender'] == "" && contexts[0].parameters['Location'] == "" &&contexts[0].parameters['RelationshipStatus'] == "" && contexts[0].parameters['Career'] == "" ) {
                    // Create User in DB with basic info from facebook ==> Ron
                    sendTextMessage(sender, "Great ! Let's get started");
+                   sendTextMessage(sender, "What is your age ?");
+
                }
              //  sendTypingOn(sender);
             //   sendTypingOff(sender);
