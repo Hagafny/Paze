@@ -9,6 +9,7 @@ const passport = require('passport');
 const createSendToken = require('./services/jwt.js');
 const facebookAuth = require('./services/facebookAuth.js');
 const localStrategy = require('./services/localStrategy.js');
+const routes = require('./routes');
 
 require('./dbConnector')(() => {
     console.log('mongo connected!');
@@ -51,6 +52,8 @@ app.get('/', function (req, res) {
 // for Facebook verification
 app.get('/webhook/', apiAiModule.webhookGet);
 app.post('/webhook/', apiAiModule.webhookPost);
+
+app.use('/api', routes);
 
 // Spin up the server
 app.listen(app.get('port'), function () {
