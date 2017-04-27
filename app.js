@@ -6,6 +6,10 @@ const bodyParser = require('body-parser');
 const app = express();
 const apiAiModule = require('./apiaiModule');
 
+require('./dbConnector')(() => {
+    console.log('mongo connected!');
+})
+
 app.set('port', (process.env.PORT || 5000));
 
 //verify request came from facebook
