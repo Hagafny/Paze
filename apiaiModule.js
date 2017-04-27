@@ -9,7 +9,7 @@ const uuid = require('uuid');
 const participantService = require("./services/participantService");
 const cognitiveServices = require('cognitive-services');
 
-const textAnalytics = new cognitiveServices.textAnalytics({
+const textAnalytics = cognitiveServices.textAnalytics({
     API_KEY: '0b08f2e3532d4e789b3918ea26e82f6b'
 })
  
