@@ -23,7 +23,7 @@ angular.module('app').controller('AppCtrl', ['$scope',
                 text: '#767676'
             },
             settings: {
-                menuProfile: true,
+                menuProfile: false,
                 menuFolded: menufold,
                 chatFolded: true,
                 layoutBoxed: false,

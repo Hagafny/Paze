@@ -8,6 +8,10 @@ angular.module('app')
         ['$stateProvider', '$urlRouterProvider', 'JQ_CONFIG',
             function($stateProvider, $urlRouterProvider, JQ_CONFIG) {
 
+                console.log($stateProvider);
+                console.dir($stateProvider);
+
+
                 $urlRouterProvider
                     .otherwise('/app/dashboard');
                 $stateProvider
