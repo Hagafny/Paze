@@ -173,7 +173,12 @@ function handleApiAiAction(sender, action, responseText, contexts, parameters) {
      hashtags: [String]
 
       }
+
+      
     */
+
+        sendTextMessage(sender, reponse);
+
         break;
         case "yes-to-example-survey.yes-to-example-survey-custom":
 
