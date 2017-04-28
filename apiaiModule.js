@@ -149,7 +149,7 @@ function receivedMessage(event) {
         } else if (messageAttachments) {
             handleMessageAttachments(messageAttachments, senderID);
         }
-    })});
+    });});
         
 
     
