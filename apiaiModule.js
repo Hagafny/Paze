@@ -117,8 +117,8 @@ function receivedMessage(event) {
         sessionIds.set(senderID, uuid.v1());
     }
 
-    if (isUserFillingSurvey(event.sender, message.text)) {
-        saveAndRespondNextQuestion(event.sender, message.text);
+    if (isUserFillingSurvey(senderID, message.text)) {
+        saveAndRespondNextQuestion(senderID, message.text);
         return;
     }    
 
@@ -895,8 +895,6 @@ function saveAndRespondNextQuestion(senderID, answer) {
 
     surveyService.getById(record.surveyId, function(err, survey) {
 
-
-        console.log("PRINT");
         console.log(JSON.stringify(survey));
 
         if(survey.questions.length - 1 > record.questionNum) {
@@ -911,7 +909,7 @@ function saveAndRespondNextQuestion(senderID, answer) {
                 //saveAnswer here
                 console.log("Sender ID: " + senderID);
                 console.log("6" + JSON.stringify(senderID));
-                sendQuickReply(senderID, question.content);
+                sendQuickReply(senderID.id, question.content);
             } else {
                 var replies = [];
                 for(var i = 0; i < question.options.length; i++) {
