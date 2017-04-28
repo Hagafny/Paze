@@ -915,8 +915,6 @@ function saveAndRespondNextQuestion(senderID, answer) {
                 user.questionNum++;
                 participantService.save(user);
 
-                console.error("user Saved " + user.questionNum);
-
                 // Responding to sender with the next question
                 if(question.type == 1) {
                     //saveAnswer here
@@ -926,9 +924,13 @@ function saveAndRespondNextQuestion(senderID, answer) {
                         for(var i = 0; i < question.options.length; i++) {
                             replies.push({
                                 "content_type":"text",
-                                "title": question.options[i]
+                                "title": question.options[i],
+                                "payload": question.options[i]
                             });
                         }
+
+
+                        console.log("@#!@      " + question.content +  "       $!@$%!@   " + JSON.stringify(replies));
                         sendQuickReply(senderID, question.content, replies);
                 }
             } else {
