@@ -930,7 +930,11 @@ function saveAndRespondNextQuestion(senderID, answer) {
 }
 
 function isUserFillingSurvey(senderID, answer) {
-    console.log("ANSWER: : :" + JSON.stringify(answer));
+
+    if(typeof(answer) != "string") {
+        answer = answer.replies[0];
+    }
+
     return surveyRecords.has(senderID) || answer && (answer.indexOf("yes.fill.survey") == 0);
 }
 
