@@ -930,7 +930,7 @@ function saveAndRespondNextQuestion(senderID, answer) {
 }
 
 function isUserFillingSurvey(senderID, answer) {
-    return surveyRecords.has(senderID) || event && (answer.indexOf("yes.fill.survey") == 0);
+    return surveyRecords.has(senderID) || answer && (answer.indexOf("yes.fill.survey") == 0);
 }
 
 function sendCompleteMessage(senderID, publisherId, record) {
