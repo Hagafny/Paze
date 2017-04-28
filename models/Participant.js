@@ -8,6 +8,12 @@ let participantSchema = mongoose.Schema({
   status: Number,
   gender: Number,
   income: Number,
+  record: {
+  	active:Boolean,
+  	surveyId: Number,
+  	questionNum: Number,
+  	answers: [String]
+  }
   location: String,
   hashtags: [String]
 });
