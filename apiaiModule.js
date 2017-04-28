@@ -909,7 +909,7 @@ function saveAndRespondNextQuestion(senderID, answer) {
                 //saveAnswer here
                 console.log("Sender ID: " + senderID);
                 console.log("6" + JSON.stringify(senderID));
-                sendQuickReply(senderID.id, question.content);
+                sendQuickReply(senderID, question.content);
             } else {
                 var replies = [];
                 for(var i = 0; i < question.options.length; i++) {
