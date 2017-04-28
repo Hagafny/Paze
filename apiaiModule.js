@@ -118,38 +118,41 @@ function receivedMessage(event) {
         sessionIds.set(senderID, uuid.v1());
     }
 
-    if (isUserFillingSurvey(senderID, message.text)) {
-        saveAndRespondNextQuestion(senderID, message.text);
-        return;
-    }    
+    isUserFillingSurvey(senderID, message.text, callback(err) {
+        aveAndRespondNextQuestion(senderID, message.text);
+    }, function(err) {
+        participantService.getByFbid(senderID, function(err, user) {
+        //console.log("Received message for user %d and page %d at %d with message:", senderID, recipientID, timeOfMessage);
+        //console.log(JSON.stringify(message));
 
-    //console.log("Received message for user %d and page %d at %d with message:", senderID, recipientID, timeOfMessage);
-    //console.log(JSON.stringify(message));
+        var isEcho = message.is_echo;
+        var messageId = message.mid;
+        var appId = message.app_id;
+        var metadata = message.metadata;
 
-    var isEcho = message.is_echo;
-    var messageId = message.mid;
-    var appId = message.app_id;
-    var metadata = message.metadata;
+        // You may get a text or attachment but not both
+        var messageText = message.text;
+        var messageAttachments = message.attachments;
+        var quickReply = message.quick_reply;
+        
+         if (isEcho) {
+            handleEcho(messageId, appId, metadata);
+            return;
+        } else if (quickReply) {
+            handleQuickReply(senderID, quickReply, messageId);
+            return;
+        }
 
-    // You may get a text or attachment but not both
-    var messageText = message.text;
-    var messageAttachments = message.attachments;
-    var quickReply = message.quick_reply;
+        if (messageText) {
+            //send message to api.ai
+            sendToApiAi(senderID, messageText);
+        } else if (messageAttachments) {
+            handleMessageAttachments(messageAttachments, senderID);
+        }
+    }) 
+        
+
     
-     if (isEcho) {
-        handleEcho(messageId, appId, metadata);
-        return;
-    } else if (quickReply) {
-        handleQuickReply(senderID, quickReply, messageId);
-        return;
-    }
-
-    if (messageText) {
-        //send message to api.ai
-        sendToApiAi(senderID, messageText);
-    } else if (messageAttachments) {
-        handleMessageAttachments(messageAttachments, senderID);
-    }
 }
 
 
@@ -877,7 +880,6 @@ function saveAndRespondNextQuestion(senderID, answer) {
 
     var surveyId = "59022c50362ceb0004facbcf"; // CHANGE HERE !!!
 
-    console.log("USER:" + JSON.stringify(user));
 
     if(!user.active) {
         user.active = true;
@@ -942,8 +944,14 @@ function saveAndRespondNextQuestion(senderID, answer) {
     });
 }
 
-function isUserFillingSurvey(senderID, answer) {
-    return (surveyRecords.has(senderID) || answer == "Start!");
+function isUserFillingSurvey(senderID, answer, yes, no) {
+    participantService.getByFbid(senderID, function(err, user) {
+        if(user.active) {
+            yes.apply(this);
+        } else {
+            no.apply(this);
+        }
+    }
 }
 
 function sendCompleteMessage(senderID, publisherId, user) {
