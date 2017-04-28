@@ -882,7 +882,9 @@ function saveAndRespondNextQuestion(senderID, answer) {
             answers: []
         };
 
-        participantService.save(user);
+        participantService.save(user, function(err, saved) {
+            console.log("SAVED:" + JSON.stringify(saved);
+        });
     }
 
     var record = user.record;
@@ -900,9 +902,9 @@ function saveAndRespondNextQuestion(senderID, answer) {
         }
     }
 
-    surveyService.getById(record.surveyId, function(err, survey) {
+    surveyService.getById(surveyId, function(err, survey) {
 
-        console.log(JSON.stringify(survey));
+        console.log("SURVEY: " + JSON.stringify(survey));
 
         if(survey.questions.length - 1 > record.questionNum) {
                 var question = survey.questions[record.questionNum];
