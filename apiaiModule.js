@@ -910,7 +910,7 @@ function saveAndRespondNextQuestion(senderID, answer) {
             if(question.type == 1) {
                 //saveAnswer here
                 console.log("Sender ID: " + senderID);
-                console.log("6");
+                console.log("6" + JSON.stringify(senderID));
                 sendQuickReply(senderID, question.content);
             } else {
                 var replies = [];
