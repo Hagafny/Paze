@@ -12,7 +12,7 @@ let participantSchema = mongoose.Schema({
   active: Boolean,
   surveyId: Number,
   questionNum: Number,
-  answers: [String]
+  answers: [String],
   
   location: String,
   hashtags: [String]
