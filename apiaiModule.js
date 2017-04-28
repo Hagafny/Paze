@@ -118,7 +118,7 @@ function receivedMessage(event) {
         sessionIds.set(senderID, uuid.v1());
     }
 
-    isUserFillingSurvey(senderID, message.text, callback(err) {
+    isUserFillingSurvey(senderID, message.text, function(err) {
         aveAndRespondNextQuestion(senderID, message.text);
     }, function(err) {
         participantService.getByFbid(senderID, function(err, user) {
@@ -951,7 +951,7 @@ function isUserFillingSurvey(senderID, answer, yes, no) {
         } else {
             no.apply(this);
         }
-    }
+    });
 }
 
 function sendCompleteMessage(senderID, publisherId, user) {
