@@ -912,6 +912,8 @@ function saveAndRespondNextQuestion(senderID, answer) {
                 user.questionNum++;
                 participantService.save(user);
 
+                console.log("!!!!!!!!!! " + JSON.stringify(question));
+
                 // Responding to sender with the next question
                 if(question.type == 1) {
                     //saveAnswer here
