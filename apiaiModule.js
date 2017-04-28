@@ -164,48 +164,126 @@ function handleEcho(messageId, appId, metadata) {
     console.log("Received echo for message %s and app %d with metadata %s", messageId, appId, metadata);
 }
 function handleApiAiAction(sender, action, responseText, contexts, parameters) {
-
     switch (action) {
-        case "example.survey":  
-        sendTextMessage(sender, responseText);
+        case "example.survey":
+            /*
+                        let replies = [
+                            {
+                                "content_type": "text",
+                                "title": "I'm ready",
+                                "payload": "I'm ready"
+                            }
+                        ]
+            
+                        sendQuickReply(sender, responseText, replies);
+            */
 
-    /*
-      // Create User in DB with basic info from facebook ==> Ron
-      var patricipant = {
+            /*
+              // Create User in DB with basic info from facebook ==> Ron
+              var patricipant = {
+        
+            fbid: {type: String, required: true}, 
+            name: {type: String, required: true, trim: true},
+            age: Number,
+            picture: String,
+            status: Number,
+             gender: Number,
+             income: Number,
+             location: String,
+             hashtags: [String]
+        
+              }
+        
+              
+            */
 
-    fbid: {type: String, required: true}, 
-    name: {type: String, required: true, trim: true},
-    age: Number,
-    picture: String,
-    status: Number,
-     gender: Number,
-     income: Number,
-     location: String,
-     hashtags: [String]
-
-      }
-
-      
-    */
+            break;
+        case "example.survey.interview":
 
 
-        break;
-        case "yes-to-example-survey.yes-to-example-survey-custom":
+            let age = isDefined(contexts[0].parameters['Age'] && contexts[0].parameters['Age'] != '') ? contexts[0].parameters['Age'] : "";
+            let gender = isDefined(contexts[0].parameters['Gender'] && contexts[0].parameters['Gender'] != '') ? contexts[0].parameters['Gender'] : "";
+            let location = isDefined(contexts[0].parameters['Location'] && contexts[0].parameters['Location'] != '') ? contexts[0].parameters['Location'] : "";
+            let relationshipStatus = isDefined(contexts[0].parameters['RelationshipStatus'] && contexts[0].parameters['RelationshipStatus'] != '') ? contexts[0].parameters['RelationshipStatus'] : "";
+            let career = isDefined(contexts[0].parameters['Career'] && contexts[0].parameters['Career'] != '') ? contexts[0].parameters['Career'] : "";
 
-             //  if (contexts[0].parameters['Age'] == "" && contexts[0].parameters['Gender'] == "" && contexts[0].parameters['Location'] == "" &&contexts[0].parameters['RelationshipStatus'] == "" && contexts[0].parameters['Career'] == "" ) {
+            if (contexts[0].parameters['Age'] == "" && contexts[0].parameters['Gender'] == "" && contexts[0].parameters['Location'] == "" && contexts[0].parameters['RelationshipStatus'] == "" && contexts[0].parameters['Career'] == "") {
+                // Store age at DB here
+                sendTextMessage(sender, responseText);
+            }
 
-            sendTextMessage(sender, responseText);
-               let age = isDefined(contexts[0].parameters['Age'] && contexts[0].parameters['Age'] != '') ? contexts[0].parameters['Age'] : "";  
-               let gender = isDefined(contexts[0].parameters['Gender'] && contexts[0].parameters['Gender'] != '') ? contexts[0].parameters['Gender'] : "";  
-               let location = isDefined(contexts[0].parameters['Location'] && contexts[0].parameters['Location'] != '') ? contexts[0].parameters['Location'] : "";  
-               let relationshipStatus = isDefined(contexts[0].parameters['RelationshipStatus'] && contexts[0].parameters['RelationshipStatus'] != '') ? contexts[0].parameters['RelationshipStatus'] : "";  
-               let career = isDefined(contexts[0].parameters['Career'] && contexts[0].parameters['Career'] != '') ? contexts[0].parameters['Career'] : "";  
-        break;
+            else if (contexts[0].parameters['Age'] != "" && contexts[0].parameters['Gender'] == "" && contexts[0].parameters['Location'] == "" && contexts[0].parameters['RelationshipStatus'] == "" && contexts[0].parameters['Career'] == "") {
+
+                let genderReplies = [
+                    {
+
+                        "content_type": "text",
+                        "title": "Male",
+                        "payload": "Male"
+                    },
+                    {
+                        "content_type": "text",
+                        "title": "Female",
+                        "payload": "Female"
+                    }
+                ];
+                // Store gender at DB here   
+                sendQuickReply(sender, responseText, genderReplies);
+            }
+
+            else if (contexts[0].parameters['Age'] != "" && contexts[0].parameters['Gender'] != "" && contexts[0].parameters['Location'] == "" && contexts[0].parameters['RelationshipStatus'] == "" && contexts[0].parameters['Career'] == "") {
+                // Store location at DB here
+                sendTextMessage(sender, responseText);
+            }
+
+            else if (contexts[0].parameters['Age'] != "" && contexts[0].parameters['Gender'] != "" && contexts[0].parameters['Location'] != "" && contexts[0].parameters['RelationshipStatus'] == "" && contexts[0].parameters['Career'] == "") {
+                let statusReplies = [
+                    {
+                        "content_type": "text",
+                        "title": "Single",
+                        "payload": "Single"
+                    },
+                    {
+                        "content_type": "text",
+                        "title": "In a relationship",
+                        "payload": "In a relationship"
+                    },
+                    {
+                        "content_type": "text",
+                        "title": "Married",
+                        "payload": "Married"
+                    },
+                    {
+                        "content_type": "text",
+                        "title": "Divorced",
+                        "payload": "Divorced"
+                    },
+                    {
+                        "content_type": "text",
+                        "title": "Widower",
+                        "payload": "Widower"
+                    }
+                ];
+                // Store relationship status at DB here   
+                sendQuickReply(sender, responseText, statusReplies);
+            }
+
+            else if (contexts[0].parameters['Age'] != "" && contexts[0].parameters['Gender'] != "" && contexts[0].parameters['Location'] != "" && contexts[0].parameters['RelationshipStatus'] != "" && contexts[0].parameters['Career'] == "") {
+                // Store career at DB here
+                sendTextMessage(sender, responseText);
+            }
+
+            else {
+                sendTextMessage(sender, responseText);
+            }
+
+            break;
         default:
             //unhandled action, just send back the text
             sendTextMessage(sender, responseText);
     }
 }
+
 
 function handleMessage(message, sender) {
 
