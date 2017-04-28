@@ -870,10 +870,11 @@ function saveAndRespondNextQuestion(senderID, answer) {
     // "would you like to have this survey" question)
 
     participantService.getByFbid(senderID, function(err, user) {
-        console.log("1");
+
     var surveyId = "59022c50362ceb0004facbcf"; // CHANGE HERE !!!
-    console.log("SENDER: " + senderID);
-    console.log("2");
+
+    console.log("USER:" + JSON.stringify(user));
+
     if(!user.record) {
         user.record = {
             surveyId: surveyId,
