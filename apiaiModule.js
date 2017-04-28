@@ -890,17 +890,13 @@ function receivedPostback(event) {
     }
 
     switch (payload) {
-
-<<<<<<< HEAD
         case "GetStarted_Button_Pressed":
             sendTypingOn(sender);
             sendTypingOff(sender);
             greetUserText(senderID); 
-=======
             sendTypingOn(sender);
             sendTypingOff(sender);
             greetUserText(senderID);
->>>>>>> e04151b36fe1de1d1c6a81e2ba16c8d0f06fef24
             sendTypingOn(sender);
             sendTypingOff(sender);
             sendTextMessage(senderID, "My name is Paze and I am an artifcial inteligance powered survey panel bot");
@@ -909,7 +905,6 @@ function receivedPostback(event) {
             sendTextMessage(senderID, "My wish is to send you surveys and I will pay you in exchange for your answers");
             sendTypingOn(sender);
             sendTypingOff(sender);
-<<<<<<< HEAD
       //    sendToApiAi(sender,)
      //    sendTextMessage(senderID, "The more I know you, the more survies you will receive. Would you like for us to conduct an example survey?");
 
@@ -927,8 +922,7 @@ function receivedPostback(event) {
             ];
 
             sendQuickReply(senderID, "The more I know you, the more survies you will receive. Would you like for us to conduct an example survey?",replies);
-        break;
-=======
+            break;
             //    sendToApiAi(sender,)
             //    sendTextMessage(senderID, "The more I know you, the more survies you will receive. Would you like for us to conduct an example survey?");
 
@@ -946,7 +940,6 @@ function receivedPostback(event) {
             ]
             sendQuickReply(senderID, "The more I know you, the more survies you will receive. Would you like for us to conduct an example survey?", replies);
             break;
->>>>>>> e04151b36fe1de1d1c6a81e2ba16c8d0f06fef24
         default:
             //unindentified payload
             sendTextMessage(senderID, "I'm not sure what you want. Can you be more specific?");
