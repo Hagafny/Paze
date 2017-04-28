@@ -909,6 +909,8 @@ function saveAndRespondNextQuestion(senderID, answer) {
             // Responding to sender with the next question
             if(question.type == 1) {
                 //saveAnswer here
+                console.log("Sender ID: " + senderID);
+                console.log("6");
                 sendQuickReply(senderID, question.content);
             } else {
                 var replies = [];
@@ -918,9 +920,13 @@ function saveAndRespondNextQuestion(senderID, answer) {
                         "title": question.options[i]
                     });
                 }
+                console.log("Sender ID: " + senderID)
+                console.log("5");
                 sendQuickReply(senderID, question.content, replies);
             }
         } else {
+            console.log("Sender ID: " + senderID);
+            console.log("4");
             sendCompleteMessage(senderID, survey.publisherId, record);
         }
         
@@ -932,6 +938,7 @@ function isUserFillingSurvey(senderID, answer) {
 }
 
 function sendCompleteMessage(senderID, publisherId, record) {
+    console.log("3");
     surveyRecords.delete(senderID);
     answerService.save({
         "participantId": senderID,
