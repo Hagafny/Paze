@@ -863,8 +863,8 @@ function sendCompleteMessage(senderID, publisherId, record) {
         "publisherId": publisherId,
         "answers": record.answers,
         "__v": 0
-    } ,callback(err) {
-        sendQuickReply(senderID, "Thanks for participating in our survey! Till the next time :)");
+    } ,function(err) {
+        sendQuickReply(senderID, "Thanks for participating in our survey! Till the next time");
     });
 }
 
