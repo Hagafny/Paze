@@ -883,7 +883,7 @@ function saveAndRespondNextQuestion(senderID, answer) {
         };
 
         participantService.save(user, function(err, saved) {
-            console.log("SAVED:" + JSON.stringify(saved);
+            console.log("SAVED:" + JSON.stringify(saved));
         });
     }
 
