@@ -884,10 +884,8 @@ function saveAndRespondNextQuestion(senderID, answer) {
         participantService.save(user);
     }
 
-    console.log("3");
-
     var record = user.record;
-    console.log("4");
+
     // Unless its the first question (which is the payload), save user's answer
     if(record.questionNum) {
         if(answer.split(" ").length > 3) {
