@@ -875,12 +875,11 @@ function saveAndRespondNextQuestion(senderID, answer) {
 
     console.log("USER:" + JSON.stringify(user));
 
-    if(!user.record.active) {
-        user.record = {
-            active: true,
-            surveyId: surveyId,
-            questionNum: 0,
-            answers: []
+        if(!user.active) {
+            user.active = true;
+            user.surveyId = surveyId;
+            user.questionNum = 0;
+            user.answers = [];
         };
 
         participantService.save(user, function(err, saved) {
@@ -888,17 +887,15 @@ function saveAndRespondNextQuestion(senderID, answer) {
         });
     }
 
-    var record = user.record;
-
     // Unless its the first question (which is the payload), save user's answer
-    if(record.questionNum) {
+    if(user.questionNum) {
         if(answer.split(" ").length > 3) {
             textapi.sentiment({ "text": answer }, function(error, response) {
-                record.answers.push({ content: answer, sentiment: response.polarity == "positive" ? 1 : (response.polarity == "negative" ? -1 : 0)});
+                user.answers.push({ content: answer, sentiment: response.polarity == "positive" ? 1 : (response.polarity == "negative" ? -1 : 0)});
                 participantService.save(user);
             });
         } else {
-            record.answers.push({ content: answer });
+            user.answers.push({ content: answer });
             participantService.save(user);
         }
     }
@@ -907,11 +904,11 @@ function saveAndRespondNextQuestion(senderID, answer) {
 
         console.log("SURVEY: " + JSON.stringify(survey));
 
-        if(survey.questions.length - 1 > record.questionNum) {
-                var question = survey.questions[record.questionNum];
+        if(survey.questions.length - 1 > user.questionNum) {
+                var question = survey.questions[user.questionNum];
 
                 // Incrementing qustion number
-                record.questionNum++;
+                user.questionNum++;
                 participantService.save(user);
 
                 // Responding to sender with the next question
@@ -945,18 +942,16 @@ function sendCompleteMessage(senderID, publisherId, user) {
     console.log("3");
     answerService.save({
         "participantId": senderID,
-        "surveyId": user.record.surveyId,
+        "surveyId": user.surveyId,
         "publisherId": publisherId,
-        "answers": user.record.answers,
+        "answers": user.answers,
         "__v": 0
     } ,function(err) {
 
-        user.record = {
-            active: false,
-            surveyId: surveyId,
-            questionNum: 0,
-            answers: []
-        };
+        user.active = false;
+        user.surveyId = 1;
+        user.questionNum = 0;
+        user.answers = [];
 
         participantService.save(user);
         sendQuickReply(senderID, "Thanks for participating in our survey! Till the next time");
