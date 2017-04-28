@@ -869,7 +869,7 @@ function saveAndRespondNextQuestion(senderID, answer) {
     // Record not found - this is the first real question (other than
     // "would you like to have this survey" question)
 
-    participantService.getByFbid(senderID, function(user){
+    participantService.getByFbid(senderID, function(err, user){
 
     var surveyId = "59022c50362ceb0004facbcf"; // CHANGE HERE !!!
 
