@@ -893,7 +893,7 @@ function saveAndRespondNextQuestion(senderID, answer) {
     }
     // Unless its the first question (which is the payload), save user's answer
     if(user.questionNum) {
-        if(answer.content.split(" ").length > 3) {
+        if(false && answer.content.split(" ").length > 3) {
             textapi.sentiment({ "text": answer.content }, function(error, response) {
                 user.answers.push({ content: answer.content, sentiment: response.polarity == "positive" ? 1 : (response.polarity == "negative" ? -1 : 0)});
                 participantService.save(user);
