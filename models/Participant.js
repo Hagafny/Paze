@@ -13,7 +13,7 @@ let participantSchema = mongoose.Schema({
   	surveyId: Number,
   	questionNum: Number,
   	answers: [String]
-  }
+  },
   location: String,
   hashtags: [String]
 });
