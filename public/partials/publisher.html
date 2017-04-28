@@ -17,7 +17,7 @@
                             </thead>
                             <tbody>
                                 <tr ng-repeat="survey in surveys">
-                                    <td ng-click="changeSelectedSurvey(survey.survey)">{{survey.survey.name}}</td>
+                                    <td style="cursor: pointer" ng-click="showSelectedSurvey(survey.survey)">{{survey.survey.name}}</td>
                                     <td>{{survey.questionAmount}}</td>
                                     <td>{{survey.survey.pazePoints}}</td>
                                     <td>
@@ -32,8 +32,32 @@
         </section>
     </div>
 
-    <div>
-        {{selectedSurvey.name}}
+    <div id="Logo">
+      <h1 style="text-align:center">{{selectedSurvey.name}}</h1>  
+
+        <div class="col-lg-12">
+            <section class="box ">
+                <div class="content-body">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+
+
+
+
+                            <div ng-repeat="question in aggregatedAnswers">
+                                {{question.q}}
+                                <div donut-chart donut-data='question.answers' donut-colors='question.colors'>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
     </div>
+
+
 
 </div>
