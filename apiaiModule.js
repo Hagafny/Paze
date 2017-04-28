@@ -287,10 +287,13 @@ function handleApiAiAction(sender, action, responseText, contexts, parameters) {
 
 function handleMessage(message, sender) {
 
+    console.log("message received : " + JSON.stringify(message));
+
+    /*
     if (isUserFillingSurvey(sender, message)) {
         saveAndRespondNextQuestion(sender, message);
         return;
-    }
+    }*/
 
     switch (message.type) {
         case 0: //text
@@ -816,13 +819,6 @@ function receivedPostback(event) {
     // The 'payload' param is a developer-defined field which is set in a postback 
     // button for Structured Messages. 
     var payload = event.postback.payload;
-
-    // payload starts with fill.survey. example: fill.survey12345
-    // if user has surbeyRecord
-    if (isUserFillingSurvey(senderID, payload)) {
-        saveAndRespondNextQuestion(senderID, payload);
-        return;
-    }
 
     switch (payload) {
 
