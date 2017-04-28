@@ -893,6 +893,8 @@ function saveAndRespondNextQuestion(senderID, answer) {
         }
     }
 
+
+    console.log("!!!record.surveyId : " + record.surveyId);
     surveyService.getById(record.surveyId, function(err, survey) {
 
         console.log(JSON.stringify(survey));
