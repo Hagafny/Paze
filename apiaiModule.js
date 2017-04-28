@@ -875,17 +875,17 @@ function saveAndRespondNextQuestion(senderID, answer) {
 
     console.log("USER:" + JSON.stringify(user));
 
-        if(!user.active) {
-            user.active = true;
-            user.surveyId = surveyId;
-            user.questionNum = 0;
-            user.answers = [];
-        };
+    if(!user.active) {
+        user.active = true;
+        user.surveyId = surveyId;
+        user.questionNum = 0;
+        user.answers = [];
+    };
 
-        participantService.save(user, function(err, saved) {
-            console.log("SAVED:" + JSON.stringify(saved));
-        });
-    }
+    participantService.save(user, function(err, saved) {
+        console.log("SAVED:" + JSON.stringify(saved));
+    });
+    
 
     // Unless its the first question (which is the payload), save user's answer
     if(user.questionNum) {
