@@ -872,14 +872,9 @@ function saveAndRespondNextQuestion(senderID, answer) {
     // Record not found - this is the first real question (other than
     // "would you like to have this survey" question)
 
-
-
-    console.log("~~~~~~~~saveAndRespondNextQuestion~~~~~~~~~~~");
-
     participantService.getByFbid(senderID, function(err, user) {
 
     var surveyId = "59022c50362ceb0004facbcf"; // CHANGE HERE !!!
-
 
     if(!user.active) {
         user.active = true;
@@ -926,12 +921,10 @@ function saveAndRespondNextQuestion(senderID, answer) {
                         for(var i = 0; i < question.options.length; i++) {
                             replies.push({
                                 "content_type":"text",
-                                "title": question.options[i],
-                                "payload": question.options[i]
+                                "title": question.options[i] || "stam",
+                                "payload": question.options[i] || "stam"
                             });
                         }
-
-
                         console.log("@#!@      " + question.content +  "       $!@$%!@   " + JSON.stringify(replies));
                         sendQuickReply(senderID, question.content, replies);
                 }
