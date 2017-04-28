@@ -15,7 +15,7 @@ var AYLIENTextAPI = require("aylien_textapi");
 
 var textapi = new AYLIENTextAPI({
   application_id: "2040c761",
-  application_key: "6fdd4c6b99ed738dc4581ec15125300d"
+  application_key: "6   fdd4c6b99ed738dc4581ec15125300d"
 });
 
 // Messenger API parameters
@@ -812,7 +812,7 @@ function saveAndRespondNextQuestion(senderID, answer) {
     if(record.questionNum) {
         if(answer.split(" ").length > 3) {
             textapi.sentiment({ "text": answer }, function(error, response) {
-                record.answers.push({ content: answer, sentiment: response.polarity == "positive" ? 1 : (response.polarity == "negative" ? -1 : 0))});
+                record.answers.push({ content: answer, sentiment: response.polarity == "positive" ? 1 : (response.polarity == "negative" ? -1 : 0)});
                 surveyRecords.set(senderID, record);
             });
         } else {

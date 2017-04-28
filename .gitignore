@@ -2,3 +2,14 @@ node_modules/
 token
 .DS_Store
 .idea/
+.apiaiModule_BASE_9880.js.swp
+.apiaiModule_REMOTE_9880.js.swp
+apiaiModule_BACKUP_9880.js
+apiaiModule_BASE_9880.js
+apiaiModule_LOCAL_9880.js
+apiaiModule_REMOTE_9880.js
+public/js/controllers/participant.js
+public/js/controllers/publisher.js
+public/js/publisher.js
+public/partials/participant.html
+public/partials/publisher.html
