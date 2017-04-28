@@ -10,6 +10,7 @@ const uuid = require('uuid');
 const participantService = require("./services/participantService");
 const surveyService = require("./services/surveyService");
 const answerService = require("./services/answerService");
+
 var AYLIENTextAPI = require("aylien_textapi");
 
 
@@ -867,69 +868,67 @@ function receivedPostback(event) {
 function saveAndRespondNextQuestion(senderID, answer) {
     // Record not found - this is the first real question (other than
     // "would you like to have this survey" question)
-    if(!surveyRecords.has(senderID)) {
 
-        // Get surveyId from payload
-        var surveyId = "59022c50362ceb0004facbcf"; // CHANGE HERE !!!
-        surveyRecords.set(senderID, {
+    participantService.getByFbid(senderID, function(user){
+
+    var surveyId = "59022c50362ceb0004facbcf"; // CHANGE HERE !!!
+
+    if(!user.record) {
+        user.record = {
             surveyId: surveyId,
             questionNum: 0,
             answers: []
-        });
+        };
+
+        participantService.save(user);
     }
 
-    var record = surveyRecords.get(senderID);
+    var record = user.record;
 
     // Unless its the first question (which is the payload), save user's answer
     if(record.questionNum) {
         if(answer.split(" ").length > 3) {
             textapi.sentiment({ "text": answer }, function(error, response) {
                 record.answers.push({ content: answer, sentiment: response.polarity == "positive" ? 1 : (response.polarity == "negative" ? -1 : 0)});
-                surveyRecords.set(senderID, record);
+                participantService.save(user);
             });
         } else {
             record.answers.push({ content: answer });
-            surveyRecords.set(senderID, record);
+            participantService.save(user);
         }
     }
 
-
-    console.log("!!!record.surveyId : " + record.surveyId);
     surveyService.getById(record.surveyId, function(err, survey) {
 
         console.log(JSON.stringify(survey));
 
         if(survey.questions.length - 1 > record.questionNum) {
-            var question = survey.questions[record.questionNum];
+                var question = survey.questions[record.questionNum];
 
-            // Incrementing qustion number
-            record.questionNum++;
-            surveyRecords.set(senderID, record.questionNum);
+                // Incrementing qustion number
+                record.questionNum++;
+                participantService.save(user);
 
-            // Responding to sender with the next question
-            if(question.type == 1) {
-                //saveAnswer here
-                console.log("Sender ID: " + senderID);
-                console.log("6" + JSON.stringify(senderID));
-                sendQuickReply(senderID, question.content);
-            } else {
-                var replies = [];
-                for(var i = 0; i < question.options.length; i++) {
-                    replies.push({
-                        "content_type":"text",
-                        "title": question.options[i]
-                    });
+                // Responding to sender with the next question
+                if(question.type == 1) {
+                    //saveAnswer here
+                    sendQuickReply(senderID, question.content);
+                } else {
+                        var replies = [];
+                        for(var i = 0; i < question.options.length; i++) {
+                            replies.push({
+                                "content_type":"text",
+                                "title": question.options[i]
+                            });
+                        }
+                        sendQuickReply(senderID, question.content, replies);
                 }
-                console.log("Sender ID: " + senderID)
-                console.log("5");
-                sendQuickReply(senderID, question.content, replies);
+            } else {
+                sendCompleteMessage(senderID, survey.publisherId, user);
             }
-        } else {
-            console.log("Sender ID: " + senderID);
-            console.log("4");
-            sendCompleteMessage(senderID, survey.publisherId, record);
-        }
-        
+            
+        });
+
     });
 }
 
@@ -937,18 +936,22 @@ function isUserFillingSurvey(senderID, answer) {
     return (surveyRecords.has(senderID) || answer == "Start!");
 }
 
-function sendCompleteMessage(senderID, publisherId, record) {
+function sendCompleteMessage(senderID, publisherId, user) {
     console.log("3");
-    surveyRecords.delete(senderID);
     answerService.save({
         "participantId": senderID,
-        "surveyId": record.surveyId,
+        "surveyId": user.record.surveyId,
         "publisherId": publisherId,
-        "answers": record.answers,
+        "answers": user.record.answers,
         "__v": 0
     } ,function(err) {
+        user.record = null;
+        participantService.save(user);
+
         sendQuickReply(senderID, "Thanks for participating in our survey! Till the next time");
     });
+
+
 }
 
 /*
