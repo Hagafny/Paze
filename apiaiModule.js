@@ -1,11 +1,14 @@
 'use strict';
 
 const apiai = require('apiai');
+const https = require('https');
 const config = require('./config');
 const crypto = require('crypto');
 const bodyParser = require('body-parser');
 const request = require('request');
 const uuid = require('uuid');
+const participantService = require("./services/participantService");
+
 
 // Messenger API parameters
 if (!config.FB_PAGE_TOKEN) {
@@ -24,11 +27,13 @@ if (!config.SERVER_URL) { //used for ink to static files
     throw new Error('missing SERVER_URL');
 }
 
+let self = this;
 
 const apiAiService = apiai(config.API_AI_CLIENT_ACCESS_TOKEN, {
     language: "en",
     requestSource: "fb"
 });
+
 const sessionIds = new Map();
 
 var webhookGet = (req, res) => {
@@ -50,17 +55,29 @@ var webhookGet = (req, res) => {
  */
 
 //my.namespace.Enum = {
-  //  PREINTERVIEW : 0,
-    //AFTERINTERVIEW : 1,
+//  PREINTERVIEW : 0,
+//AFTERINTERVIEW : 1,
 //}
 
+function post(options, callback) {
+    var options =  options;
+    var req = https.request(options, function(res) {
+      res.setEncoding('utf8');
+      res.on('data', callback);
+    });
 
+    req.on('error', function(e) {
+      console.log('problem with request: ' + e.message);
+    });
+
+    // write data to request body
+    req.write('{"string": "Hello, World"}');
+    req.end();
+}
 
 var webhookPost = (req, res) => {
     var data = req.body;
     console.log(JSON.stringify(data));
-
-
 
     // Make sure this is a page subscription
     if (data.object == 'page') {
@@ -118,6 +135,39 @@ function receivedMessage(event) {
     var messageText = message.text;
     var messageAttachments = message.attachments;
     var quickReply = message.quick_reply;
+    
+    try {
+
+        post({
+          hostname: 'westus.api.cognitive.microsoft.com',
+          port: 80,
+          path: 'text/analytics/v2.0/topics?minDocumentsPerWord=1&maxDocumentsPerWord=100',
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+              'Ocp-Apim-Subscription-Key': '0b08f2e3532d4e789b3918ea26e82f6b'
+          }, body: {
+              "stopWords": [],
+              "topicsToExclude": [],
+              "documents": [
+                {
+                  "id": "123125411351313125125",
+                  "text": messageText
+                }
+              ]
+          } 
+        }, function(body) {
+                sendTextMessage(senderID, body);
+                //console.log('Got response', response ? JSON.stringify(response) : "undefined responseText");
+        });
+        
+            
+
+    } catch(e) {
+       sendTextMessage(senderID, e.message);
+    }
+
+    return;
 
     if (isEcho) {
         handleEcho(messageId, appId, metadata);
@@ -126,7 +176,6 @@ function receivedMessage(event) {
         handleQuickReply(senderID, quickReply, messageId);
         return;
     }
-
 
     if (messageText) {
         //send message to api.ai
@@ -156,25 +205,116 @@ function handleEcho(messageId, appId, metadata) {
 }
 function handleApiAiAction(sender, action, responseText, contexts, parameters) {
     switch (action) {
-        case "example.survey": 
-               // say let's get started first 
-               if (contexts[0].parameters['Age'] == "" && contexts[0].parameters['Gender'] == "" && contexts[0].parameters['Location'] == "" &&contexts[0].parameters['RelationshipStatus'] == "" && contexts[0].parameters['Career'] == "" ) {
-                   // Create User in DB with basic info from facebook ==> Ron
-                   sendTextMessage(sender, "Great ! Let's get started");
-                   sendTextMessage(sender, "What is your age ?");
-               //    contexts[0].parameters['Age'] = 0;
+        case "example.survey":
+/*
+            let replies = [
+                {
+                    "content_type": "text",
+                    "title": "I'm ready",
+                    "payload": "I'm ready"
+                }
+            ]
 
-               }
-             //  sendTypingOn(sender);
-            //   sendTypingOff(sender);
-               sendTextMessage(sender, reponse);
-               let age = isDefined(contexts[0].parameters['Age'] && contexts[0].parameters['Age'] != '') ? contexts[0].parameters['Age'] : "";  
-               let gender = isDefined(contexts[0].parameters['Gender'] && contexts[0].parameters['Gender'] != '') ? contexts[0].parameters['Gender'] : "";  
-               let location = isDefined(contexts[0].parameters['Location'] && contexts[0].parameters['Location'] != '') ? contexts[0].parameters['Location'] : "";  
-               let relationshipStatus = isDefined(contexts[0].parameters['RelationshipStatus'] && contexts[0].parameters['RelationshipStatus'] != '') ? contexts[0].parameters['RelationshipStatus'] : "";  
-               let career = isDefined(contexts[0].parameters['Career'] && contexts[0].parameters['Career'] != '') ? contexts[0].parameters['Career'] : "";  
-          //  }
-        break;
+            sendQuickReply(sender, responseText, replies);
+*/
+
+            /*
+              // Create User in DB with basic info from facebook ==> Ron
+              var patricipant = {
+        
+            fbid: {type: String, required: true}, 
+            name: {type: String, required: true, trim: true},
+            age: Number,
+            picture: String,
+            status: Number,
+             gender: Number,
+             income: Number,
+             location: String,
+             hashtags: [String]
+        
+              }
+        
+              
+            */
+
+
+            break;
+        case "example.survey.interview":
+        
+
+            //  if (contexts[0].parameters['Age'] == "" && contexts[0].parameters['Gender'] == "" && contexts[0].parameters['Location'] == "" &&contexts[0].parameters['RelationshipStatus'] == "" && contexts[0].parameters['Career'] == "" ) {
+            
+            let age = isDefined(contexts[0].parameters['Age'] && contexts[0].parameters['Age'] != '') ? contexts[0].parameters['Age'] : "";
+            let gender = isDefined(contexts[0].parameters['Gender'] && contexts[0].parameters['Gender'] != '') ? contexts[0].parameters['Gender'] : "";
+            let location = isDefined(contexts[0].parameters['Location'] && contexts[0].parameters['Location'] != '') ? contexts[0].parameters['Location'] : "";
+            let relationshipStatus = isDefined(contexts[0].parameters['RelationshipStatus'] && contexts[0].parameters['RelationshipStatus'] != '') ? contexts[0].parameters['RelationshipStatus'] : "";
+            let career = isDefined(contexts[0].parameters['Career'] && contexts[0].parameters['Career'] != '') ? contexts[0].parameters['Career'] : "";
+/*
+            if (contexts[0].parameters['Age'] == "" && contexts[0].parameters['Gender'] == "" && contexts[0].parameters['Location'] == "" && contexts[0].parameters['RelationshipStatus'] == "" && contexts[0].parameters['Career'] == "") {
+                // Store age at DB here
+                sendTextMessage(sender, responseText);
+            }
+
+            if (contexts[0].parameters['Age'] != "" && contexts[0].parameters['Gender'] == "" && contexts[0].parameters['Location'] == "" && contexts[0].parameters['RelationshipStatus'] == "" && contexts[0].parameters['Career'] == "") {
+                let genderReplies = [
+                    {
+                        "content_type": "text",
+                        "title": "Male",
+                        "payload": "Male"
+                    },
+                    {
+                        "content_type": "text",
+                        "title": "Female",
+                        "payload": "Female"
+                    },
+                ]
+                // Store gender at DB here   
+                sendQuickReply(sender, responseText, genderReplies);
+            }
+
+            if (contexts[0].parameters['Age'] != "" && contexts[0].parameters['Gender'] != "" && contexts[0].parameters['Location'] == "" && contexts[0].parameters['RelationshipStatus'] == "" && contexts[0].parameters['Career'] == "") {
+                // Store location at DB here
+                sendTextMessage(sender, responseText);
+            }
+
+            if (contexts[0].parameters['Age'] != "" && contexts[0].parameters['Gender'] != "" && contexts[0].parameters['Location'] != "" && contexts[0].parameters['RelationshipStatus'] == "" && contexts[0].parameters['Career'] == "") {
+                let statusReplies = [
+                    {
+                        "content_type": "text",
+                        "title": "Single",
+                        "payload": "Single"
+                    },
+                    {
+                        "content_type": "text",
+                        "title": "In a relationship",
+                        "payload": "In a relationship"
+                    },
+                    {
+                        "content_type": "text",
+                        "title": "Married",
+                        "payload": "Married"
+                    },
+                    {
+                        "content_type": "text",
+                        "title": "Divorced",
+                        "payload": "Divorced"
+                    },
+                    {
+                        "content_type": "text",
+                        "title": "Widower",
+                        "payload": "Widower"
+                    }
+                ]
+                // Store relationship status at DB here   
+                sendQuickReply(sender, responseText, statusReplies);
+            }
+
+            if (contexts[0].parameters['Age'] != "" && contexts[0].parameters['Gender'] != "" && contexts[0].parameters['Location'] != "" && contexts[0].parameters['RelationshipStatus'] != "" && contexts[0].parameters['Career'] == "") {
+                // Store career at DB here
+                sendTextMessage(sender, responseText);
+            }
+*/
+            break;
         default:
             //unhandled action, just send back the text
             sendTextMessage(sender, responseText);
@@ -710,34 +850,34 @@ function receivedPostback(event) {
     switch (payload) {
         case "GetStarted_Button_Pressed":
 
-        sendTypingOn(sender);
-        sendTypingOff(sender);
-        greetUserText(senderID); 
-        sendTypingOn(sender);
-        sendTypingOff(sender);
-        sendTextMessage(senderID, "My name is Paze and I am an artifcial inteligance powered survey panel bot");
-        sendTypingOn(sender);
-        sendTypingOff(sender);
-        sendTextMessage(senderID, "My wish is to send you surveys and I will pay you in exchange for your answers");
-        sendTypingOn(sender);
-        sendTypingOff(sender);
-  //    sendToApiAi(sender,)
- //    sendTextMessage(senderID, "The more I know you, the more survies you will receive. Would you like for us to conduct an example survey?");
+            sendTypingOn(sender);
+            sendTypingOff(sender);
+            greetUserText(senderID);
+            sendTypingOn(sender);
+            sendTypingOff(sender);
+            sendTextMessage(senderID, "My name is Paze and I am an artifcial inteligance powered survey panel bot");
+            sendTypingOn(sender);
+            sendTypingOff(sender);
+            sendTextMessage(senderID, "My wish is to send you surveys and I will pay you in exchange for your answers");
+            sendTypingOn(sender);
+            sendTypingOff(sender);
+            //    sendToApiAi(sender,)
+            //    sendTextMessage(senderID, "The more I know you, the more survies you will receive. Would you like for us to conduct an example survey?");
 
-      let replies = [
-      {
-        "content_type":"text",
-        "title":"Yes",
-        "payload":"Yes, I want to take an example survey"
-      },
-      {
-        "content_type":"text",
-        "title":"No",
-        "payload":"No, I don't to take an example survey"
-      },
-    ]
-        sendQuickReply(senderID,"The more I know you, the more survies you will receive. Would you like for us to conduct an example survey?",replies);
-        break;
+            let replies = [
+                {
+                    "content_type": "text",
+                    "title": "Yes",
+                    "payload": "Yes, I want to take an example survey"
+                },
+                {
+                    "content_type": "text",
+                    "title": "No",
+                    "payload": "No, I don't to take an example survey"
+                },
+            ]
+            sendQuickReply(senderID, "The more I know you, the more survies you will receive. Would you like for us to conduct an example survey?", replies);
+            break;
         default:
             //unindentified payload
             sendTextMessage(senderID, "I'm not sure what you want. Can you be more specific?");
@@ -852,7 +992,7 @@ function receivedAuthentication(event) {
  *
  */
 function verifyRequestSignature(req, res, buf) {
-    var signature = req.headers["x-hub-signature"]; 
+    var signature = req.headers["x-hub-signature"];
 
     if (!signature) {
         throw new Error('Couldn\'t validate the signature.');
