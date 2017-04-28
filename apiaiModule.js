@@ -116,6 +116,13 @@ function receivedMessage(event) {
     if (!sessionIds.has(senderID)) {
         sessionIds.set(senderID, uuid.v1());
     }
+
+    console.log("MMMMM : " + message.text);
+    if (isUserFillingSurvey(sender, message.text)) {
+        saveAndRespondNextQuestion(sender, message.text);
+        return;
+    }    
+
     //console.log("Received message for user %d and page %d at %d with message:", senderID, recipientID, timeOfMessage);
     //console.log(JSON.stringify(message));
 
@@ -288,12 +295,6 @@ function handleApiAiAction(sender, action, responseText, contexts, parameters) {
 function handleMessage(message, sender) {
 
     console.log("message received : " + JSON.stringify(message));
-
-    /*
-    if (isUserFillingSurvey(sender, message)) {
-        saveAndRespondNextQuestion(sender, message);
-        return;
-    }*/
 
     switch (message.type) {
         case 0: //text
@@ -870,7 +871,7 @@ function saveAndRespondNextQuestion(senderID, answer) {
     if(!surveyRecords.has(senderID)) {
 
         // Get surveyId from payload
-        var surveyId = answer.replace("yes.fill.survey", "");
+        var surveyId = "59022c50362ceb0004facbcf"; // CHANGE HERE !!!
         surveyRecords.set(senderID, {
             surveyId: surveyId,
             questionNum: 0,
@@ -878,8 +879,6 @@ function saveAndRespondNextQuestion(senderID, answer) {
         });
     }
 
-    // TODO: save answer for user 
-    // TODO: increment questionNum
     var record = surveyRecords.get(senderID);
 
     // Unless its the first question (which is the payload), save user's answer
@@ -926,16 +925,7 @@ function saveAndRespondNextQuestion(senderID, answer) {
 }
 
 function isUserFillingSurvey(senderID, answer) {
-
-    if(typeof(answer) != "string") {
-        try {
-            answer = answer.replies[0];
-        } catch(e) {
-            console.log("I DONT KNOW : " + JSON.stringify(answer));
-        }
-    }
-
-    return surveyRecords.has(senderID) || answer && (answer.indexOf("yes.fill.survey") == 0);
+    return (surveyRecords.has(senderID) || answer == "Start!");
 }
 
 function sendCompleteMessage(senderID, publisherId, record) {
