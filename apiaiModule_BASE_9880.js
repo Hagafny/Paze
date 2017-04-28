@@ -8,16 +8,7 @@ const bodyParser = require('body-parser');
 const request = require('request');
 const uuid = require('uuid');
 const participantService = require("./services/participantService");
-const surveyService = require("./services/surveyService");
-const answerService = require("./services/answerService");
 
-var AYLIENTextAPI = require("aylien_textapi");
-
-
-var textapi = new AYLIENTextAPI({
-  application_id: "2040c761",
-  application_key: "6fdd4c6b99ed738dc4581ec15125300d"
-});
 
 // Messenger API parameters
 if (!config.FB_PAGE_TOKEN) {
@@ -44,7 +35,6 @@ const apiAiService = apiai(config.API_AI_CLIENT_ACCESS_TOKEN, {
 });
 
 const sessionIds = new Map();
-const surveyRecords = new Map();
 
 var webhookGet = (req, res) => {
     console.log("request");
@@ -68,6 +58,22 @@ var webhookGet = (req, res) => {
   //  PREINTERVIEW : 0,
     //AFTERINTERVIEW : 1,
 //}
+
+function post(options, callback) {
+    var options =  options;
+    var req = https.request(options, function(res) {
+      res.setEncoding('utf8');
+      res.on('data', callback);
+    });
+
+    req.on('error', function(e) {
+      console.log('problem with request: ' + e.message);
+    });
+
+    // write data to request body
+    req.write('{"string": "Hello, World"}');
+    req.end();
+}
 
 var webhookPost = (req, res) => {
     var data = req.body;
@@ -117,12 +123,6 @@ function receivedMessage(event) {
     if (!sessionIds.has(senderID)) {
         sessionIds.set(senderID, uuid.v1());
     }
-
-    if (isUserFillingSurvey(senderID, message.text)) {
-        saveAndRespondNextQuestion(senderID, message.text);
-        return;
-    }    
-
     //console.log("Received message for user %d and page %d at %d with message:", senderID, recipientID, timeOfMessage);
     //console.log(JSON.stringify(message));
 
@@ -136,7 +136,40 @@ function receivedMessage(event) {
     var messageAttachments = message.attachments;
     var quickReply = message.quick_reply;
     
-     if (isEcho) {
+    try {
+
+        post({
+          hostname: 'westus.api.cognitive.microsoft.com',
+          port: 80,
+          path: 'text/analytics/v2.0/topics?minDocumentsPerWord=1&maxDocumentsPerWord=100',
+          method: 'POST',
+          headers: {
+              'Content-Type': 'application/json',
+              'Ocp-Apim-Subscription-Key': '0b08f2e3532d4e789b3918ea26e82f6b'
+          }, body: {
+              "stopWords": [],
+              "topicsToExclude": [],
+              "documents": [
+                {
+                  "id": "123125411351313125125",
+                  "text": messageText
+                }
+              ]
+          } 
+        }, function(body) {
+                sendTextMessage(senderID, body);
+                //console.log('Got response', response ? JSON.stringify(response) : "undefined responseText");
+        });
+        
+            
+
+    } catch(e) {
+       sendTextMessage(senderID, e.message);
+    }
+
+    return;
+
+    if (isEcho) {
         handleEcho(messageId, appId, metadata);
         return;
     } else if (quickReply) {
@@ -172,130 +205,49 @@ function handleEcho(messageId, appId, metadata) {
 }
 function handleApiAiAction(sender, action, responseText, contexts, parameters) {
     switch (action) {
-        case "example.survey":
-            /*
-                        let replies = [
-                            {
-                                "content_type": "text",
-                                "title": "I'm ready",
-                                "payload": "I'm ready"
-                            }
-                        ]
-            
-                        sendQuickReply(sender, responseText, replies);
-            */
+        case "example.survey":  
+        sendTextMessage(sender, responseText);
 
-            /*
-              // Create User in DB with basic info from facebook ==> Ron
-              var patricipant = {
-        
-            fbid: {type: String, required: true}, 
-            name: {type: String, required: true, trim: true},
-            age: Number,
-            picture: String,
-            status: Number,
-             gender: Number,
-             income: Number,
-             location: String,
-             hashtags: [String]
-        
-              }
-        
-              
-            */
+    /*
+      // Create User in DB with basic info from facebook ==> Ron
+      var patricipant = {
 
-            break;
-        case "example.survey.interview":
+    fbid: {type: String, required: true}, 
+    name: {type: String, required: true, trim: true},
+    age: Number,
+    picture: String,
+    status: Number,
+     gender: Number,
+     income: Number,
+     location: String,
+     hashtags: [String]
+
+      }
+
+      
+    */
 
 
-            let age = isDefined(contexts[0].parameters['Age'] && contexts[0].parameters['Age'] != '') ? contexts[0].parameters['Age'] : "";
-            let gender = isDefined(contexts[0].parameters['Gender'] && contexts[0].parameters['Gender'] != '') ? contexts[0].parameters['Gender'] : "";
-            let location = isDefined(contexts[0].parameters['Location'] && contexts[0].parameters['Location'] != '') ? contexts[0].parameters['Location'] : "";
-            let relationshipStatus = isDefined(contexts[0].parameters['RelationshipStatus'] && contexts[0].parameters['RelationshipStatus'] != '') ? contexts[0].parameters['RelationshipStatus'] : "";
-            let career = isDefined(contexts[0].parameters['Career'] && contexts[0].parameters['Career'] != '') ? contexts[0].parameters['Career'] : "";
+        break;
+        case "yes-to-example-survey.yes-to-example-survey-custom":
 
-            if (contexts[0].parameters['Age'] == "" && contexts[0].parameters['Gender'] == "" && contexts[0].parameters['Location'] == "" && contexts[0].parameters['RelationshipStatus'] == "" && contexts[0].parameters['Career'] == "") {
-                // Store age at DB here
-                sendTextMessage(sender, responseText);
-            }
 
-            else if (contexts[0].parameters['Age'] != "" && contexts[0].parameters['Gender'] == "" && contexts[0].parameters['Location'] == "" && contexts[0].parameters['RelationshipStatus'] == "" && contexts[0].parameters['Career'] == "") {
+             //  if (contexts[0].parameters['Age'] == "" && contexts[0].parameters['Gender'] == "" && contexts[0].parameters['Location'] == "" &&contexts[0].parameters['RelationshipStatus'] == "" && contexts[0].parameters['Career'] == "" ) {
 
-                let genderReplies = [
-                    {
-
-                        "content_type": "text",
-                        "title": "Male",
-                        "payload": "Male"
-                    },
-                    {
-                        "content_type": "text",
-                        "title": "Female",
-                        "payload": "Female"
-                    }
-                ];
-                // Store gender at DB here   
-                sendQuickReply(sender, responseText, genderReplies);
-            }
-
-            else if (contexts[0].parameters['Age'] != "" && contexts[0].parameters['Gender'] != "" && contexts[0].parameters['Location'] == "" && contexts[0].parameters['RelationshipStatus'] == "" && contexts[0].parameters['Career'] == "") {
-                // Store location at DB here
-                sendTextMessage(sender, responseText);
-            }
-
-            else if (contexts[0].parameters['Age'] != "" && contexts[0].parameters['Gender'] != "" && contexts[0].parameters['Location'] != "" && contexts[0].parameters['RelationshipStatus'] == "" && contexts[0].parameters['Career'] == "") {
-                let statusReplies = [
-                    {
-                        "content_type": "text",
-                        "title": "Single",
-                        "payload": "Single"
-                    },
-                    {
-                        "content_type": "text",
-                        "title": "In a relationship",
-                        "payload": "In a relationship"
-                    },
-                    {
-                        "content_type": "text",
-                        "title": "Married",
-                        "payload": "Married"
-                    },
-                    {
-                        "content_type": "text",
-                        "title": "Divorced",
-                        "payload": "Divorced"
-                    },
-                    {
-                        "content_type": "text",
-                        "title": "Widower",
-                        "payload": "Widower"
-                    }
-                ];
-                // Store relationship status at DB here   
-                sendQuickReply(sender, responseText, statusReplies);
-            }
-
-            else if (contexts[0].parameters['Age'] != "" && contexts[0].parameters['Gender'] != "" && contexts[0].parameters['Location'] != "" && contexts[0].parameters['RelationshipStatus'] != "" && contexts[0].parameters['Career'] == "") {
-                // Store career at DB here
-                sendTextMessage(sender, responseText);
-            }
-
-            else {
-                sendTextMessage(sender, responseText);
-            }
-
-            break;
+            sendTextMessage(sender, responseText);
+               let age = isDefined(contexts[0].parameters['Age'] && contexts[0].parameters['Age'] != '') ? contexts[0].parameters['Age'] : "";  
+               let gender = isDefined(contexts[0].parameters['Gender'] && contexts[0].parameters['Gender'] != '') ? contexts[0].parameters['Gender'] : "";  
+               let location = isDefined(contexts[0].parameters['Location'] && contexts[0].parameters['Location'] != '') ? contexts[0].parameters['Location'] : "";  
+               let relationshipStatus = isDefined(contexts[0].parameters['RelationshipStatus'] && contexts[0].parameters['RelationshipStatus'] != '') ? contexts[0].parameters['RelationshipStatus'] : "";  
+               let career = isDefined(contexts[0].parameters['Career'] && contexts[0].parameters['Career'] != '') ? contexts[0].parameters['Career'] : "";  
+        break;
         default:
             //unhandled action, just send back the text
             sendTextMessage(sender, responseText);
     }
 }
 
-
 function handleMessage(message, sender) {
-
-    console.log("message received : " + JSON.stringify(message));
-
     switch (message.type) {
         case 0: //text
             sendTextMessage(sender, message.speech);
@@ -822,36 +774,35 @@ function receivedPostback(event) {
     var payload = event.postback.payload;
 
     switch (payload) {
-
         case "GetStarted_Button_Pressed":
-            sendTypingOn(sender);
-            sendTypingOff(sender);
-            greetUserText(senderID); 
-            sendTypingOn(sender);
-            sendTypingOff(sender);
-            sendTextMessage(senderID, "My name is Paze and I am an artifcial inteligance powered survey panel bot");
-            sendTypingOn(sender);
-            sendTypingOff(sender);
-            sendTextMessage(senderID, "My wish is to send you surveys and I will pay you in exchange for your answers");
-            sendTypingOn(sender);
-            sendTypingOff(sender);
-      //    sendToApiAi(sender,)
-     //    sendTextMessage(senderID, "The more I know you, the more survies you will receive. Would you like for us to conduct an example survey?");
 
-            let replies = [
-              {
-                "content_type":"text",
-                "title":"Yes",
-                "payload":"Yes, I want to take an example survey"
-              },
-              {
-                "content_type":"text",
-                "title":"No",
-                "payload":"No, I don't to take an example survey"
-              }
-            ];
+        sendTypingOn(sender);
+        sendTypingOff(sender);
+        greetUserText(senderID); 
+        sendTypingOn(sender);
+        sendTypingOff(sender);
+        sendTextMessage(senderID, "My name is Paze and I am an artifcial inteligance powered survey panel bot");
+        sendTypingOn(sender);
+        sendTypingOff(sender);
+        sendTextMessage(senderID, "My wish is to send you surveys and I will pay you in exchange for your answers");
+        sendTypingOn(sender);
+        sendTypingOff(sender);
+  //    sendToApiAi(sender,)
+ //    sendTextMessage(senderID, "The more I know you, the more survies you will receive. Would you like for us to conduct an example survey?");
 
-            sendQuickReply(senderID, "The more I know you, the more survies you will receive. Would you like for us to conduct an example survey?",replies);
+      let replies = [
+      {
+        "content_type":"text",
+        "title":"Yes",
+        "payload":"Yes, I want to take an example survey"
+      },
+      {
+        "content_type":"text",
+        "title":"No",
+        "payload":"No, I don't to take an example survey"
+      },
+    ]
+        sendQuickReply(senderID,"The more I know you, the more survies you will receive. Would you like for us to conduct an example survey?",replies);
         break;
         default:
             //unindentified payload
@@ -865,105 +816,6 @@ function receivedPostback(event) {
 
 }
 
-function saveAndRespondNextQuestion(senderID, answer) {
-    // Record not found - this is the first real question (other than
-    // "would you like to have this survey" question)
-
-    participantService.getByFbid(senderID, function(err, user) {
-
-    var surveyId = "59022c50362ceb0004facbcf"; // CHANGE HERE !!!
-
-    console.log("USER:" + JSON.stringify(user));
-
-    if(!user.record.active) {
-        user.record = {
-            active: true,
-            surveyId: surveyId,
-            questionNum: 0,
-            answers: []
-        };
-
-        participantService.save(user, function(err, saved) {
-            console.log("SAVED:" + JSON.stringify(saved));
-        });
-    }
-
-    var record = user.record;
-
-    // Unless its the first question (which is the payload), save user's answer
-    if(record.questionNum) {
-        if(answer.split(" ").length > 3) {
-            textapi.sentiment({ "text": answer }, function(error, response) {
-                record.answers.push({ content: answer, sentiment: response.polarity == "positive" ? 1 : (response.polarity == "negative" ? -1 : 0)});
-                participantService.save(user);
-            });
-        } else {
-            record.answers.push({ content: answer });
-            participantService.save(user);
-        }
-    }
-
-    surveyService.getById(surveyId, function(err, survey) {
-
-        console.log("SURVEY: " + JSON.stringify(survey));
-
-        if(survey.questions.length - 1 > record.questionNum) {
-                var question = survey.questions[record.questionNum];
-
-                // Incrementing qustion number
-                record.questionNum++;
-                participantService.save(user);
-
-                // Responding to sender with the next question
-                if(question.type == 1) {
-                    //saveAnswer here
-                    sendQuickReply(senderID, question.content);
-                } else {
-                        var replies = [];
-                        for(var i = 0; i < question.options.length; i++) {
-                            replies.push({
-                                "content_type":"text",
-                                "title": question.options[i]
-                            });
-                        }
-                        sendQuickReply(senderID, question.content, replies);
-                }
-            } else {
-                sendCompleteMessage(senderID, survey.publisherId, user);
-            }
-            
-        });
-
-    });
-}
-
-function isUserFillingSurvey(senderID, answer) {
-    return (surveyRecords.has(senderID) || answer == "Start!");
-}
-
-function sendCompleteMessage(senderID, publisherId, user) {
-    console.log("3");
-    answerService.save({
-        "participantId": senderID,
-        "surveyId": user.record.surveyId,
-        "publisherId": publisherId,
-        "answers": user.record.answers,
-        "__v": 0
-    } ,function(err) {
-
-        user.record = {
-            active: false,
-            surveyId: surveyId,
-            questionNum: 0,
-            answers: []
-        };
-
-        participantService.save(user);
-        sendQuickReply(senderID, "Thanks for participating in our survey! Till the next time");
-    });
-
-
-}
 
 /*
  * Message Read Event
