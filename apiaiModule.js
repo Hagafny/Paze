@@ -118,8 +118,8 @@ function receivedMessage(event) {
     }
 
     console.log("MMMMM : " + message.text);
-    if (isUserFillingSurvey(sender, message.text)) {
-        saveAndRespondNextQuestion(sender, message.text);
+    if (isUserFillingSurvey(event.sender, message.text)) {
+        saveAndRespondNextQuestion(event.sender, message.text);
         return;
     }    
 
