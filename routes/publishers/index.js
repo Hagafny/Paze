@@ -2,7 +2,7 @@ let router = require('express').Router;
 const publishers = router();
 const handlers = require('./handlers');
 
-publishers.get('/:id', handlers.getById);
+publishers.get('/:id', handlers.getPublisherSurveys);
 publishers.post('/', handlers.save);
 
 const publisherSurvies = router({ mergeParams: true });

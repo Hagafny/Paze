@@ -1,4 +1,4 @@
-<div class='content-wrapper' ng-init="app.settings.pagetitle = 'Participant';" ng-controller="ParticipantCtrl">
+<div class='content-wrapper' ng-init="app.settings.pagetitle = 'Publisher';" ng-controller="PublisherCtrl">
     <section class="box nobox margin-top-15 margin-bottom-0">
         <div class="content-body">
             <div class="col-md-12 col-sm-12 col-xs-12 padding-right-30 padding-left-20">
@@ -31,8 +31,8 @@
                             <i class="material-icons icon-primary pull-left">computer
 </i>
                             <div class="stats">
-                                <h3>{{amountOfSurveys}}</h3>
-                                <span>Surveys Taken</span>
+                                <h3>{{surveys.length}}</h3>
+                                <span>Surveys Issued</span>
                             </div>
                         </div>
                     </div>
@@ -62,15 +62,19 @@
                             <thead>
                                 <tr>
                                     <th st-sort="name">Name</th>
-                                    <th st-sort="name">Publisher</th>
+                                    <th st-sort="name">Questions</th>
                                     <th st-sort="count">Paze Points</th>
+                                    <th st-sort="who">Participation</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr ng-repeat="survey in surveys">
-                                    <td>{{survey.surveyId.name}}</td>
-                                    <td>{{survey.publisherId.name}}</td>
-                                    <td>{{survey.surveyId.pazePoints}}</td>
+                                    <td>{{survey.survey.name}}</td>
+                                    <td>{{survey.questionAmount}}</td>
+                                    <td>{{survey.survey.pazePoints}}</td>
+                                    <td>          
+                <uib-progressbar class="progress-striped active" max="max" value="30 + survey.answersAmount"><span style="white-space:nowrap;">{{survey.answersAmount}} / {{survey.survey.amountOfParticipants}}</span></uib-progressbar>
+            </td>
                                 </tr>
                             </tbody>
                         </table>

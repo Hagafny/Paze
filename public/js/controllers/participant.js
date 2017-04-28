@@ -4,10 +4,8 @@ app.controller('ParticipantCtrl', function ($scope, $http, $stateParams) {
   var participantId = $stateParams.id;
   $http.get('api/participants/' + participantId)
     .success(function (response) {
-      console.log(response);
       $scope.participant = response.participant;
       $scope.surveys = response.surveys;
-
       var pazePoints = 0;
       var amountOfSurveys = response.surveys.length;
       for (var i = 0; i < amountOfSurveys; i++) {

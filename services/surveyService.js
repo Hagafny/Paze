@@ -25,19 +25,31 @@ let getPublisherSurveys = (publisherId, callback) => {
     Survey.find({ publisherId: publisherId }, baseFields, (err, surveys) => {
         if (err) console.error(err);
 
-        if (typeof callback == typeof Function)
+        if (typeof callback == typeof Function) {
+            surveys.sort(compareByPazePoints);
             callback(err, surveys);
+        }
+
     })
 }
 
 let getParticipantSurveys = (participantId, callback) => {
-    Answer.find({ participantId: participantId }, 'surveyId answers')
-        .lean().populate('surveyId', baseFields).exec((err, surveys) => {
+    Answer.find({ participantId: participantId }, 'surveyId answers publisherId')
+        .lean().populate('surveyId publisherId', baseFields).exec((err, surveys) => {
             if (err) console.error(err);
-
-            if (typeof callback == typeof Function)
+            if (typeof callback == typeof Function) {
+                surveys.sort(compareByPazePoints);
                 callback(err, surveys);
+            }
         })
+}
+
+function compareByPazePoints(a, b) {
+    if (a.surveyId.pazePoints < b.surveyId.pazePoints)
+        return 1;
+    if (a.surveyId.pazePoints > b.surveyId.pazePoints)
+        return -1;
+    return 0;
 }
 
 module.exports = {

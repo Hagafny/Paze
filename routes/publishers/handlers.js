@@ -1,5 +1,5 @@
 const publisherService = require('../../services/publisherService');
-const surveyService = require('../../services/surveyService');
+const answerService = require('../../services/answerService');
 
 let getById = (req, res) => {
     let id = req.params.id;
@@ -24,11 +24,29 @@ let save = (req, res) => {
 
 let getPublisherSurveys = (req, res) => {
     let publisherId = req.params.id;
-    surveyService.getPublisherSurveys(publisherId, (err, surveys) => {
+    answerService.getAnswersForPublisher(publisherId, (err, surveys) => {
+        var newSurveys = [];
+        for (var key in surveys) {
+            newSurveys.push(surveys[key]);
+        }
+
         if (err)
             res.status(404).json(err);
-        else
-            res.status(200).send(surveys);
+        else {
+            publisherService.getById(publisherId, (err2, publisher) => {
+                if (err2)
+                    res.status(404).json(err2);
+                else {
+                    var sendObj = {
+                        publisher: publisher,
+                        surveys: newSurveys
+                    }
+
+                    res.status(200).send(sendObj);
+                }
+            })
+        }
+
     })
 }
 

@@ -13,28 +13,12 @@ angular.module('app')
             $stateProvider
                 .state('app.participant', {
                     url: '/participant/:id',
-                    templateUrl: 'partials/participant.html',
-                    resolve: {
-                        deps: ['$ocLazyLoad',
-                            function ($ocLazyLoad) {
-                                return $ocLazyLoad.load('chart.js').then(
-                                    function () {
-                                        return $ocLazyLoad.load('js/controllers/dashboard.js');
-                                    }
-                                )
-                                    .then(
-                                    function () {
-                                        return $ocLazyLoad.load('../bower_components/font-awesome/css/font-awesome.css');
-                                    }
-                                    );
-                            }
-                        ]
-                    }
-
-
-
-
+                    templateUrl: 'partials/participant.html'
                 })
+                .state('app.publisher', {
+                    url: '/publisher/:id',
+                    templateUrl: 'partials/publisher.html'
+                })              
                 .state('app', {
                     abstract: true,
                     url: '/app',
@@ -55,7 +39,7 @@ angular.module('app')
                                     function () {
                                         return $ocLazyLoad.load('../bower_components/font-awesome/css/font-awesome.css');
                                     }
-                                    );
+                                    )
                             }
                         ]
                     }
