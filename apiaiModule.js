@@ -15,7 +15,7 @@ var AYLIENTextAPI = require("aylien_textapi");
 
 var textapi = new AYLIENTextAPI({
   application_id: "2040c761",
-  application_key: "6   fdd4c6b99ed738dc4581ec15125300d"
+  application_key: "6fdd4c6b99ed738dc4581ec15125300d"
 });
 
 // Messenger API parameters
