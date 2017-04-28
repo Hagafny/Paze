@@ -119,7 +119,7 @@ function receivedMessage(event) {
     }
 
     isUserFillingSurvey(senderID, message.text, function(err) {
-        aveAndRespondNextQuestion(senderID, message.text);
+        saveAndRespondNextQuestion(senderID, message.text);
     }, function(err) {
         participantService.getByFbid(senderID, function(err, user) {
         //console.log("Received message for user %d and page %d at %d with message:", senderID, recipientID, timeOfMessage);
