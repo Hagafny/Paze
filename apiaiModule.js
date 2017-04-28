@@ -869,6 +869,10 @@ function saveAndRespondNextQuestion(senderID, answer) {
     // Record not found - this is the first real question (other than
     // "would you like to have this survey" question)
 
+
+
+    console.log("~~~~~~~~saveAndRespondNextQuestion~~~~~~~~~~~");
+
     participantService.getByFbid(senderID, function(err, user) {
 
     var surveyId = "59022c50362ceb0004facbcf"; // CHANGE HERE !!!
@@ -880,13 +884,13 @@ function saveAndRespondNextQuestion(senderID, answer) {
         user.surveyId = surveyId;
         user.questionNum = 0;
         user.answers = [];
-    };
 
-    participantService.save(user, function(err, saved) {
-        console.log("SAVED:" + JSON.stringify(saved));
-    });
-    
-
+        participantService.save(user, function(err, saved) {
+            console.log("SAVED:" + JSON.stringify(saved));
+        });
+    } else {
+        console.error("user active");
+    }
     // Unless its the first question (which is the payload), save user's answer
     if(user.questionNum) {
         if(answer.split(" ").length > 3) {
@@ -910,6 +914,8 @@ function saveAndRespondNextQuestion(senderID, answer) {
                 // Incrementing qustion number
                 user.questionNum++;
                 participantService.save(user);
+
+                console.error("user Saved " + user.questionNum);
 
                 // Responding to sender with the next question
                 if(question.type == 1) {
