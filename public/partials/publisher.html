@@ -1,56 +1,4 @@
 <div class='content-wrapper' ng-init="app.settings.pagetitle = 'Publisher';" ng-controller="PublisherCtrl">
-    <section class="box nobox margin-top-15 margin-bottom-0">
-        <div class="content-body">
-            <div class="col-md-12 col-sm-12 col-xs-12 padding-right-30 padding-left-20">
-                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 padding-right-0 padding-left-0">
-                    <div class="r4_counter wid-stats db_box">
-                        <div class='stats-data'>
-
-                            <i class="material-icons icon-primary pull-left">strikethrough_s</i>
-                            <div class="stats">
-                                <h3>{{pazePoints}}</h3>
-                                <span>Paze Points</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 padding-right-0 padding-left-0">
-                    <div class="r4_counter wid-stats db_box">
-                        <div class='stats-data'>
-                            <i class="material-icons icon-primary pull-left">thumbs_up_down</i>
-                            <div class="stats">
-                                <h3>{{rating}}%</h3>
-                                <span>Rating</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 padding-right-0 padding-left-0">
-                    <div class="r4_counter wid-stats db_box">
-                        <div class='stats-data'>
-                            <i class="material-icons icon-primary pull-left">computer
-</i>
-                            <div class="stats">
-                                <h3>{{surveys.length}}</h3>
-                                <span>Surveys Issued</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12 padding-right-0 padding-left-0" style="cursor:pointer">
-                    <div class="r4_counter wid-stats db_box">
-                        <div class='stats-data'>
-
-                            <i style="color:#14a1c6" class="material-icons icon-primary pull-left">credit_card</i>
-                            <div class="stats" style="padding-top:23px">
-                                <h4>Checkout</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <div class="col-lg-12">
         <section class="box ">
@@ -69,12 +17,12 @@
                             </thead>
                             <tbody>
                                 <tr ng-repeat="survey in surveys">
-                                    <td>{{survey.survey.name}}</td>
+                                    <td ng-click="changeSelectedSurvey(survey.survey)">{{survey.survey.name}}</td>
                                     <td>{{survey.questionAmount}}</td>
                                     <td>{{survey.survey.pazePoints}}</td>
-                                    <td>          
-                <uib-progressbar class="progress-striped active" max="max" value="30 + survey.answersAmount"><span style="white-space:nowrap;">{{survey.answersAmount}} / {{survey.survey.amountOfParticipants}}</span></uib-progressbar>
-            </td>
+                                    <td>
+                                        <uib-progressbar class="progress-striped active" max="max" value="30 + survey.answersAmount"><span style="white-space:nowrap;">{{survey.answersAmount}} / {{survey.survey.amountOfParticipants}}</span></uib-progressbar>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -83,4 +31,9 @@
             </div>
         </section>
     </div>
+
+    <div>
+        {{selectedSurvey.name}}
+    </div>
+
 </div>

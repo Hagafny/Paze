@@ -17,8 +17,19 @@ angular.module('app')
                 })
                 .state('app.publisher', {
                     url: '/publisher/:id',
-                    templateUrl: 'partials/publisher.html'
-                })              
+                    templateUrl: 'partials/publisher.html',
+                    resolve: {
+                        deps: ['$ocLazyLoad',
+                            function ($ocLazyLoad) {
+                                return $ocLazyLoad.load('ngMorris').then(
+                                    function () {
+                                        return $ocLazyLoad.load('js/controllers/morris.js');
+                                    }
+                                );
+                            }
+                        ]
+                    }
+                })
                 .state('app', {
                     abstract: true,
                     url: '/app',
