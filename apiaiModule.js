@@ -68,8 +68,6 @@ var webhookGet = (req, res) => {
 //AFTERINTERVIEW : 1,
 //}
 
-<<<<<<< HEAD
-=======
 function post(options, callback) {
     var options = options;
     var req = https.request(options, function (res) {
@@ -86,7 +84,6 @@ function post(options, callback) {
     req.end();
 }
 
->>>>>>> e04151b36fe1de1d1c6a81e2ba16c8d0f06fef24
 var webhookPost = (req, res) => {
     var data = req.body;
     console.log(JSON.stringify(data));
@@ -147,46 +144,8 @@ function receivedMessage(event) {
     var messageText = message.text;
     var messageAttachments = message.attachments;
     var quickReply = message.quick_reply;
-<<<<<<< HEAD
-    
-     if (isEcho) {
-=======
-
-    try {
-
-        post({
-            hostname: 'westus.api.cognitive.microsoft.com',
-            port: 80,
-            path: 'text/analytics/v2.0/topics?minDocumentsPerWord=1&maxDocumentsPerWord=100',
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Ocp-Apim-Subscription-Key': '0b08f2e3532d4e789b3918ea26e82f6b'
-            }, body: {
-                "stopWords": [],
-                "topicsToExclude": [],
-                "documents": [
-                    {
-                        "id": "123125411351313125125",
-                        "text": messageText
-                    }
-                ]
-            }
-        }, function (body) {
-            sendTextMessage(senderID, body);
-            //console.log('Got response', response ? JSON.stringify(response) : "undefined responseText");
-        });
-
-
-
-    } catch (e) {
-        sendTextMessage(senderID, e.message);
-    }
-
-    return;
 
     if (isEcho) {
->>>>>>> e04151b36fe1de1d1c6a81e2ba16c8d0f06fef24
         handleEcho(messageId, appId, metadata);
         return;
     } else if (quickReply) {
@@ -273,9 +232,7 @@ function handleApiAiAction(sender, action, responseText, contexts, parameters) {
 
             else if (contexts[0].parameters['Age'] != "" && contexts[0].parameters['Gender'] == "" && contexts[0].parameters['Location'] == "" && contexts[0].parameters['RelationshipStatus'] == "" && contexts[0].parameters['Career'] == "") {
 
-<<<<<<< HEAD
              //  if (contexts[0].parameters['Age'] == "" && contexts[0].parameters['Gender'] == "" && contexts[0].parameters['Location'] == "" &&contexts[0].parameters['RelationshipStatus'] == "" && contexts[0].parameters['Career'] == "" ) {
-=======
                 console.log("this is a test");
                 let genderReplies = [
                     {
@@ -289,7 +246,6 @@ function handleApiAiAction(sender, action, responseText, contexts, parameters) {
                         "title": "Female",
                         "payload": "Female"
                     },
->>>>>>> e04151b36fe1de1d1c6a81e2ba16c8d0f06fef24
 
                 ]
                 // Store gender at DB here   
