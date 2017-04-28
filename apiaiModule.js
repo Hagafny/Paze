@@ -8,7 +8,15 @@ const bodyParser = require('body-parser');
 const request = require('request');
 const uuid = require('uuid');
 const participantService = require("./services/participantService");
+const surveyService = require("./services/surveyService");
+const answerService = require("./services/answerService");
+var AYLIENTextAPI = require("aylien_textapi");
 
+
+var textapi = new AYLIENTextAPI({
+  application_id: "2040c761",
+  application_key: "6fdd4c6b99ed738dc4581ec15125300d"
+});
 
 // Messenger API parameters
 if (!config.FB_PAGE_TOKEN) {
@@ -35,6 +43,7 @@ const apiAiService = apiai(config.API_AI_CLIENT_ACCESS_TOKEN, {
 });
 
 const sessionIds = new Map();
+const surveyRecords = new Map();
 
 var webhookGet = (req, res) => {
     console.log("request");
@@ -155,6 +164,7 @@ function handleEcho(messageId, appId, metadata) {
     console.log("Received echo for message %s and app %d with metadata %s", messageId, appId, metadata);
 }
 function handleApiAiAction(sender, action, responseText, contexts, parameters) {
+
     switch (action) {
         case "example.survey":  
         sendTextMessage(sender, responseText);
@@ -182,7 +192,6 @@ function handleApiAiAction(sender, action, responseText, contexts, parameters) {
         break;
         case "yes-to-example-survey.yes-to-example-survey-custom":
 
-
              //  if (contexts[0].parameters['Age'] == "" && contexts[0].parameters['Gender'] == "" && contexts[0].parameters['Location'] == "" &&contexts[0].parameters['RelationshipStatus'] == "" && contexts[0].parameters['Career'] == "" ) {
 
             sendTextMessage(sender, responseText);
@@ -199,6 +208,12 @@ function handleApiAiAction(sender, action, responseText, contexts, parameters) {
 }
 
 function handleMessage(message, sender) {
+
+    if (isUserFillingSurvey(sender, message)) {
+        saveAndRespondNextQuestion(sender, message);
+        return;
+    }
+
     switch (message.type) {
         case 0: //text
             sendTextMessage(sender, message.speech);
@@ -724,36 +739,44 @@ function receivedPostback(event) {
     // button for Structured Messages. 
     var payload = event.postback.payload;
 
+    // payload starts with fill.survey. example: fill.survey12345
+    // if user has surbeyRecord
+    if (isUserFillingSurvey(senderID, payload)) {
+        saveAndRespondNextQuestion(senderID, payload);
+        return;
+    }
+
     switch (payload) {
+
         case "GetStarted_Button_Pressed":
+            sendTypingOn(sender);
+            sendTypingOff(sender);
+            greetUserText(senderID); 
+            sendTypingOn(sender);
+            sendTypingOff(sender);
+            sendTextMessage(senderID, "My name is Paze and I am an artifcial inteligance powered survey panel bot");
+            sendTypingOn(sender);
+            sendTypingOff(sender);
+            sendTextMessage(senderID, "My wish is to send you surveys and I will pay you in exchange for your answers");
+            sendTypingOn(sender);
+            sendTypingOff(sender);
+      //    sendToApiAi(sender,)
+     //    sendTextMessage(senderID, "The more I know you, the more survies you will receive. Would you like for us to conduct an example survey?");
 
-        sendTypingOn(sender);
-        sendTypingOff(sender);
-        greetUserText(senderID); 
-        sendTypingOn(sender);
-        sendTypingOff(sender);
-        sendTextMessage(senderID, "My name is Paze and I am an artifcial inteligance powered survey panel bot");
-        sendTypingOn(sender);
-        sendTypingOff(sender);
-        sendTextMessage(senderID, "My wish is to send you surveys and I will pay you in exchange for your answers");
-        sendTypingOn(sender);
-        sendTypingOff(sender);
-  //    sendToApiAi(sender,)
- //    sendTextMessage(senderID, "The more I know you, the more survies you will receive. Would you like for us to conduct an example survey?");
+            let replies = [
+              {
+                "content_type":"text",
+                "title":"Yes",
+                "payload":"Yes, I want to take an example survey"
+              },
+              {
+                "content_type":"text",
+                "title":"No",
+                "payload":"No, I don't to take an example survey"
+              }
+            ];
 
-      let replies = [
-      {
-        "content_type":"text",
-        "title":"Yes",
-        "payload":"Yes, I want to take an example survey"
-      },
-      {
-        "content_type":"text",
-        "title":"No",
-        "payload":"No, I don't to take an example survey"
-      },
-    ]
-        sendQuickReply(senderID,"The more I know you, the more survies you will receive. Would you like for us to conduct an example survey?",replies);
+            sendQuickReply(senderID, "The more I know you, the more survies you will receive. Would you like for us to conduct an example survey?",replies);
         break;
         default:
             //unindentified payload
@@ -767,6 +790,83 @@ function receivedPostback(event) {
 
 }
 
+function saveAndRespondNextQuestion(senderID, answer) {
+    // Record not found - this is the first real question (other than
+    // "would you like to have this survey" question)
+    if(!surveyRecords.has(senderID)) {
+
+        // Get surveyId from payload
+        var surveyId = answer.replace("yes.fill.survey", "");
+        surveyRecords.set(senderID, {
+            surveyId: surveyId,
+            questionNum: 0,
+            answers: []
+        });
+    }
+
+    // TODO: save answer for user 
+    // TODO: increment questionNum
+    var record = surveyRecords.get(senderID);
+
+    // Unless its the first question (which is the payload), save user's answer
+    if(record.questionNum) {
+        if(answer.split(" ").length > 3) {
+            textapi.sentiment({ "text": answer }, function(error, response) {
+                record.answers.push({ content: answer, sentiment: response.polarity == "positive" ? 1 : (response.polarity == "negative" ? -1 : 0))});
+                surveyRecords.set(senderID, record);
+            });
+        } else {
+            record.answers.push({ content: answer });
+            surveyRecords.set(senderID, record);
+        }
+    }
+
+    surveyService.getById(record.surveyId, function(survey) {
+
+        if(survey.questions.length - 1 > record.questionNum) {
+            var question = record.questions[record.questionNum];
+
+            // Incrementing qustion number
+            record.questionNum++;
+            surveyRecords.set(senderID, record.questionNum);
+
+            // Responding to sender with the next question
+            if(question.type == 1) {
+                //saveAnswer here
+                sendQuickReply(senderID, question.content);
+            } else {
+                var replies = [];
+                for(var i = 0; i < question.options.length; i++) {
+                    replies.push({
+                        "content_type":"text",
+                        "title": question.options[i]
+                    });
+                }
+                sendQuickReply(senderID, question.content, replies);
+            }
+        } else {
+            sendCompleteMessage(senderID, survey.publisherId, record);
+        }
+        
+    });
+}
+
+function isUserFillingSurvey(senderID, answer) {
+    return surveyRecords.has(senderID) || event && (answer.indexOf("yes.fill.survey") == 0);
+}
+
+function sendCompleteMessage(senderID, publisherId, record) {
+    surveyRecords.delete(senderID);
+    answerService.save({
+        "participantId": senderID,
+        "surveyId": record.surveyId,
+        "publisherId": publisherId,
+        "answers": record.answers,
+        "__v": 0
+    } ,callback(err) {
+        sendQuickReply(senderID, "Thanks for participating in our survey! Till the next time :)");
+    });
+}
 
 /*
  * Message Read Event
