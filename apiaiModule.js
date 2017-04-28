@@ -117,7 +117,6 @@ function receivedMessage(event) {
         sessionIds.set(senderID, uuid.v1());
     }
 
-    console.log("MMMMM : " + message.text);
     if (isUserFillingSurvey(event.sender, message.text)) {
         saveAndRespondNextQuestion(event.sender, message.text);
         return;
@@ -895,6 +894,9 @@ function saveAndRespondNextQuestion(senderID, answer) {
     }
 
     surveyService.getById(record.surveyId, function(survey) {
+
+        console.log("printing survey");
+        console.log(JSON.stringify(surveys));
 
         if(survey.questions.length - 1 > record.questionNum) {
             var question = record.questions[record.questionNum];
