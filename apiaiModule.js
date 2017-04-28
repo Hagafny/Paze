@@ -900,7 +900,7 @@ function saveAndRespondNextQuestion(senderID, answer) {
         console.log(JSON.stringify(survey));
 
         if(survey.questions.length - 1 > record.questionNum) {
-            var question = record.questions[record.questionNum];
+            var question = survey.questions[record.questionNum];
 
             // Incrementing qustion number
             record.questionNum++;
