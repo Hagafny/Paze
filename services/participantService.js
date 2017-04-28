@@ -11,6 +11,11 @@ let getById = (id, callback) => {
 
 let getByFbid = (fbid, callback) => {
     Participant.findOne({ fbid: fbid }, (err, participant) => {
+
+        if(!participant) {
+            console.log("NOT MYU FAULT");
+        }
+
         if (err) console.error(err);
         
         if (typeof callback == typeof Function)

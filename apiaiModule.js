@@ -869,10 +869,11 @@ function saveAndRespondNextQuestion(senderID, answer) {
     // Record not found - this is the first real question (other than
     // "would you like to have this survey" question)
 
-    participantService.getByFbid(senderID, function(err, user){
-
+    participantService.getByFbid(senderID, function(err, user) {
+        console.log("1");
     var surveyId = "59022c50362ceb0004facbcf"; // CHANGE HERE !!!
-
+    console.log("SENDER: " + senderID);
+    console.log("2");
     if(!user.record) {
         user.record = {
             surveyId: surveyId,
@@ -883,8 +884,10 @@ function saveAndRespondNextQuestion(senderID, answer) {
         participantService.save(user);
     }
 
-    var record = user.record;
+    console.log("3");
 
+    var record = user.record;
+    console.log("4");
     // Unless its the first question (which is the payload), save user's answer
     if(record.questionNum) {
         if(answer.split(" ").length > 3) {
